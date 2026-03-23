@@ -254,7 +254,14 @@ footer a:hover { color:var(--text); }
 
 <!-- ═══════ HOME VIEW — FEED ═══════ -->
 <div id="home-view" class="container">
-
+<div class="feed-item" onclick="showArticle('ecolab-acquires-coolit-4-75b')">
+  <div class="fi-top">
+    <span class="fi-tag deal">Deal</span>
+    <span>Mar 23, 2026 · 4 min</span>
+  </div>
+  <div class="fi-title">Ecolab Pays $4.75B for AI Cooling Hardware It Needed Yesterday</div>
+  <div class="fi-excerpt">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA — and turning itself into the data center's plumber.</div>
+</div>
   <div class="feed-item" onclick="showArticle('costar')">
     <div class="fi-top">
       <span class="fi-tag deal">Deal</span>
@@ -400,7 +407,282 @@ footer a:hover { color:var(--text); }
 
   <div style="height:48px;"></div>
 </div>
-
+<div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Ecolab Pays $4.75B for AI Cooling Hardware It Needed Yesterday</h1>
+    <p class="ah-sub">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA — and turning itself into the data center's plumber.</p>
+    <div class="ah-meta">
+      <span>Mar 23, 2026</span>
+      <span>·</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell">
+      <div class="ms-val">$4.75B</div>
+      <div class="ms-label">Enterprise Value</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">29x</div>
+      <div class="ms-label">Fwd. EBITDA Multiple</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">~8.6x</div>
+      <div class="ms-label">NTM Revenue Multiple</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">All-Cash</div>
+      <div class="ms-label">Consideration</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">Q3 2026</div>
+      <div class="ms-label">Expected Close</div>
+    </div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Ecolab Inc. (NYSE: ECL), the $60B water and hygiene services company, announced on March 20 that it has entered into a definitive agreement to acquire CoolIT Systems in an all-cash transaction valued at $4.75 billion. The seller is a consortium of KKR and Abu Dhabi sovereign wealth fund Mubadala Investment, who jointly acquired CoolIT in June 2023 for approximately $270 million — meaning they are walking away with a roughly 17.6x return in under three years. The deal is being financed entirely with new transaction debt, which will push Ecolab's pro forma net leverage to approximately 3x adjusted EBITDA at close, with a stated target of returning to 2x within two years.</p>
+    <p>CoolIT is a Calgary-based manufacturer of direct liquid cooling (DLC) systems for hyperscale and colocation data centers. The company designs and builds coolant distribution units (CDUs), cold plates, and direct-to-chip cooling technologies — the hardware that physically pulls heat away from AI accelerators that no longer respond to a fan blowing air over them. CoolIT is projected to generate approximately $550 million in revenue over the next twelve months, implying a purchase multiple of roughly 8.6x NTM sales and 29x forward EBITDA — pricing that reflects the scarcity value of proven liquid cooling capacity at scale. The deal is expected to close in Q3 2026, subject to regulatory approvals. Citi served as exclusive financial advisor to Ecolab.</p>
+    <p>The acquisition doubles Ecolab's stated total addressable market in its Global High-Tech segment from $5 billion to $10 billion. Management projects CoolIT will add approximately 2 percentage points to Global Water's organic sales growth rate and 1 point to Ecolab's overall company-level organic growth rate.</p>
+ 
+    <h2>Why It Matters</h2>
+    <p>The deal is the clearest possible signal that the AI infrastructure buildout has officially reached the "physical layer" — the pipes, fluids, and thermal management systems that determine whether a $30,000 GPU cluster actually stays online. Ecolab already serves more than 1,000 data centers through its Cooling-as-a-Service offering, providing the water chemistry that keeps cooling loops from corroding. What it was missing was the actual cooling hardware. CoolIT fills that gap completely, and the combined entity can now walk into a hyperscaler's procurement meeting and pitch an integrated solution: CoolIT's CDUs plus Ecolab's chemical treatment, monitoring, and service contracts. That's a materially harder position for competitors to replicate than either business alone.</p>
+    <p>The strategic logic also explains why Ecolab was willing to pay 29x EBITDA for a hardware company — a multiple more typical of SaaS than industrial equipment. CoolIT's value isn't just in its current revenue; it's in the long-term service contracts that attach to every CDU installation. Liquid cooling loops require ongoing chemical management to prevent corrosion and mineral scaling. Every piece of CoolIT hardware installed is a future Ecolab chemistry customer. The company is paying for an installed base, not just a revenue line. Ecolab CEO Christophe Beck has been telegraphing this pivot for over a year, reorganizing the company around data center growth in early 2025 and calling it the primary driver for the next five years of company performance.</p>
+    <p>For KKR and Mubadala, this is simply one of the best private equity outcomes of the decade. They bought CoolIT in mid-2023 — early enough to catch the AI cooling wave but before the market repriced — for $270 million. Three years later they're selling for $4.75 billion, a return that will feature prominently in every future KKR fundraising deck. The exit validates the entire "AI picks and shovels" investment thesis that has driven infrastructure M&A since 2024.</p>
+ 
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item">
+        <span class="cb-dot red"></span>
+        <p><strong>Leverage at an awkward moment:</strong> Ecolab is taking on enough debt to push pro forma leverage to 3x. That's manageable for an investment-grade company, but it limits flexibility at a time when the AI infrastructure cycle could see its first real demand air pocket. A slowdown in hyperscaler capex spending would pressure both CoolIT's revenue growth and Ecolab's ability to deleverage on schedule.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot red"></span>
+        <p><strong>Technology obsolescence risk:</strong> Liquid cooling itself is not a monolithic technology. Direct-to-chip cooling — CoolIT's core product — could be displaced by immersion cooling or other thermal management approaches over a 5–7 year horizon. At 29x EBITDA, Ecolab has zero margin of safety if CoolIT's specific technology loses share to a different cooling architecture.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot orange"></span>
+        <p><strong>Integration complexity:</strong> CoolIT is a Calgary-based hardware company with deep engineering culture. Ecolab is a Minnesota-based services giant that has historically grown through chemistry and digital monitoring, not manufacturing. Blending those cultures without losing the product team that made CoolIT worth $4.75 billion will require deliberate management — something that's easier said than done in a post-acquisition integration.</p>
+      </div>
+    </div>
+ 
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Unbeatable bundled offering:</strong> No competitor can sell a data center operator both the cooling hardware and the chemical treatment to keep it running. This cross-sell flywheel — CoolIT CDUs create Ecolab chemistry contracts — is a genuine moat that neither business could build independently. It structurally increases revenue per customer and improves retention.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Riding the right secular trend:</strong> The shift from air cooling to liquid cooling in data centers isn't a cyclical trade — it's a structural change driven by GPU power density that has nowhere to go but up. CoolIT has 25 years of engineering depth and relationships with the largest hyperscalers on the planet. Ecolab's global service network of millions of customer locations provides the distribution infrastructure to scale CoolIT internationally faster than it could organically.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>KKR's exit validates the asset quality:</strong> KKR doesn't sell a company for 17.6x in three years unless it has conviction that the buyer is overpaying, or unless the business has genuinely matured to a point where a strategic buyer can extract more value than a financial sponsor. The clean exit with no earn-outs or contingencies suggests the asset is exactly what it appears to be.</p>
+      </div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+ 
+ 
+<!-- ============================================================ -->
+<!-- ARTICLE 2: BERKSHIRE / TOKIO MARINE                          -->
+<!-- ============================================================ -->
+ 
+<!-- FEED ITEM -->
+ 
+<div class="feed-item" onclick="showArticle('berkshire-tokio-marine-1-8b')">
+  <div class="fi-top">
+    <span class="fi-tag deal">Deal</span>
+    <span>Mar 23, 2026 · 4 min</span>
+  </div>
+  <div class="fi-title">Greg Abel's First Big Move: Berkshire Takes a $1.8B Stake in Tokio Marine</div>
+  <div class="fi-excerpt">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact — a meaningful step beyond Buffett's passive Japan playbook.</div>
+</div>
+ 
+---
+ 
+<!-- ARTICLE VIEW -->
+ 
+<div id="article-berkshire-tokio-marine-1-8b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Greg Abel's First Big Move: Berkshire Takes a $1.8B Stake in Tokio Marine</h1>
+    <p class="ah-sub">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact — a meaningful step beyond Buffett's passive Japan playbook.</p>
+    <div class="ah-meta">
+      <span>Mar 23, 2026</span>
+      <span>·</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell">
+      <div class="ms-val">¥287.4B</div>
+      <div class="ms-label">Investment (JPY)</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">$1.8B</div>
+      <div class="ms-label">Investment (USD)</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">2.49%</div>
+      <div class="ms-label">Stake Acquired</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">9.9%</div>
+      <div class="ms-label">Standstill Cap</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">10 Years</div>
+      <div class="ms-label">Partnership Term</div>
+    </div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Berkshire Hathaway Inc. (NYSE: BRK.B) announced this morning that its reinsurance subsidiary National Indemnity Company (NICO) has acquired a 2.49% strategic equity stake in Tokio Marine Holdings Inc. (OTC: TKOMY) — Japan's largest property and casualty insurer — through the purchase of approximately 48.2 million treasury shares for ¥287.4 billion, or roughly $1.8 billion at current exchange rates. The transaction is accompanied by a comprehensive 10-year strategic partnership agreement covering global reinsurance collaboration and joint mergers and acquisitions activity. Under a standstill provision, Berkshire has committed not to exceed a 9.9% stake without board approval from Tokio Marine, though any additional purchases beyond the initial tranche will be made through the open market. In the first five years of the agreement, both parties are restricted from entering comparable exclusive arrangements with competitors.</p>
+    <p>The structure is notable for its reciprocal capital mechanics: Tokio Marine will use up to ¥287.4 billion of the proceeds from the treasury share sale to repurchase its own shares on the open market, effectively neutralizing the dilutive impact on existing shareholders while allowing Berkshire to establish its position. The reinsurance component has NICO joining Tokio Marine's reinsurance panel and participating in a whole account quota share — meaning NICO will take a proportional share of Tokio Marine's underwriting risk in exchange for a proportional share of premiums. This is a live operational arrangement, not a passive equity investment dressed up with partnership language.</p>
+    <p>This marks the first major international initiative executed under Greg Abel, who officially assumed the CEO role from Warren Buffett on January 1, 2026. The initiative is said to have originated on Berkshire's side, with Abel having made multiple trips to Tokyo throughout 2024 and 2025 to develop the relationship.</p>
+ 
+    <h2>Why It Matters</h2>
+    <p>Buffett's Japan strategy was elegant in its simplicity: buy ~10% of each of the five largest trading houses — Itochu, Marubeni, Mitsubishi, Mitsui, Sumitomo — collect dividends, and wait. It required no operational involvement, no board seats, no language barriers. Abel is doing something structurally different here. A quota share reinsurance arrangement is not a passive investment. It ties NICO's underwriting results directly to Tokio Marine's portfolio composition. For this to generate the returns Berkshire expects, the two companies need to actually work together — aligning on risk appetite, pricing discipline, and claims philosophy. Abel is betting that Berkshire's insurance culture, refined over decades with Ajit Jain, is compatible with a 147-year-old Japanese institution. That is an operational thesis, not a financial one.</p>
+    <p>The joint M&A mandate is equally interesting. Tokio Marine has publicly stated a target of deploying $10 billion toward international acquisitions through 2027. Berkshire's balance sheet — sitting on over $160 billion in cash as of year-end 2025 — is essentially unlimited by comparison. The combination of Tokio Marine's deep Asian distribution and underwriting expertise with Berkshire's capital firepower and reputation creates a credible vehicle for acquiring specialty insurance carriers and infrastructure-adjacent assets across the ASEAN region and potentially North America. Watch for a named joint acquisition target before the end of 2026. The Ajit Jain imprimatur — he was quoted in today's announcement calling the partnership a source of "compelling long-term opportunities" — provides the insurance market credibility that Abel, who came up through Berkshire Hathaway Energy, cannot bring on his own.</p>
+    <p>For Tokio Marine, the deal is more straightforwardly valuable: a reinsurance backstop from the most financially secure insurer on the planet, plus the halo of the Berkshire name at a moment when the company is trying to accelerate international growth. CEO Masahiro Koike's alignment of corporate cultures was a diplomatic courtesy; the actual benefit is access to NICO's "fortress balance sheet" capacity in a world where catastrophic weather losses are becoming statistically harder to model.</p>
+ 
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item">
+        <span class="cb-dot red"></span>
+        <p><strong>Operational integration across cultures:</strong> Quota share arrangements work smoothly when both parties have identical views on reserving, loss adjustment, and ceded premium allocation. The gap between Berkshire's hyper-decentralized, returns-first culture and a traditional Japanese institutional insurer is wide. A major catastrophe year — the very scenario this partnership is designed to handle — would stress-test that alignment immediately and could reveal material philosophical differences that a 10-year contract can't easily unwind.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot orange"></span>
+        <p><strong>Currency exposure:</strong> The $1.8 billion investment is denominated in yen. Berkshire has partially hedged its Japan exposure through yen-denominated bond issuance (it raised ¥210 billion in late 2025), but the equity stake remains exposed to USD/JPY moves. A 10% yen depreciation from current levels would reduce the dollar-denominated value of the stake by roughly $180 million.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot orange"></span>
+        <p><strong>Abel's track record is unproven internationally:</strong> Buffett's Japan bets were brilliant and are up massively. Abel is making a more complex, operationally intensive bet in the same geography. The market will be patient, but Berkshire's investor base expects capital to be deployed with the same discipline Buffett demonstrated. A messy joint acquisition or a reinsurance arrangement that underperforms would sharpen scrutiny of Abel's judgment at exactly the wrong time.</p>
+      </div>
+    </div>
+ 
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>The reinsurance timing is exceptional:</strong> Global reinsurance pricing is at cycle highs following years of catastrophe losses and capacity withdrawal. Entering a quota share with Japan's largest P&C insurer at this point in the pricing cycle is the insurance equivalent of buying real estate in 2009. NICO gets premium income at favorable rates while building the relationship infrastructure for the next decade.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Unlocks a $10B joint acquisition pipeline:</strong> Tokio Marine has the mandate, the market knowledge, and the distribution; Berkshire has the capital. This partnership effectively creates a new, well-capitalized acquirer in the global specialty insurance market at a time when there are multiple motivated sellers — particularly among mid-size European and Asian carriers facing solvency pressure from climate-related losses. The joint M&A opportunity is more interesting than the equity stake itself.</p>
+      </div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+ 
+ 
+<!-- ============================================================ -->
+<!-- ARTICLE 3: BAKER HUGHES / CHART INDUSTRIES                   -->
+<!-- ============================================================ -->
+ 
+<!-- FEED ITEM -->
+ 
+<div class="feed-item" onclick="showArticle('baker-hughes-acquires-chart-industries-13-6b')">
+  <div class="fi-top">
+    <span class="fi-tag deal">Deal</span>
+    <span>Mar 23, 2026 · 5 min</span>
+  </div>
+  <div class="fi-title">Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</div>
+  <div class="fi-excerpt">The deal for Chart Industries — snatched away from a $19B Flowserve merger — is a blunt declaration that Baker Hughes wants to be an energy technology company, and it's willing to pay 13.6x EBITDA to get there faster.</div>
+</div>
+ 
+---
+ 
+<!-- ARTICLE VIEW -->
+ 
+<div id="article-baker-hughes-acquires-chart-industries-13-6b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</h1>
+    <p class="ah-sub">The deal for Chart Industries — snatched away from a $19B Flowserve merger — is a blunt declaration that Baker Hughes wants to be an energy technology company, and it's willing to pay 13.6x EBITDA to get there faster.</p>
+    <div class="ah-meta">
+      <span>Mar 23, 2026</span>
+      <span>·</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell">
+      <div class="ms-val">$210.00</div>
+      <div class="ms-label">Offer / Share</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">22%</div>
+      <div class="ms-label">Premium</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">$13.6B</div>
+      <div class="ms-label">Enterprise Value</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">All-Cash</div>
+      <div class="ms-label">Consideration</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">Mid-2026</div>
+      <div class="ms-label">Expected Close</div>
+    </div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Baker Hughes Company (NASDAQ: BKR) announced on July 29, 2025 that it had entered into a definitive agreement to acquire Chart Industries (NYSE: GTLS) for $210 per share in cash, representing a total enterprise value of $13.6 billion. The $210 offer carried a 22% premium to Chart's pre-announcement closing price, and the deal was unanimously approved by the boards of both companies. Chart shareholders voted to approve the transaction in October 2025. The deal is financed with committed bridge debt provided by Goldman Sachs and Morgan Stanley, which Baker Hughes intends to replace with permanent debt financing prior to close. Pro forma net leverage at closing is projected at 2.25x, declining to a 1.0–1.5x range within 24 months through free cash flow generation and targeted asset divestitures. Baker Hughes has identified $325 million in annualized cost synergies expected to be fully realized by year three. The deal is expected to close by mid-2026, with Chart shareholders having already delivered their approval.</p>
+    <p>Chart Industries is a Ball Ground, Georgia-based manufacturer of cryogenic equipment, heat exchangers, process technologies, and industrial gas handling equipment. In 2024, the company reported $4.2 billion in revenue and $1.0 billion in adjusted EBITDA — putting the acquisition multiple at approximately 13.6x EBITDA, or roughly 9x on a fully synergized basis. Chart's products are used across the full liquid gas supply chain: LNG production and storage, hydrogen liquefaction, carbon capture, data center cooling, industrial gas, and food and beverage processing. The company's cryogenic equipment is deployed in approximately 90% of LNG projects globally. Baker Hughes itself reported full-year 2024 revenue of $27.8 billion and adjusted EBITDA of $4.6 billion, making this acquisition roughly half its own EBITDA base — a large, transformative commitment by any measure.</p>
+    <p>The deal came at the expense of Flowserve Corporation, which had agreed to acquire Chart in a $19 billion all-stock merger of equals announced in June 2025. Baker Hughes mounted a superior cash offer, Chart terminated the Flowserve agreement in late July 2025, and Flowserve collected a $266 million termination fee. The competitive dynamic suggests Baker Hughes was highly motivated — motivated enough to pay a clean cash premium over a deal that would have given Chart shareholders stock in a combined entity at a higher nominal value.</p>
+ 
+    <h2>Why It Matters</h2>
+    <p>Baker Hughes CEO Lorenzo Simonelli has spent the past three years describing Baker Hughes as an "energy technology company" rather than an oilfield services provider. Chart Industries is the acquisition that actually makes that description accurate. Chart's end markets — LNG, hydrogen, carbon capture, data center cooling, industrial gas — are the growth verticals that Baker Hughes has been building toward organically. Buying Chart compresses five to seven years of organic growth into a single transaction and gives the combined entity a genuinely differentiated position: Baker Hughes brings rotating equipment, flow control, and digital technology; Chart brings heat transfer, cryogenic hardware, and process engineering. Those capabilities don't overlap — they stack. The combined company can offer integrated solutions across the entire gas processing value chain that neither could offer independently.</p>
+    <p>The LNG angle alone justifies serious attention. Global LNG demand is structurally growing, driven by European energy security concerns post-Ukraine and Asian industrial expansion. Chart's cryogenic equipment is in roughly 90% of LNG projects worldwide — that is not a market position you can replicate in any reasonable timeframe. Baker Hughes already has deep LNG project relationships through its turbomachinery and compression business. Owning Chart means the combined entity can bid on entire LNG project packages — from compression through liquefaction equipment — rather than competing for individual line items. That changes the commercial conversation with customers in a meaningful way.</p>
+    <p>The data center angle deserves its own note: Chart's industrial cooling equipment, which was originally designed for cryogenic applications, is increasingly being adapted for high-density data center thermal management. This is the same AI infrastructure trend that drove Ecolab's CoolIT acquisition. Baker Hughes is arriving at the same destination from a different direction, and at a larger scale. If AI capex spending sustains its current trajectory, Chart's data center revenue line — currently small relative to its LNG and industrial gas business — could become a material contributor within three to four years.</p>
+ 
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item">
+        <span class="cb-dot red"></span>
+        <p><strong>Integration of two complex manufacturers:</strong> This is not a software tuck-in. Baker Hughes and Chart are both large, operationally complex manufacturers with distinct engineering cultures, customer bases, and supply chains. The $325 million synergy target sounds reasonable until you consider that achieving it requires consolidating manufacturing capacity, rationalizing overlapping product lines, and retaining the specialized engineers who make Chart's cryogenic equipment actually work. Synergy misses in deals of this complexity are common; the first two years will be the tell.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot red"></span>
+        <p><strong>LNG demand sensitivity:</strong> Chart's largest revenue segment is LNG. A sustained decline in LNG pricing, a shift in European energy policy, or acceleration in renewable alternatives could pressure the core business that justified the premium. Baker Hughes is already exposed to energy capital spending cycles through its oilfield services business; adding Chart increases that correlation, not reduces it.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot orange"></span>
+        <p><strong>Leverage leaves limited room for error:</strong> Baker Hughes is entering this deal with 2.25x leverage at close and a commitment to maintain its A credit rating. That's achievable in a strong free cash flow environment, but the plan depends on both companies performing well simultaneously during the integration period — and on planned divestitures proceeding on schedule. Any slip in Chart's order book or Baker Hughes' OFSE segment creates real debt management pressure.</p>
+      </div>
+    </div>
+ 
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>LNG infrastructure scarcity plays into their hands:</strong> Chart's 90% market share in LNG cryogenic equipment is a genuine competitive moat — one that has taken decades to build and cannot be replicated quickly. As LNG export capacity continues to expand globally, every new liquefaction terminal is a Chart (and now Baker Hughes) customer. The installed base creates aftermarket service revenue that is far more predictable than new equipment sales.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Synergized multiple is genuinely attractive:</strong> At 9x fully synergized EBITDA, Baker Hughes is not wildly overpaying for an industrial asset with this quality of market position. The 22% premium is justified by the competitive process and the strategic value — and if management executes on the $325 million synergy target, the effective acquisition multiple compresses further. Double-digit EPS accretion in year one is the company's own projection.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Positioned across multiple growth verticals simultaneously:</strong> LNG, hydrogen, carbon capture, and data center cooling are four structurally different demand drivers that all happen to require Chart's core competencies. Baker Hughes is not making a single-sector bet; it is buying a platform that participates in the energy transition from multiple angles. That diversification within the industrial energy technology category is difficult to achieve organically.</p>
+      </div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+ 
 <footer>
   <span>© 2026 Acquire<span>Wire</span></span>
 </footer>
@@ -424,8 +706,11 @@ function toggleTheme() {
 })();
 function showArticle(id) {
   document.getElementById('home-view').style.display = 'none';
-  document.getElementById('article-view').style.display = 'block';
+  document.querySelectorAll('.article-page').forEach(function(el) { el.style.display = 'none'; });
+  var target = document.getElementById('article-' + id);
+  if (target) target.style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 }
 function showHome() {
   document.getElementById('article-view').style.display = 'none';
