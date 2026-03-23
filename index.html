@@ -711,11 +711,11 @@ function showArticle(id) {
   if (target) target.style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-}
 function showHome() {
-  document.getElementById('article-view').style.display = 'none';
+  document.querySelectorAll('.article-page').forEach(function(el) { el.style.display = 'none'; });
   document.getElementById('home-view').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 }
 </script>
 </body>
