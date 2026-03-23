@@ -118,7 +118,8 @@ footer span span { color:var(--accent); font-weight:700; }
 .feed-item:nth-child(2) { animation:fadeUp .4s ease .05s both; }
 .feed-item:nth-child(3) { animation:fadeUp .4s ease .1s both; }
 .feed-item:nth-child(4) { animation:fadeUp .4s ease .15s both; }
-.newsletter { animation:fadeUp .4s ease .2s both; }
+.feed-item:nth-child(5) { animation:fadeUp .4s ease .2s both; }
+.newsletter { animation:fadeUp .4s ease .25s both; }
 .article-header { animation:fadeUp .4s ease both; }
 .article-body { animation:fadeUp .4s ease .08s both; }
 </style>
@@ -139,6 +140,18 @@ footer span span { color:var(--accent); font-weight:700; }
 
 <!-- ═══════ HOME VIEW — FEED ═══════ -->
 <div id="home-view" class="container">
+
+  <div class="feed-item" onclick="showArticle('caci-acquires-arka-group-2-6b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
+    <div class="fi-title">CACI Pays $2.6B for the Spy Satellites It Couldn't Build Fast Enough</div>
+    <div class="fi-excerpt">The defense contractor buys ARKA Group from Blackstone, landing EO/IR sensors, hyperspectral imaging, and agentic AI software in a single check — a direct play on Golden Dome and the Indo-Pacific.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('nexstar-acquires-tegna-6-2b')">
+    <div class="fi-top"><span class="fi-tag regulation">Regulation</span><span>Mar 23, 2026 · 5 min</span></div>
+    <div class="fi-title">Nexstar Closes TEGNA for $6.2B — and Immediately Gets Sued by Eight States</div>
+    <div class="fi-excerpt">The FCC waived its own 39% household reach cap to let the biggest local TV merger in decades close. Now Nexstar controls 265 stations and 80% of U.S. households, and the lawsuits are already filed.</div>
+  </div>
 
   <div class="feed-item" onclick="showArticle('ecolab-acquires-coolit-4-75b')">
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
@@ -171,6 +184,88 @@ footer span span { color:var(--accent); font-weight:700; }
 </div>
 
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
+
+<!-- ARTICLE: CACI / ARKA -->
+<div id="article-caci-acquires-arka-group-2-6b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>CACI Pays $2.6B for the Spy Satellites It Couldn't Build Fast Enough</h1>
+    <p class="ah-sub">The defense contractor buys ARKA Group from Blackstone, landing EO/IR sensors, hyperspectral imaging, and agentic AI software in a single check — a direct play on Golden Dome and the Indo-Pacific.</p>
+    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$2.6B</div><div class="ms-label">Enterprise Value</div></div>
+    <div class="ms-cell"><div class="ms-val">~4.0x</div><div class="ms-label">NTM Revenue</div></div>
+    <div class="ms-cell"><div class="ms-val">~18x</div><div class="ms-label">NTM EBITDA</div></div>
+    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
+    <div class="ms-cell"><div class="ms-val">Mar 9, 2026</div><div class="ms-label">Closed</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>CACI International Inc. (NYSE: CACI) completed its $2.6 billion all-cash acquisition of ARKA Group L.P. on March 9, 2026. The seller was Blackstone Tactical Opportunities, which first backed ARKA in 2019 and spent the next five years bolt-on assembling it into a full-spectrum space intelligence platform — acquiring Amergint, Tethers Unlimited, Danbury Mission Technologies, Stratagem Group, Lumacron, and finally the radar and sensing business from Maxar in 2024.</p>
+    <p>The deal was announced December 19, 2025 and cleared regulatory approvals in under 80 days. CACI financed the acquisition entirely with cash and expects a tax benefit with a present value of approximately $225 million embedded in the transaction structure. ARKA is projected to contribute roughly $650 million in revenue and $150 million in EBITDA over the next twelve months, implying purchase multiples of approximately 4.0x NTM sales and 18x NTM EBITDA. More than 1,100 ARKA employees — 315 of them software engineers — joined CACI at close.</p>
+    <p>ARKA's core asset is its Danbury, Connecticut facility, which manufactures electro-optical/infrared (EO/IR) and hyperspectral imaging sensors for satellites. The company also operates ground-based software processing and agentic AI systems that convert raw sensor data into actionable geospatial intelligence for the DoD and Intelligence Community. Roughly half of ARKA's revenue mix is classified.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The Golden Dome angle:</strong> CACI was explicit in its investor presentation that ARKA's capabilities are positioned directly for the Golden Dome missile defense initiative — the administration's marquee defense modernization program. Space-based sensors that can track hypersonic threats in real time are not a commodity. ARKA has the Danbury manufacturing depth and the cleared customer relationships to be a primary supplier. You can't build that in three years.</p>
+    <p><strong>The vertical integration play:</strong> CACI has historically been an IT services and signals intelligence firm — the "pipes" side of national security. ARKA gives it the sensors and the AI software to own the full kill chain from collection to analysis. That's a fundamentally higher-margin, stickier business than managing government IT contracts.</p>
+    <p><strong>Blackstone's exit:</strong> Blackstone assembled ARKA through six acquisitions over five years — a classic platform build — and sold at a time when defense multiples are elevated and space intelligence spending is accelerating. At ~18x EBITDA on a business that didn't exist as a single entity in 2019, they extracted maximum cycle value.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Classified revenue opacity:</strong> Half of ARKA's revenue is non-disclosed. CACI investors are underwriting a business they can't fully see, at a premium multiple, in a program environment that can shift with a single budget cycle.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Integration of six bolt-ons:</strong> Blackstone stitched ARKA together from disparate acquisitions. Whether those pieces share technology, culture, and processes — or merely a holding company — becomes CACI's problem at close.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Leverage at close:</strong> CACI funded with cash but still consumed a significant portion of its balance sheet. A continuing resolution or CR-extended budget environment would pressure ARKA's new contract wins at exactly the wrong time.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Irreplaceable hardware:</strong> The Danbury EO/IR manufacturing facility took decades to build. There is no shortcut to replicating its production capability for the classified satellite programs it serves.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Multi-domain intelligence moat:</strong> CACI's existing signals intelligence combined with ARKA's space-based sensing creates a multi-source intelligence platform that competes directly with much larger primes — at a fraction of their overhead.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Agentic AI in the right place:</strong> ARKA's agentic AI software is purpose-built for classified environments — exactly the use case the DoD is prioritizing under its February 2026 directive on sovereign AI for tactical edge missions.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Nexstar / TEGNA -->
+<div id="article-nexstar-acquires-tegna-6-2b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag regulation">Regulation</span></div>
+    <h1>Nexstar Closes TEGNA for $6.2B — and Immediately Gets Sued by Eight States</h1>
+    <p class="ah-sub">The FCC waived its own 39% household reach cap to let the biggest local TV merger in decades close. Now Nexstar controls 265 stations and 80% of U.S. households, and the lawsuits are already filed.</p>
+    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>5 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$22.00</div><div class="ms-label">Offer / Share</div></div>
+    <div class="ms-cell"><div class="ms-val">31%</div><div class="ms-label">Premium</div></div>
+    <div class="ms-cell"><div class="ms-val">$6.2B</div><div class="ms-label">Enterprise Value</div></div>
+    <div class="ms-cell"><div class="ms-val">265</div><div class="ms-label">Stations Combined</div></div>
+    <div class="ms-cell"><div class="ms-val">80%</div><div class="ms-label">US HH Reach</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Nexstar Media Group (Nasdaq: NXST) closed its $6.2 billion acquisition of TEGNA Inc. on March 19, 2026, making TEGNA a wholly owned subsidiary. The deal, announced August 19, 2025, priced each TEGNA share at $22.00 in cash — a 31% premium to the unaffected 30-day average ending August 8, 2025. Financing came via a $2.39 billion senior first-lien bridge facility and a new $2.75 billion term loan B, alongside existing Nexstar liquidity.</p>
+    <p>The combined entity controls more than 265 full-power television stations across 44 states and Washington D.C., operating in 132 of the nation's 210 TV markets. Combined 2025 pro forma revenue is approximately $7.66 billion. As a condition of FCC approval, Nexstar committed to divest six stations within two years, expand local news investment in acquired markets, and freeze retransmission rates for existing pay-TV distributor agreements through November 30, 2026.</p>
+    <p>The critical unlock was the FCC's decision — under Chairman Brendan Carr — to waive the decades-old 39% national television household ownership cap. That rule had effectively blocked broadcast consolidation at this scale for years. Without the waiver, the deal was structurally impossible.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The retransmission consent weapon:</strong> Local TV stations get paid by cable and satellite providers to carry their signals. The bigger your footprint, the harder it is for a distributor to drop you — which means higher per-subscriber fees at renewal. Nexstar now operates in 132 markets. DirecTV, which sued to block this deal, knows exactly what that leverage looks like in a negotiation. The lawsuit is not altruistic.</p>
+    <p><strong>A political deal as much as a financial one:</strong> President Trump endorsed the merger on Truth Social in February. FCC Chairman Carr, a Trump appointee, signed off within weeks. The framing — consolidation as a bulwark against "Big Tech" and coastal media — gave the administration a narrative reason to wave it through. The eight state AGs who sued the day before closing (California, New York, Colorado, Illinois, Oregon, North Carolina, Connecticut, Virginia) see it differently.</p>
+    <p><strong>Precedent for the rest of the industry:</strong> If this holds, broadcast consolidation accelerates. Sinclair, Gray Television, and others are watching whether the state AG suits succeed in unwinding the deal or die in court. The answer shapes every subsequent broadcast M&A conversation in 2026.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Active litigation:</strong> Eight state attorneys general filed suit the day before closing and immediately sought a temporary restraining order. DirecTV also sued on antitrust grounds. Even a partial injunction could force divestitures or rate concessions beyond what the FCC already required.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Structural decline in linear TV:</strong> Cord-cutting continues to erode the base that retransmission consent fees depend on. Nexstar just levered up to buy scale in a medium whose audience shrinks roughly 8% annually. The synergies need to materialize fast.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Debt load:</strong> Nexstar took on over $5 billion in new facilities to fund this. The combined pro forma showed a net loss of $171 million for 2025 on a fully consolidated basis, driven by interest expense. A political ad market downturn in a non-election year would stress the model.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Retransmission pricing power:</strong> Operating in 80% of U.S. TV households gives Nexstar the leverage to reset distributor contracts at materially higher rates. Even a modest per-subscriber fee increase across the TEGNA footprint moves the needle significantly.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>2026 is a midterm setup year:</strong> Political ad spending cycles every two years. With a midterm election in November 2026, Nexstar's expanded local news footprint becomes a premium political advertising vehicle at exactly the right moment post-close.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cost structure rationalization:</strong> Two overlapping station groups with separate back-office infrastructure, technology stacks, and sales organizations. The synergy opportunity in G&A and technology consolidation is real even if revenue synergies take time.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
 
 <!-- ARTICLE: Ecolab / CoolIT -->
 <div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
