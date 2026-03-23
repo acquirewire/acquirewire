@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AcquireWire — M&A Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --surface: #f7f8fa;
+  --surface-2: #eef0f4;
+  --surface-3: #e4e7ec;
+  --border: rgba(0,0,0,0.08);
+  --border-light: rgba(0,0,0,0.12);
+  --text: #1a1d23;
+  --text-dim: #52575e;
+  --text-muted: #8c919a;
+  --accent: #1a6b4f;
+  --accent-dim: #155a42;
+  --accent-glow: rgba(26,107,79,0.06);
+  --blue: #2a6cb7;
+  --purple: #6b4fa0;
+  --orange: #b87a1a;
+  --red: #b84233;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Source Sans 3','Helvetica Neue',Arial,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+
+/* ─── DARK MODE TOGGLE ─── */
+.theme-toggle {
+  width:32px; height:32px; border-radius:6px; border:1px solid var(--border);
+  background:var(--surface); cursor:pointer; display:flex; align-items:center;
+  justify-content:center; font-size:0.85rem; transition:all .2s; flex-shrink:0;
+  color:var(--text-dim); line-height:1;
+}
+.theme-toggle:hover { border-color:var(--border-light); color:var(--text); }
+
+/* ─── DARK MODE OVERRIDES ─── */
+body.dark {
+  --bg: #0f1218;
+  --surface: #181d26;
+  --surface-2: #1f2630;
+  --surface-3: #282f3a;
+  --border: rgba(255,255,255,0.07);
+  --border-light: rgba(255,255,255,0.12);
+  --text: #e2e5ea;
+  --text-dim: #8a909b;
+  --text-muted: #585e6a;
+  --accent: #2d9b74;
+  --accent-dim: #258563;
+  --accent-glow: rgba(45,155,116,0.08);
+  --blue: #5a96d4;
+  --purple: #8b6fc0;
+  --orange: #c9922e;
+  --red: #c85444;
+}
+body.dark header { background:rgba(15,18,24,0.92); }
+body.dark .fi-tag.deal { background:rgba(45,155,116,0.1); }
+body.dark .fi-tag.analysis { background:rgba(90,150,212,0.1); }
+body.dark .fi-tag.regulation { background:rgba(201,146,46,0.1); }
+body.dark .fi-tag.pe { background:rgba(139,111,192,0.1); }
+
+/* ─── HEADER ─── */
+header {
+  padding:16px 40px;
+  display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,0.92); backdrop-filter:blur(16px);
+}
+.logo { display:flex; align-items:center; gap:10px; cursor:pointer; }
+.logo-icon {
+  width:28px; height:28px; background:var(--accent); border-radius:6px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1rem; color:var(--bg);
+}
+.logo-name { font-weight:700; font-size:1.15rem; letter-spacing:-0.01em; }
+.logo-name span { color:var(--accent); }
+.header-nav { display:flex; gap:22px; align-items:center; }
+.header-nav a { color:var(--text-dim); text-decoration:none; font-size:0.76rem; font-weight:500; transition:color .2s; }
+.header-nav a:hover { color:var(--text); }
+.sub-btn {
+  background:var(--accent); color:var(--bg); border:none; padding:7px 16px;
+  font-family:'Source Sans 3',sans-serif; font-size:0.7rem; font-weight:700;
+  border-radius:5px; cursor:pointer; transition:all .2s;
+}
+.sub-btn:hover { background:var(--accent-dim); }
+
+/* ─── CONTAINER ─── */
+.container { max-width:720px; margin:0 auto; padding:0 24px; }
+
+/* ─── HOME VIEW ─── */
+#home-view {}
+#article-view { display:none; }
+
+/* ─── FEED ITEM ─── */
+.feed-item {
+  padding:28px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:all .2s;
+}
+.feed-item:hover { padding-left:4px; }
+.feed-item:hover .fi-title { color:var(--accent); }
+.fi-top {
+  display:flex; align-items:center; gap:10px; margin-bottom:8px;
+  font-size:0.68rem; color:var(--text-muted);
+}
+.fi-tag {
+  font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;
+  padding:2px 8px; border-radius:3px;
+}
+.fi-tag.deal { background:rgba(26,107,79,0.08); color:var(--accent); }
+.fi-tag.analysis { background:rgba(42,108,183,0.08); color:var(--blue); }
+.fi-tag.regulation { background:rgba(184,122,26,0.08); color:var(--orange); }
+.fi-tag.pe { background:rgba(107,79,160,0.08); color:var(--purple); }
+.fi-title {
+  font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1.35rem;
+  line-height:1.25; margin-bottom:8px; transition:color .2s;
+}
+.fi-excerpt { font-size:0.88rem; color:var(--text-dim); line-height:1.6; }
+.fi-stats {
+  display:flex; gap:16px; margin-top:12px; flex-wrap:wrap;
+}
+.fi-stat {
+  background:var(--surface); border:1px solid var(--border); border-radius:6px;
+  padding:6px 12px; display:flex; align-items:center; gap:6px;
+}
+.fi-stat .fs-val { font-family:'SF Mono',Consolas,monospace; font-size:0.78rem; font-weight:600; color:var(--text); }
+.fi-stat .fs-label { font-size:0.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em; }
+
+/* ─── NEWSLETTER ─── */
+.newsletter {
+  padding:36px 0; display:flex; align-items:center; gap:32px;
+  border-bottom:1px solid var(--border);
+}
+.nl-body { flex:1; }
+.nl-body h3 { font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1.15rem; margin-bottom:3px; }
+.nl-body p { font-size:0.82rem; color:var(--text-dim); }
+.nl-form { display:flex; flex-shrink:0; }
+.nl-form input {
+  width:200px; padding:9px 12px; background:var(--surface); border:1px solid var(--border);
+  border-radius:5px 0 0 5px; color:var(--text); font-family:inherit; font-size:0.78rem; outline:none;
+}
+.nl-form input::placeholder { color:var(--text-muted); }
+.nl-form input:focus { border-color:var(--accent); }
+.nl-form button {
+  padding:9px 18px; background:var(--accent); color:var(--bg); border:none;
+  border-radius:0 5px 5px 0; font-family:inherit; font-size:0.68rem; font-weight:700; cursor:pointer;
+}
+
+/* ═══════════════════════════════════
+   ARTICLE VIEW
+   ═══════════════════════════════════ */
+.article-back {
+  font-size:0.72rem; color:var(--accent); cursor:pointer; padding:18px 0 0;
+  display:inline-flex; align-items:center; gap:5px; font-weight:600;
+}
+.article-back:hover { text-decoration:underline; }
+
+.article-header { padding:24px 0 20px; border-bottom:1px solid var(--border); }
+.article-header .ah-tags { display:flex; gap:8px; margin-bottom:10px; }
+.article-header h1 {
+  font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:2rem;
+  line-height:1.15; margin-bottom:10px;
+}
+.article-header .ah-sub {
+  font-size:0.92rem; color:var(--text-dim); line-height:1.6; margin-bottom:10px;
+}
+.article-header .ah-meta { font-size:0.68rem; color:var(--text-muted); display:flex; gap:10px; }
+
+/* ─── DEAL METRICS STRIP ─── */
+.metrics-strip {
+  display:flex; gap:0; margin:20px 0; background:var(--surface);
+  border:1px solid var(--border); border-radius:8px; overflow:hidden;
+}
+.ms-cell {
+  flex:1; text-align:center; padding:14px 10px;
+  border-right:1px solid var(--border);
+}
+.ms-cell:last-child { border-right:none; }
+.ms-val { font-family:'SF Mono',Consolas,monospace; font-size:1.15rem; font-weight:600; color:var(--text); }
+.ms-label { font-size:0.58rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+
+/* ─── ARTICLE BODY ─── */
+.article-body { padding:24px 0; }
+.article-body h2 {
+  font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1.2rem;
+  margin:28px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border);
+}
+.article-body h2:first-child { margin-top:0; }
+.article-body p { font-size:0.9rem; color:var(--text-dim); line-height:1.7; margin-bottom:12px; }
+.article-body p strong { color:var(--text); }
+
+/* ─── WATCHLIST / RISK BOX ─── */
+.callout-box {
+  background:var(--surface); border:1px solid var(--border); border-radius:8px;
+  padding:16px 20px; margin:20px 0;
+}
+.callout-box .cb-head {
+  font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+  margin-bottom:10px; display:flex; align-items:center; gap:6px;
+}
+.callout-box .cb-head.risk { color:var(--orange); }
+.callout-box .cb-head.bull { color:var(--accent); }
+.callout-box .cb-item {
+  display:flex; gap:10px; align-items:flex-start; margin-bottom:8px;
+}
+.callout-box .cb-item:last-child { margin-bottom:0; }
+.callout-box .cb-dot {
+  width:5px; height:5px; border-radius:50%; margin-top:7px; flex-shrink:0;
+}
+.callout-box .cb-dot.orange { background:var(--orange); }
+.callout-box .cb-dot.green { background:var(--accent); }
+.callout-box .cb-dot.red { background:var(--red); }
+.callout-box .cb-item p { font-size:0.82rem; color:var(--text-dim); line-height:1.55; margin:0; }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top:1px solid var(--border); padding:28px 24px;
+  max-width:720px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:0.68rem; color:var(--text-muted);
+}
+footer span span { color:var(--accent); font-weight:700; }
+footer .foot-links { display:flex; gap:16px; }
+footer a { color:var(--text-muted); text-decoration:none; transition:color .2s; }
+footer a:hover { color:var(--text); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.feed-item:nth-child(1) { animation:fadeUp .4s ease both; }
+.feed-item:nth-child(2) { animation:fadeUp .4s ease .05s both; }
+.feed-item:nth-child(3) { animation:fadeUp .4s ease .1s both; }
+.feed-item:nth-child(4) { animation:fadeUp .4s ease .15s both; }
+.feed-item:nth-child(5) { animation:fadeUp .4s ease .2s both; }
+.newsletter { animation:fadeUp .4s ease .25s both; }
+.article-header { animation:fadeUp .4s ease both; }
+.article-body { animation:fadeUp .4s ease .08s both; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="showHome()">
+    <div class="logo-name">Acquire<span>Wire</span></div>
+  </div>
+  <div class="header-nav">
+    <a href="#" onclick="showHome()">Feed</a>
+    <a href="#">Newsletter</a>
+    <a href="#">About</a>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" id="themeBtn">☽</button>
+    <button class="sub-btn">Subscribe</button>
+  </div>
+</header>
+
+<!-- ═══════ HOME VIEW — FEED ═══════ -->
+<div id="home-view" class="container">
+
+  <div class="feed-item" onclick="showArticle('costar')">
+    <div class="fi-top">
+      <span class="fi-tag deal">Deal</span>
+      <span>Mar 21, 2026 · 4 min</span>
+    </div>
+    <div class="fi-title">CoStar Group to Acquire Matterport for $1.6B in All-Cash Deal</div>
+    <div class="fi-excerpt">The real estate data giant is paying a 225% premium to take the 3D mapping company private, betting that spatial data becomes the backbone of commercial property analytics.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('mastercard')">
+    <div class="fi-top">
+      <span class="fi-tag deal">Deal</span>
+      <span>Mar 20, 2026 · 6 min</span>
+    </div>
+    <div class="fi-title">Mastercard Weighs $600M Acquisition of OneSpan to Close Authentication Gap</div>
+    <div class="fi-excerpt">The payments giant is reportedly in late-stage talks to acquire the digital identity specialist at $15.53/share — a 38% premium — as PSD3 regulation creates a narrow window to lock in bank authentication infrastructure.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('jnj')">
+    <div class="fi-top">
+      <span class="fi-tag deal">Deal</span>
+      <span>Mar 19, 2026 · 4 min</span>
+    </div>
+    <div class="fi-title">Johnson & Johnson to Acquire Intra-Cellular Therapies for $18.7B</div>
+    <div class="fi-excerpt">J&J bolsters its neuroscience pipeline with the largest pharma deal of 2026 so far, paying 47x forward earnings for Caplyta and a late-stage CNS portfolio ahead of key patent cliffs.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('ftc')">
+    <div class="fi-top">
+      <span class="fi-tag regulation">Regulation</span>
+      <span>Mar 18, 2026 · 5 min</span>
+    </div>
+    <div class="fi-title">The New Antitrust Playbook: How Dealmakers Are Navigating a Shifting FTC</div>
+    <div class="fi-excerpt">With a new administration reshaping regulatory priorities, M&A advisors are recalibrating deal structures and timelines — but uncertainty hasn't fully cleared.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('kkr')">
+    <div class="fi-top">
+      <span class="fi-tag pe">Private Equity</span>
+      <span>Mar 17, 2026 · 4 min</span>
+    </div>
+    <div class="fi-title">KKR Raises Record $28B Buyout Fund Amid LP Skepticism on Exits</div>
+    <div class="fi-excerpt">Despite tepid exit markets, the PE giant oversubscribed its flagship North American fund, banking on a 2026–27 deployment cycle as valuations reset.</div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="nl-body">
+      <h3>The Daily Wire</h3>
+      <p>One email, every weekday morning. The day's most important deal, explained.</p>
+    </div>
+    <div class="nl-form">
+      <input type="email" placeholder="you@email.com">
+      <button>Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ ARTICLE VIEW — CoStar × Matterport ═══════ -->
+<div id="article-view" class="container">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+
+  <div class="article-header">
+    <div class="ah-tags">
+      <span class="fi-tag deal">Deal</span>
+    </div>
+    <h1>CoStar Group to Acquire Matterport for $1.6B in All-Cash Deal</h1>
+    <p class="ah-sub">The real estate data giant is paying a 225% premium to take the 3D mapping company private, betting that spatial data becomes the backbone of commercial property analytics.</p>
+    <div class="ah-meta">
+      <span>Mar 21, 2026</span>
+      <span>·</span>
+      <span>4 min read</span>
+    </div>
+  </div>
+
+  <!-- METRICS STRIP -->
+  <div class="metrics-strip">
+    <div class="ms-cell">
+      <div class="ms-val">$5.50</div>
+      <div class="ms-label">Offer / Share</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">225%</div>
+      <div class="ms-label">Premium</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">$1.6B</div>
+      <div class="ms-label">Enterprise Value</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">All-Cash</div>
+      <div class="ms-label">Consideration</div>
+    </div>
+    <div class="ms-cell">
+      <div class="ms-val">Q3 2026</div>
+      <div class="ms-label">Expected Close</div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+
+    <h2>Deal Overview</h2>
+    <p><strong>CoStar Group</strong> (NASDAQ: CSGP), the $35B real estate information and analytics company behind Apartments.com and LoopNet, has agreed to acquire <strong>Matterport</strong> (NASDAQ: MTTR) for $5.50 per share in an all-cash transaction valuing the company at approximately $1.6 billion.</p>
+    <p>The offer represents a 225% premium to Matterport's undisturbed closing price. Matterport is a spatial data company whose 3D capture technology has digitized over 40 million spaces across 177 countries, creating "digital twins" of physical buildings used in real estate, insurance, construction, and facilities management.</p>
+    <p>The deal is structured as a one-step merger requiring Matterport shareholder approval and standard regulatory clearances. CoStar will fund the acquisition entirely from its $4.9B cash position — no debt issuance required.</p>
+
+    <h2>Why It Matters</h2>
+    <p><strong>The data play:</strong> CoStar's core business is making commercial real estate searchable and measurable. Matterport's 3D digital twins add a spatial layer to that dataset — turning flat listings into walkable, measurable environments. For institutional property investors and brokers, this is the difference between looking at photos and having floor-by-floor analytics.</p>
+    <p><strong>The AI angle:</strong> Matterport's spatial data library (40M+ scanned spaces) becomes a proprietary training dataset for CoStar's property AI tools. No competitor has anything close to this scale of 3D real estate data. The defensibility isn't in the hardware — it's in the accumulated dataset.</p>
+    <p><strong>Vertical integration:</strong> CoStar has been on an acquisition spree building a full-stack real estate platform (Apartments.com for residential, LoopNet for commercial, Ten-X for auction). Matterport fills the "digital experience" gap — the ability to tour and measure a property without visiting it.</p>
+
+    <!-- RISK CALLOUT -->
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item">
+        <span class="cb-dot orange"></span>
+        <p><strong>Premium justification:</strong> 225% is an eye-watering premium for a company that's never been profitable. Matterport posted -$82M net income in FY2024 on $164M revenue. CoStar is betting on revenue synergies that don't exist yet.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot orange"></span>
+        <p><strong>Integration complexity:</strong> Matterport's customer base is heavily consumer/prosumer (realtors, small property managers). CoStar's strength is enterprise. Bridging that gap without losing Matterport's existing users is non-trivial.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot red"></span>
+        <p><strong>Hardware dependency:</strong> Matterport still generates ~30% of revenue from camera hardware sales, which is low-margin and declining. The strategic value is in the software platform, but the hardware tail creates margin drag during integration.</p>
+      </div>
+    </div>
+
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Data moat:</strong> 40M+ digitized spaces is an unreplicable asset. As property analytics moves toward AI-driven valuation and automated inspections, whoever owns the largest spatial dataset wins.</p>
+      </div>
+      <div class="cb-item">
+        <span class="cb-dot green"></span>
+        <p><strong>Distribution arbitrage:</strong> Matterport has the tech but limited enterprise distribution. CoStar has 300K+ commercial real estate clients who'll get Matterport baked into their existing workflows — zero customer acquisition cost for the highest-value segment.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height:48px;"></div>
+</div>
+
+<footer>
+  <span>© 2026 Acquire<span>Wire</span></span>
+</footer>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  var isDark = document.body.classList.contains('dark');
+  document.getElementById('themeBtn').textContent = isDark ? '☀' : '☽';
+  try { localStorage.setItem('aw-theme', isDark ? 'dark' : 'light'); } catch(e) {}
+}
+(function() {
+  try {
+    if (localStorage.getItem('aw-theme') === 'dark') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('themeBtn').textContent = '☀';
+      });
+    }
+  } catch(e) {}
+})();
+function showArticle(id) {
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('article-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showHome() {
+  document.getElementById('article-view').style.display = 'none';
+  document.getElementById('home-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
