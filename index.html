@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -139,7 +140,14 @@ footer span span { color:var(--accent); font-weight:700; }
 </header>
 
 <!-- ═══════ HOME VIEW — FEED ═══════ -->
+
 <div id="home-view" class="container">
+
+  <div class="feed-item" onclick="showArticle('cintas-acquires-unifirst-5-5b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 24, 2026 · 4 min</span></div>
+    <div class="fi-title">Cintas Finally Gets UniFirst — on Its Third Try and for $5.5B</div>
+    <div class="fi-excerpt">After failed bids in 2022 and early 2025, Cintas closes in on its long-time rival at $310 per share, creating a near-50% market share juggernaut in North American uniform services — and a serious FTC problem.</div>
+  </div>
 
   <div class="feed-item" onclick="showArticle('caci-acquires-arka-group-2-6b')">
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
@@ -165,12 +173,6 @@ footer span span { color:var(--accent); font-weight:700; }
     <div class="fi-excerpt">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact — a meaningful step beyond Buffett's passive Japan playbook.</div>
   </div>
 
-  <div class="feed-item" onclick="showArticle('baker-hughes-acquires-chart-industries-13-6b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 5 min</span></div>
-    <div class="fi-title">Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</div>
-    <div class="fi-excerpt">The deal for Chart Industries — snatched away from a $19B Flowserve merger — is a blunt declaration that Baker Hughes wants to be an energy technology company.</div>
-  </div>
-
   <div class="newsletter">
     <div class="nl-body">
       <h3>The Daily Wire</h3>
@@ -185,7 +187,50 @@ footer span span { color:var(--accent); font-weight:700; }
 
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
 
+<!-- ARTICLE: Cintas / UniFirst -->
+
+<div id="article-cintas-acquires-unifirst-5-5b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Cintas Finally Gets UniFirst — on Its Third Try and for $5.5B</h1>
+    <p class="ah-sub">After failed bids in 2022 and early 2025, Cintas closes in on its long-time rival at $310 per share, creating a near-50% market share juggernaut in North American uniform services — and a serious FTC problem.</p>
+    <div class="ah-meta"><span>Mar 24, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$310</div><div class="ms-label">Offer / Share</div></div>
+    <div class="ms-cell"><div class="ms-val">$5.5B</div><div class="ms-label">Enterprise Value</div></div>
+    <div class="ms-cell"><div class="ms-val">8.0x</div><div class="ms-label">Synergized EBITDA</div></div>
+    <div class="ms-cell"><div class="ms-val">$375M</div><div class="ms-label">Cost Synergies</div></div>
+    <div class="ms-cell"><div class="ms-val">H2 2026</div><div class="ms-label">Expected Close</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Cintas Corporation (Nasdaq: CTAS) and UniFirst Corporation (NYSE: UNF) announced on March 11, 2026, that they have entered into a definitive agreement under which Cintas will acquire UniFirst for $310.00 per share — $155.00 in cash plus 0.7720 shares of Cintas stock for each UniFirst share, based on Cintas' closing price of $200.77 on March 9. The implied enterprise value is approximately $5.5 billion, representing 8.0x run-rate trailing twelve months EBITDA including projected synergies.</p>
+    <p>Cintas identified approximately $375 million in annualized operating cost synergies, expected to be fully realized within four years of close. Financing comes from cash on hand, committed lines of credit, and a fully committed bridge from Morgan Stanley, KeyBank, and Wells Fargo. Pro forma leverage at close is expected at approximately 1.5x debt-to-EBITDA — lean enough to preserve Cintas' investment grade rating. The transaction was unanimously approved by both boards and is backed by a voting support agreement from the Croatti family, which controls roughly two-thirds of UniFirst's voting power. Cintas has agreed to a $350 million reverse termination fee if regulators block the deal.</p>
+    <p>This is Cintas' third run at UniFirst. A 2022 approach was rebuffed. A $5.3 billion bid in early 2025 was withdrawn in March of that year after UniFirst's board declined to engage. The March 2026 agreement — at a higher price, with the Croatti family finally on board — ends one of the longest corporate courtships in industrial services history.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>A near-duopoly in workwear:</strong> The combined entity will command an estimated 45–50% of the North American uniform rental and facility services market. The only remaining national competitor is Vestis, the former Aramark uniform business. In dozens of mid-sized regional markets where Vestis lacks a processing plant, the merger effectively creates a local monopoly. That's the FTC's problem to solve — and Cintas knows it, hence the $350 million reverse termination fee.</p>
+    <p><strong>The "Cintas-ization" thesis:</strong> Cintas has done this before. Its 2017 acquisition of G&K Services validated a simple operational blueprint: absorb a lower-margin competitor's route density, apply Cintas' superior processing efficiency and pricing discipline, watch EBITDA margins expand. UniFirst's margins have consistently trailed Cintas by several hundred basis points. The $375 million synergy figure is built on that spread.</p>
+    <p><strong>Route density is the real prize:</strong> Uniform rental is a logistics business masquerading as a services business. What Cintas is buying is UniFirst's route network — the trucks, plants, and customer relationships that would take a decade to replicate organically. With greater density per truck, Cintas drives down cost-per-stop across the combined footprint. That's where the synergies actually come from, not headcount cuts.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>FTC scrutiny is the deal's existential risk:</strong> A combined 45–50% market share in a route-based service industry with high switching costs is exactly the structure regulators target. The FTC is expected to require divestitures in specific local markets — the question is how many and whether they impair the synergy case.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Labor monopsony argument:</strong> Cintas and UniFirst are the two largest employers of route drivers and laundry technicians in many regions. The 2026 regulatory framework weighs workforce effects alongside consumer harm, giving the DOJ a second avenue to challenge or condition the deal.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Culture and ERP integration:</strong> Cintas runs a hyper-competitive, metrics-driven culture. UniFirst has operated as a family-controlled, relationship-first business for decades and spent years mid-cycle on its own ERP transformation. Merging two different back-office systems without customer attrition requires execution Cintas hasn't attempted at this scale since G&K.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Proven playbook:</strong> The G&K acquisition in 2017 is the template. Cintas absorbed a major rival, hit its synergy targets, and expanded margins. Management has described having "muscle memory" for exactly this integration — the current deal team ran G&K.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Margin expansion math is compelling:</strong> UniFirst's EBITDA margins have consistently run 4–6 percentage points below Cintas'. Applying Cintas-level margins to the UniFirst revenue base — even partially — generates hundreds of millions in incremental earnings well beyond the $375 million synergy guide.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Healthcare tailwind:</strong> An aging U.S. population is driving sustained demand for healthcare laundry and protective garment services — a segment where UniFirst has meaningful exposure and Cintas wants to grow. The combined entity becomes the dominant supplier to hospitals and clinics at the right moment in the demographic cycle.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
 <!-- ARTICLE: CACI / ARKA -->
+
 <div id="article-caci-acquires-arka-group-2-6b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -214,7 +259,7 @@ footer span span { color:var(--accent); font-weight:700; }
       <div class="cb-head risk">⚠ Risks to Watch</div>
       <div class="cb-item"><span class="cb-dot red"></span><p><strong>Classified revenue opacity:</strong> Half of ARKA's revenue is non-disclosed. CACI investors are underwriting a business they can't fully see, at a premium multiple, in a program environment that can shift with a single budget cycle.</p></div>
       <div class="cb-item"><span class="cb-dot red"></span><p><strong>Integration of six bolt-ons:</strong> Blackstone stitched ARKA together from disparate acquisitions. Whether those pieces share technology, culture, and processes — or merely a holding company — becomes CACI's problem at close.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Leverage at close:</strong> CACI funded with cash but still consumed a significant portion of its balance sheet. A continuing resolution or CR-extended budget environment would pressure ARKA's new contract wins at exactly the wrong time.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Budget risk:</strong> CACI funded with cash but consumed a significant portion of its balance sheet. A continuing resolution or CR-extended budget environment would pressure ARKA's new contract wins at exactly the wrong time.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
@@ -227,6 +272,7 @@ footer span span { color:var(--accent); font-weight:700; }
 </div>
 
 <!-- ARTICLE: Nexstar / TEGNA -->
+
 <div id="article-nexstar-acquires-tegna-6-2b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -249,7 +295,7 @@ footer span span { color:var(--accent); font-weight:700; }
     <p>The critical unlock was the FCC's decision — under Chairman Brendan Carr — to waive the decades-old 39% national television household ownership cap. That rule had effectively blocked broadcast consolidation at this scale for years. Without the waiver, the deal was structurally impossible.</p>
     <h2>Why It Matters</h2>
     <p><strong>The retransmission consent weapon:</strong> Local TV stations get paid by cable and satellite providers to carry their signals. The bigger your footprint, the harder it is for a distributor to drop you — which means higher per-subscriber fees at renewal. Nexstar now operates in 132 markets. DirecTV, which sued to block this deal, knows exactly what that leverage looks like in a negotiation. The lawsuit is not altruistic.</p>
-    <p><strong>A political deal as much as a financial one:</strong> President Trump endorsed the merger on Truth Social in February. FCC Chairman Carr, a Trump appointee, signed off within weeks. The framing — consolidation as a bulwark against "Big Tech" and coastal media — gave the administration a narrative reason to wave it through. The eight state AGs who sued the day before closing (California, New York, Colorado, Illinois, Oregon, North Carolina, Connecticut, Virginia) see it differently.</p>
+    <p><strong>A political deal as much as a financial one:</strong> President Trump endorsed the merger on Truth Social in February. FCC Chairman Carr signed off within weeks. The framing — consolidation as a bulwark against "Big Tech" and coastal media — gave the administration a narrative reason to wave it through. The eight state AGs who sued the day before closing (California, New York, Colorado, Illinois, Oregon, North Carolina, Connecticut, Virginia) see it differently.</p>
     <p><strong>Precedent for the rest of the industry:</strong> If this holds, broadcast consolidation accelerates. Sinclair, Gray Television, and others are watching whether the state AG suits succeed in unwinding the deal or die in court. The answer shapes every subsequent broadcast M&A conversation in 2026.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
@@ -268,6 +314,7 @@ footer span span { color:var(--accent); font-weight:700; }
 </div>
 
 <!-- ARTICLE: Ecolab / CoolIT -->
+
 <div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -308,6 +355,7 @@ footer span span { color:var(--accent); font-weight:700; }
 </div>
 
 <!-- ARTICLE: Berkshire / Tokio Marine -->
+
 <div id="article-berkshire-tokio-marine-1-8b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -341,47 +389,6 @@ footer span span { color:var(--accent); font-weight:700; }
       <div class="cb-head bull">✓ Bull Case</div>
       <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cycle timing:</strong> Reinsurance pricing at cycle highs. Entering a quota share now is the insurance equivalent of buying real estate in 2009.</p></div>
       <div class="cb-item"><span class="cb-dot green"></span><p><strong>$10B acquisition pipeline:</strong> Tokio Marine has the mandate and market knowledge; Berkshire has the capital. Multiple motivated sellers globally in specialty insurance.</p></div>
-    </div>
-  </div>
-  <div style="height:48px;"></div>
-</div>
-
-<!-- ARTICLE: Baker Hughes / Chart Industries -->
-<div id="article-baker-hughes-acquires-chart-industries-13-6b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header">
-    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
-    <h1>Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</h1>
-    <p class="ah-sub">The deal for Chart Industries — snatched from a $19B Flowserve merger — declares Baker Hughes wants to be an energy technology company.</p>
-    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>5 min read</span></div>
-  </div>
-  <div class="metrics-strip">
-    <div class="ms-cell"><div class="ms-val">$210</div><div class="ms-label">Offer / Share</div></div>
-    <div class="ms-cell"><div class="ms-val">22%</div><div class="ms-label">Premium</div></div>
-    <div class="ms-cell"><div class="ms-val">$13.6B</div><div class="ms-label">Enterprise Value</div></div>
-    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
-    <div class="ms-cell"><div class="ms-val">Mid-2026</div><div class="ms-label">Expected Close</div></div>
-  </div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Baker Hughes Company (NASDAQ: BKR) agreed to acquire Chart Industries (NYSE: GTLS) for $210 per share in cash — a $13.6 billion enterprise value at a 22% premium. Financing comes via bridge debt from Goldman Sachs and Morgan Stanley. Pro forma leverage: 2.25x, targeting 1.0–1.5x within 24 months. Baker Hughes identified $325 million in annualized cost synergies.</p>
-    <p>Chart Industries manufactures cryogenic equipment, heat exchangers, and industrial gas handling equipment. FY2024 revenue: $4.2 billion, adjusted EBITDA: $1.0 billion. Chart's equipment is deployed in approximately 90% of LNG projects globally.</p>
-    <p>The deal displaced Flowserve's $19 billion all-stock merger of equals. Flowserve collected a $266 million termination fee.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>Identity transformation:</strong> Baker Hughes CEO Lorenzo Simonelli has called the company an "energy technology company" for three years. Chart makes that description accurate. Chart's markets — LNG, hydrogen, carbon capture, data center cooling — are the growth verticals Baker Hughes has been building toward.</p>
-    <p><strong>LNG dominance:</strong> Chart's cryogenic equipment in ~90% of LNG projects is unreplicable. The combined entity can bid on entire project packages rather than individual line items.</p>
-    <p><strong>Data center crossover:</strong> Chart's cooling equipment is being adapted for high-density data centers — the same AI infrastructure trend driving Ecolab's CoolIT deal. Baker Hughes arrives at the same destination from a different direction, at larger scale.</p>
-    <div class="callout-box">
-      <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Complex integration:</strong> Two large manufacturers with distinct cultures. The $325M synergy target requires consolidating manufacturing and retaining specialized engineers.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>LNG sensitivity:</strong> Chart's largest segment is LNG. A sustained pricing decline or renewable acceleration pressures the core business.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Leverage risk:</strong> 2.25x at close depends on both companies performing well during integration and divestitures proceeding on schedule.</p></div>
-    </div>
-    <div class="callout-box">
-      <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>LNG moat:</strong> 90% market share in cryogenic equipment built over decades. Installed base creates predictable aftermarket revenue.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Attractive on synergies:</strong> 9x fully synergized EBITDA. Double-digit EPS accretion projected in year one.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Multi-vertical platform:</strong> LNG, hydrogen, carbon capture, and data center cooling are four independent demand drivers. Not a single-sector bet.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
@@ -421,5 +428,6 @@ function showHome() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
 </body>
 </html>
