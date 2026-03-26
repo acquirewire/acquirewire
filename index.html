@@ -176,10 +176,10 @@ footer span span { color:var(--accent); font-weight:700; }
       <h3>The Daily Wire</h3>
       <p>One email, every weekday morning. The day's most important deal, explained.</p>
     </div>
-    <div class="nl-form">
-      <input type="email" placeholder="you@email.com">
-      <button>Subscribe</button>
-    </div>
+<form class="nl-form" action="https://buttondown.com/api/emails/embed-subscribe/acquirewire" method="post">
+  <input type="email" name="email" placeholder="you@email.com" required>
+  <button type="submit">Subscribe</button>
+</form>
   </div>
 </div>
 
