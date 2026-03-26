@@ -132,7 +132,7 @@ footer span span { color:var(--accent); font-weight:700; }
   <div class="header-nav">
     <a href="#" onclick="showHome()">Feed</a>
     <a href="#">Newsletter</a>
-    <a href="#">About</a>
+    <a onclick="showAbout()">About</a>
     <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" id="themeBtn">☽</button>
     <button class="sub-btn">Subscribe</button>
   </div>
@@ -183,6 +183,30 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
 </div>
 
+  <!-- ═══════ ABOUT VIEW ═══════ -->
+<div id="about-view" class="container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div style="padding:36px 0;">
+    <h1 style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:2rem;line-height:1.15;margin-bottom:6px;">About AcquireWire</h1>
+    <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);">Independent M&A deal analysis. One person, every weekday morning.</p>
+
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin-bottom:12px;">I'm a first-year Accounting and Finance student at LSE, and I run AcquireWire on my own. It's an M&A news site covering the most interesting mergers, acquisitions, and strategic transactions happening globally. Each piece works through what happened (deal overview and key metrics), why it matters (strategic rationale), what could go wrong (risks to watch), and why it might work (bull case).</p>
+
+    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.15rem;margin:32px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border);">Why I started this</h2>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin-bottom:12px;">I built AcquireWire to develop commercial awareness ahead of spring week and summer internship interviews. But the honest reason is that I'd rather show an interviewer a live site with 50 published deal analyses than tell them I'm passionate about M&A. Anyone can say they're interested in finance. A running site is a different kind of argument.</p>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin:16px 0;font-size:0.86rem;color:var(--text-dim);line-height:1.65;border-left:3px solid var(--accent);">Writing forces me to understand deals properly. I can skim a transaction in 30 seconds, but if I have to explain why a 22% premium makes sense at 13.6x EBITDA, I need to actually work through the numbers. That friction is the point.</div>
+
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin-bottom:12px;">Covering deals across so many sectors has given me working knowledge of industries I'd never encounter in a lecture. I now have an informed view on LNG infrastructure, AI cooling, Japanese insurance — all from writing about who's buying what and why.</p>
+
+    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.15rem;margin:32px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border);">What I cover and how often</h2>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin-bottom:12px;">I cover public M&A transactions above $500M across all sectors. The site is updated daily when deals of that calibre are worth writing about — whether that's a mega-merger, a notable take-private, or a strategic stake that signals something interesting about a sector. Some weeks that's five articles, some weeks two. I'd rather publish less and say something useful than file on every deal for the sake of it.</p>
+
+    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.15rem;margin:32px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border);">How I make it</h2>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.75;margin-bottom:12px;">I source deals from SEC filings, press wires, and financial news. I use AI tools to accelerate first-draft research and article structuring, which lets me publish at a depth that would normally require a team. Every article is reviewed and edited before it goes live — the AI speeds up the process, but the analysis and editorial judgment are mine.</p>
+  </div>
+  <div style="height:48px;"></div>
+</div>
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
 
 <!-- ARTICLE: Merck / Terns Pharmaceuticals -->
@@ -417,7 +441,14 @@ function showArticle(id) {
 }
 function showHome() {
   document.querySelectorAll('.article-page').forEach(function(el) { el.style.display = 'none'; });
+  document.getElementById('about-view').style.display = 'none';
   document.getElementById('home-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showAbout() {
+  document.getElementById('home-view').style.display = 'none';
+  document.querySelectorAll('.article-page').forEach(function(el) { el.style.display = 'none'; });
+  document.getElementById('about-view').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
