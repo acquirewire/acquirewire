@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -140,8 +139,13 @@ footer span span { color:var(--accent); font-weight:700; }
 </header>
 
 <!-- ═══════ HOME VIEW — FEED ═══════ -->
-
 <div id="home-view" class="container">
+
+  <div class="feed-item" onclick="showArticle('mastercard-acquires-bvnk-1-8b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 26, 2026 · 4 min</span></div>
+    <div class="fi-title">Mastercard Pays $1.8B for the Stablecoin Rails It Can't Afford to Rent from Someone Else</div>
+    <div class="fi-excerpt">Coinbase nearly bought BVNK for $2B before walking. Mastercard stepped in at $1.8B to own the on-chain infrastructure before a crypto-native player locked it up — paying 45x revenue to not become a settlement layer for someone else's network.</div>
+  </div>
 
   <div class="feed-item" onclick="showArticle('merck-acquires-terns-pharmaceuticals-6-7b')">
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 25, 2026 · 5 min</span></div>
@@ -153,12 +157,6 @@ footer span span { color:var(--accent); font-weight:700; }
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 24, 2026 · 4 min</span></div>
     <div class="fi-title">Cintas Finally Gets UniFirst — on Its Third Try and for $5.5B</div>
     <div class="fi-excerpt">After failed bids in 2022 and early 2025, Cintas closes in on its long-time rival at $310 per share, creating a near-50% market share juggernaut in North American uniform services — and a serious FTC problem.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('caci-acquires-arka-group-2-6b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
-    <div class="fi-title">CACI Pays $2.6B for the Spy Satellites It Couldn't Build Fast Enough</div>
-    <div class="fi-excerpt">The defense contractor buys ARKA Group from Blackstone, landing EO/IR sensors, hyperspectral imaging, and agentic AI software in a single check — a direct play on Golden Dome and the Indo-Pacific.</div>
   </div>
 
   <div class="feed-item" onclick="showArticle('nexstar-acquires-tegna-6-2b')">
@@ -187,8 +185,48 @@ footer span span { color:var(--accent); font-weight:700; }
 
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
 
-<!-- ARTICLE: Merck / Terns -->
+<!-- ARTICLE: Mastercard / BVNK -->
+<div id="article-mastercard-acquires-bvnk-1-8b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Mastercard Pays $1.8B for the Stablecoin Rails It Can't Afford to Rent from Someone Else</h1>
+    <p class="ah-sub">Coinbase nearly bought BVNK for $2B before walking. Mastercard stepped in at $1.8B to own the on-chain infrastructure before a crypto-native player locked it up — paying 45x revenue to not become a settlement layer for someone else's network.</p>
+    <div class="ah-meta"><span>Mar 26, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$1.8B</div><div class="ms-label">Deal Value</div></div>
+    <div class="ms-cell"><div class="ms-val">$300M</div><div class="ms-label">Contingent</div></div>
+    <div class="ms-cell"><div class="ms-val">~45x</div><div class="ms-label">Revenue Multiple</div></div>
+    <div class="ms-cell"><div class="ms-val">130+</div><div class="ms-label">Countries (BVNK)</div></div>
+    <div class="ms-cell"><div class="ms-val">YE 2026</div><div class="ms-label">Expected Close</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Mastercard (NYSE: MA) announced on March 17 that it has entered into a definitive agreement to acquire BVNK, a London-based stablecoin infrastructure company, for up to $1.8 billion — $1.5 billion upfront plus $300 million in contingent payments tied to performance milestones. The deal is expected to close by year-end, subject to regulatory approvals. The companies did not disclose the consideration structure, but the acquisition is not expected to have a meaningful near-term impact on Mastercard's earnings.</p>
+    <p>BVNK, founded in 2021, builds the backend infrastructure that allows financial institutions and enterprises to send, receive, store, and convert stablecoins across more than 130 countries and all major blockchain networks. Its platform is essentially a payment orchestration layer that bridges fiat currency rails with on-chain digital dollars. BVNK generated approximately $40 million in revenue as of late 2024 — a figure that implies a purchase multiple of roughly 45x trailing revenue. In 2025, it processed an estimated $30 billion in stablecoin payment volume. The acquisition eclipses Stripe's $1.1 billion purchase of stablecoin infrastructure firm Bridge in early 2025, making BVNK the largest stablecoin acquisition on record.</p>
+    <p>The deal's backstory sharpens its strategic significance. Coinbase had been in advanced acquisition talks with BVNK for approximately $2 billion before those negotiations collapsed around November 2025. Mastercard was also reportedly in separate talks to acquire crypto infrastructure firm Zerohash at a price of $1.5 to $2 billion before that deal also fell through. The BVNK transaction is the end result of an aggressive but complicated courtship of the stablecoin infrastructure space by the incumbent payments networks.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The existential framing:</strong> Mastercard processed $59 billion in crypto transactions across its network in 2025. But most of that volume flows through Mastercard-branded cards used to on-ramp and off-ramp from crypto exchanges — not through Mastercard's core settlement infrastructure. Stablecoin payment volumes hit $350 billion in 2025 and are growing. If that volume scales on blockchain rails and bypasses card networks entirely, Mastercard becomes irrelevant to the transaction. BVNK's on-chain plumbing is Mastercard's way of inserting itself into those flows before they route around it.</p>
+    <p><strong>The agentic AI threat accelerates the timeline:</strong> Agentic AI systems — software agents that autonomously execute financial transactions — have a strong structural preference for programmable money on blockchain rails rather than card-based payments. Card transactions require human-readable credentials, fraud detection workflows designed for consumer behavior, and settlement windows that create friction for machine-to-machine payments. Stablecoins don't. Several analysts flagged this specifically when the deal was announced: BVNK is defensive infrastructure against a future where AI agents route around the card networks entirely.</p>
+    <p><strong>The Coinbase counterfactual:</strong> If Coinbase had closed its deal at $2 billion, Mastercard would have been competing against a crypto-native player with BVNK's infrastructure and Coinbase's distribution network — a genuinely uncomfortable combination. At $1.8 billion, Mastercard not only acquires the infrastructure but removes it from any competitor's reach. The near-miss with Coinbase explains the price: Mastercard was not just buying an asset, it was also buying a foreclosure.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>45x revenue is a faith-based multiple:</strong> BVNK generated around $40 million in revenue on $30 billion in payment volume, implying a take rate of roughly 0.13%. At that margin profile, the path to justifying $1.8 billion in enterprise value requires either volume scaling by orders of magnitude or significant take rate expansion — neither of which is guaranteed.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Regulatory complexity across 130+ countries:</strong> Stablecoin regulation is fragmented and rapidly evolving. The EU's MiCA framework, the U.S. GENIUS Act, and divergent Asian standards create a compliance burden that scales with geographic reach. Integrating BVNK's operations into Mastercard's regulatory posture in every market it touches is a non-trivial undertaking.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration with a 60-year-old network:</strong> Mastercard's core infrastructure was built for card-based fiat transactions. Grafting blockchain-native settlement rails onto that architecture without creating friction or compliance gaps requires a level of technical integration that incumbent financial institutions have historically underestimated.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>The TAM is real and growing fast:</strong> Stablecoin payment volume reached $350 billion in 2025. BCG projects digital currency payments will become a core layer of global commerce. Mastercard's 2.5 billion cards and relationships with every major financial institution give BVNK's technology a distribution channel that would take decades to build independently.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cross-border remittances are the immediate win:</strong> The remittances market is large, expensive for consumers, and structurally underserved by card networks. Stablecoin rails offer near-instant settlement at a fraction of the cost of wire transfers or traditional remittance services. BVNK's 130-country footprint makes it an immediate fit for Mastercard's Send platform.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Regulatory clarity is arriving:</strong> The U.S. GENIUS Act established a federal framework for stablecoin issuers. The EU's MiCA is live. Clearer rules accelerate institutional adoption — and Mastercard, with BVNK inside, is positioned to be the compliant on-ramp that banks and fintechs reach for first when they want to offer digital currency services.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
 
+<!-- ARTICLE: Merck / Terns -->
 <div id="article-merck-acquires-terns-pharmaceuticals-6-7b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -206,31 +244,30 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Merck (NYSE: MRK) announced this morning that it has entered into a definitive agreement to acquire Terns Pharmaceuticals (Nasdaq: TERN) for $53.00 per share in cash, representing an equity value of approximately $6.7 billion — or $5.7 billion net of Terns' roughly $1 billion in cash on hand. The price reflects a 6% premium to Tuesday's closing price of $50, and a 31% premium to the 60-day volume-weighted average price as of March 24. Both boards have approved the deal. Close is expected in Q2 2026, subject to antitrust clearance and a majority tender of shares.</p>
-    <p>The deal's centerpiece is TERN-701, an investigational oral allosteric BCR::ABL1 tyrosine kinase inhibitor (TKI) being evaluated in the Phase 1/2 CARDINAL trial for patients with Philadelphia chromosome-positive chronic phase chronic myeloid leukemia (CML) who have failed at least one prior TKI. Phase 1 data presented at ASH last December showed a major molecular response rate as high as 75% at 24 weeks — a number that prompted William Blair analysts to write that "unprecedented remains the only suitable adjective." The FDA granted Orphan Drug Designation for TERN-701 in March 2024. Late-stage trials are expected to begin in late 2026 or early 2027.</p>
+    <p>Merck (NYSE: MRK) announced on March 25 that it has entered into a definitive agreement to acquire Terns Pharmaceuticals (Nasdaq: TERN) for $53.00 per share in cash, representing an equity value of approximately $6.7 billion — or $5.7 billion net of Terns' roughly $1 billion in cash on hand. The price reflects a 6% premium to Tuesday's closing price of $50, and a 31% premium to the 60-day volume-weighted average price as of March 24. Both boards have approved the deal. Close is expected in Q2 2026, subject to antitrust clearance and a majority tender of shares.</p>
+    <p>The deal's centerpiece is TERN-701, an investigational oral allosteric BCR::ABL1 tyrosine kinase inhibitor being evaluated in the Phase 1/2 CARDINAL trial for patients with Philadelphia chromosome-positive chronic phase chronic myeloid leukemia who have failed at least one prior TKI. Phase 1 data presented at ASH last December showed a major molecular response rate as high as 75% at 24 weeks. The FDA granted Orphan Drug Designation for TERN-701 in March 2024. Late-stage trials are expected to begin in late 2026 or early 2027.</p>
     <p>This is Merck's third multi-billion acquisition in under twelve months, following a $9.2 billion deal for Cidara Therapeutics in late 2025 and a $10 billion acquisition of Verona Pharma earlier that year. All three are pipeline-filling moves ahead of a single looming event: Keytruda's loss of patent exclusivity in 2028. Keytruda generated $31.7 billion in revenue in 2025 — roughly half of Merck's total sales.</p>
     <h2>Why It Matters</h2>
     <p><strong>The Keytruda cliff is the whole story:</strong> Merck generated $65 billion in revenue in 2025. When Keytruda loses exclusivity, the company needs to replace the better part of $30 billion in annual sales. Cidara, Verona, and now Terns are the scaffolding. TERN-701 alone, if approved, could generate over $4 billion in annual peak sales according to BMO Capital Markets — not a full replacement for Keytruda, but a meaningful piece of a much larger diversification effort.</p>
-    <p><strong>The Scemblix threat:</strong> Novartis' Scemblix (asciminib) is the current best-in-class allosteric TKI for CML, with Novartis recently raising its own peak sales guidance from $3 billion to $4 billion. TERN-701 targets the same mechanism but with a once-daily, food-independent dosing profile versus Scemblix's twice-daily, fasting-required regimen. The Phase 1 efficacy data already cleared what analysts consider the minimum bar to be competitive. If Phase 2/3 data holds, Merck walks into a $4+ billion market with a potentially superior product.</p>
-    <p><strong>The low premium is a tell:</strong> A 6% closing-day premium is one of the lowest paid for a publicly traded biotech in years. But Terns' stock had already risen six-fold in six months on takeover speculation and TERN-701 data. The 31% premium to the 60-day average is more representative — and analysts at William Blair, Mizuho, and Leerink all flagged that the deal may still undervalue the asset. Merck CEO Robert Davis told investors the company remains "opportunistic" on further deals, implying the pipeline-filling campaign isn't finished.</p>
+    <p><strong>The Scemblix threat:</strong> Novartis' Scemblix is the current best-in-class allosteric TKI for CML, with Novartis recently raising its own peak sales guidance from $3 billion to $4 billion. TERN-701 targets the same mechanism but with a once-daily, food-independent dosing profile versus Scemblix's twice-daily, fasting-required regimen. If Phase 2/3 data holds, Merck walks into a $4+ billion market with a potentially superior product.</p>
+    <p><strong>The low premium is a tell:</strong> A 6% closing-day premium is one of the lowest paid for a publicly traded biotech in years. But Terns' stock had already risen six-fold in six months on takeover speculation and TERN-701 data. Analysts at William Blair, Mizuho, and Leerink all flagged that the deal may undervalue the asset, and that competing bids from AbbVie or Bristol Myers Squibb remain possible before the tender closes.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
       <div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase 1 to Phase 3 is a long road:</strong> TERN-701's remarkable early data is still from a dose-escalation trial. CML is a notoriously difficult disease to run late-stage trials in — endpoints are slow, patient populations are competitive, and Scemblix's established base creates a high bar for market entry.</p></div>
       <div class="cb-item"><span class="cb-dot red"></span><p><strong>Competing bid risk is real:</strong> William Blair, Mizuho, and Leerink have all publicly suggested the deal undervalues TERN-701. AbbVie and Bristol Myers Squibb were named as potential competing acquirers. A topping bid before tender close could cost Merck significantly more than $6.7 billion.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Keytruda replacement math doesn't close:</strong> Even at $4 billion in peak TERN-701 sales plus the Cidara and Verona contributions, Merck's pipeline acquisitions fall well short of replacing $30 billion in Keytruda revenue. The company needs either more deals or must assume Keytruda biosimilar uptake is slower than historical precedent suggests.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Keytruda replacement math doesn't close:</strong> Even at $4 billion in peak TERN-701 sales plus the Cidara and Verona contributions, Merck's pipeline acquisitions fall well short of replacing $30 billion in Keytruda revenue. The company needs either more deals or must assume biosimilar uptake is slower than historical precedent suggests.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Best-in-class data at Phase 1:</strong> A 75% major molecular response rate in a heavily pretreated patient population, with no dose-limiting toxicities and a clean safety profile, is not normal. Merck's research chief said publicly the company had reviewed updated data before making the bid — a strong signal that Phase 2/3 entry is well de-risked.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Best-in-class data at Phase 1:</strong> A 75% major molecular response rate in a heavily pretreated patient population, with no dose-limiting toxicities and a clean safety profile, is not normal. Merck's research chief indicated the company reviewed updated data before making the bid — a strong signal that Phase 2/3 entry is well de-risked.</p></div>
       <div class="cb-item"><span class="cb-dot green"></span><p><strong>Hematology flywheel:</strong> Merck is deliberately building a hematology franchise. TERN-701 pairs with existing pipeline assets to give the company credibility and commercial infrastructure in blood cancers — a category where Keytruda has minimal presence, meaning zero cannibalization risk.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>$1B cash cushion on the acquired entity:</strong> At $5.7 billion net of cash, Merck is effectively paying 5.7x Terns' cash-adjusted value for an asset with $4B+ peak sales potential and Orphan Drug designation. On a risk-adjusted basis, that's a defensible entry price even at Phase 1.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>$1B cash cushion on the acquired entity:</strong> At $5.7 billion net of cash, Merck is effectively paying for an asset with $4B+ peak sales potential and Orphan Drug designation. On a risk-adjusted basis, that's a defensible entry price even at Phase 1.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
 </div>
 
 <!-- ARTICLE: Cintas / UniFirst -->
-
 <div id="article-cintas-acquires-unifirst-5-5b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -249,7 +286,7 @@ footer span span { color:var(--accent); font-weight:700; }
   <div class="article-body">
     <h2>Deal Overview</h2>
     <p>Cintas Corporation (Nasdaq: CTAS) and UniFirst Corporation (NYSE: UNF) announced on March 11, 2026, that they have entered into a definitive agreement under which Cintas will acquire UniFirst for $310.00 per share — $155.00 in cash plus 0.7720 shares of Cintas stock for each UniFirst share, based on Cintas' closing price of $200.77 on March 9. The implied enterprise value is approximately $5.5 billion, representing 8.0x run-rate trailing twelve months EBITDA including projected synergies.</p>
-    <p>Cintas identified approximately $375 million in annualized operating cost synergies, expected to be fully realized within four years of close. Financing comes from cash on hand, committed lines of credit, and a fully committed bridge from Morgan Stanley, KeyBank, and Wells Fargo. Pro forma leverage at close is expected at approximately 1.5x debt-to-EBITDA — lean enough to preserve Cintas' investment grade rating. The transaction was unanimously approved by both boards and is backed by a voting support agreement from the Croatti family, which controls roughly two-thirds of UniFirst's voting power. Cintas has agreed to a $350 million reverse termination fee if regulators block the deal.</p>
+    <p>Cintas identified approximately $375 million in annualized operating cost synergies, expected to be fully realized within four years of close. Financing comes from cash on hand, committed lines of credit, and a fully committed bridge from Morgan Stanley, KeyBank, and Wells Fargo. Pro forma leverage at close is expected at approximately 1.5x debt-to-EBITDA. The transaction was unanimously approved by both boards and is backed by a voting support agreement from the Croatti family, which controls roughly two-thirds of UniFirst's voting power. Cintas has agreed to a $350 million reverse termination fee if regulators block the deal.</p>
     <p>This is Cintas' third run at UniFirst. A 2022 approach was rebuffed. A $5.3 billion bid in early 2025 was withdrawn in March of that year after UniFirst's board declined to engage. The March 2026 agreement — at a higher price, with the Croatti family finally on board — ends one of the longest corporate courtships in industrial services history.</p>
     <h2>Why It Matters</h2>
     <p><strong>A near-duopoly in workwear:</strong> The combined entity will command an estimated 45–50% of the North American uniform rental and facility services market. The only remaining national competitor is Vestis, the former Aramark uniform business. In dozens of mid-sized regional markets where Vestis lacks a processing plant, the merger effectively creates a local monopoly. That's the FTC's problem to solve — and Cintas knows it, hence the $350 million reverse termination fee.</p>
@@ -271,50 +308,7 @@ footer span span { color:var(--accent); font-weight:700; }
   <div style="height:48px;"></div>
 </div>
 
-<!-- ARTICLE: CACI / ARKA -->
-
-<div id="article-caci-acquires-arka-group-2-6b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header">
-    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
-    <h1>CACI Pays $2.6B for the Spy Satellites It Couldn't Build Fast Enough</h1>
-    <p class="ah-sub">The defense contractor buys ARKA Group from Blackstone, landing EO/IR sensors, hyperspectral imaging, and agentic AI software in a single check — a direct play on Golden Dome and the Indo-Pacific.</p>
-    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>4 min read</span></div>
-  </div>
-  <div class="metrics-strip">
-    <div class="ms-cell"><div class="ms-val">$2.6B</div><div class="ms-label">Enterprise Value</div></div>
-    <div class="ms-cell"><div class="ms-val">~4.0x</div><div class="ms-label">NTM Revenue</div></div>
-    <div class="ms-cell"><div class="ms-val">~18x</div><div class="ms-label">NTM EBITDA</div></div>
-    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
-    <div class="ms-cell"><div class="ms-val">Mar 9, 2026</div><div class="ms-label">Closed</div></div>
-  </div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>CACI International Inc. (NYSE: CACI) completed its $2.6 billion all-cash acquisition of ARKA Group L.P. on March 9, 2026. The seller was Blackstone Tactical Opportunities, which first backed ARKA in 2019 and spent the next five years bolt-on assembling it into a full-spectrum space intelligence platform — acquiring Amergint, Tethers Unlimited, Danbury Mission Technologies, Stratagem Group, Lumacron, and finally the radar and sensing business from Maxar in 2024.</p>
-    <p>The deal was announced December 19, 2025 and cleared regulatory approvals in under 80 days. CACI financed the acquisition entirely with cash and expects a tax benefit with a present value of approximately $225 million embedded in the transaction structure. ARKA is projected to contribute roughly $650 million in revenue and $150 million in EBITDA over the next twelve months, implying purchase multiples of approximately 4.0x NTM sales and 18x NTM EBITDA. More than 1,100 ARKA employees — 315 of them software engineers — joined CACI at close.</p>
-    <p>ARKA's core asset is its Danbury, Connecticut facility, which manufactures electro-optical/infrared (EO/IR) and hyperspectral imaging sensors for satellites. The company also operates ground-based software processing and agentic AI systems that convert raw sensor data into actionable geospatial intelligence for the DoD and Intelligence Community. Roughly half of ARKA's revenue mix is classified.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>The Golden Dome angle:</strong> CACI was explicit in its investor presentation that ARKA's capabilities are positioned directly for the Golden Dome missile defense initiative — the administration's marquee defense modernization program. Space-based sensors that can track hypersonic threats in real time are not a commodity. ARKA has the Danbury manufacturing depth and the cleared customer relationships to be a primary supplier. You can't build that in three years.</p>
-    <p><strong>The vertical integration play:</strong> CACI has historically been an IT services and signals intelligence firm — the "pipes" side of national security. ARKA gives it the sensors and the AI software to own the full kill chain from collection to analysis. That's a fundamentally higher-margin, stickier business than managing government IT contracts.</p>
-    <p><strong>Blackstone's exit:</strong> Blackstone assembled ARKA through six acquisitions over five years — a classic platform build — and sold at a time when defense multiples are elevated and space intelligence spending is accelerating. At ~18x EBITDA on a business that didn't exist as a single entity in 2019, they extracted maximum cycle value.</p>
-    <div class="callout-box">
-      <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Classified revenue opacity:</strong> Half of ARKA's revenue is non-disclosed. CACI investors are underwriting a business they can't fully see, at a premium multiple, in a program environment that can shift with a single budget cycle.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Integration of six bolt-ons:</strong> Blackstone stitched ARKA together from disparate acquisitions. Whether those pieces share technology, culture, and processes — or merely a holding company — becomes CACI's problem at close.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Budget risk:</strong> CACI funded with cash but consumed a significant portion of its balance sheet. A continuing resolution or CR-extended budget environment would pressure ARKA's new contract wins at exactly the wrong time.</p></div>
-    </div>
-    <div class="callout-box">
-      <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Irreplaceable hardware:</strong> The Danbury EO/IR manufacturing facility took decades to build. There is no shortcut to replicating its production capability for the classified satellite programs it serves.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Multi-domain intelligence moat:</strong> CACI's existing signals intelligence combined with ARKA's space-based sensing creates a multi-source intelligence platform that competes directly with much larger primes — at a fraction of their overhead.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Agentic AI in the right place:</strong> ARKA's agentic AI software is purpose-built for classified environments — exactly the use case the DoD is prioritizing under its February 2026 directive on sovereign AI for tactical edge missions.</p></div>
-    </div>
-  </div>
-  <div style="height:48px;"></div>
-</div>
-
 <!-- ARTICLE: Nexstar / TEGNA -->
-
 <div id="article-nexstar-acquires-tegna-6-2b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -356,7 +350,6 @@ footer span span { color:var(--accent); font-weight:700; }
 </div>
 
 <!-- ARTICLE: Ecolab / CoolIT -->
-
 <div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -430,6 +423,5 @@ function showHome() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
-
 </body>
 </html>
