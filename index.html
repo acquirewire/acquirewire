@@ -118,7 +118,8 @@ footer span span { color:var(--accent); font-weight:700; }
 .feed-item:nth-child(2) { animation:fadeUp .4s ease .05s both; }
 .feed-item:nth-child(3) { animation:fadeUp .4s ease .1s both; }
 .feed-item:nth-child(4) { animation:fadeUp .4s ease .15s both; }
-.newsletter { animation:fadeUp .4s ease .2s both; }
+.feed-item:nth-child(5) { animation:fadeUp .4s ease .2s both; }
+.newsletter { animation:fadeUp .4s ease .25s both; }
 .article-header { animation:fadeUp .4s ease both; }
 .article-body { animation:fadeUp .4s ease .08s both; }
 </style>
@@ -139,6 +140,18 @@ footer span span { color:var(--accent); font-weight:700; }
 
 <!-- ═══════ HOME VIEW : FEED ═══════ -->
 <div id="home-view" class="container">
+
+  <div class="feed-item" onclick="showArticle('merck-acquires-terns-pharma-6-7b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 25, 2026 · 4 min</span></div>
+    <div class="fi-title">Merck Pays $6.7B for a Phase 1 Leukemia Drug Because the Keytruda Clock Is Ticking</div>
+    <div class="fi-excerpt">The pharma giant is buying Terns Pharmaceuticals at a 31% premium to VWAP, betting that TERN-701 can rival Novartis's Scemblix before the 2028 patent cliff arrives.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('thermo-fisher-acquires-clario-8-9b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 24, 2026 · 4 min</span></div>
+    <div class="fi-title">Thermo Fisher Closes $8.9B Clario Deal, Buys the Data Layer of Drug Development</div>
+    <div class="fi-excerpt">The clinical trial data company behind 70% of FDA and EMA novel drug approvals is now part of Thermo Fisher's biopharma services empire.</div>
+  </div>
 
   <div class="feed-item" onclick="showArticle('ecolab-acquires-coolit-4-75b')">
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
@@ -171,6 +184,88 @@ footer span span { color:var(--accent); font-weight:700; }
 </div>
 
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
+
+<!-- ARTICLE: Merck / Terns Pharmaceuticals -->
+<div id="article-merck-acquires-terns-pharma-6-7b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Merck Pays $6.7B for a Phase 1 Leukemia Drug Because the Keytruda Clock Is Ticking</h1>
+    <p class="ah-sub">The pharma giant is buying Terns Pharmaceuticals at a 31% premium to VWAP, betting that TERN-701 can rival Novartis's Scemblix before the 2028 patent cliff arrives.</p>
+    <div class="ah-meta"><span>Mar 25, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$6.7B</div><div class="ms-label">Equity Value</div></div>
+    <div class="ms-cell"><div class="ms-val">$53</div><div class="ms-label">Per Share</div></div>
+    <div class="ms-cell"><div class="ms-val">31%</div><div class="ms-label">60-Day VWAP Prem.</div></div>
+    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
+    <div class="ms-cell"><div class="ms-val">Q2 2026</div><div class="ms-label">Expected Close</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Merck & Co. (NYSE: MRK) announced on March 25 that it will acquire Terns Pharmaceuticals (NASDAQ: TERN), a clinical-stage oncology company, for $53.00 per share in an all-cash tender offer. The deal values Terns at approximately $6.7 billion in equity, or $5.7 billion net of acquired cash. That price represents a 6% premium to Tuesday's close, a 31% premium to the 60-day VWAP, and a 42% premium to the 90-day VWAP.</p>
+    <p>Terns' stock had already surged roughly sixfold over the prior six months on the strength of Phase 1 data for its lead asset, TERN-701, and widespread speculation that the company was an acquisition target. Both boards have approved the deal, which is expected to close in Q2 2026 pending antitrust clearance and a majority tender.</p>
+    <p>Merck expects to record an approximately $5.8 billion charge (roughly $2.35 per share) in its Q2 and full-year 2026 results related to the acquisition.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The Keytruda imperative:</strong> Keytruda generated $29.5 billion in 2024 revenue and accounts for roughly 40% of Merck's pharmaceutical sales. U.S. patent protection expires in late 2028, with IRA-negotiated Medicare price cuts kicking in the same year. Merck is cutting $3 billion in costs and buying its way into replacement revenue streams. Terns is the latest, and one of the largest, of those bets.</p>
+    <p><strong>Best-in-class clinical data:</strong> TERN-701, an oral allosteric BCR-ABL inhibitor for chronic myeloid leukemia, posted a 74% overall major molecular response rate in heavily pretreated patients in the Phase 1 CARDINAL study, with a 36% deep molecular response rate by 24 weeks. Those numbers are roughly double the rates seen in comparable Phase 1 trials of approved or in-development CML therapies. No dose-limiting toxicities were observed.</p>
+    <p><strong>The Scemblix race:</strong> TERN-701 targets the same allosteric binding pocket as Novartis's Scemblix (asciminib), which is already approved and growing rapidly. In preclinical studies, TERN-701 showed greater potency against several resistance mutations. If Merck can move TERN-701 through pivotal trials and into first-line CML, the peak revenue opportunity is measured in billions.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase 1 price tag:</strong> $6.7 billion for a drug that has not yet entered pivotal trials. If TERN-701 stumbles in Phase 3, Merck takes a multi-billion dollar writedown with no revenue to show for it.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Scemblix head start:</strong> Novartis already has an approved, commercial-stage allosteric inhibitor with expanding indications. TERN-701 needs to prove superiority, not just equivalence, to capture meaningful share.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Narrow pipeline:</strong> Terns is essentially a single-asset company. There is no fallback program if TERN-701 disappoints.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Unprecedented Phase 1 data:</strong> 74% MMR and 36% deep molecular response in a heavily pretreated, refractory population. These are the best early-stage CML numbers the field has seen.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Merck's hematology infrastructure:</strong> Merck already has Phase 3 candidates across leukemias, lymphomas, and myeloproliferative neoplasms. TERN-701 slots into an existing organizational machine, not a greenfield build.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Patent cliff math:</strong> If TERN-701 reaches even $3 to 4 billion in peak sales, it materially offsets the Keytruda revenue gap. That math justifies the premium.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Thermo Fisher / Clario -->
+<div id="article-thermo-fisher-acquires-clario-8-9b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Thermo Fisher Closes $8.9B Clario Deal, Buys the Data Layer of Drug Development</h1>
+    <p class="ah-sub">The clinical trial data company behind 70% of FDA and EMA novel drug approvals is now part of Thermo Fisher's biopharma services empire.</p>
+    <div class="ah-meta"><span>Mar 24, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$8.875B</div><div class="ms-label">Cash at Close</div></div>
+    <div class="ms-cell"><div class="ms-val">~7.1x</div><div class="ms-label">NTM Revenue</div></div>
+    <div class="ms-cell"><div class="ms-val">$0.45</div><div class="ms-label">Yr 1 EPS Accretion</div></div>
+    <div class="ms-cell"><div class="ms-val">$175M</div><div class="ms-label">Yr 5 Synergies (OI)</div></div>
+    <div class="ms-cell"><div class="ms-val">Closed</div><div class="ms-label">Status</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Thermo Fisher Scientific (NYSE: TMO) completed its acquisition of Clario Holdings on March 24 for $8.875 billion in cash at close, with an additional $125 million deferred payment due in January 2027 and up to $400 million in performance-based earnouts tied to Clario's 2026 and 2027 results. Total consideration could reach approximately $9.4 billion.</p>
+    <p>Clario was acquired from a private equity consortium led by Astorg and Nordic Capital, with Novo Holdings and Cinven also participating. Clario generated approximately $1.25 billion in 2025 revenue and employs roughly 4,000 people globally. The company will join Thermo Fisher's Laboratory Products and Biopharma Services segment.</p>
+    <p>Thermo Fisher expects the deal to be immediately accretive to adjusted operating margin, add $0.45 to adjusted EPS in year one, and generate approximately $175 million in adjusted operating income from synergies by year five. Management projects high-single-digit revenue growth for the Clario business under Thermo Fisher ownership.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The data infrastructure play:</strong> Clario's endpoint data platform has been involved in roughly 70% of all novel drug approvals by the FDA and EMA over the past decade. That is not a market share number you can replicate. Thermo Fisher is buying the data backbone of clinical trials: the systems that collect, manage, and analyze clinical evidence across every phase of drug development.</p>
+    <p><strong>Vertical integration logic:</strong> Thermo Fisher already supplies lab equipment, reagents, and contract research services to biopharma. Adding Clario's clinical data layer means the company can now serve a pharma customer from molecule discovery through regulatory submission. Every integration point is a cross-sell opportunity and a switching cost for the customer.</p>
+    <p><strong>PE exit mechanics:</strong> The earnout structure is worth noting. Up to $400 million in contingent payments gives the selling PE consortium meaningful upside if Clario performs, while protecting Thermo Fisher's downside. It also signals that both sides believe the growth trajectory is real.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Biotech funding dependency:</strong> Clario's growth is directly tied to clinical trial volumes. A sustained biotech funding downturn would pressure the business regardless of its competitive position.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>AI disruption:</strong> Endpoint data collection and analysis is exactly the kind of workflow that AI-native competitors are targeting. Thermo Fisher needs to invest heavily to keep Clario's platform ahead.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration with existing CRO:</strong> Thermo Fisher's PPD contract research unit and Clario must be integrated without disrupting active clinical trials. That is a complex operational challenge.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Irreplaceable installed base:</strong> 70% of novel drug approvals over a decade. Pharma companies do not switch endpoint data providers mid-program. Retention is structural.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Revenue synergies over cost synergies:</strong> The $175M synergy target is primarily revenue-driven, not headcount reduction. That is a healthier, more sustainable synergy profile.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Double-digit IRR:</strong> Management is projecting double-digit internal rate of return with high-single-digit organic growth. At 7.1x revenue for a sticky, recurring data business, the math works if growth holds.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
 
 <!-- ARTICLE: Ecolab / CoolIT -->
 <div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
