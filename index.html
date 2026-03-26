@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AcquireWire — M&A Intelligence</title>
+<title>AcquireWire | M&A Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -118,8 +118,7 @@ footer span span { color:var(--accent); font-weight:700; }
 .feed-item:nth-child(2) { animation:fadeUp .4s ease .05s both; }
 .feed-item:nth-child(3) { animation:fadeUp .4s ease .1s both; }
 .feed-item:nth-child(4) { animation:fadeUp .4s ease .15s both; }
-.feed-item:nth-child(5) { animation:fadeUp .4s ease .2s both; }
-.newsletter { animation:fadeUp .4s ease .25s both; }
+.newsletter { animation:fadeUp .4s ease .2s both; }
 .article-header { animation:fadeUp .4s ease both; }
 .article-body { animation:fadeUp .4s ease .08s both; }
 </style>
@@ -138,37 +137,25 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
 </header>
 
-<!-- ═══════ HOME VIEW — FEED ═══════ -->
+<!-- ═══════ HOME VIEW : FEED ═══════ -->
 <div id="home-view" class="container">
-
-  <div class="feed-item" onclick="showArticle('mastercard-acquires-bvnk-1-8b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 26, 2026 · 4 min</span></div>
-    <div class="fi-title">Mastercard Pays $1.8B for the Stablecoin Rails It Can't Afford to Rent from Someone Else</div>
-    <div class="fi-excerpt">Coinbase nearly bought BVNK for $2B before walking. Mastercard stepped in at $1.8B to own the on-chain infrastructure before a crypto-native player locked it up — paying 45x revenue to not become a settlement layer for someone else's network.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('merck-acquires-terns-pharmaceuticals-6-7b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 25, 2026 · 5 min</span></div>
-    <div class="fi-title">Merck Pays $6.7B for a Leukemia Drug That Analysts Say Is Already Worth More</div>
-    <div class="fi-excerpt">The 6% closing-day premium is almost insultingly low — except that Terns' stock had already sextupled in six months. Merck is buying TERN-701 to fill the Keytruda hole before 2028, and multiple banks think another bidder could still emerge.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('cintas-acquires-unifirst-5-5b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 24, 2026 · 4 min</span></div>
-    <div class="fi-title">Cintas Finally Gets UniFirst — on Its Third Try and for $5.5B</div>
-    <div class="fi-excerpt">After failed bids in 2022 and early 2025, Cintas closes in on its long-time rival at $310 per share, creating a near-50% market share juggernaut in North American uniform services — and a serious FTC problem.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('nexstar-acquires-tegna-6-2b')">
-    <div class="fi-top"><span class="fi-tag regulation">Regulation</span><span>Mar 23, 2026 · 5 min</span></div>
-    <div class="fi-title">Nexstar Closes TEGNA for $6.2B — and Immediately Gets Sued by Eight States</div>
-    <div class="fi-excerpt">The FCC waived its own 39% household reach cap to let the biggest local TV merger in decades close. Now Nexstar controls 265 stations and 80% of U.S. households, and the lawsuits are already filed.</div>
-  </div>
 
   <div class="feed-item" onclick="showArticle('ecolab-acquires-coolit-4-75b')">
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
     <div class="fi-title">Ecolab Pays $4.75B for AI Cooling Hardware It Needed Yesterday</div>
-    <div class="fi-excerpt">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA — and turning itself into the data center's plumber.</div>
+    <div class="fi-excerpt">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA, turning itself into the data center's plumber.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('berkshire-tokio-marine-1-8b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
+    <div class="fi-title">Greg Abel's First Big Move: Berkshire Takes a $1.8B Stake in Tokio Marine</div>
+    <div class="fi-excerpt">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact, a meaningful step beyond Buffett's passive Japan playbook.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('baker-hughes-acquires-chart-industries-13-6b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 5 min</span></div>
+    <div class="fi-title">Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</div>
+    <div class="fi-excerpt">The deal for Chart Industries, snatched away from a $19B Flowserve merger, is a blunt declaration that Baker Hughes wants to be an energy technology company.</div>
   </div>
 
   <div class="newsletter">
@@ -185,177 +172,13 @@ footer span span { color:var(--accent); font-weight:700; }
 
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
 
-<!-- ARTICLE: Mastercard / BVNK -->
-<div id="article-mastercard-acquires-bvnk-1-8b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header">
-    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
-    <h1>Mastercard Pays $1.8B for the Stablecoin Rails It Can't Afford to Rent from Someone Else</h1>
-    <p class="ah-sub">Coinbase nearly bought BVNK for $2B before walking. Mastercard stepped in at $1.8B to own the on-chain infrastructure before a crypto-native player locked it up — paying 45x revenue to not become a settlement layer for someone else's network.</p>
-    <div class="ah-meta"><span>Mar 26, 2026</span><span>·</span><span>4 min read</span></div>
-  </div>
-  <div class="metrics-strip">
-    <div class="ms-cell"><div class="ms-val">$1.8B</div><div class="ms-label">Deal Value</div></div>
-    <div class="ms-cell"><div class="ms-val">$300M</div><div class="ms-label">Contingent</div></div>
-    <div class="ms-cell"><div class="ms-val">~45x</div><div class="ms-label">Revenue Multiple</div></div>
-    <div class="ms-cell"><div class="ms-val">130+</div><div class="ms-label">Countries (BVNK)</div></div>
-    <div class="ms-cell"><div class="ms-val">YE 2026</div><div class="ms-label">Expected Close</div></div>
-  </div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Mastercard (NYSE: MA) announced on March 17 that it has entered into a definitive agreement to acquire BVNK, a London-based stablecoin infrastructure company, for up to $1.8 billion — $1.5 billion upfront plus $300 million in contingent payments tied to performance milestones. The deal is expected to close by year-end, subject to regulatory approvals. The companies did not disclose the consideration structure, but the acquisition is not expected to have a meaningful near-term impact on Mastercard's earnings.</p>
-    <p>BVNK, founded in 2021, builds the backend infrastructure that allows financial institutions and enterprises to send, receive, store, and convert stablecoins across more than 130 countries and all major blockchain networks. Its platform is essentially a payment orchestration layer that bridges fiat currency rails with on-chain digital dollars. BVNK generated approximately $40 million in revenue as of late 2024 — a figure that implies a purchase multiple of roughly 45x trailing revenue. In 2025, it processed an estimated $30 billion in stablecoin payment volume. The acquisition eclipses Stripe's $1.1 billion purchase of stablecoin infrastructure firm Bridge in early 2025, making BVNK the largest stablecoin acquisition on record.</p>
-    <p>The deal's backstory sharpens its strategic significance. Coinbase had been in advanced acquisition talks with BVNK for approximately $2 billion before those negotiations collapsed around November 2025. Mastercard was also reportedly in separate talks to acquire crypto infrastructure firm Zerohash at a price of $1.5 to $2 billion before that deal also fell through. The BVNK transaction is the end result of an aggressive but complicated courtship of the stablecoin infrastructure space by the incumbent payments networks.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>The existential framing:</strong> Mastercard processed $59 billion in crypto transactions across its network in 2025. But most of that volume flows through Mastercard-branded cards used to on-ramp and off-ramp from crypto exchanges — not through Mastercard's core settlement infrastructure. Stablecoin payment volumes hit $350 billion in 2025 and are growing. If that volume scales on blockchain rails and bypasses card networks entirely, Mastercard becomes irrelevant to the transaction. BVNK's on-chain plumbing is Mastercard's way of inserting itself into those flows before they route around it.</p>
-    <p><strong>The agentic AI threat accelerates the timeline:</strong> Agentic AI systems — software agents that autonomously execute financial transactions — have a strong structural preference for programmable money on blockchain rails rather than card-based payments. Card transactions require human-readable credentials, fraud detection workflows designed for consumer behavior, and settlement windows that create friction for machine-to-machine payments. Stablecoins don't. Several analysts flagged this specifically when the deal was announced: BVNK is defensive infrastructure against a future where AI agents route around the card networks entirely.</p>
-    <p><strong>The Coinbase counterfactual:</strong> If Coinbase had closed its deal at $2 billion, Mastercard would have been competing against a crypto-native player with BVNK's infrastructure and Coinbase's distribution network — a genuinely uncomfortable combination. At $1.8 billion, Mastercard not only acquires the infrastructure but removes it from any competitor's reach. The near-miss with Coinbase explains the price: Mastercard was not just buying an asset, it was also buying a foreclosure.</p>
-    <div class="callout-box">
-      <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>45x revenue is a faith-based multiple:</strong> BVNK generated around $40 million in revenue on $30 billion in payment volume, implying a take rate of roughly 0.13%. At that margin profile, the path to justifying $1.8 billion in enterprise value requires either volume scaling by orders of magnitude or significant take rate expansion — neither of which is guaranteed.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Regulatory complexity across 130+ countries:</strong> Stablecoin regulation is fragmented and rapidly evolving. The EU's MiCA framework, the U.S. GENIUS Act, and divergent Asian standards create a compliance burden that scales with geographic reach. Integrating BVNK's operations into Mastercard's regulatory posture in every market it touches is a non-trivial undertaking.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration with a 60-year-old network:</strong> Mastercard's core infrastructure was built for card-based fiat transactions. Grafting blockchain-native settlement rails onto that architecture without creating friction or compliance gaps requires a level of technical integration that incumbent financial institutions have historically underestimated.</p></div>
-    </div>
-    <div class="callout-box">
-      <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>The TAM is real and growing fast:</strong> Stablecoin payment volume reached $350 billion in 2025. BCG projects digital currency payments will become a core layer of global commerce. Mastercard's 2.5 billion cards and relationships with every major financial institution give BVNK's technology a distribution channel that would take decades to build independently.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cross-border remittances are the immediate win:</strong> The remittances market is large, expensive for consumers, and structurally underserved by card networks. Stablecoin rails offer near-instant settlement at a fraction of the cost of wire transfers or traditional remittance services. BVNK's 130-country footprint makes it an immediate fit for Mastercard's Send platform.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Regulatory clarity is arriving:</strong> The U.S. GENIUS Act established a federal framework for stablecoin issuers. The EU's MiCA is live. Clearer rules accelerate institutional adoption — and Mastercard, with BVNK inside, is positioned to be the compliant on-ramp that banks and fintechs reach for first when they want to offer digital currency services.</p></div>
-    </div>
-  </div>
-  <div style="height:48px;"></div>
-</div>
-
-<!-- ARTICLE: Merck / Terns -->
-<div id="article-merck-acquires-terns-pharmaceuticals-6-7b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header">
-    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
-    <h1>Merck Pays $6.7B for a Leukemia Drug That Analysts Say Is Already Worth More</h1>
-    <p class="ah-sub">The 6% closing-day premium is almost insultingly low — except that Terns' stock had already sextupled in six months. Merck is buying TERN-701 to fill the Keytruda hole before 2028, and multiple banks think another bidder could still emerge.</p>
-    <div class="ah-meta"><span>Mar 25, 2026</span><span>·</span><span>5 min read</span></div>
-  </div>
-  <div class="metrics-strip">
-    <div class="ms-cell"><div class="ms-val">$53.00</div><div class="ms-label">Offer / Share</div></div>
-    <div class="ms-cell"><div class="ms-val">$6.7B</div><div class="ms-label">Equity Value</div></div>
-    <div class="ms-cell"><div class="ms-val">31%</div><div class="ms-label">60-Day Premium</div></div>
-    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
-    <div class="ms-cell"><div class="ms-val">Q2 2026</div><div class="ms-label">Expected Close</div></div>
-  </div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Merck (NYSE: MRK) announced on March 25 that it has entered into a definitive agreement to acquire Terns Pharmaceuticals (Nasdaq: TERN) for $53.00 per share in cash, representing an equity value of approximately $6.7 billion — or $5.7 billion net of Terns' roughly $1 billion in cash on hand. The price reflects a 6% premium to Tuesday's closing price of $50, and a 31% premium to the 60-day volume-weighted average price as of March 24. Both boards have approved the deal. Close is expected in Q2 2026, subject to antitrust clearance and a majority tender of shares.</p>
-    <p>The deal's centerpiece is TERN-701, an investigational oral allosteric BCR::ABL1 tyrosine kinase inhibitor being evaluated in the Phase 1/2 CARDINAL trial for patients with Philadelphia chromosome-positive chronic phase chronic myeloid leukemia who have failed at least one prior TKI. Phase 1 data presented at ASH last December showed a major molecular response rate as high as 75% at 24 weeks. The FDA granted Orphan Drug Designation for TERN-701 in March 2024. Late-stage trials are expected to begin in late 2026 or early 2027.</p>
-    <p>This is Merck's third multi-billion acquisition in under twelve months, following a $9.2 billion deal for Cidara Therapeutics in late 2025 and a $10 billion acquisition of Verona Pharma earlier that year. All three are pipeline-filling moves ahead of a single looming event: Keytruda's loss of patent exclusivity in 2028. Keytruda generated $31.7 billion in revenue in 2025 — roughly half of Merck's total sales.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>The Keytruda cliff is the whole story:</strong> Merck generated $65 billion in revenue in 2025. When Keytruda loses exclusivity, the company needs to replace the better part of $30 billion in annual sales. Cidara, Verona, and now Terns are the scaffolding. TERN-701 alone, if approved, could generate over $4 billion in annual peak sales according to BMO Capital Markets — not a full replacement for Keytruda, but a meaningful piece of a much larger diversification effort.</p>
-    <p><strong>The Scemblix threat:</strong> Novartis' Scemblix is the current best-in-class allosteric TKI for CML, with Novartis recently raising its own peak sales guidance from $3 billion to $4 billion. TERN-701 targets the same mechanism but with a once-daily, food-independent dosing profile versus Scemblix's twice-daily, fasting-required regimen. If Phase 2/3 data holds, Merck walks into a $4+ billion market with a potentially superior product.</p>
-    <p><strong>The low premium is a tell:</strong> A 6% closing-day premium is one of the lowest paid for a publicly traded biotech in years. But Terns' stock had already risen six-fold in six months on takeover speculation and TERN-701 data. Analysts at William Blair, Mizuho, and Leerink all flagged that the deal may undervalue the asset, and that competing bids from AbbVie or Bristol Myers Squibb remain possible before the tender closes.</p>
-    <div class="callout-box">
-      <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase 1 to Phase 3 is a long road:</strong> TERN-701's remarkable early data is still from a dose-escalation trial. CML is a notoriously difficult disease to run late-stage trials in — endpoints are slow, patient populations are competitive, and Scemblix's established base creates a high bar for market entry.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Competing bid risk is real:</strong> William Blair, Mizuho, and Leerink have all publicly suggested the deal undervalues TERN-701. AbbVie and Bristol Myers Squibb were named as potential competing acquirers. A topping bid before tender close could cost Merck significantly more than $6.7 billion.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Keytruda replacement math doesn't close:</strong> Even at $4 billion in peak TERN-701 sales plus the Cidara and Verona contributions, Merck's pipeline acquisitions fall well short of replacing $30 billion in Keytruda revenue. The company needs either more deals or must assume biosimilar uptake is slower than historical precedent suggests.</p></div>
-    </div>
-    <div class="callout-box">
-      <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Best-in-class data at Phase 1:</strong> A 75% major molecular response rate in a heavily pretreated patient population, with no dose-limiting toxicities and a clean safety profile, is not normal. Merck's research chief indicated the company reviewed updated data before making the bid — a strong signal that Phase 2/3 entry is well de-risked.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Hematology flywheel:</strong> Merck is deliberately building a hematology franchise. TERN-701 pairs with existing pipeline assets to give the company credibility and commercial infrastructure in blood cancers — a category where Keytruda has minimal presence, meaning zero cannibalization risk.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>$1B cash cushion on the acquired entity:</strong> At $5.7 billion net of cash, Merck is effectively paying for an asset with $4B+ peak sales potential and Orphan Drug designation. On a risk-adjusted basis, that's a defensible entry price even at Phase 1.</p></div>
-    </div>
-  </div>
-  <div style="height:48px;"></div>
-</div>
-
-<!-- ARTICLE: Cintas / UniFirst -->
-<div id="article-cintas-acquires-unifirst-5-5b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header">
-    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
-    <h1>Cintas Finally Gets UniFirst — on Its Third Try and for $5.5B</h1>
-    <p class="ah-sub">After failed bids in 2022 and early 2025, Cintas closes in on its long-time rival at $310 per share, creating a near-50% market share juggernaut in North American uniform services — and a serious FTC problem.</p>
-    <div class="ah-meta"><span>Mar 24, 2026</span><span>·</span><span>4 min read</span></div>
-  </div>
-  <div class="metrics-strip">
-    <div class="ms-cell"><div class="ms-val">$310</div><div class="ms-label">Offer / Share</div></div>
-    <div class="ms-cell"><div class="ms-val">$5.5B</div><div class="ms-label">Enterprise Value</div></div>
-    <div class="ms-cell"><div class="ms-val">8.0x</div><div class="ms-label">Synergized EBITDA</div></div>
-    <div class="ms-cell"><div class="ms-val">$375M</div><div class="ms-label">Cost Synergies</div></div>
-    <div class="ms-cell"><div class="ms-val">H2 2026</div><div class="ms-label">Expected Close</div></div>
-  </div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Cintas Corporation (Nasdaq: CTAS) and UniFirst Corporation (NYSE: UNF) announced on March 11, 2026, that they have entered into a definitive agreement under which Cintas will acquire UniFirst for $310.00 per share — $155.00 in cash plus 0.7720 shares of Cintas stock for each UniFirst share, based on Cintas' closing price of $200.77 on March 9. The implied enterprise value is approximately $5.5 billion, representing 8.0x run-rate trailing twelve months EBITDA including projected synergies.</p>
-    <p>Cintas identified approximately $375 million in annualized operating cost synergies, expected to be fully realized within four years of close. Financing comes from cash on hand, committed lines of credit, and a fully committed bridge from Morgan Stanley, KeyBank, and Wells Fargo. Pro forma leverage at close is expected at approximately 1.5x debt-to-EBITDA. The transaction was unanimously approved by both boards and is backed by a voting support agreement from the Croatti family, which controls roughly two-thirds of UniFirst's voting power. Cintas has agreed to a $350 million reverse termination fee if regulators block the deal.</p>
-    <p>This is Cintas' third run at UniFirst. A 2022 approach was rebuffed. A $5.3 billion bid in early 2025 was withdrawn in March of that year after UniFirst's board declined to engage. The March 2026 agreement — at a higher price, with the Croatti family finally on board — ends one of the longest corporate courtships in industrial services history.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>A near-duopoly in workwear:</strong> The combined entity will command an estimated 45–50% of the North American uniform rental and facility services market. The only remaining national competitor is Vestis, the former Aramark uniform business. In dozens of mid-sized regional markets where Vestis lacks a processing plant, the merger effectively creates a local monopoly. That's the FTC's problem to solve — and Cintas knows it, hence the $350 million reverse termination fee.</p>
-    <p><strong>The "Cintas-ization" thesis:</strong> Cintas has done this before. Its 2017 acquisition of G&K Services validated a simple operational blueprint: absorb a lower-margin competitor's route density, apply Cintas' superior processing efficiency and pricing discipline, watch EBITDA margins expand. UniFirst's margins have consistently trailed Cintas by several hundred basis points. The $375 million synergy figure is built on that spread.</p>
-    <p><strong>Route density is the real prize:</strong> Uniform rental is a logistics business masquerading as a services business. What Cintas is buying is UniFirst's route network — the trucks, plants, and customer relationships that would take a decade to replicate organically. With greater density per truck, Cintas drives down cost-per-stop across the combined footprint. That's where the synergies actually come from, not headcount cuts.</p>
-    <div class="callout-box">
-      <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>FTC scrutiny is the deal's existential risk:</strong> A combined 45–50% market share in a route-based service industry with high switching costs is exactly the structure regulators target. The FTC is expected to require divestitures in specific local markets — the question is how many and whether they impair the synergy case.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Labor monopsony argument:</strong> Cintas and UniFirst are the two largest employers of route drivers and laundry technicians in many regions. The 2026 regulatory framework weighs workforce effects alongside consumer harm, giving the DOJ a second avenue to challenge or condition the deal.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Culture and ERP integration:</strong> Cintas runs a hyper-competitive, metrics-driven culture. UniFirst has operated as a family-controlled, relationship-first business for decades and spent years mid-cycle on its own ERP transformation. Merging two different back-office systems without customer attrition requires execution Cintas hasn't attempted at this scale since G&K.</p></div>
-    </div>
-    <div class="callout-box">
-      <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Proven playbook:</strong> The G&K acquisition in 2017 is the template. Cintas absorbed a major rival, hit its synergy targets, and expanded margins. Management has described having "muscle memory" for exactly this integration — the current deal team ran G&K.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Margin expansion math is compelling:</strong> UniFirst's EBITDA margins have consistently run 4–6 percentage points below Cintas'. Applying Cintas-level margins to the UniFirst revenue base — even partially — generates hundreds of millions in incremental earnings well beyond the $375 million synergy guide.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Healthcare tailwind:</strong> An aging U.S. population is driving sustained demand for healthcare laundry and protective garment services — a segment where UniFirst has meaningful exposure and Cintas wants to grow. The combined entity becomes the dominant supplier to hospitals and clinics at the right moment in the demographic cycle.</p></div>
-    </div>
-  </div>
-  <div style="height:48px;"></div>
-</div>
-
-<!-- ARTICLE: Nexstar / TEGNA -->
-<div id="article-nexstar-acquires-tegna-6-2b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header">
-    <div class="ah-tags"><span class="fi-tag regulation">Regulation</span></div>
-    <h1>Nexstar Closes TEGNA for $6.2B — and Immediately Gets Sued by Eight States</h1>
-    <p class="ah-sub">The FCC waived its own 39% household reach cap to let the biggest local TV merger in decades close. Now Nexstar controls 265 stations and 80% of U.S. households, and the lawsuits are already filed.</p>
-    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>5 min read</span></div>
-  </div>
-  <div class="metrics-strip">
-    <div class="ms-cell"><div class="ms-val">$22.00</div><div class="ms-label">Offer / Share</div></div>
-    <div class="ms-cell"><div class="ms-val">31%</div><div class="ms-label">Premium</div></div>
-    <div class="ms-cell"><div class="ms-val">$6.2B</div><div class="ms-label">Enterprise Value</div></div>
-    <div class="ms-cell"><div class="ms-val">265</div><div class="ms-label">Stations Combined</div></div>
-    <div class="ms-cell"><div class="ms-val">80%</div><div class="ms-label">US HH Reach</div></div>
-  </div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Nexstar Media Group (Nasdaq: NXST) closed its $6.2 billion acquisition of TEGNA Inc. on March 19, 2026, making TEGNA a wholly owned subsidiary. The deal, announced August 19, 2025, priced each TEGNA share at $22.00 in cash — a 31% premium to the unaffected 30-day average ending August 8, 2025. Financing came via a $2.39 billion senior first-lien bridge facility and a new $2.75 billion term loan B, alongside existing Nexstar liquidity.</p>
-    <p>The combined entity controls more than 265 full-power television stations across 44 states and Washington D.C., operating in 132 of the nation's 210 TV markets. Combined 2025 pro forma revenue is approximately $7.66 billion. As a condition of FCC approval, Nexstar committed to divest six stations within two years, expand local news investment in acquired markets, and freeze retransmission rates for existing pay-TV distributor agreements through November 30, 2026.</p>
-    <p>The critical unlock was the FCC's decision — under Chairman Brendan Carr — to waive the decades-old 39% national television household ownership cap. That rule had effectively blocked broadcast consolidation at this scale for years. Without the waiver, the deal was structurally impossible.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>The retransmission consent weapon:</strong> Local TV stations get paid by cable and satellite providers to carry their signals. The bigger your footprint, the harder it is for a distributor to drop you — which means higher per-subscriber fees at renewal. Nexstar now operates in 132 markets. DirecTV, which sued to block this deal, knows exactly what that leverage looks like in a negotiation. The lawsuit is not altruistic.</p>
-    <p><strong>A political deal as much as a financial one:</strong> President Trump endorsed the merger on Truth Social in February. FCC Chairman Carr signed off within weeks. The framing — consolidation as a bulwark against "Big Tech" and coastal media — gave the administration a narrative reason to wave it through. The eight state AGs who sued the day before closing (California, New York, Colorado, Illinois, Oregon, North Carolina, Connecticut, Virginia) see it differently.</p>
-    <p><strong>Precedent for the rest of the industry:</strong> If this holds, broadcast consolidation accelerates. Sinclair, Gray Television, and others are watching whether the state AG suits succeed in unwinding the deal or die in court. The answer shapes every subsequent broadcast M&A conversation in 2026.</p>
-    <div class="callout-box">
-      <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Active litigation:</strong> Eight state attorneys general filed suit the day before closing and immediately sought a temporary restraining order. DirecTV also sued on antitrust grounds. Even a partial injunction could force divestitures or rate concessions beyond what the FCC already required.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Structural decline in linear TV:</strong> Cord-cutting continues to erode the base that retransmission consent fees depend on. Nexstar just levered up to buy scale in a medium whose audience shrinks roughly 8% annually. The synergies need to materialize fast.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Debt load:</strong> Nexstar took on over $5 billion in new facilities to fund this. The combined pro forma showed a net loss of $171 million for 2025 on a fully consolidated basis, driven by interest expense. A political ad market downturn in a non-election year would stress the model.</p></div>
-    </div>
-    <div class="callout-box">
-      <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Retransmission pricing power:</strong> Operating in 80% of U.S. TV households gives Nexstar the leverage to reset distributor contracts at materially higher rates. Even a modest per-subscriber fee increase across the TEGNA footprint moves the needle significantly.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>2026 is a midterm setup year:</strong> Political ad spending cycles every two years. With a midterm election in November 2026, Nexstar's expanded local news footprint becomes a premium political advertising vehicle at exactly the right moment post-close.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cost structure rationalization:</strong> Two overlapping station groups with separate back-office infrastructure, technology stacks, and sales organizations. The synergy opportunity in G&A and technology consolidation is real even if revenue synergies take time.</p></div>
-    </div>
-  </div>
-  <div style="height:48px;"></div>
-</div>
-
 <!-- ARTICLE: Ecolab / CoolIT -->
 <div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
     <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
     <h1>Ecolab Pays $4.75B for AI Cooling Hardware It Needed Yesterday</h1>
-    <p class="ah-sub">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA — and turning itself into the data center's plumber.</p>
+    <p class="ah-sub">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA, turning itself into the data center's plumber.</p>
     <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>4 min read</span></div>
   </div>
   <div class="metrics-strip">
@@ -367,23 +190,103 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Ecolab Inc. (NYSE: ECL), the $60B water and hygiene services company, announced on March 20 that it has entered into a definitive agreement to acquire CoolIT Systems in an all-cash transaction valued at $4.75 billion. The seller is a consortium of KKR and Abu Dhabi sovereign wealth fund Mubadala Investment, who jointly acquired CoolIT in June 2023 for approximately $270 million — meaning they are walking away with a roughly 17.6x return in under three years.</p>
+    <p>Ecolab Inc. (NYSE: ECL), the $60B water and hygiene services company, announced on March 20 that it has entered into a definitive agreement to acquire CoolIT Systems in an all-cash transaction valued at $4.75 billion. The seller is a consortium of KKR and Abu Dhabi sovereign wealth fund Mubadala Investment, who jointly acquired CoolIT in June 2023 for approximately $270 million, meaning they are walking away with a roughly 17.6x return in under three years.</p>
     <p>CoolIT is a Calgary-based manufacturer of direct liquid cooling (DLC) systems for hyperscale and colocation data centers. The company designs and builds coolant distribution units (CDUs), cold plates, and direct-to-chip cooling technologies. CoolIT is projected to generate approximately $550 million in revenue over the next twelve months, implying a purchase multiple of roughly 8.6x NTM sales and 29x forward EBITDA.</p>
     <p>The acquisition doubles Ecolab's stated total addressable market in its Global High-Tech segment from $5 billion to $10 billion.</p>
     <h2>Why It Matters</h2>
     <p><strong>The physical layer thesis:</strong> The AI infrastructure buildout has officially reached the pipes, fluids, and thermal management systems that determine whether a $30,000 GPU cluster actually stays online. Ecolab already serves more than 1,000 data centers. What it was missing was the actual cooling hardware. CoolIT fills that gap completely.</p>
-    <p><strong>The installed base play:</strong> Ecolab was willing to pay 29x EBITDA because CoolIT's value isn't just current revenue — it's the long-term service contracts that attach to every CDU installation. Liquid cooling loops require ongoing chemical management. Every piece of CoolIT hardware installed is a future Ecolab chemistry customer.</p>
-    <p><strong>KKR's exit:</strong> One of the best PE outcomes of the decade. They bought CoolIT in mid-2023 for $270 million. Three years later they're selling for $4.75 billion — a 17.6x return that validates the "AI picks and shovels" investment thesis.</p>
+    <p><strong>The installed base play:</strong> Ecolab was willing to pay 29x EBITDA because CoolIT's value isn't just current revenue. It's the long-term service contracts that attach to every CDU installation. Liquid cooling loops require ongoing chemical management. Every piece of CoolIT hardware installed is a future Ecolab chemistry customer.</p>
+    <p><strong>KKR's exit:</strong> One of the best PE outcomes of the decade. They bought CoolIT in mid-2023 for $270 million. Three years later they're selling for $4.75 billion, a 17.6x return that validates the "AI picks and shovels" investment thesis.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
       <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage at 3x:</strong> Ecolab is financing entirely with debt. A slowdown in hyperscaler capex would pressure both CoolIT's growth and Ecolab's ability to deleverage on schedule.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Technology obsolescence:</strong> Direct-to-chip cooling could be displaced by immersion cooling over a 5–7 year horizon. At 29x EBITDA, there's zero margin of safety if CoolIT's technology loses share.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Technology obsolescence:</strong> Direct-to-chip cooling could be displaced by immersion cooling over a 5 to 7 year horizon. At 29x EBITDA, there's zero margin of safety if CoolIT's technology loses share.</p></div>
       <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration complexity:</strong> CoolIT is a Calgary hardware company. Ecolab is a Minnesota services giant. Blending those cultures without losing the product team is non-trivial.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
       <div class="cb-item"><span class="cb-dot green"></span><p><strong>Unbeatable bundle:</strong> No competitor can sell both the cooling hardware and the chemical treatment to keep it running. This cross-sell flywheel is a genuine moat.</p></div>
       <div class="cb-item"><span class="cb-dot green"></span><p><strong>Secular trend:</strong> The shift from air to liquid cooling is structural, driven by GPU power density. CoolIT has 25 years of depth and relationships with the largest hyperscalers.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Berkshire / Tokio Marine -->
+<div id="article-berkshire-tokio-marine-1-8b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Greg Abel's First Big Move: Berkshire Takes a $1.8B Stake in Tokio Marine</h1>
+    <p class="ah-sub">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact.</p>
+    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$1.8B</div><div class="ms-label">Investment</div></div>
+    <div class="ms-cell"><div class="ms-val">2.49%</div><div class="ms-label">Stake</div></div>
+    <div class="ms-cell"><div class="ms-val">9.9%</div><div class="ms-label">Standstill Cap</div></div>
+    <div class="ms-cell"><div class="ms-val">10 Years</div><div class="ms-label">Partnership</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Berkshire Hathaway Inc. (NYSE: BRK.B) announced that its reinsurance subsidiary National Indemnity Company (NICO) has acquired a 2.49% strategic equity stake in Tokio Marine Holdings Inc., Japan's largest P&C insurer, for roughly $1.8 billion. The transaction includes a 10-year strategic partnership covering reinsurance collaboration and joint M&A activity.</p>
+    <p>The structure is notable: Tokio Marine will use the proceeds to repurchase its own shares, neutralizing dilution. NICO joins Tokio Marine's reinsurance panel in a whole account quota share, a live operational arrangement, not a passive investment.</p>
+    <p>This marks the first major international initiative under Greg Abel, who assumed the CEO role from Warren Buffett on January 1, 2026.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>A different playbook:</strong> Buffett's Japan strategy was passive: buy trading houses, collect dividends, wait. Abel is doing something operationally intensive. A quota share ties NICO's results directly to Tokio Marine's portfolio. The two companies need to actually work together on risk appetite and pricing discipline. This is an operational thesis, not a financial one.</p>
+    <p><strong>The M&A pipeline:</strong> Tokio Marine targets $10 billion in international acquisitions through 2027. Berkshire has $160B+ in cash. Together they create a credible vehicle for acquiring specialty insurance carriers across ASEAN and North America.</p>
+    <p><strong>For Tokio Marine:</strong> A reinsurance backstop from the most financially secure insurer on the planet, plus the Berkshire name at a moment of international expansion.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Cultural gap:</strong> Berkshire's decentralized, returns-first culture vs. a 147-year-old Japanese institution. A major catastrophe year would stress-test alignment immediately.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Currency exposure:</strong> The $1.8B is yen-denominated. A 10% depreciation costs ~$180 million.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Abel unproven internationally:</strong> Berkshire investors expect Buffett-level discipline. A messy joint acquisition would sharpen scrutiny fast.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cycle timing:</strong> Reinsurance pricing at cycle highs. Entering a quota share now is the insurance equivalent of buying real estate in 2009.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>$10B acquisition pipeline:</strong> Tokio Marine has the mandate and market knowledge; Berkshire has the capital. Multiple motivated sellers globally in specialty insurance.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Baker Hughes / Chart Industries -->
+<div id="article-baker-hughes-acquires-chart-industries-13-6b" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</h1>
+    <p class="ah-sub">The deal for Chart Industries, snatched from a $19B Flowserve merger, declares Baker Hughes wants to be an energy technology company.</p>
+    <div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>5 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$210</div><div class="ms-label">Offer / Share</div></div>
+    <div class="ms-cell"><div class="ms-val">22%</div><div class="ms-label">Premium</div></div>
+    <div class="ms-cell"><div class="ms-val">$13.6B</div><div class="ms-label">Enterprise Value</div></div>
+    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
+    <div class="ms-cell"><div class="ms-val">Mid-2026</div><div class="ms-label">Expected Close</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>Baker Hughes Company (NASDAQ: BKR) agreed to acquire Chart Industries (NYSE: GTLS) for $210 per share in cash, a $13.6 billion enterprise value at a 22% premium. Financing comes via bridge debt from Goldman Sachs and Morgan Stanley. Pro forma leverage: 2.25x, targeting 1.0 to 1.5x within 24 months. Baker Hughes identified $325 million in annualized cost synergies.</p>
+    <p>Chart Industries manufactures cryogenic equipment, heat exchangers, and industrial gas handling equipment. FY2024 revenue: $4.2 billion, adjusted EBITDA: $1.0 billion. Chart's equipment is deployed in approximately 90% of LNG projects globally.</p>
+    <p>The deal displaced Flowserve's $19 billion all-stock merger of equals. Flowserve collected a $266 million termination fee.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>Identity transformation:</strong> Baker Hughes CEO Lorenzo Simonelli has called the company an "energy technology company" for three years. Chart makes that description accurate. Chart's markets (LNG, hydrogen, carbon capture, data center cooling) are the growth verticals Baker Hughes has been building toward.</p>
+    <p><strong>LNG dominance:</strong> Chart's cryogenic equipment in ~90% of LNG projects is unreplicable. The combined entity can bid on entire project packages rather than individual line items.</p>
+    <p><strong>Data center crossover:</strong> Chart's cooling equipment is being adapted for high-density data centers, the same AI infrastructure trend driving Ecolab's CoolIT deal. Baker Hughes arrives at the same destination from a different direction, at larger scale.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Complex integration:</strong> Two large manufacturers with distinct cultures. The $325M synergy target requires consolidating manufacturing and retaining specialized engineers.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>LNG sensitivity:</strong> Chart's largest segment is LNG. A sustained pricing decline or renewable acceleration pressures the core business.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Leverage risk:</strong> 2.25x at close depends on both companies performing well during integration and divestitures proceeding on schedule.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>LNG moat:</strong> 90% market share in cryogenic equipment built over decades. Installed base creates predictable aftermarket revenue.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Attractive on synergies:</strong> 9x fully synergized EBITDA. Double-digit EPS accretion projected in year one.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Multi-vertical platform:</strong> LNG, hydrogen, carbon capture, and data center cooling are four independent demand drivers. Not a single-sector bet.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
