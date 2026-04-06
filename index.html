@@ -6,337 +6,415 @@
 <title>AcquireWire — M&A Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--surface:#f7f8fa;--surface-2:#eef0f4;--surface-3:#e4e7ec;--border:rgba(0,0,0,.08);--border-light:rgba(0,0,0,.12);--text:#1a1d23;--text-dim:#52575e;--text-muted:#8c919a;--accent:#1a6b4f;--accent-dim:#155a42;--accent-glow:rgba(26,107,79,.06);--blue:#2a6cb7;--purple:#6b4fa0;--orange:#b87a1a;--red:#b84233}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.theme-toggle{width:32px;height:32px;border-radius:6px;border:1px solid var(--border);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .2s;flex-shrink:0;color:var(--text-dim);line-height:1}
-.theme-toggle:hover{border-color:var(--border-light);color:var(--text)}
-body.dark{--bg:#0f1218;--surface:#181d26;--surface-2:#1f2630;--surface-3:#282f3a;--border:rgba(255,255,255,.07);--border-light:rgba(255,255,255,.12);--text:#e2e5ea;--text-dim:#8a909b;--text-muted:#585e6a;--accent:#2d9b74;--accent-dim:#258563;--accent-glow:rgba(45,155,116,.08);--blue:#5a96d4;--purple:#8b6fc0;--orange:#c9922e;--red:#c85444}
-body.dark header{background:rgba(15,18,24,.92)}
-body.dark .fi-tag.deal{background:rgba(45,155,116,.1)}body.dark .fi-tag.analysis{background:rgba(90,150,212,.1)}body.dark .fi-tag.regulation{background:rgba(201,146,46,.1)}body.dark .fi-tag.pe{background:rgba(139,111,192,.1)}body.dark .hero-card{border-color:var(--border-light)}
-header{padding:16px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px)}
-.logo{display:flex;align-items:center;gap:10px;cursor:pointer}.logo-name{font-weight:700;font-size:1.15rem;letter-spacing:-.01em}.logo-name span{color:var(--accent)}
-.header-nav{display:flex;gap:22px;align-items:center}.header-nav a{color:var(--text-dim);text-decoration:none;font-size:.76rem;font-weight:500;transition:color .2s}.header-nav a:hover{color:var(--text)}
-.sub-btn{background:var(--accent);color:var(--bg);border:none;padding:7px 16px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;border-radius:5px;cursor:pointer;transition:all .2s}.sub-btn:hover{background:var(--accent-dim)}
-.container{max-width:720px;margin:0 auto;padding:0 24px}
-.hero-card{margin:28px 0 8px;padding:28px 32px;border:1px solid var(--border);border-radius:10px;background:var(--surface);cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
-.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
-.hero-card:hover{border-color:var(--accent);box-shadow:0 4px 24px var(--accent-glow)}.hero-card:hover .hero-title{color:var(--accent)}
-.hero-label{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.hero-label .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero-title{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.65rem;line-height:1.2;margin-bottom:10px;transition:color .2s}
-.hero-excerpt{font-size:.92rem;color:var(--text-dim);line-height:1.6;margin-bottom:14px}
-.hero-stats{display:flex;gap:20px;flex-wrap:wrap}.hero-stat{display:flex;flex-direction:column}
-.hero-stat-val{font-family:'SF Mono',Consolas,monospace;font-size:.88rem;font-weight:600;color:var(--text)}
-.hero-stat-label{font-size:.54rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
-.section-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);padding:20px 0 4px;border-bottom:1px solid var(--border);margin-bottom:0}
-.feed-item{padding:28px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:all .2s}.feed-item:hover{padding-left:4px}.feed-item:hover .fi-title{color:var(--accent)}
-.fi-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.68rem;color:var(--text-muted)}
-.fi-tag{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;border-radius:3px}
-.fi-tag.deal{background:rgba(26,107,79,.08);color:var(--accent)}.fi-tag.analysis{background:rgba(42,108,183,.08);color:var(--blue)}.fi-tag.regulation{background:rgba(184,122,26,.08);color:var(--orange)}.fi-tag.pe{background:rgba(107,79,160,.08);color:var(--purple)}
-.fi-title{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.35rem;line-height:1.25;margin-bottom:8px;transition:color .2s}
-.fi-excerpt{font-size:.88rem;color:var(--text-dim);line-height:1.6}
-.newsletter{padding:36px 0;display:flex;align-items:center;gap:32px;border-bottom:1px solid var(--border)}
-.nl-body{flex:1}.nl-body h3{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.15rem;margin-bottom:3px}.nl-body p{font-size:.82rem;color:var(--text-dim)}
-.nl-form{display:flex;flex-shrink:0}.nl-form input{width:200px;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:5px 0 0 5px;color:var(--text);font-family:inherit;font-size:.78rem;outline:none}.nl-form input::placeholder{color:var(--text-muted)}.nl-form input:focus{border-color:var(--accent)}.nl-form button{padding:9px 18px;background:var(--accent);color:var(--bg);border:none;border-radius:0 5px 5px 0;font-family:inherit;font-size:.68rem;font-weight:700;cursor:pointer}
-.article-back{font-size:.72rem;color:var(--accent);cursor:pointer;padding:18px 0 0;display:inline-flex;align-items:center;gap:5px;font-weight:600}.article-back:hover{text-decoration:underline}
-.article-header{padding:24px 0 20px;border-bottom:1px solid var(--border)}.article-header .ah-tags{display:flex;gap:8px;margin-bottom:10px}.article-header h1{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:2rem;line-height:1.15;margin-bottom:10px}.article-header .ah-sub{font-size:.92rem;color:var(--text-dim);line-height:1.6;margin-bottom:10px}.article-header .ah-meta{font-size:.68rem;color:var(--text-muted);display:flex;gap:10px}
-.metrics-strip{display:flex;gap:0;margin:20px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}.ms-cell{flex:1;text-align:center;padding:14px 10px;border-right:1px solid var(--border)}.ms-cell:last-child{border-right:none}.ms-val{font-family:'SF Mono',Consolas,monospace;font-size:1.15rem;font-weight:600;color:var(--text)}.ms-label{font-size:.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
-.article-body{padding:24px 0}.article-body h2{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:1.2rem;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}.article-body h2:first-child{margin-top:0}.article-body p{font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:12px}.article-body p strong{color:var(--text)}
-.callout-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin:20px 0}.callout-box .cb-head{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;display:flex;align-items:center;gap:6px}.callout-box .cb-head.risk{color:var(--orange)}.callout-box .cb-head.bull{color:var(--accent)}.callout-box .cb-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}.callout-box .cb-item:last-child{margin-bottom:0}.callout-box .cb-dot{width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0}.callout-box .cb-dot.orange{background:var(--orange)}.callout-box .cb-dot.green{background:var(--accent)}.callout-box .cb-dot.red{background:var(--red)}.callout-box .cb-item p{font-size:.82rem;color:var(--text-dim);line-height:1.55;margin:0}
-footer{border-top:1px solid var(--border);padding:28px 24px;max-width:720px;margin:0 auto;font-size:.68rem;color:var(--text-muted)}footer span span{color:var(--accent);font-weight:700}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.hero-card{animation:fadeUp .4s ease both}.section-label{animation:fadeUp .4s ease .05s both}
-.feed-item{animation:fadeUp .4s ease both}
-.feed-item:nth-child(1){animation-delay:.08s}.feed-item:nth-child(2){animation-delay:.11s}.feed-item:nth-child(3){animation-delay:.14s}.feed-item:nth-child(4){animation-delay:.17s}.feed-item:nth-child(5){animation-delay:.20s}.feed-item:nth-child(6){animation-delay:.23s}.feed-item:nth-child(7){animation-delay:.26s}.feed-item:nth-child(8){animation-delay:.29s}.feed-item:nth-child(9){animation-delay:.32s}
-.newsletter{animation:fadeUp .4s ease .35s both}.article-header{animation:fadeUp .4s ease both}.article-body{animation:fadeUp .4s ease .08s both}
-@media(max-width:600px){header{padding:14px 16px}.hero-card{padding:20px 18px}.hero-title{font-size:1.3rem}.hero-stats{gap:14px}.newsletter{flex-direction:column;gap:16px}.nl-form{width:100%}.nl-form input{flex:1}.metrics-strip{flex-wrap:wrap}.ms-cell{flex:1 1 33%}}
+:root {
+  --bg: #ffffff;
+  --surface: #f7f8fa;
+  --surface-2: #eef0f4;
+  --surface-3: #e4e7ec;
+  --border: rgba(0,0,0,0.08);
+  --border-light: rgba(0,0,0,0.12);
+  --text: #1a1d23;
+  --text-dim: #52575e;
+  --text-muted: #8c919a;
+  --accent: #1a6b4f;
+  --accent-dim: #155a42;
+  --accent-glow: rgba(26,107,79,0.06);
+  --blue: #2a6cb7;
+  --purple: #6b4fa0;
+  --orange: #b87a1a;
+  --red: #b84233;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Source Sans 3','Helvetica Neue',Arial,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+.theme-toggle {
+  width:32px; height:32px; border-radius:6px; border:1px solid var(--border);
+  background:var(--surface); cursor:pointer; display:flex; align-items:center;
+  justify-content:center; font-size:0.85rem; transition:all .2s; flex-shrink:0;
+  color:var(--text-dim); line-height:1;
+}
+.theme-toggle:hover { border-color:var(--border-light); color:var(--text); }
+body.dark {
+  --bg: #0f1218; --surface: #181d26; --surface-2: #1f2630; --surface-3: #282f3a;
+  --border: rgba(255,255,255,0.07); --border-light: rgba(255,255,255,0.12);
+  --text: #e2e5ea; --text-dim: #8a909b; --text-muted: #585e6a;
+  --accent: #2d9b74; --accent-dim: #258563; --accent-glow: rgba(45,155,116,0.08);
+  --blue: #5a96d4; --purple: #8b6fc0; --orange: #c9922e; --red: #c85444;
+}
+body.dark header { background:rgba(15,18,24,0.92); }
+body.dark .fi-tag.deal { background:rgba(45,155,116,0.1); }
+body.dark .fi-tag.analysis { background:rgba(90,150,212,0.1); }
+body.dark .fi-tag.regulation { background:rgba(201,146,46,0.1); }
+body.dark .fi-tag.pe { background:rgba(139,111,192,0.1); }
+header {
+  padding:16px 40px; display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,0.92); backdrop-filter:blur(16px);
+}
+.logo { display:flex; align-items:center; gap:10px; cursor:pointer; }
+.logo-name { font-weight:700; font-size:1.15rem; letter-spacing:-0.01em; }
+.logo-name span { color:var(--accent); }
+.header-nav { display:flex; gap:22px; align-items:center; }
+.header-nav a { color:var(--text-dim); text-decoration:none; font-size:0.76rem; font-weight:500; transition:color .2s; }
+.header-nav a:hover { color:var(--text); }
+.sub-btn {
+  background:var(--accent); color:var(--bg); border:none; padding:7px 16px;
+  font-family:'Source Sans 3',sans-serif; font-size:0.7rem; font-weight:700;
+  border-radius:5px; cursor:pointer; transition:all .2s;
+}
+.sub-btn:hover { background:var(--accent-dim); }
+.container { max-width:720px; margin:0 auto; padding:0 24px; }
+.feed-item { padding:28px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:all .2s; }
+.feed-item:hover { padding-left:4px; }
+.feed-item:hover .fi-title { color:var(--accent); }
+.fi-top { display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:0.68rem; color:var(--text-muted); }
+.fi-tag { font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:2px 8px; border-radius:3px; }
+.fi-tag.deal { background:rgba(26,107,79,0.08); color:var(--accent); }
+.fi-tag.analysis { background:rgba(42,108,183,0.08); color:var(--blue); }
+.fi-tag.regulation { background:rgba(184,122,26,0.08); color:var(--orange); }
+.fi-tag.pe { background:rgba(107,79,160,0.08); color:var(--purple); }
+.fi-title { font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1.35rem; line-height:1.25; margin-bottom:8px; transition:color .2s; }
+.fi-excerpt { font-size:0.88rem; color:var(--text-dim); line-height:1.6; }
+.newsletter { padding:36px 0; display:flex; align-items:center; gap:32px; border-bottom:1px solid var(--border); }
+.nl-body { flex:1; }
+.nl-body h3 { font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1.15rem; margin-bottom:3px; }
+.nl-body p { font-size:0.82rem; color:var(--text-dim); }
+.nl-form { display:flex; flex-shrink:0; }
+.nl-form input { width:200px; padding:9px 12px; background:var(--surface); border:1px solid var(--border); border-radius:5px 0 0 5px; color:var(--text); font-family:inherit; font-size:0.78rem; outline:none; }
+.nl-form input::placeholder { color:var(--text-muted); }
+.nl-form input:focus { border-color:var(--accent); }
+.nl-form button { padding:9px 18px; background:var(--accent); color:var(--bg); border:none; border-radius:0 5px 5px 0; font-family:inherit; font-size:0.68rem; font-weight:700; cursor:pointer; }
+.article-back { font-size:0.72rem; color:var(--accent); cursor:pointer; padding:18px 0 0; display:inline-flex; align-items:center; gap:5px; font-weight:600; }
+.article-back:hover { text-decoration:underline; }
+.article-header { padding:24px 0 20px; border-bottom:1px solid var(--border); }
+.article-header .ah-tags { display:flex; gap:8px; margin-bottom:10px; }
+.article-header h1 { font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:2rem; line-height:1.15; margin-bottom:10px; }
+.article-header .ah-sub { font-size:0.92rem; color:var(--text-dim); line-height:1.6; margin-bottom:10px; }
+.article-header .ah-meta { font-size:0.68rem; color:var(--text-muted); display:flex; gap:10px; }
+.metrics-strip { display:flex; gap:0; margin:20px 0; background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+.ms-cell { flex:1; text-align:center; padding:14px 10px; border-right:1px solid var(--border); }
+.ms-cell:last-child { border-right:none; }
+.ms-val { font-family:'SF Mono',Consolas,monospace; font-size:1.15rem; font-weight:600; color:var(--text); }
+.ms-label { font-size:0.58rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+.article-body { padding:24px 0; }
+.article-body h2 { font-family:'Source Serif 4',Georgia,serif; font-weight:700; font-size:1.2rem; margin:28px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+.article-body h2:first-child { margin-top:0; }
+.article-body p { font-size:0.9rem; color:var(--text-dim); line-height:1.7; margin-bottom:12px; }
+.article-body p strong { color:var(--text); }
+.callout-box { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin:20px 0; }
+.callout-box .cb-head { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:10px; display:flex; align-items:center; gap:6px; }
+.callout-box .cb-head.risk { color:var(--orange); }
+.callout-box .cb-head.bull { color:var(--accent); }
+.callout-box .cb-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+.callout-box .cb-item:last-child { margin-bottom:0; }
+.callout-box .cb-dot { width:5px; height:5px; border-radius:50%; margin-top:7px; flex-shrink:0; }
+.callout-box .cb-dot.orange { background:var(--orange); }
+.callout-box .cb-dot.green { background:var(--accent); }
+.callout-box .cb-dot.red { background:var(--red); }
+.callout-box .cb-item p { font-size:0.82rem; color:var(--text-dim); line-height:1.55; margin:0; }
+footer { border-top:1px solid var(--border); padding:28px 24px; max-width:720px; margin:0 auto; font-size:0.68rem; color:var(--text-muted); }
+footer span span { color:var(--accent); font-weight:700; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.feed-item:nth-child(1) { animation:fadeUp .4s ease both; }
+.feed-item:nth-child(2) { animation:fadeUp .4s ease .05s both; }
+.feed-item:nth-child(3) { animation:fadeUp .4s ease .1s both; }
+.feed-item:nth-child(4) { animation:fadeUp .4s ease .15s both; }
+.feed-item:nth-child(5) { animation:fadeUp .4s ease .2s both; }
+.newsletter { animation:fadeUp .4s ease .25s both; }
+.article-header { animation:fadeUp .4s ease both; }
+.article-body { animation:fadeUp .4s ease .08s both; }
 </style>
 </head>
 <body>
 <header>
-  <div class="logo" onclick="showHome()"><div class="logo-name">Acquire<span>Wire</span></div></div>
+  <div class="logo" onclick="showHome()">
+    <div class="logo-name">Acquire<span>Wire</span></div>
+  </div>
   <div class="header-nav">
-    <a href="#" onclick="showHome()">Feed</a><a href="#">Newsletter</a><a href="#">About</a>
+    <a href="#" onclick="showHome()">Feed</a>
+    <a href="#">Newsletter</a>
+    <a href="#">About</a>
     <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" id="themeBtn">☽</button>
     <button class="sub-btn">Subscribe</button>
   </div>
 </header>
 
+<!-- ═══════ HOME VIEW — FEED ═══════ -->
 <div id="home-view" class="container">
 
-  <div class="hero-card" onclick="showArticle('kdp-jde-peets-18b-coffee')">
-    <div class="hero-label"><span class="hero-dot"></span>Lead Story</div>
-    <div class="hero-title">Keurig Dr Pepper Closes Its $18B Bet on Coffee, Then Plans to Break Itself in Two</div>
-    <div class="hero-excerpt">The tender offer for JDE Peet's was declared unconditional yesterday with 96.2% of shares tendered. Settlement on April 1 creates the world's largest pure-play coffee company at $16 billion in revenue. Then KDP splits into two public companies.</div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-val">$18.4B</div><div class="hero-stat-label">Deal Value</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">33%</div><div class="hero-stat-label">Premium (90d VWAP)</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">96.2%</div><div class="hero-stat-label">Shares Tendered</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">$16B</div><div class="hero-stat-label">Coffee Co. Revenue</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">Apr 1</div><div class="hero-stat-label">Settlement</div></div>
-    </div>
+  <div class="feed-item" onclick="showArticle('neurocrine-soleno-2-9b-pharma')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Apr 6, 2026 · 4 min</span></div>
+    <div class="fi-title">Neurocrine Pays $2.9B for a Drug That Sells Itself at $466K a Year</div>
+    <div class="fi-excerpt">The neuroscience company is buying Soleno Therapeutics at a 34% premium to lock up Vykat XR, the only approved treatment for the insatiable hunger of Prader-Willi syndrome, with just 12.5% of patients reached so far.</div>
   </div>
 
-  <div class="section-label">Latest Deals</div>
-
-  <div class="feed-item" onclick="showArticle('novartis-excellergy-2b-allergy')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 27, 2026 · 4 min</span></div>
-    <div class="fi-title">Novartis Spends $5B in One Week Because Its Blockbusters Are Dying</div>
-    <div class="fi-excerpt">The $2B Excellergy acquisition, coming seven days after a $3B oncology deal, is a pharma giant racing the patent cliff at full sprint.</div>
+  <div class="feed-item" onclick="showArticle('goldman-innovator-2b-etf')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Apr 2, 2026 · 4 min</span></div>
+    <div class="fi-title">Goldman Sachs Pays $2B for the Firm That Invented the Buffer ETF</div>
+    <div class="fi-excerpt">The acquisition of Innovator Capital Management vaults Goldman to 240 ETFs and $90B in ETF assets, buying its way into the fastest-growing corner of asset management at 7.1% of AUM.</div>
   </div>
 
-  <div class="feed-item" onclick="showArticle('henkel-olaplex-1-4b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 26, 2026 · 4 min</span></div>
-    <div class="fi-title">Henkel Pays $1.4B for Olaplex, the IPO That Lost 95% of Its Value</div>
-    <div class="fi-excerpt">The German consumer giant buys the fallen hair care darling at a 55% premium to its $1.33 close, ending a disastrous four-year run as a public company.</div>
+  <div class="feed-item" onclick="showArticle('mccormick-unilever-foods-44-8b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 31, 2026 · 5 min</span></div>
+    <div class="fi-title">McCormick and Unilever Are Merging Their Way to a $65B Flavor Empire</div>
+    <div class="fi-excerpt">The second-largest food deal in history pairs Hellmann's and Knorr with McCormick's spice rack in a $44.8B Reverse Morris Trust. Investors punished both stocks anyway.</div>
   </div>
 
-  <div class="feed-item" onclick="showArticle('merck-terns-6-7b-leukemia')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 25, 2026 · 4 min</span></div>
-    <div class="fi-title">Merck Pays $6.7B for a Leukemia Drug That Barely Existed Two Years Ago</div>
-    <div class="fi-excerpt">Terns Pharmaceuticals' stock rose 6x in six months on takeover speculation. Merck made the speculators right, paying $53/share to secure TERN-701 before Keytruda's patent cliff hits.</div>
+  <div class="feed-item" onclick="showArticle('lilly-centessa-7-8b-pharma')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 30, 2026 · 4 min</span></div>
+    <div class="fi-title">Eli Lilly's Third Acquisition of 2026 Is a $7.8B Bet on Keeping People Awake</div>
+    <div class="fi-excerpt">Lilly is buying Centessa Pharmaceuticals and its orexin agonist pipeline for $6.3B upfront plus $1.5B in CVRs, entering the sleep disorder market with a potential best-in-class drug still in Phase II.</div>
   </div>
 
-  <div class="feed-item" onclick="showArticle('ecolab-acquires-coolit-4-75b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
-    <div class="fi-title">Ecolab Pays $4.75B for AI Cooling Hardware It Needed Yesterday</div>
-    <div class="fi-excerpt">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA, turning itself into the data center's plumber.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('berkshire-tokio-marine-1-8b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 4 min</span></div>
-    <div class="fi-title">Greg Abel's First Big Move: Berkshire Takes a $1.8B Stake in Tokio Marine</div>
-    <div class="fi-excerpt">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact.</div>
+  <div class="feed-item" onclick="showArticle('sysco-restaurant-depot-29-1b')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 30, 2026 · 5 min</span></div>
+    <div class="fi-title">Sysco Is Paying $29B for Restaurant Depot and Wall Street Hates It</div>
+    <div class="fi-excerpt">The largest U.S. food distributor is swallowing the largest cash-and-carry wholesaler at 14.6x operating income. Sysco stock fell 15% intraday, its worst session since March 2020.</div>
   </div>
 
   <div class="newsletter">
-    <div class="nl-body"><h3>The Daily Wire</h3><p>One email, every weekday morning. The day's most important deal, explained.</p></div>
-    <div class="nl-form"><input type="email" placeholder="you@email.com"><button>Subscribe</button></div>
+    <div class="nl-body">
+      <h3>The Daily Wire</h3>
+      <p>One email, every weekday morning. The day's most important deal, explained.</p>
+    </div>
+    <div class="nl-form">
+      <input type="email" placeholder="you@email.com">
+      <button>Subscribe</button>
+    </div>
   </div>
-
-  <div class="feed-item" onclick="showArticle('baker-hughes-acquires-chart-industries-13-6b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 23, 2026 · 5 min</span></div>
-    <div class="fi-title">Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</div>
-    <div class="fi-excerpt">The deal for Chart Industries, snatched from a $19B Flowserve merger, declares Baker Hughes wants to be an energy technology company.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('novartis-pikavation-3b-breast-cancer')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Mar 20, 2026 · 4 min</span></div>
-    <div class="fi-title">Novartis Pays $3B to Replace Its Own Breast Cancer Drug</div>
-    <div class="fi-excerpt">The Pikavation acquisition brings a next-generation PI3K inhibitor designed to outperform Novartis's own Piqray, which is losing ground to Roche's Itovebi.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('danaher-masimo-9-9b-medtech')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Feb 17, 2026 · 4 min</span></div>
-    <div class="fi-title">Danaher Pays $9.9B for Masimo After Activists Cleaned House</div>
-    <div class="fi-excerpt">The medtech acquirer gets the pulse oximetry leader at a 38% premium, one year after a proxy fight ousted founder Joe Kiani and unwound his disastrous consumer electronics bet.</div>
-  </div>
-
-  <div class="feed-item" onclick="showArticle('texas-instruments-silicon-labs-7-5b')">
-    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Feb 4, 2026 · 4 min</span></div>
-    <div class="fi-title">Texas Instruments Writes Its Biggest Check in 15 Years: $7.5B for Silicon Labs</div>
-    <div class="fi-excerpt">TI pays a 69% premium to own the wireless IoT chip leader, then plans to pull all production into its own fabs. The $450M synergy target is almost entirely manufacturing.</div>
-  </div>
-
 </div>
 
-<!-- ═══════ ARTICLE: KDP / JDE Peet's ═══════ -->
-<div id="article-kdp-jde-peets-18b-coffee" class="article-page container" style="display:none;">
+<!-- ═══════ ARTICLE VIEWS ═══════ -->
+
+<!-- ARTICLE: Neurocrine / Soleno -->
+<div id="article-neurocrine-soleno-2-9b-pharma" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
     <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
-    <h1>Keurig Dr Pepper Closes Its $18B Bet on Coffee, Then Plans to Break Itself in Two</h1>
-    <p class="ah-sub">The tender offer for JDE Peet's was declared unconditional with 96.2% of shares tendered. Settlement on April 1 creates the world's largest pure-play coffee company. Then KDP splits into two public companies.</p>
-    <div class="ah-meta"><span>Mar 28, 2026</span><span>·</span><span>5 min read</span></div>
+    <h1>Neurocrine Pays $2.9B for a Drug That Sells Itself at $466K a Year</h1>
+    <p class="ah-sub">The neuroscience company is buying Soleno Therapeutics at a 34% premium to lock up Vykat XR, the only approved treatment for the insatiable hunger of Prader-Willi syndrome, with just 12.5% of patients reached so far.</p>
+    <div class="ah-meta"><span>Apr 6, 2026</span><span>·</span><span>4 min read</span></div>
   </div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$18.4B</div><div class="ms-label">Deal Value</div></div><div class="ms-cell"><div class="ms-val">33%</div><div class="ms-label">Premium (90d VWAP)</div></div><div class="ms-cell"><div class="ms-val">96.2%</div><div class="ms-label">Tendered</div></div><div class="ms-cell"><div class="ms-val">$400M</div><div class="ms-label">Synergies Target</div></div><div class="ms-cell"><div class="ms-val">~10%</div><div class="ms-label">Yr 1 EPS Accretion</div></div></div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$2.9B</div><div class="ms-label">Equity Value</div></div>
+    <div class="ms-cell"><div class="ms-val">$53/sh</div><div class="ms-label">Offer Price</div></div>
+    <div class="ms-cell"><div class="ms-val">34%</div><div class="ms-label">Premium</div></div>
+    <div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div>
+    <div class="ms-cell"><div class="ms-val">~90 Days</div><div class="ms-label">Expected Close</div></div>
+  </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Keurig Dr Pepper Inc. (NASDAQ: KDP) announced on March 27 that its tender offer for all outstanding shares of JDE Peet's N.V. (EURONEXT: JDEP) has been declared unconditional. During the offer period, 96.22% of JDE Peet's shares were tendered, representing approximately EUR 14.9 billion in aggregate value. Settlement is scheduled for April 1, 2026. A post-closing acceptance period runs through April 13.</p>
-    <p>KDP is paying EUR 31.85 ($37.26) per share in cash, a 33% premium to JDE Peet's 90-day volume-weighted average price. The total deal is valued at approximately $18.4 billion, financed through roughly $9 billion in long-term debt, $8.5 billion in equity capital, and $5 billion in assumed JDE Peet's bonds.</p>
-    <p>The plan after closing is extraordinary: KDP intends to split into two independent, publicly traded companies. "Global Coffee Co." will combine KDP's Keurig and Green Mountain brands with JDE Peet's portfolio (L'OR, Jacobs, Douwe Egberts, Peet's Coffee), creating a $16 billion annual revenue coffee business in 100+ countries. "Beverage Co." will house Dr Pepper, 7Up, Canada Dry, Snapple, and Ghost, with over $11 billion in annual sales. CEO Tim Cofer will lead Beverage Co. from Frisco, Texas. CFO Sudhanshu Priyadarshi will run Global Coffee Co. from Burlington, Mass. and Amsterdam.</p>
+    <p>Neurocrine Biosciences (NASDAQ: NBIX) announced on April 6 that it will acquire Soleno Therapeutics (NASDAQ: SLNO) for $53 per share in an all-cash tender offer, valuing Soleno at approximately $2.9 billion. The offer represents a 34% premium to Soleno's closing price on April 2 and a 51% premium to its 30-day volume-weighted average price. Soleno shares surged roughly 33% in premarket trading.</p>
+    <p>Neurocrine, a San Diego-based neuroscience company with $2.86 billion in 2025 revenue (driven almost entirely by its tardive dyskinesia drug Ingrezza), will fund the deal with its $2.54 billion cash pile supplemented by modest pre-payable debt. The transaction is expected to close within 90 days, subject to a majority tender and HSR clearance. Soleno's board unanimously recommends the deal. The merger agreement includes a $95.25 million termination fee payable by Soleno and a $141.5 million reverse termination fee payable by Neurocrine.</p>
     <h2>Why It Matters</h2>
-    <p><strong>Buy to break:</strong> This is one of the largest "acquire to separate" transactions in consumer goods history. KDP is spending $18 billion not to become a bigger conglomerate, but to build a coffee company large enough to justify standalone scale, then immediately spin it off. The logic: two focused businesses will each command higher valuations than one bloated one.</p>
-    <p><strong>The Nestle problem:</strong> Global Coffee Co. would be the world's largest pure-play coffee company, directly challenging Nestle's Nespresso and Nescafe franchises with a multi-format portfolio spanning single-serve pods, whole bean, instant, and out-of-home. Nestle had the global coffee market largely to itself. It doesn't anymore.</p>
-    <p><strong>JAB's endgame:</strong> JAB Holding Company, the investment vehicle of the Reimann family, engineered JDE Peet's through years of coffee acquisitions (Jacobs Douwe Egberts, Peet's Coffee, Stumptown). The KDP deal lets JAB monetize at a premium while their portfolio gets absorbed into a larger platform with better distribution.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Execution on separation:</strong> Running a combined entity while simultaneously planning a split into two public companies is operationally brutal. Any delay or misstep in the separation (targeted by late 2026) would drag on both businesses.</p></div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage load:</strong> $9 billion in new debt plus $5 billion in assumed bonds. KDP's struggling U.S. coffee business (declining K-Cup volumes) now carries the financing burden for a premium-priced acquisition.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Brand portfolio overlap:</strong> Integrating dozens of regional coffee brands across 100 countries while maintaining quality and distribution is a multi-year exercise with real attrition risk.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>$400M synergy target:</strong> Cost synergies over three years from overlapping supply chains, procurement, and corporate overhead. Management projects roughly 10% EPS accretion in year one.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Geographic unlock:</strong> KDP is dominant in North America but has negligible international coffee presence. JDE Peet's is strong in Europe, Latin America, and Asia-Pacific. The combined footprint fills each other's gaps almost perfectly.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Beverage Co. gets cleaner:</strong> Separating coffee lets the soda and energy business (Dr Pepper, Ghost, Canada Dry) tell a simpler growth story to investors, likely commanding a higher standalone multiple.</p></div></div>
+    <p><strong>The commercial proof point:</strong> Soleno's Vykat XR (diazoxide choline) was approved by the FDA in March 2025 as the first and only treatment for hyperphagia in Prader-Willi syndrome. In its first nine months on the market, the drug generated $190.4 million in net revenue, priced at $466,000 per patient per year. By year-end 2025, 859 patients were actively on drug, representing just 12.5% of the estimated U.S. addressable market. Neurocrine is buying a proven commercial asset with enormous room to run.</p>
+    <p><strong>The rare disease playbook:</strong> Neurocrine already has a best-in-class rare disease sales force from its Ingrezza franchise. Layering Vykat XR onto that infrastructure is the kind of deal that pays for itself through distribution leverage alone, without needing to build a new commercial organization from scratch. The overlap in prescriber relationships (neurologists, endocrinologists) makes the fit tighter than a typical bolt-on.</p>
+    <p><strong>The "surprising" price:</strong> Stifel analysts flagged the deal as unexpectedly cheap for Soleno shareholders, given the drug's trajectory. At roughly 15x trailing revenue for a product with 87.5% of its market still untapped, Soleno's board may face questions about whether it left money on the table. But for Neurocrine, this is a rare chance to buy a first-in-class orphan drug before peak penetration.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Payer resistance at scale:</strong> Vykat XR costs $466K/year. Coverage currently reaches 60% of U.S. lives, but pushing deeper into Medicaid and smaller plans will test pricing power.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Single-product dependency:</strong> Soleno has no meaningful pipeline beyond Vykat XR. If the drug hits a safety signal or competitive threat, there is no fallback.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Small patient population:</strong> PWS affects roughly 1 in 15,000 births. Even at full penetration, this is a niche market. The $2.9B price requires sustained pricing and adherence.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>87.5% of patients untouched:</strong> Only 12.5% of the U.S. addressable market has been reached in nine months. The penetration curve is still steep, with 630 prescribers already active and growing.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Orphan drug economics:</strong> First-in-class, no competition, 7 years of market exclusivity remaining. Neurocrine's existing rare disease infrastructure can accelerate growth without proportional cost increases.</p></div>
+    </div>
   </div>
   <div style="height:48px;"></div>
 </div>
 
-<!-- ═══════ ARTICLE: Novartis / Excellergy ═══════ -->
-<div id="article-novartis-excellergy-2b-allergy" class="article-page container" style="display:none;">
+<!-- ARTICLE: Goldman Sachs / Innovator Capital -->
+<div id="article-goldman-innovator-2b-etf" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Novartis Spends $5B in One Week Because Its Blockbusters Are Dying</h1><p class="ah-sub">The $2B Excellergy acquisition, coming seven days after a $3B oncology deal, is a pharma giant racing the patent cliff at full sprint.</p><div class="ah-meta"><span>Mar 27, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$2B</div><div class="ms-label">Total Value</div></div><div class="ms-cell"><div class="ms-val">Phase 1</div><div class="ms-label">Lead Asset Stage</div></div><div class="ms-cell"><div class="ms-val">$5B+</div><div class="ms-label">Deals This Week</div></div><div class="ms-cell"><div class="ms-val">H2 2026</div><div class="ms-label">Expected Close</div></div></div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Goldman Sachs Pays $2B for the Firm That Invented the Buffer ETF</h1>
+    <p class="ah-sub">The acquisition of Innovator Capital Management vaults Goldman to 240 ETFs and $90B in ETF assets, buying its way into the fastest-growing corner of asset management at 7.1% of AUM.</p>
+    <div class="ah-meta"><span>Apr 2, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$2.0B</div><div class="ms-label">Deal Value</div></div>
+    <div class="ms-cell"><div class="ms-val">$31B</div><div class="ms-label">AUM Acquired</div></div>
+    <div class="ms-cell"><div class="ms-val">171</div><div class="ms-label">ETFs Added</div></div>
+    <div class="ms-cell"><div class="ms-val">$90B</div><div class="ms-label">Pro Forma ETF AUS</div></div>
+    <div class="ms-cell"><div class="ms-val">7.1%</div><div class="ms-label">Price / AUM</div></div>
+  </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Novartis AG (SIX: NOVN) announced on March 27 that it has agreed to acquire Excellergy Inc., a private Palo Alto-based biotech developing next-generation anti-IgE therapies for allergic diseases, for up to $2 billion in upfront and milestone payments. The transaction is expected to close in the second half of 2026.</p>
-    <p>The acquisition brings Exl-111, a half-life extended, high-affinity anti-IgE antibody currently in Phase 1 clinical trials. Unlike existing anti-IgE therapies such as Novartis's own Xolair (which blocks free IgE before it binds), Exl-111 is designed to target IgE molecules already bound to immune cells, potentially enabling faster and deeper suppression of allergic responses.</p>
-    <p>This is Novartis's second multi-billion-dollar acquisition in seven days. On March 20, the company agreed to acquire Pikavation Therapeutics from Synnovation for up to $3 billion to secure a next-generation breast cancer drug. Combined with the $12 billion Avidity Biosciences deal (closed February 2026), the $1.5 billion SciNeuro Alzheimer's deal (January), and the $1.7 billion Unnatural Products cardiology deal (February), Novartis has committed over $20 billion in acquisitions since the start of the year.</p>
+    <p>Goldman Sachs (NYSE: GS) closed its acquisition of Innovator Capital Management on April 2, 2026, in a transaction valued at approximately $2 billion in cash and equity, subject to performance targets. The deal was first announced in December 2025. Innovator, based in Wheaton, Illinois, is the pioneer of defined-outcome ETFs, a category that uses options-based strategies to offer investors downside protection in exchange for capped upside.</p>
+    <p>The acquisition adds Innovator's 171 ETFs and roughly $31 billion in assets under supervision (AUS) to Goldman Sachs Asset Management, which now manages approximately 240 ETFs globally with $90 billion in total ETF AUS. That positions Goldman as a top-ten global active ETF provider. Innovator's 70-plus employees have joined Goldman, with co-founders Bruce Bond and John Southard becoming Advisory Directors and CIO Graham Day and distribution head Trevor Terrell joining as Partners.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The patent cliff is real:</strong> CEO Vas Narasimhan has acknowledged that Novartis is absorbing $4 billion in patent expirations this year alone. Xolair's U.S. formulation patent expired in November 2025, and global sales are forecast to decline from roughly $3 billion at peak to $1 billion by 2031. Excellergy's Exl-111 is the replacement pipeline.</p>
-    <p><strong>The allergy franchise rebuild:</strong> Xolair was co-developed with Roche's Genentech and became the first FDA-approved treatment for food allergies in February 2024. Exl-111's trifunctional mechanism of action (targeting IgE already bound to effector cells) represents a potential generational leap. If confirmed clinically, the drug could address food allergy, chronic urticaria, allergic asthma, and pediatric populations.</p>
-    <p><strong>Acquisition velocity as strategy:</strong> Novartis is not doing one transformative deal. It is doing six or seven mid-sized deals simultaneously across immunology, oncology, neuroscience, and cardiology. The portfolio approach spreads clinical risk but requires flawless integration across every therapeutic area.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase 1 risk:</strong> $2 billion for a Phase 1 asset is aggressive. Exl-111 has preclinical data and early pharmacokinetic results, but no efficacy readout yet. The drug is years from market.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Competitive field:</strong> GSK recently acquired RAPT Therapeutics for $2.2 billion with a food allergy treatment further along in development.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration bandwidth:</strong> Novartis is now integrating Avidity, Pikavation, SciNeuro, Unnatural Products, and Excellergy simultaneously.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Known biology:</strong> Novartis has 20+ years of IgE expertise from Xolair. This is not a new therapeutic area; it is an upgrade to an existing franchise with established commercial infrastructure.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Massive TAM:</strong> Food allergy alone affects 17 million Americans. Chronic urticaria, allergic asthma, and other IgE-mediated conditions expand the addressable population significantly.</p></div></div>
-  </div><div style="height:48px;"></div>
+    <p><strong>Buy vs. build in asset management:</strong> Goldman tried for years to grow its ETF business organically. It worked, but not fast enough. Active ETFs pulled nearly a third of all U.S. ETF inflows in 2025, and defined-outcome strategies were among the hottest subsegments. Rather than spend five years building a competitive options-overlay platform, Goldman wrote a check. The $2 billion price tag, roughly 7.1% of AUM, is steep by asset management standards but buys immediate scale in a category with structural tailwinds.</p>
+    <p><strong>The distribution arbitrage:</strong> Innovator built great products but distributed them through a 70-person team. Goldman distributes through one of the largest wealth management and institutional sales networks on the planet. The thesis is straightforward: put Innovator's defined-outcome ETFs in front of Goldman's client base and watch AUM compound. If Goldman can grow Innovator's assets to $50B within two years, the acquisition pays for itself on fee revenue alone.</p>
+    <p><strong>The active ETF land grab:</strong> Global active ETF assets approached $1.8 trillion by year-end 2025, and over 85% of newly launched ETFs were actively managed. Goldman, BlackRock, JPMorgan, and Capital Group are all racing to build dominant active ETF platforms. This acquisition is Goldman's clearest declaration that it intends to win that race.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration complexity:</strong> Migrating 171 ETFs onto Goldman's fund accounting, NAV calculation, and compliance infrastructure without disrupting shareholders is operationally intensive. The next 90 days are critical.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Price premium:</strong> At 7.1% of AUM, Goldman paid well above typical asset management acquisition multiples. If active ETF flows slow or buffer strategies fall out of favor, the payback period extends uncomfortably.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Distribution leverage:</strong> Goldman's global sales network selling Innovator's proven products is the textbook case for 1+1=3 in asset management M&A.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Structural demand:</strong> Defined-outcome ETFs serve the massive retirement and wealth preservation market. As rate volatility persists, demand for downside-buffered products should keep growing.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
 </div>
 
-<!-- ═══════ ARTICLE: Henkel / Olaplex ═══════ -->
-<div id="article-henkel-olaplex-1-4b" class="article-page container" style="display:none;">
+<!-- ARTICLE: McCormick / Unilever Foods -->
+<div id="article-mccormick-unilever-foods-44-8b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Henkel Pays $1.4B for Olaplex, the IPO That Lost 95% of Its Value</h1><p class="ah-sub">The German consumer giant buys the fallen hair care darling at a 55% premium to its $1.33 close, ending a disastrous four-year run as a public company.</p><div class="ah-meta"><span>Mar 26, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$1.4B</div><div class="ms-label">Equity Value</div></div><div class="ms-cell"><div class="ms-val">$2.06</div><div class="ms-label">Per Share</div></div><div class="ms-cell"><div class="ms-val">55%</div><div class="ms-label">Premium</div></div><div class="ms-cell"><div class="ms-val">~3.3x</div><div class="ms-label">EV / Revenue</div></div><div class="ms-cell"><div class="ms-val">H2 2026</div><div class="ms-label">Expected Close</div></div></div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>McCormick and Unilever Are Merging Their Way to a $65B Flavor Empire</h1>
+    <p class="ah-sub">The second-largest food deal in history pairs Hellmann's and Knorr with McCormick's spice rack in a $44.8B Reverse Morris Trust. Investors punished both stocks anyway.</p>
+    <div class="ah-meta"><span>Mar 31, 2026</span><span>·</span><span>5 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$44.8B</div><div class="ms-label">Foods Valuation</div></div>
+    <div class="ms-cell"><div class="ms-val">13.8x</div><div class="ms-label">EV / EBITDA</div></div>
+    <div class="ms-cell"><div class="ms-val">$20B</div><div class="ms-label">Combined Revenue</div></div>
+    <div class="ms-cell"><div class="ms-val">$600M</div><div class="ms-label">Cost Synergies</div></div>
+    <div class="ms-cell"><div class="ms-val">Mid-2027</div><div class="ms-label">Expected Close</div></div>
+  </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Henkel AG (XETRA: HEN3), the German consumer goods conglomerate behind Persil, Schwarzkopf, and Dial, announced on March 26 that it has agreed to acquire Olaplex Holdings Inc. (NASDAQ: OLPX) for $2.06 per share in an all-cash transaction, valuing the company at approximately $1.4 billion. The deal was unanimously approved by Olaplex's board, and controlling shareholder Advent International has committed to vote in favor.</p>
-    <p>The offer price represents a 55% premium to Olaplex's March 25 closing price of $1.33 per share. Olaplex generated approximately $423 million in FY2025 revenue with adjusted EBITDA of roughly $94 million (22% margin), down substantially from its peak profitability.</p>
-    <p>For context: Olaplex went public in September 2021 at $21 per share, reaching a market capitalization above $13 billion. It is being acquired for roughly one-tenth of that valuation.</p>
+    <p>Unilever (LON: ULVR) and McCormick & Company (NYSE: MKC) announced on March 31 that they have agreed to combine Unilever's global Foods business (excluding India) with McCormick in a Reverse Morris Trust transaction. The deal values Unilever Foods at $44.8 billion, corresponding to 13.8x 2025 EBITDA. The combined entity will be worth approximately $65 billion with $20 billion in annual revenue.</p>
+    <p>Under the terms, Unilever and its shareholders will receive 65% of the combined company's fully diluted equity (valued at $29.1 billion) plus $15.7 billion in cash. McCormick shareholders will own approximately 35%. McCormick CEO Brendan Foley will lead the combined company from its headquarters in Hunt Valley, Maryland, with an additional international headquarters in the Netherlands. McCormick has secured $15.7 billion in bridge financing from Citigroup, Goldman Sachs, and Morgan Stanley. Net leverage at close is expected to be 4.0x, with a target of 3.0x within two years.</p>
+    <p>The deal is the largest Reverse Morris Trust involving a European company and the second-largest food transaction in history.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The cautionary IPO tale:</strong> Olaplex was the prestige hair care brand that was supposed to prove you could build a venture-scale outcome in beauty. Founded in 2014 by a UCSB chemistry professor, it invented "bond-building" technology and created a category. Advent International took it public at the peak of the 2021 IPO window. Then came a hair loss lawsuit, increased competition, and slowing growth. The stock went from $25 at IPO to $1.33. Henkel's $2.06 offer is a mercy exit.</p>
-    <p><strong>Henkel's strategy is working:</strong> CEO Carsten Knobel merged Henkel's laundry and beauty divisions into a single "Consumer Brands" unit and has been acquiring aggressively. Olaplex gives Henkel a premium, science-led brand with strong professional salon relationships and DTC e-commerce presence.</p>
-    <p><strong>Advent's painful math:</strong> The $1.4 billion takeout is a fraction of Olaplex's peak valuation. For PE sponsors who rode the 2021 IPO wave, this is a case study in what happens when the market reprices growth.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Brand perception damage:</strong> A 2023 lawsuit alleging hair loss dented Olaplex's reputation. Rebuilding consumer trust under new ownership takes years.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Declining margins:</strong> Adjusted EBITDA margin fell from 38% to 22% in two years. Henkel needs to stabilize profitability before it can extract value.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Specialty retail weakness:</strong> Olaplex's specialty retail channel declined 14.5% in Q4 2025, even as professional and DTC channels grew.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Distribution unlock:</strong> Henkel operates in 80+ countries. Olaplex is primarily North American. The international expansion opportunity is real and immediate.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>The science still works:</strong> Olaplex's bond-building chemistry remains differentiated. Under Henkel's R&D infrastructure, innovation can accelerate without public-market pressure.</p></div></div>
-  </div><div style="height:48px;"></div>
+    <p><strong>Unilever's strategic exit:</strong> CEO Fernando Fernandez has spent a year dismantling Unilever's conglomerate structure. The ice cream business (Ben & Jerry's, Magnum) was spun off in December. Now the food division follows. What remains is a focused household and personal care company, spanning Dove, Axe, and Domestos, with a faster growth profile and simpler story for investors. The $15.7 billion cash payment funds debt reduction and a massive 6.9 billion euro buyback program running through 2029.</p>
+    <p><strong>McCormick's transformation:</strong> McCormick goes from a $7 billion spice company to a $20 billion global food platform overnight. Adding Hellmann's (the world's largest mayonnaise brand) and Knorr (stock cubes and seasonings dominant in 80+ countries) to its existing Frank's RedHot, Cholula, and French's portfolio creates a genuine flavor conglomerate with pricing power across retail and foodservice channels globally.</p>
+    <p><strong>The market's skepticism:</strong> McCormick shares fell 9% and Unilever dropped 3% on the announcement. RBC analyst James Edward Jones captured the bear case: Unilever is giving up 100% ownership of two dominant brands (Knorr and Hellmann's) for a 55% stake in a sprawling food conglomerate. Investors wanted a cleaner exit, not a complex RMT structure that leaves Unilever entangled for years.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage at 4.0x:</strong> McCormick is absorbing enormous debt to fund the cash component. A consumer spending slowdown or failed synergy capture could strain the balance sheet for years.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Integration scale:</strong> Merging two global food operations across dozens of countries, manufacturing facilities, and distribution networks is a multi-year project. The $600M synergy target is ambitious.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Regulatory gauntlet:</strong> A $65B food combination will face antitrust scrutiny in multiple jurisdictions. The mid-2027 timeline already assumes a long review process.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Brand portfolio depth:</strong> Hellmann's, Knorr, McCormick, Frank's, Cholula, and Maille under one roof. These are category leaders with pricing power and global distribution that no competitor can replicate.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Foodservice scale:</strong> The combined company becomes a dominant supplier to restaurants and food manufacturers worldwide, with cross-selling opportunities that neither company could access alone.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
 </div>
 
-<!-- ═══════ ARTICLE: Merck / Terns ═══════ -->
-<div id="article-merck-terns-6-7b-leukemia" class="article-page container" style="display:none;">
+<!-- ARTICLE: Eli Lilly / Centessa -->
+<div id="article-lilly-centessa-7-8b-pharma" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Merck Pays $6.7B for a Leukemia Drug That Barely Existed Two Years Ago</h1><p class="ah-sub">Terns Pharmaceuticals' stock rose 6x in six months on takeover speculation. Merck made the speculators right, paying $53/share to secure TERN-701 before Keytruda's patent cliff hits.</p><div class="ah-meta"><span>Mar 25, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$6.7B</div><div class="ms-label">Equity Value</div></div><div class="ms-cell"><div class="ms-val">$53</div><div class="ms-label">Per Share</div></div><div class="ms-cell"><div class="ms-val">42%</div><div class="ms-label">Premium (90d VWAP)</div></div><div class="ms-cell"><div class="ms-val">Phase 1/2</div><div class="ms-label">Lead Asset Stage</div></div><div class="ms-cell"><div class="ms-val">Q2 2026</div><div class="ms-label">Expected Close</div></div></div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Eli Lilly's Third Acquisition of 2026 Is a $7.8B Bet on Keeping People Awake</h1>
+    <p class="ah-sub">Lilly is buying Centessa Pharmaceuticals and its orexin agonist pipeline for $6.3B upfront plus $1.5B in CVRs, entering the sleep disorder market with a potential best-in-class drug still in Phase II.</p>
+    <div class="ah-meta"><span>Mar 30, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$6.3B</div><div class="ms-label">Upfront Cash</div></div>
+    <div class="ms-cell"><div class="ms-val">$1.5B</div><div class="ms-label">CVR Potential</div></div>
+    <div class="ms-cell"><div class="ms-val">$38/sh</div><div class="ms-label">Offer Price</div></div>
+    <div class="ms-cell"><div class="ms-val">37%</div><div class="ms-label">Premium</div></div>
+    <div class="ms-cell"><div class="ms-val">Q3 2026</div><div class="ms-label">Expected Close</div></div>
+  </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Merck & Co. (NYSE: MRK) announced on March 25 that it has entered into a definitive agreement to acquire Terns Pharmaceuticals Inc. (NASDAQ: TERN), a clinical-stage oncology company, for $53.00 per share in cash, representing an equity value of approximately $6.7 billion ($5.7 billion net of acquired cash). The offer represents a 31% premium to the 60-day and 42% premium to the 90-day volume-weighted average stock price.</p>
-    <p>The crown jewel is TERN-701, an oral allosteric BCR::ABL1 tyrosine kinase inhibitor currently in a Phase 1/2 trial (CARDINAL) for Philadelphia chromosome-positive chronic phase CML. The FDA granted Orphan Drug Designation for TERN-701 in March 2024. This is Merck's third multi-billion-dollar acquisition in the past year.</p>
+    <p>Eli Lilly (NYSE: LLY) announced on March 30 a definitive agreement to acquire Centessa Pharmaceuticals (NASDAQ: CNTA), a UK-based clinical-stage biotech, for $38 per share in cash (roughly $6.3 billion), representing a 37% premium to Centessa's closing price. Shareholders will also receive one non-transferable contingent value right (CVR) worth up to $9 per share, bringing the total potential deal value to approximately $7.8 billion.</p>
+    <p>The CVR pays out in three tranches: $2 per share upon FDA approval of cleminorexton or ORX142 for narcolepsy type 2, $5 per share upon approval for idiopathic hypersomnia, and $2 per share upon a first FDA approval in any indication before January 1, 2030. The transaction, structured as a scheme of arrangement under English law, is expected to close in Q3 2026. This is Lilly's third acquisition of 2026, following a $2.4 billion bid for Orna Therapeutics and the $1.2 billion Ventyx Bio deal, plus an $8.8 billion alliance with Innovent Biologics.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The Keytruda countdown:</strong> Keytruda generated over $25 billion in 2024 revenue and is the world's best-selling drug. Its U.S. patent expires in 2028. Every deal Merck makes right now is an attempt to replace even a fraction of that revenue. TERN-701 is positioned as a potential best-in-class therapy for CML, a market where Novartis's Scemblix currently leads.</p>
-    <p><strong>The speculation tax:</strong> Terns' stock rose roughly 6x from its January lows as investors bet the company would be acquired. By the time Merck showed up, the premium to Tuesday's close was only 6%. The real premium was already baked in. This is what happens when the market collectively identifies a target before the acquirer pulls the trigger.</p>
-    <p><strong>Hematology as a beachhead:</strong> Merck's existing hematology pipeline includes candidates in Phase 3 for leukemias, lymphomas, and myeloproliferative neoplasms. TERN-701 slots into organizational infrastructure that is already built.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Early-stage premium:</strong> $6.7 billion for a Phase 1/2 asset with no pivotal data. If TERN-701 fails in later trials, the $5.8 billion write-off will be one of pharma's most expensive.</p></div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Scemblix entrenchment:</strong> Novartis's Scemblix is already approved and generating revenue in CML. TERN-701 needs to demonstrate superiority to gain meaningful share.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Keytruda cliff math:</strong> No combination of pipeline drugs will fully replace $25B+ in annual Keytruda revenue. Investors will scrutinize whether Merck's deal spree is building real value or delaying the inevitable.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Best-in-class potential:</strong> TERN-701's allosteric mechanism targets BCR::ABL1 differently than existing TKIs, with early data suggesting activity against resistant mutations.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Infrastructure fit:</strong> Merck's existing hematology teams mean TERN-701 doesn't need a standalone organization. Integration costs should be modest relative to deal size.</p></div></div>
-  </div><div style="height:48px;"></div>
+    <p><strong>The orexin thesis:</strong> Centessa's lead candidate, cleminorexton (formerly ORX750), is an orexin receptor 2 (OX2R) agonist designed to treat excessive daytime sleepiness. The drug has shown positive Phase IIa results across narcolepsy type 1, narcolepsy type 2, and idiopathic hypersomnia. Orexin agonists are considered the most promising new class of sleep-wake medications in decades, essentially the opposite of Merck's Belsomra (an orexin antagonist that induces sleep). Lilly is buying the potential to own the wakefulness side of that equation.</p>
+    <p><strong>The GLP-1 windfall at work:</strong> Lilly's Mounjaro and Zepbound franchises are throwing off so much cash that the company can afford to spend $7.8 billion on a Phase II asset without blinking. Three acquisitions and a major licensing deal in three months signals a company that is deploying its GLP-1 profits aggressively to build the next generation of its pipeline. The CVR structure limits overpayment risk: Lilly pays full price only if the drugs actually get approved.</p>
+    <p><strong>Sleep medicine is a massive market:</strong> Narcolepsy affects roughly 200,000 people in the U.S. alone, and idiopathic hypersomnia may affect even more. Current treatments (stimulants, sodium oxybate) are imperfect. A well-tolerated orexin agonist could capture billions in peak sales. Lilly is not just buying one drug; it is buying a platform (cleminorexton, ORX142, ORX489) that could generate multiple products across several sleep-wake indications.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase II risk:</strong> Cleminorexton has mid-stage data only. Phase III trials have not started, and registrational studies are not expected to begin until Q1 2027. A lot can go wrong between here and approval.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Competitive field:</strong> Takeda's TAK-861 and other orexin agonists are in development. If a competitor reaches the market first or shows better data, Lilly's $6.3 billion upfront could look expensive.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>UK scheme of arrangement:</strong> The deal requires court approval and a 75% shareholder vote under English law. More complex and less certain than a standard U.S. tender offer.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Platform, not a single asset:</strong> Cleminorexton, ORX142, and ORX489 give Lilly multiple shots on goal across narcolepsy, idiopathic hypersomnia, and potentially Parkinson's-related sleepiness.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>CVR limits downside:</strong> $1.5 billion of the deal value is contingent on FDA approvals. If the drugs fail, Lilly keeps the $1.5B. If they succeed, the total price is still reasonable for a best-in-class franchise.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
 </div>
 
-<!-- ═══════ ARTICLE: Ecolab / CoolIT ═══════ -->
-<div id="article-ecolab-acquires-coolit-4-75b" class="article-page container" style="display:none;">
+<!-- ARTICLE: Sysco / Jetro Restaurant Depot -->
+<div id="article-sysco-restaurant-depot-29-1b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Ecolab Pays $4.75B for AI Cooling Hardware It Needed Yesterday</h1><p class="ah-sub">The water-treatment giant is buying CoolIT Systems from KKR at 29x EBITDA, turning itself into the data center's plumber.</p><div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$4.75B</div><div class="ms-label">Enterprise Value</div></div><div class="ms-cell"><div class="ms-val">29x</div><div class="ms-label">Fwd. EBITDA</div></div><div class="ms-cell"><div class="ms-val">~8.6x</div><div class="ms-label">NTM Revenue</div></div><div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div><div class="ms-cell"><div class="ms-val">Q3 2026</div><div class="ms-label">Expected Close</div></div></div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Sysco Is Paying $29B for Restaurant Depot and Wall Street Hates It</h1>
+    <p class="ah-sub">The largest U.S. food distributor is swallowing the largest cash-and-carry wholesaler at 14.6x operating income. Sysco stock fell 15% intraday, its worst session since March 2020.</p>
+    <div class="ah-meta"><span>Mar 30, 2026</span><span>·</span><span>5 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$29.1B</div><div class="ms-label">Enterprise Value</div></div>
+    <div class="ms-cell"><div class="ms-val">14.6x</div><div class="ms-label">Operating Income</div></div>
+    <div class="ms-cell"><div class="ms-val">$16B</div><div class="ms-label">Target Revenue</div></div>
+    <div class="ms-cell"><div class="ms-val">$2.1B</div><div class="ms-label">Target EBITDA</div></div>
+    <div class="ms-cell"><div class="ms-val">$250M</div><div class="ms-label">Synergy Target</div></div>
+  </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Ecolab Inc. (NYSE: ECL), the $60B water and hygiene services company, announced on March 20 that it has entered into a definitive agreement to acquire CoolIT Systems in an all-cash transaction valued at $4.75 billion. The seller is a consortium of KKR and Mubadala Investment, who acquired CoolIT in June 2023 for approximately $270 million, a roughly 17.6x return in under three years.</p>
-    <p>CoolIT is a Calgary-based manufacturer of direct liquid cooling (DLC) systems for hyperscale and colocation data centers. CoolIT is projected to generate approximately $550 million in revenue over the next twelve months, implying roughly 8.6x NTM sales and 29x forward EBITDA.</p>
+    <p>Sysco Corporation (NYSE: SYY), the largest food distributor in the United States, announced on March 30 that it will acquire Jetro Restaurant Depot, the nation's largest cash-and-carry food wholesaler, for approximately $29.1 billion. Restaurant Depot shareholders will receive $21.6 billion in cash and 91.5 million Sysco shares. Based on Sysco's closing price of $81.80 on March 27, the total consideration represents 14.6x Restaurant Depot's operating income, or 13.0x including expected synergies.</p>
+    <p>Restaurant Depot, founded in Brooklyn in 1976, operates 166 large-format warehouse stores across 35 states. In calendar year 2025, it generated approximately $16 billion in revenue, $2.1 billion in EBITDA, and $1.9 billion in free cash flow, with a 30-year track record of uninterrupted EBITDA growth. The combined company generated nearly $100 billion in revenue and $6.4 billion in adjusted EBITDA in 2025.</p>
+    <p>Sysco plans to fund the cash portion with $21 billion in new debt and hybrid instruments plus $1 billion from cash and equity. Restaurant Depot shareholders will own roughly 16% of the combined company. Sysco is pausing share buybacks during the deleveraging period. The deal is expected to close by Q3 of Sysco's fiscal 2027, pending regulatory approval.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The physical layer thesis:</strong> The AI infrastructure buildout has officially reached the pipes, fluids, and thermal management systems that determine whether a $30,000 GPU cluster actually stays online. Ecolab already serves more than 1,000 data centers. CoolIT fills the hardware gap completely.</p>
-    <p><strong>The installed base play:</strong> Ecolab was willing to pay 29x EBITDA because CoolIT's value isn't just current revenue. It's the long-term service contracts that attach to every CDU installation. Every piece of CoolIT hardware is a future Ecolab chemistry customer.</p>
-    <p><strong>KKR's exit:</strong> One of the best PE outcomes of the decade. Bought for $270 million in mid-2023. Sold for $4.75 billion. A 17.6x return that validates the "AI picks and shovels" investment thesis.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage at 3x:</strong> Ecolab is financing entirely with debt. A slowdown in hyperscaler capex would pressure both growth and deleveraging.</p></div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Technology obsolescence:</strong> Direct-to-chip cooling could be displaced by immersion cooling over 5 to 7 years. At 29x EBITDA, there's zero margin of safety.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration complexity:</strong> A Calgary hardware company merging with a Minnesota services giant. Culture blending is non-trivial.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Unbeatable bundle:</strong> No competitor can sell both the cooling hardware and the chemical treatment to keep it running.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Secular trend:</strong> The shift from air to liquid cooling is structural, driven by GPU power density. CoolIT has 25 years of hyperscaler relationships.</p></div></div>
-  </div><div style="height:48px;"></div>
+    <p><strong>The omnichannel bet:</strong> Sysco is a logistics company that delivers food to 700,000 customers. Restaurant Depot is a retailer where 725,000 independent operators drive to a warehouse and load their own trucks. These are fundamentally different business models. Sysco is betting that combining delivery-based distribution with cash-and-carry retail creates an omnichannel operation that can serve independent restaurants however they want to buy. It is a bold thesis. It may also be a naive one.</p>
+    <p><strong>The FTC ghost:</strong> In 2015, a federal judge blocked Sysco's $3.5 billion acquisition of US Foods on antitrust grounds. That deal combined two broadline distributors. This deal is structurally different: Restaurant Depot is a cash-and-carry retailer, not a broadline competitor. Sysco will argue the businesses are complementary, not overlapping. But the Independent Restaurant Coalition has already called on the FTC to block the sale, and the combined entity's near-$100 billion in revenue will attract serious scrutiny.</p>
+    <p><strong>Wall Street's verdict was instant:</strong> Sysco stock plunged 15% intraday on March 30, its worst single-day decline since the COVID crash. The objections are clear: $21 billion in new debt pushing pro forma leverage to roughly 4.5x, 19% share dilution, and a family-run Brooklyn warehouse business that has never operated inside a public company. The $250 million synergy target looks modest at 12.5% of Restaurant Depot's operating income, and investors are skeptical it can be achieved without disrupting the very culture that built a 30-year growth streak.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage spike:</strong> Pro forma net debt-to-EBITDA jumps from 2.8x to approximately 4.5x. A recession or slowdown in restaurant spending would pressure Sysco's ability to deleverage on schedule.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Antitrust uncertainty:</strong> The FTC blocked Sysco's last major deal. While this acquisition is structurally different, a combined $100B revenue food company will receive intense regulatory scrutiny.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Cultural mismatch:</strong> Sysco is a fleet-based logistics corporation. Restaurant Depot is a family-run warehouse retailer. Blending those operating models without destroying what made Restaurant Depot successful is the hardest part of this deal.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Financial profile:</strong> Restaurant Depot adds 45% more EBITDA and 55% more free cash flow to Sysco's base, with 30 years of uninterrupted growth. The business is a cash machine.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Procurement power:</strong> A $100B combined food purchasing operation creates massive supplier leverage. The $250M synergy target may prove conservative if procurement savings materialize as expected.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Independent restaurant access:</strong> Restaurant Depot's 725,000 customers are the most fragmented, hardest-to-reach segment of foodservice. Sysco just bought the largest direct relationship with that customer base in the country.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
 </div>
 
-<!-- ═══════ ARTICLE: Berkshire / Tokio Marine ═══════ -->
-<div id="article-berkshire-tokio-marine-1-8b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Greg Abel's First Big Move: Berkshire Takes a $1.8B Stake in Tokio Marine</h1><p class="ah-sub">Berkshire's new CEO buys 2.49% of Japan's largest P&C insurer and inks a 10-year reinsurance and joint M&A pact.</p><div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$1.8B</div><div class="ms-label">Investment</div></div><div class="ms-cell"><div class="ms-val">2.49%</div><div class="ms-label">Stake</div></div><div class="ms-cell"><div class="ms-val">9.9%</div><div class="ms-label">Standstill Cap</div></div><div class="ms-cell"><div class="ms-val">10 Years</div><div class="ms-label">Partnership</div></div></div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Berkshire Hathaway Inc. (NYSE: BRK.B) announced that its reinsurance subsidiary National Indemnity Company (NICO) has acquired a 2.49% strategic equity stake in Tokio Marine Holdings Inc., Japan's largest P&C insurer, for roughly $1.8 billion. The transaction includes a 10-year strategic partnership covering reinsurance collaboration and joint M&A activity.</p>
-    <p>Tokio Marine will use the proceeds to repurchase its own shares, neutralizing dilution. NICO joins Tokio Marine's reinsurance panel in a whole account quota share, a live operational arrangement, not a passive investment. This marks the first major international initiative under Greg Abel, who assumed the CEO role on January 1, 2026.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>A different playbook:</strong> Buffett's Japan strategy was passive: buy trading houses, collect dividends, wait. Abel is doing something operationally intensive. A quota share ties NICO's results directly to Tokio Marine's portfolio. This is an operational thesis, not a financial one.</p>
-    <p><strong>The M&A pipeline:</strong> Tokio Marine targets $10 billion in international acquisitions through 2027. Berkshire has $160B+ in cash. Together they create a credible vehicle for acquiring specialty insurance carriers across ASEAN and North America.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Cultural gap:</strong> Berkshire's decentralized, returns-first culture vs. a 147-year-old Japanese institution. A major catastrophe year would stress-test alignment immediately.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Currency exposure:</strong> The $1.8B is yen-denominated. A 10% depreciation costs roughly $180 million.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Abel unproven internationally:</strong> Berkshire investors expect Buffett-level discipline. A messy joint acquisition would sharpen scrutiny fast.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Cycle timing:</strong> Reinsurance pricing at cycle highs. Entering a quota share now is the insurance equivalent of buying real estate in 2009.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>$10B acquisition pipeline:</strong> Tokio Marine has the mandate and market knowledge; Berkshire has the capital.</p></div></div>
-  </div><div style="height:48px;"></div>
-</div>
-
-<!-- ═══════ ARTICLE: Baker Hughes / Chart ═══════ -->
-<div id="article-baker-hughes-acquires-chart-industries-13-6b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Baker Hughes Writes a $13.6B Check to Stop Being an Oilfield Services Company</h1><p class="ah-sub">The deal for Chart Industries, snatched from a $19B Flowserve merger, declares Baker Hughes wants to be an energy technology company.</p><div class="ah-meta"><span>Mar 23, 2026</span><span>·</span><span>5 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$210</div><div class="ms-label">Offer / Share</div></div><div class="ms-cell"><div class="ms-val">22%</div><div class="ms-label">Premium</div></div><div class="ms-cell"><div class="ms-val">$13.6B</div><div class="ms-label">Enterprise Value</div></div><div class="ms-cell"><div class="ms-val">All-Cash</div><div class="ms-label">Consideration</div></div><div class="ms-cell"><div class="ms-val">Mid-2026</div><div class="ms-label">Expected Close</div></div></div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Baker Hughes Company (NASDAQ: BKR) agreed to acquire Chart Industries (NYSE: GTLS) for $210 per share in cash, a $13.6 billion enterprise value at a 22% premium. Pro forma leverage: 2.25x, targeting 1.0 to 1.5x within 24 months. Baker Hughes identified $325 million in annualized cost synergies.</p>
-    <p>Chart Industries manufactures cryogenic equipment, heat exchangers, and industrial gas handling equipment. FY2024 revenue: $4.2 billion, adjusted EBITDA: $1.0 billion. Chart's equipment is deployed in approximately 90% of LNG projects globally. The deal displaced Flowserve's $19 billion all-stock merger of equals. Flowserve collected a $266 million termination fee.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>Identity transformation:</strong> Baker Hughes CEO Lorenzo Simonelli has called the company an "energy technology company" for three years. Chart makes that description accurate. Chart's markets (LNG, hydrogen, carbon capture, data center cooling) are the growth verticals Baker Hughes has been building toward.</p>
-    <p><strong>LNG dominance:</strong> Chart's cryogenic equipment in roughly 90% of LNG projects is unreplicable. The combined entity can bid on entire project packages rather than individual line items.</p>
-    <p><strong>Data center crossover:</strong> Chart's cooling equipment is being adapted for high-density data centers, the same AI infrastructure trend driving Ecolab's CoolIT deal.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Complex integration:</strong> Two large manufacturers with distinct cultures. The $325M synergy target requires consolidating manufacturing and retaining specialized engineers.</p></div><div class="cb-item"><span class="cb-dot red"></span><p><strong>LNG sensitivity:</strong> Chart's largest segment is LNG. A sustained pricing decline pressures the core business.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Leverage risk:</strong> 2.25x at close depends on both companies performing well during integration.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>LNG moat:</strong> 90% market share in cryogenic equipment. Installed base creates predictable aftermarket revenue.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Attractive on synergies:</strong> 9x fully synergized EBITDA. Double-digit EPS accretion projected in year one.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Multi-vertical platform:</strong> LNG, hydrogen, carbon capture, and data center cooling are four independent demand drivers.</p></div></div>
-  </div><div style="height:48px;"></div>
-</div>
-
-<!-- ═══════ ARTICLE: Novartis / Pikavation ═══════ -->
-<div id="article-novartis-pikavation-3b-breast-cancer" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Novartis Pays $3B to Replace Its Own Breast Cancer Drug</h1><p class="ah-sub">The Pikavation acquisition brings a next-generation PI3K inhibitor designed to outperform Novartis's own Piqray, which is losing ground to Roche's Itovebi.</p><div class="ah-meta"><span>Mar 20, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$2B</div><div class="ms-label">Upfront</div></div><div class="ms-cell"><div class="ms-val">$1B</div><div class="ms-label">Milestones</div></div><div class="ms-cell"><div class="ms-val">Phase 1/2</div><div class="ms-label">Lead Asset Stage</div></div><div class="ms-cell"><div class="ms-val">~40%</div><div class="ms-label">HR+/HER2- w/ PIK3CA</div></div><div class="ms-cell"><div class="ms-val">H1 2026</div><div class="ms-label">Expected Close</div></div></div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Novartis AG (SIX: NOVN) announced on March 20 that it has entered into a definitive agreement to acquire Pikavation Therapeutics Inc., a subsidiary of Synnovation Therapeutics, for $2 billion upfront and up to $1 billion in milestones. The crown jewel is SNV4818, a pan-mutant-selective PI3K-alpha inhibitor in Phase 1/2 trials for HR+/HER2- metastatic breast cancer.</p>
-    <p>Unlike existing PI3K-alpha inhibitors (including Novartis's own Piqray), SNV4818 selectively targets the mutated enzyme while sparing the wild-type version, potentially reducing dose-limiting side effects that have constrained the class.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>Self-cannibalization as strategy:</strong> Novartis approved Piqray in 2019 as the first PI3K-alpha inhibitor for solid tumors. But Piqray's side-effect profile limited its commercial success, and Roche's Itovebi has moved into earlier-line therapy. Rather than defend an aging franchise, Novartis is buying its own replacement.</p>
-    <p><strong>The 40% opportunity:</strong> Approximately 40% of HR+/HER2- breast cancer patients carry PIK3CA mutations. If SNV4818 demonstrates better tolerability, it could become part of a standard triple-combination regimen with Novartis's own Kisqali and hormonal therapy.</p>
-    <p><strong>Competitive arms race:</strong> Relay Therapeutics leads with zovegalisib in Phase 3. Eli Lilly acquired Scorpion Therapeutics' PI3K asset. Novartis needed to move now or risk being locked out of the next-generation class.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Early-stage bet:</strong> SNV4818 is in Phase 1/2 with a primary completion date in 2027. Clinical failure writes off $2 billion.</p></div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Relay's head start:</strong> Zovegalisib is in Phase 3 with strong efficacy data (10.3 months median PFS). SNV4818 faces a higher bar.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Piqray cannibalization:</strong> Launching SNV4818 would directly compete with Novartis's own approved product.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Kisqali synergy:</strong> Pairing the leading CDK4/6 inhibitor with a best-in-class PI3K-alpha inhibitor creates a proprietary combination no competitor can replicate.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Roche's validation:</strong> Itovebi's projected $2.3 billion peak sales demonstrate the commercial opportunity for a drug with better selectivity.</p></div></div>
-  </div><div style="height:48px;"></div>
-</div>
-
-<!-- ═══════ ARTICLE: Danaher / Masimo ═══════ -->
-<div id="article-danaher-masimo-9-9b-medtech" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Danaher Pays $9.9B for Masimo After Activists Cleaned House</h1><p class="ah-sub">The medtech acquirer gets the pulse oximetry leader at a 38% premium, one year after a proxy fight ousted founder Joe Kiani and unwound his disastrous consumer electronics bet.</p><div class="ah-meta"><span>Feb 17, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$9.9B</div><div class="ms-label">Enterprise Value</div></div><div class="ms-cell"><div class="ms-val">$180</div><div class="ms-label">Per Share</div></div><div class="ms-cell"><div class="ms-val">38%</div><div class="ms-label">Premium</div></div><div class="ms-cell"><div class="ms-val">$1.5B+</div><div class="ms-label">FY2025E Revenue</div></div><div class="ms-cell"><div class="ms-val">H2 2026</div><div class="ms-label">Expected Close</div></div></div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Danaher Corporation (NYSE: DHR) announced on February 17 that it will acquire Masimo Corporation (NASDAQ: MASI) for $180 per share in all cash, representing an enterprise value of approximately $9.9 billion. The offer is a 38.3% premium to Masimo's February 13 closing price.</p>
-    <p>Masimo is the global leader in pulse oximetry and non-invasive patient monitoring, with its SET platform used on over 200 million patients annually in 150+ countries. The company reported approximately $1.5 billion in estimated FY2025 healthcare revenue, with a 2.6 million unit installed base and a 98%+ renewal rate. Masimo will operate as a standalone business within Danaher's Diagnostics segment.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>The activist setup:</strong> This deal was made possible by Politan Capital's 2024 proxy fight, which ousted founder and CEO Joe Kiani. Kiani had spent $1 billion acquiring Sound United (Bowers & Wilkins, Denon, Marantz) in 2022, a consumer electronics venture that destroyed shareholder value. The new board sold Sound United to Samsung's Harman unit for $350 million (a 65% loss) in May 2025, cleaned up the balance sheet, and put Masimo's core healthcare business on display. Danaher showed up 9 months later.</p>
-    <p><strong>Danaher's diagnostics empire:</strong> Danaher has spent two decades assembling the premier collection of diagnostics assets. Masimo fills the patient monitoring gap. The 98%+ renewal rate means predictable, recurring revenue, exactly the profile Danaher targets. The Danaher Business System is purpose-built to improve margins on exactly this type of business.</p>
-    <p><strong>The 80% recurring number:</strong> More than 80% of Masimo's healthcare revenue is recurring (sensors, disposables, software). At $9.9 billion, Danaher is paying for a revenue stream that renews automatically.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Apple patent litigation:</strong> Masimo is in an ongoing dispute with Apple over blood oxygen sensing IP. An adverse ruling could create uncertainty.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Post-Kiani talent retention:</strong> Masimo's engineering depth is core to the thesis. Key technical staff may have loyalty to the founder.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Hospital budget pressure:</strong> Healthcare systems globally are cutting capex. A prolonged pullback could slow installed base growth.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>DBS margin expansion:</strong> Danaher's operating playbook has consistently improved margins at acquired businesses by 300 to 600 basis points.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Cross-sell with Radiometer:</strong> Danaher's blood gas business and Masimo's pulse oximetry serve the same ICU customers. Bundling creates a monitoring ecosystem no competitor can match.</p></div></div>
-  </div><div style="height:48px;"></div>
-</div>
-
-<!-- ═══════ ARTICLE: TI / Silicon Labs ═══════ -->
-<div id="article-texas-instruments-silicon-labs-7-5b" class="article-page container" style="display:none;">
-  <div class="article-back" onclick="showHome()">← Back to Feed</div>
-  <div class="article-header"><div class="ah-tags"><span class="fi-tag deal">Deal</span></div><h1>Texas Instruments Writes Its Biggest Check in 15 Years: $7.5B for Silicon Labs</h1><p class="ah-sub">TI pays a 69% premium to own the wireless IoT chip leader, then plans to pull all production into its own fabs. The $450M synergy target is almost entirely manufacturing.</p><div class="ah-meta"><span>Feb 4, 2026</span><span>·</span><span>4 min read</span></div></div>
-  <div class="metrics-strip"><div class="ms-cell"><div class="ms-val">$7.5B</div><div class="ms-label">Enterprise Value</div></div><div class="ms-cell"><div class="ms-val">$231</div><div class="ms-label">Per Share</div></div><div class="ms-cell"><div class="ms-val">69%</div><div class="ms-label">Premium</div></div><div class="ms-cell"><div class="ms-val">$450M</div><div class="ms-label">Synergies Target</div></div><div class="ms-cell"><div class="ms-val">H1 2027</div><div class="ms-label">Expected Close</div></div></div>
-  <div class="article-body">
-    <h2>Deal Overview</h2>
-    <p>Texas Instruments Inc. (NASDAQ: TXN) announced on February 4 that it will acquire Silicon Laboratories Inc. (NASDAQ: SLAB) for $231.00 per share in all cash, an enterprise value of approximately $7.5 billion. The 69% premium to SLAB's unaffected close reflects the competitive dynamics of the IoT chip market. TI expects $450 million in annual manufacturing and operational synergies within three years.</p>
-    <p>Silicon Labs is a leader in low-power wireless connectivity chips, with approximately 1,200 products supporting Bluetooth, Thread, Zigbee, Wi-Fi, Z-Wave, and Matter protocols. FY2025 revenue: $785 million (up 34% YoY). Industrial & Commercial: $445 million. Home & Life: $340 million. Non-GAAP gross margin: 58.5%. This is TI's largest acquisition since the $6.5 billion National Semiconductor deal in 2011.</p>
-    <h2>Why It Matters</h2>
-    <p><strong>The fab advantage thesis:</strong> Silicon Labs outsources virtually all production to external foundries. TI plans to migrate Silicon Labs' entire product line into its own 300mm wafer fabs, dramatically lowering per-unit costs. The $450 million synergy target is not about cutting headcount. It is about moving chips from TSMC pricing to TI internal pricing. This is a deal where the acquirer's competitive advantage is its factory.</p>
-    <p><strong>IoT portfolio expansion:</strong> TI's core strength is analog and embedded processing. What TI lacked was wireless connectivity. Silicon Labs adds roughly 1,200 wireless products and deep expertise in smart home, industrial IoT, and smart city protocols. TI's existing customers can now source the wireless radio from the same vendor as their analog chips.</p>
-    <p><strong>69% premium tells the story:</strong> Silicon Labs was growing 34% annually with record design win traction. TI needed to pay full price to preempt other bidders. At roughly 9.5x NTM revenue before synergies (closer to 5.5x after), TI is betting it can make the economics work through manufacturing leverage no other acquirer could offer.</p>
-    <div class="callout-box"><div class="cb-head risk">⚠ Risks to Watch</div><div class="cb-item"><span class="cb-dot red"></span><p><strong>Regulatory timeline:</strong> Closing in H1 2027 means 15+ months of antitrust review. Semiconductor deals face elevated scrutiny in the current policy environment.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>Fab migration risk:</strong> Moving production to TI's fabs requires re-qualifying every product with every customer. Yield or quality issues during transition could lose design wins.</p></div><div class="cb-item"><span class="cb-dot orange"></span><p><strong>IoT cycle sensitivity:</strong> Smart home and industrial IoT are cyclical. The previous year saw sharp inventory corrections across the wireless chip market.</p></div></div>
-    <div class="callout-box"><div class="cb-head bull">✓ Bull Case</div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Manufacturing moat:</strong> TI's 300mm fabs are among the most cost-efficient in the analog/mixed-signal world. No fabless competitor can replicate the per-unit cost advantage.</p></div><div class="cb-item"><span class="cb-dot green"></span><p><strong>Matter protocol tailwind:</strong> The Matter smart home standard is driving consolidation in wireless protocols. Silicon Labs is a leading Matter chip supplier with design wins across major OEMs.</p></div></div>
-  </div><div style="height:48px;"></div>
-</div>
-
-<footer><span>© 2026 Acquire<span>Wire</span></span></footer>
+<footer>
+  <span>© 2026 Acquire<span>Wire</span></span>
+</footer>
 
 <script>
-function toggleTheme(){document.body.classList.toggle('dark');var d=document.body.classList.contains('dark');document.getElementById('themeBtn').textContent=d?'☀':'☽';try{localStorage.setItem('aw-theme',d?'dark':'light')}catch(e){}}
-(function(){try{if(localStorage.getItem('aw-theme')==='dark'){document.body.classList.add('dark');document.addEventListener('DOMContentLoaded',function(){document.getElementById('themeBtn').textContent='☀'})}}catch(e){}})();
-function showArticle(id){document.getElementById('home-view').style.display='none';document.querySelectorAll('.article-page').forEach(function(el){el.style.display='none'});var t=document.getElementById('article-'+id);if(t)t.style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
-function showHome(){document.querySelectorAll('.article-page').forEach(function(el){el.style.display='none'});document.getElementById('home-view').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  var isDark = document.body.classList.contains('dark');
+  document.getElementById('themeBtn').textContent = isDark ? '☀' : '☽';
+  try { localStorage.setItem('aw-theme', isDark ? 'dark' : 'light'); } catch(e) {}
+}
+(function() {
+  try {
+    if (localStorage.getItem('aw-theme') === 'dark') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('themeBtn').textContent = '☀';
+      });
+    }
+  } catch(e) {}
+})();
+function showArticle(id) {
+  document.getElementById('home-view').style.display = 'none';
+  document.querySelectorAll('.article-page').forEach(function(el) { el.style.display = 'none'; });
+  var target = document.getElementById('article-' + id);
+  if (target) target.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showHome() {
+  document.querySelectorAll('.article-page').forEach(function(el) { el.style.display = 'none'; });
+  document.getElementById('home-view').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
 </body>
 </html>
