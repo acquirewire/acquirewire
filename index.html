@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AcquireWire — M&A Intelligence</title>
+<title>AcquireWire | M&A Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -119,7 +119,11 @@ footer span span { color:var(--accent); font-weight:700; }
 .feed-item:nth-child(3) { animation:fadeUp .4s ease .1s both; }
 .feed-item:nth-child(4) { animation:fadeUp .4s ease .15s both; }
 .feed-item:nth-child(5) { animation:fadeUp .4s ease .2s both; }
-.newsletter { animation:fadeUp .4s ease .25s both; }
+.feed-item:nth-child(6) { animation:fadeUp .4s ease .25s both; }
+.feed-item:nth-child(7) { animation:fadeUp .4s ease .3s both; }
+.feed-item:nth-child(8) { animation:fadeUp .4s ease .35s both; }
+.feed-item:nth-child(9) { animation:fadeUp .4s ease .4s both; }
+.newsletter { animation:fadeUp .4s ease .45s both; }
 .article-header { animation:fadeUp .4s ease both; }
 .article-body { animation:fadeUp .4s ease .08s both; }
 </style>
@@ -138,8 +142,31 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
 </header>
 
-<!-- ═══════ HOME VIEW — FEED ═══════ -->
 <div id="home-view" class="container">
+
+  <div class="feed-item" onclick="showArticle('coreweave-meta-21b-ai-infra')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Apr 9, 2026 · 4 min</span></div>
+    <div class="fi-title">Meta Commits $21B More to CoreWeave, Bringing Total AI Cloud Spend to $35B</div>
+    <div class="fi-excerpt">The expanded deal runs through 2032, locks in early access to Nvidia's Vera Rubin chips, and makes Meta roughly 40% of CoreWeave's projected capacity for the rest of the decade.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('carlyle-private-credit-redemptions')">
+    <div class="fi-top"><span class="fi-tag pe">PE</span><span>Apr 9, 2026 · 4 min</span></div>
+    <div class="fi-title">Carlyle's $7B Private Credit Fund Just Gated Investors. It Won't Be the Last.</div>
+    <div class="fi-excerpt">Redemption requests hit 15.7% of shares, three times the 5% limit. Carlyle paid out less than a third of what investors asked for. Morgan Stanley, BlackRock, and Apollo have all capped withdrawals in recent weeks.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('iran-ceasefire-market-rally')">
+    <div class="fi-top"><span class="fi-tag analysis">Analysis</span><span>Apr 9, 2026 · 5 min</span></div>
+    <div class="fi-title">The Ceasefire Rally: Seven Straight Days, Oil Below $100, and the Dow Back in the Green</div>
+    <div class="fi-excerpt">The S&P 500's longest winning streak since October. WTI crude's biggest single-day plunge since April 2020. Semis leading, energy lagging, and the Fed worried about inflation. A market snapshot from a week that moved everything.</div>
+  </div>
+
+  <div class="feed-item" onclick="showArticle('anthropic-30b-run-rate-compute')">
+    <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Apr 7, 2026 · 4 min</span></div>
+    <div class="fi-title">Anthropic Hit $30B in Revenue Run Rate and Overtook OpenAI in Four Months</div>
+    <div class="fi-excerpt">From $9B to $30B since December. 1,000+ enterprise clients at $1M+. A 3.5 gigawatt compute deal with Google and Broadcom. And a Pentagon dispute that hasn't slowed it down.</div>
+  </div>
 
   <div class="feed-item" onclick="showArticle('neurocrine-soleno-2-9b-pharma')">
     <div class="fi-top"><span class="fi-tag deal">Deal</span><span>Apr 6, 2026 · 4 min</span></div>
@@ -181,9 +208,165 @@ footer span span { color:var(--accent); font-weight:700; }
       <button>Subscribe</button>
     </div>
   </div>
+
 </div>
 
 <!-- ═══════ ARTICLE VIEWS ═══════ -->
+
+<!-- ARTICLE: CoreWeave / Meta -->
+<div id="article-coreweave-meta-21b-ai-infra" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Meta Commits $21B More to CoreWeave, Bringing Total AI Cloud Spend to $35B</h1>
+    <p class="ah-sub">The expanded deal runs through 2032, locks in early access to Nvidia's Vera Rubin chips, and makes Meta roughly 40% of CoreWeave's projected capacity for the rest of the decade.</p>
+    <div class="ah-meta"><span>Apr 9, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$21B</div><div class="ms-label">New Commitment</div></div>
+    <div class="ms-cell"><div class="ms-val">$35B</div><div class="ms-label">Total Contracts</div></div>
+    <div class="ms-cell"><div class="ms-val">2032</div><div class="ms-label">Deal Horizon</div></div>
+    <div class="ms-cell"><div class="ms-val">~40%</div><div class="ms-label">CRWV Capacity</div></div>
+  </div>
+  <div class="article-body">
+    <h2>Deal Overview</h2>
+    <p>CoreWeave (NASDAQ: CRWV) announced on April 9 an expanded long-term agreement with Meta Platforms (NASDAQ: META) to provide approximately $21 billion in AI cloud capacity through December 2032. This builds on a prior $14.2 billion deal signed in late 2025, bringing Meta's total committed spend with CoreWeave to roughly $35 billion. The infrastructure will span multiple data center locations and include some of the earliest deployments of Nvidia's Vera Rubin platform. CoreWeave also announced plans to raise $3 billion in fresh debt.</p>
+    <p>Unlike earlier contracts focused on training large language models, this agreement is specifically optimized for inference: running AI models in real-time at scale. Meta shares rose roughly 3% on the news; CoreWeave gained about 5%. CoreWeave CEO Mike Intrator framed the deal simply: hyperscalers can build their own data centers, but they still need external capacity. "For some reason, all these people who can buy compute also feel the need to buy it from us."</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The inference pivot:</strong> The AI infrastructure market is shifting from training (building models) to inference (running them). Meta's $21 billion commitment is the clearest signal yet that inference compute will dwarf training spend over the next decade. As Meta deploys AI agents across Facebook, Instagram, and WhatsApp for tasks like real-time translation, content moderation, and autonomous shopping, the demand for low-latency, always-on compute is effectively unbounded.</p>
+    <p><strong>CoreWeave's concentration risk:</strong> Meta now represents roughly 40% of CoreWeave's projected capacity through the end of the decade. That is extraordinary customer concentration for a company that IPO'd only weeks ago. If Meta's AI strategy stumbles, or if it decides to bring more compute in-house, CoreWeave's revenue base compresses dramatically. The flip side: $35 billion in contracted revenue provides a level of visibility that almost no infrastructure company has ever had at this stage.</p>
+    <p><strong>The GPU landlord model works:</strong> CoreWeave's entire thesis is that hyperscalers will always need more compute than they can build themselves. This deal, plus similar arrangements with Google, Microsoft, and OpenAI, proves the model. CoreWeave shares are up 28% in 2026.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Customer concentration:</strong> ~40% of capacity committed to one client. Meta's internal buildout (including a $10B Texas data center) could reduce future external demand.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Debt load:</strong> $3B in new debt on top of existing leverage. CoreWeave is a capital-intensive business that must keep building ahead of demand.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>$35B in contracted revenue:</strong> Unprecedented visibility for an infrastructure company. Revenue is locked in through 2032 with one of the world's largest technology companies.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Vera Rubin early access:</strong> Being among the first to deploy Nvidia's next-generation platform gives CoreWeave a performance edge that competitors cannot match for 12 to 18 months.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Carlyle Private Credit Redemptions -->
+<div id="article-carlyle-private-credit-redemptions" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag pe">PE</span></div>
+    <h1>Carlyle's $7B Private Credit Fund Just Gated Investors. It Won't Be the Last.</h1>
+    <p class="ah-sub">Redemption requests hit 15.7% of shares, three times the 5% limit. Carlyle paid out less than a third of what investors asked for. Morgan Stanley, BlackRock, and Apollo have all capped withdrawals in recent weeks.</p>
+    <div class="ah-meta"><span>Apr 9, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$7B</div><div class="ms-label">Fund AUM</div></div>
+    <div class="ms-cell"><div class="ms-val">15.7%</div><div class="ms-label">Redemption Requests</div></div>
+    <div class="ms-cell"><div class="ms-val">5%</div><div class="ms-label">Redemption Cap</div></div>
+    <div class="ms-cell"><div class="ms-val">~$750M</div><div class="ms-label">Requested Out</div></div>
+    <div class="ms-cell"><div class="ms-val">~$240M</div><div class="ms-label">Actually Paid</div></div>
+  </div>
+  <div class="article-body">
+    <h2>What Happened</h2>
+    <p>The Carlyle Tactical Private Credit Fund (CTAC), a $7 billion interval fund that represents 41% of Carlyle's private credit portfolio, disclosed in a shareholder letter on April 9 that it received repurchase requests totaling roughly 15.7% of its outstanding shares in Q1 2026. The fund's structure limits redemptions to 5% per quarter. That means investors who asked to pull an estimated $750 million received approximately $240 million, less than a third of their requested amount.</p>
+    <p>Carlyle is not alone. Blue Owl's OCIC fund reported redemption requests of 29.1% and gated at 5% on April 2. Morgan Stanley, BlackRock, and Apollo Global Management have all imposed similar limits in recent weeks. The shareholder letter attributed the wave to "recent market volatility" across private credit funds broadly.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The semi-liquid illusion cracks:</strong> Private credit's selling point to retail and wealth management clients was simple: higher yields than public bonds with the ability to redeem periodically. The "semi-liquid" label implied you could get your money back when you needed it. What investors are now discovering is that "semi-liquid" means "liquid until everyone wants out at the same time." When redemption requests exceed the gate, investors are trapped, and the fund managers decide who gets paid first.</p>
+    <p><strong>Iran war fallout:</strong> The timing is not coincidental. The U.S.-Iran conflict that began February 28 sent oil above $110, crushed equities, widened credit spreads, and triggered asset markdowns across private credit portfolios. Investors who entered these funds expecting bond-like stability got equity-like volatility with bond-like illiquidity. The ceasefire may calm markets, but the structural problem remains: too many investors in vehicles they cannot exit.</p>
+    <p><strong>Contagion risk is real:</strong> When one major fund gates, investors in similar funds rush to redeem preemptively, creating a self-fulfilling liquidity crisis. The progression from Blue Owl (29.1% requests) to Carlyle (15.7%) to the broader industry suggests the wave is still building. The question is whether the ceasefire rally provides enough breathing room for asset values to recover before the next redemption window opens.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Forced selling cascade:</strong> If funds cannot meet redemptions from cash reserves, they may be forced to sell illiquid credit assets at discounts, further depressing NAVs and triggering more redemption requests.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Regulatory scrutiny:</strong> The SEC has been watching semi-liquid private credit structures for years. A wave of gated funds gives regulators the ammunition to impose new liquidity requirements on the $1.7 trillion private credit market.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Reputational damage:</strong> Carlyle, Blue Owl, and Apollo built their retail private credit businesses on the promise of accessibility. Gating destroys trust with the financial advisor channel that distributed these products.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Interval structure works as designed:</strong> The funds are legally structured to manage exactly this scenario. Gating prevents forced liquidation and protects remaining investors from fire-sale losses.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Ceasefire stabilizes underlying assets:</strong> If the Iran ceasefire holds and credit spreads normalize, the redemption pressure may ease before the next quarterly window.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Iran Ceasefire Market Rally -->
+<div id="article-iran-ceasefire-market-rally" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag analysis">Analysis</span></div>
+    <h1>The Ceasefire Rally: Seven Straight Days, Oil Below $100, and the Dow Back in the Green</h1>
+    <p class="ah-sub">The S&P 500's longest winning streak since October. WTI crude's biggest single-day plunge since April 2020. Semis leading, energy lagging, and the Fed worried about inflation. A market snapshot from a week that moved everything.</p>
+    <div class="ah-meta"><span>Apr 9, 2026</span><span>·</span><span>5 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">7 Days</div><div class="ms-label">S&P Win Streak</div></div>
+    <div class="ms-cell"><div class="ms-val">+2.9%</div><div class="ms-label">Dow (Apr 8)</div></div>
+    <div class="ms-cell"><div class="ms-val">$94.41</div><div class="ms-label">WTI Low (Apr 8)</div></div>
+    <div class="ms-cell"><div class="ms-val">-16%</div><div class="ms-label">Oil Single Day</div></div>
+    <div class="ms-cell"><div class="ms-val">+5%</div><div class="ms-label">Broadcom (Apr 8)</div></div>
+  </div>
+  <div class="article-body">
+    <h2>The Week in Context</h2>
+    <p>On April 7, President Trump announced a two-week ceasefire with Iran, brokered by Pakistan, ending 40 days of U.S.-Israeli strikes that had sent oil above $110 per barrel, disrupted global shipping through the Strait of Hormuz, and dragged the Dow into negative territory for 2026. The market response was immediate and violent. On April 8, the Dow surged 1,326 points (2.9%), its best day since April 2025. WTI crude plunged 16% to $94.41, the steepest single-day decline since April 2020. The S&P 500 broke above its 200-day moving average. By April 9, the index had notched seven consecutive gains, its longest winning streak since October.</p>
+    <p>The rotation was textbook. Semiconductor stocks led the rebound: Broadcom jumped 5%, reclaiming ground lost during the conflict. Energy names that had surged on war premiums reversed hard: Exxon fell 4.7%, Chevron dropped 4.3%. Industrials (XLI +3.8%) and materials (XLB +3.3%) rallied on expectations that global trade disruption would ease. Ten of eleven S&P sectors closed green on April 8. Energy was the lone loser.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>The "war premium" unwind is only half done:</strong> Oil settled near $98 on April 9 after bouncing from the $94 low, as markets realized Iran was still controlling access to the Strait of Hormuz despite the ceasefire. Ships need to "coordinate with Iran's Armed Forces" to pass through. That is not free passage. Until the strait is genuinely reopened without conditions, crude remains elevated above the pre-war ~$70 to $75 range. The rally is pricing in a ceasefire that is fragile at best.</p>
+    <p><strong>The Fed pivot that isn't:</strong> FOMC minutes released April 9 showed policymakers are now more inclined toward rate hikes, not cuts, as they fear the war has triggered inflationary pressure that the ceasefire alone will not reverse. Oil spent 40 days above $100. That feeds into transportation, food, and manufacturing costs with a lag. Even if crude normalizes, the inflation impulse is already in the pipeline. Markets rallying on peace may be ignoring the monetary tightening that peace cannot prevent.</p>
+    <p><strong>Amazon's $15B AI reveal:</strong> Buried in the ceasefire euphoria, CEO Andy Jassy disclosed for the first time that AWS's AI revenue run rate topped $15 billion in Q1. Amazon shares jumped 5.6% on April 9. The number confirms that the AI infrastructure buildout is accelerating through geopolitical chaos: hyperscalers are spending regardless of oil prices, wars, or rate expectations. Amazon, Meta ($21B CoreWeave deal), and Anthropic ($30B run rate) all reported milestone AI numbers in the same week.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Ceasefire fragility:</strong> Iran's Supreme Leader posted that "aggressors who attacked our country" will not "go unpunished." Israel is continuing strikes in Lebanon. Pakistan-brokered talks in Islamabad on April 10 face deep structural disagreements.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Inflation persistence:</strong> 40 days of $100+ oil has second-order effects on CPI that a ceasefire cannot instantly reverse. The Fed is watching, and rate hikes are back on the table.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Private credit stress:</strong> Carlyle, Blue Owl, and others are gating funds. The rally masks underlying credit deterioration that the war exposed but did not cause.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Technical breakout:</strong> The S&P recaptured its 200-day moving average. Seven-day winning streaks historically extend further when accompanied by breadth improvement.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>AI spending is war-proof:</strong> Amazon, Meta, and Anthropic all posted record AI infrastructure commitments during the conflict. Enterprise tech spending is not slowing down regardless of macro.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
+
+<!-- ARTICLE: Anthropic $30B Run Rate -->
+<div id="article-anthropic-30b-run-rate-compute" class="article-page container" style="display:none;">
+  <div class="article-back" onclick="showHome()">← Back to Feed</div>
+  <div class="article-header">
+    <div class="ah-tags"><span class="fi-tag deal">Deal</span></div>
+    <h1>Anthropic Hit $30B in Revenue Run Rate and Overtook OpenAI in Four Months</h1>
+    <p class="ah-sub">From $9B to $30B since December. 1,000+ enterprise clients at $1M+. A 3.5 gigawatt compute deal with Google and Broadcom. And a Pentagon dispute that hasn't slowed it down.</p>
+    <div class="ah-meta"><span>Apr 7, 2026</span><span>·</span><span>4 min read</span></div>
+  </div>
+  <div class="metrics-strip">
+    <div class="ms-cell"><div class="ms-val">$30B</div><div class="ms-label">Run Rate Revenue</div></div>
+    <div class="ms-cell"><div class="ms-val">$9B</div><div class="ms-label">End of 2025</div></div>
+    <div class="ms-cell"><div class="ms-val">1,000+</div><div class="ms-label">$1M+ Clients</div></div>
+    <div class="ms-cell"><div class="ms-val">3.5 GW</div><div class="ms-label">New Compute</div></div>
+    <div class="ms-cell"><div class="ms-val">$380B</div><div class="ms-label">Valuation</div></div>
+  </div>
+  <div class="article-body">
+    <h2>What Happened</h2>
+    <p>Anthropic disclosed on April 7 that its annualized revenue run rate has surpassed $30 billion, up from approximately $9 billion at the end of 2025, a 3.3x increase in roughly four months. The company now has more than 1,000 business customers each spending over $1 million annually, a number that doubled in under two months since its February Series G announcement. Eight of the Fortune 10 are running critical workloads on Claude.</p>
+    <p>Alongside the revenue disclosure, Anthropic announced an expanded partnership with Google and Broadcom for 3.5 gigawatts of next-generation TPU compute capacity, set to come online in 2027. The deal deepens Anthropic's existing Google Cloud relationship and extends a Broadcom supply agreement through 2031. The majority of the compute will be sited in the United States. Anthropic also raised a $30 billion Series G round in February at a $380 billion valuation, with SoftBank, Amazon, Nvidia, and a16z among the investors.</p>
+    <h2>Why It Matters</h2>
+    <p><strong>Anthropic has overtaken OpenAI:</strong> OpenAI disclosed a $2 billion monthly revenue figure in late March, putting its run rate around $24 to $25 billion. Anthropic is now generating more revenue than its rival despite having a fraction of OpenAI's consumer user base (OpenAI has 900 million+ weekly ChatGPT users). The difference is enterprise mix. Roughly 80% of Anthropic's revenue comes from business customers, compared to OpenAI's more consumer-heavy composition. Enterprise revenue is stickier, higher-margin, and expands faster.</p>
+    <p><strong>The compute arms race escalates:</strong> The 3.5 gigawatt deal is staggering in physical terms. For context, a single gigawatt powers roughly 750,000 American homes. Anthropic is securing the equivalent of a medium-sized city's power consumption in AI chip capacity alone. Broadcom CEO Hock Tan has projected close to $100 billion in AI chip revenue for 2027, with Anthropic cited as a primary driver. A Broadcom SEC filing earlier revealed that Anthropic had placed $10 billion and $11 billion custom chip orders in consecutive quarters.</p>
+    <p><strong>The Pentagon dispute doesn't matter (yet):</strong> The U.S. Department of Defense labeled Anthropic a supply-chain risk following a disagreement over AI safety measures. Anthropic has warned the designation could result in billions in lost revenue. But the numbers tell a different story: enterprise demand is accelerating despite the label. The question is whether the Pentagon dispute is a solvable contract disagreement or a structural rift between Anthropic's safety commitments and government expectations for AI deployment.</p>
+    <div class="callout-box">
+      <div class="cb-head risk">⚠ Risks to Watch</div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Pentagon supply-chain designation:</strong> Over 100 enterprise customers have reportedly expressed concerns. If the dispute escalates, government-adjacent contracts across defense, intelligence, and healthcare could be at risk.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Run rate is not revenue:</strong> $30B annualized from recent monthly figures does not guarantee $30B for the full year. Enterprise AI spending is still early and potentially volatile.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Capital intensity:</strong> 3.5GW of compute does not come cheap. Even with $30B in revenue, Anthropic's infrastructure commitments could pressure free cash flow for years.</p></div>
+    </div>
+    <div class="callout-box">
+      <div class="cb-head bull">✓ Bull Case</div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Enterprise dominance:</strong> 1,000+ customers at $1M+ ARR, doubling every two months. Eight of the Fortune 10. This is not consumer hype; it is deep enterprise integration.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Multi-cloud advantage:</strong> Claude is the only frontier AI model available on AWS Bedrock, Google Cloud Vertex AI, and Microsoft Azure Foundry. No competitor has that distribution.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Cost efficiency:</strong> Anthropic is projected to reach positive free cash flow by 2027. OpenAI projects $14B in losses for 2026 and has pushed breakeven to 2030. The unit economics gap is structural.</p></div>
+    </div>
+  </div>
+  <div style="height:48px;"></div>
+</div>
 
 <!-- ARTICLE: Neurocrine / Soleno -->
 <div id="article-neurocrine-soleno-2-9b-pharma" class="article-page container" style="display:none;">
@@ -203,28 +386,26 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Neurocrine Biosciences (NASDAQ: NBIX) announced on April 6 that it will acquire Soleno Therapeutics (NASDAQ: SLNO) for $53 per share in an all-cash tender offer, valuing Soleno at approximately $2.9 billion. The offer represents a 34% premium to Soleno's closing price on April 2 and a 51% premium to its 30-day volume-weighted average price. Soleno shares surged roughly 33% in premarket trading.</p>
-    <p>Neurocrine, a San Diego-based neuroscience company with $2.86 billion in 2025 revenue (driven almost entirely by its tardive dyskinesia drug Ingrezza), will fund the deal with its $2.54 billion cash pile supplemented by modest pre-payable debt. The transaction is expected to close within 90 days, subject to a majority tender and HSR clearance. Soleno's board unanimously recommends the deal. The merger agreement includes a $95.25 million termination fee payable by Soleno and a $141.5 million reverse termination fee payable by Neurocrine.</p>
+    <p>Neurocrine Biosciences (NASDAQ: NBIX) announced on April 6 that it will acquire Soleno Therapeutics (NASDAQ: SLNO) for $53 per share in an all-cash tender offer, valuing Soleno at approximately $2.9 billion. The offer represents a 34% premium to Soleno's closing price on April 2 and a 51% premium to its 30-day volume-weighted average price. Neurocrine will fund the deal with its $2.54 billion cash pile supplemented by modest pre-payable debt. The transaction is expected to close within 90 days.</p>
+    <p>Soleno's Vykat XR (diazoxide choline) was approved by the FDA in March 2025 as the first and only treatment for hyperphagia in Prader-Willi syndrome. In its first nine months on market, the drug generated $190.4 million in net revenue, priced at $466,000 per patient per year. By year-end 2025, 859 patients were actively on drug, representing just 12.5% of the estimated U.S. addressable market.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The commercial proof point:</strong> Soleno's Vykat XR (diazoxide choline) was approved by the FDA in March 2025 as the first and only treatment for hyperphagia in Prader-Willi syndrome. In its first nine months on the market, the drug generated $190.4 million in net revenue, priced at $466,000 per patient per year. By year-end 2025, 859 patients were actively on drug, representing just 12.5% of the estimated U.S. addressable market. Neurocrine is buying a proven commercial asset with enormous room to run.</p>
-    <p><strong>The rare disease playbook:</strong> Neurocrine already has a best-in-class rare disease sales force from its Ingrezza franchise. Layering Vykat XR onto that infrastructure is the kind of deal that pays for itself through distribution leverage alone, without needing to build a new commercial organization from scratch. The overlap in prescriber relationships (neurologists, endocrinologists) makes the fit tighter than a typical bolt-on.</p>
-    <p><strong>The "surprising" price:</strong> Stifel analysts flagged the deal as unexpectedly cheap for Soleno shareholders, given the drug's trajectory. At roughly 15x trailing revenue for a product with 87.5% of its market still untapped, Soleno's board may face questions about whether it left money on the table. But for Neurocrine, this is a rare chance to buy a first-in-class orphan drug before peak penetration.</p>
+    <p><strong>The commercial proof point:</strong> Neurocrine is buying a proven asset with enormous room to run. Vykat XR has 630 active prescribers and only 12.5% market penetration. Layering it onto Neurocrine's existing rare disease sales force from its Ingrezza franchise is the kind of deal that pays for itself through distribution leverage alone.</p>
+    <p><strong>The "surprising" price:</strong> Stifel analysts flagged the deal as unexpectedly cheap for Soleno shareholders given the drug's trajectory. At roughly 15x trailing revenue for a product with 87.5% of its market still untapped, Soleno's board may face questions about whether it left money on the table.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Payer resistance at scale:</strong> Vykat XR costs $466K/year. Coverage currently reaches 60% of U.S. lives, but pushing deeper into Medicaid and smaller plans will test pricing power.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Single-product dependency:</strong> Soleno has no meaningful pipeline beyond Vykat XR. If the drug hits a safety signal or competitive threat, there is no fallback.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Small patient population:</strong> PWS affects roughly 1 in 15,000 births. Even at full penetration, this is a niche market. The $2.9B price requires sustained pricing and adherence.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Payer resistance at scale:</strong> Vykat XR costs $466K/year. Coverage currently reaches 60% of U.S. lives. Pushing deeper into Medicaid and smaller plans will test pricing power.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Small patient population:</strong> PWS affects roughly 1 in 15,000 births. Even at full penetration, this is a niche market.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>87.5% of patients untouched:</strong> Only 12.5% of the U.S. addressable market has been reached in nine months. The penetration curve is still steep, with 630 prescribers already active and growing.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Orphan drug economics:</strong> First-in-class, no competition, 7 years of market exclusivity remaining. Neurocrine's existing rare disease infrastructure can accelerate growth without proportional cost increases.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>87.5% of patients untouched:</strong> Only 12.5% of the U.S. addressable market has been reached in nine months. The penetration curve is still steep.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Orphan drug economics:</strong> First-in-class, no competition, 7 years of market exclusivity remaining.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
 </div>
 
-<!-- ARTICLE: Goldman Sachs / Innovator Capital -->
+<!-- ARTICLE: Goldman / Innovator -->
 <div id="article-goldman-innovator-2b-etf" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -242,21 +423,19 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Goldman Sachs (NYSE: GS) closed its acquisition of Innovator Capital Management on April 2, 2026, in a transaction valued at approximately $2 billion in cash and equity, subject to performance targets. The deal was first announced in December 2025. Innovator, based in Wheaton, Illinois, is the pioneer of defined-outcome ETFs, a category that uses options-based strategies to offer investors downside protection in exchange for capped upside.</p>
-    <p>The acquisition adds Innovator's 171 ETFs and roughly $31 billion in assets under supervision (AUS) to Goldman Sachs Asset Management, which now manages approximately 240 ETFs globally with $90 billion in total ETF AUS. That positions Goldman as a top-ten global active ETF provider. Innovator's 70-plus employees have joined Goldman, with co-founders Bruce Bond and John Southard becoming Advisory Directors and CIO Graham Day and distribution head Trevor Terrell joining as Partners.</p>
+    <p>Goldman Sachs (NYSE: GS) closed its acquisition of Innovator Capital Management on April 2, 2026, in a transaction valued at approximately $2 billion in cash and equity. Innovator, based in Wheaton, Illinois, is the pioneer of defined-outcome ETFs. The acquisition adds 171 ETFs and roughly $31 billion in assets under supervision to Goldman Sachs Asset Management, which now manages approximately 240 ETFs globally with $90 billion in total ETF AUS.</p>
     <h2>Why It Matters</h2>
-    <p><strong>Buy vs. build in asset management:</strong> Goldman tried for years to grow its ETF business organically. It worked, but not fast enough. Active ETFs pulled nearly a third of all U.S. ETF inflows in 2025, and defined-outcome strategies were among the hottest subsegments. Rather than spend five years building a competitive options-overlay platform, Goldman wrote a check. The $2 billion price tag, roughly 7.1% of AUM, is steep by asset management standards but buys immediate scale in a category with structural tailwinds.</p>
-    <p><strong>The distribution arbitrage:</strong> Innovator built great products but distributed them through a 70-person team. Goldman distributes through one of the largest wealth management and institutional sales networks on the planet. The thesis is straightforward: put Innovator's defined-outcome ETFs in front of Goldman's client base and watch AUM compound. If Goldman can grow Innovator's assets to $50B within two years, the acquisition pays for itself on fee revenue alone.</p>
-    <p><strong>The active ETF land grab:</strong> Global active ETF assets approached $1.8 trillion by year-end 2025, and over 85% of newly launched ETFs were actively managed. Goldman, BlackRock, JPMorgan, and Capital Group are all racing to build dominant active ETF platforms. This acquisition is Goldman's clearest declaration that it intends to win that race.</p>
+    <p><strong>Buy vs. build in asset management:</strong> Active ETFs pulled nearly a third of all U.S. ETF inflows in 2025, and defined-outcome strategies were among the hottest subsegments. Rather than spend five years building a competitive options-overlay platform, Goldman wrote a check. The $2 billion price tag is steep by asset management standards but buys immediate scale in a category with structural tailwinds.</p>
+    <p><strong>The distribution arbitrage:</strong> Innovator built great products but distributed them through a 70-person team. Goldman distributes through one of the largest wealth management and institutional sales networks on the planet. If Goldman can grow Innovator's assets to $50B within two years, the acquisition pays for itself on fee revenue alone.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration complexity:</strong> Migrating 171 ETFs onto Goldman's fund accounting, NAV calculation, and compliance infrastructure without disrupting shareholders is operationally intensive. The next 90 days are critical.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Price premium:</strong> At 7.1% of AUM, Goldman paid well above typical asset management acquisition multiples. If active ETF flows slow or buffer strategies fall out of favor, the payback period extends uncomfortably.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Integration complexity:</strong> Migrating 171 ETFs onto Goldman's infrastructure without disrupting shareholders is operationally intensive.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Price premium:</strong> At 7.1% of AUM, Goldman paid well above typical asset management multiples.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
       <div class="cb-item"><span class="cb-dot green"></span><p><strong>Distribution leverage:</strong> Goldman's global sales network selling Innovator's proven products is the textbook case for 1+1=3 in asset management M&A.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Structural demand:</strong> Defined-outcome ETFs serve the massive retirement and wealth preservation market. As rate volatility persists, demand for downside-buffered products should keep growing.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Structural demand:</strong> Defined-outcome ETFs serve the massive retirement and wealth preservation market.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
@@ -280,23 +459,20 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Unilever (LON: ULVR) and McCormick & Company (NYSE: MKC) announced on March 31 that they have agreed to combine Unilever's global Foods business (excluding India) with McCormick in a Reverse Morris Trust transaction. The deal values Unilever Foods at $44.8 billion, corresponding to 13.8x 2025 EBITDA. The combined entity will be worth approximately $65 billion with $20 billion in annual revenue.</p>
-    <p>Under the terms, Unilever and its shareholders will receive 65% of the combined company's fully diluted equity (valued at $29.1 billion) plus $15.7 billion in cash. McCormick shareholders will own approximately 35%. McCormick CEO Brendan Foley will lead the combined company from its headquarters in Hunt Valley, Maryland, with an additional international headquarters in the Netherlands. McCormick has secured $15.7 billion in bridge financing from Citigroup, Goldman Sachs, and Morgan Stanley. Net leverage at close is expected to be 4.0x, with a target of 3.0x within two years.</p>
-    <p>The deal is the largest Reverse Morris Trust involving a European company and the second-largest food transaction in history.</p>
+    <p>Unilever (LON: ULVR) and McCormick & Company (NYSE: MKC) announced on March 31 that they have agreed to combine Unilever's global Foods business (excluding India) with McCormick in a Reverse Morris Trust transaction. The deal values Unilever Foods at $44.8 billion, corresponding to 13.8x 2025 EBITDA. The combined entity will be worth approximately $65 billion with $20 billion in annual revenue. Unilever and its shareholders will receive 65% of the combined company plus $15.7 billion in cash. McCormick shareholders will own approximately 35%.</p>
     <h2>Why It Matters</h2>
-    <p><strong>Unilever's strategic exit:</strong> CEO Fernando Fernandez has spent a year dismantling Unilever's conglomerate structure. The ice cream business (Ben & Jerry's, Magnum) was spun off in December. Now the food division follows. What remains is a focused household and personal care company, spanning Dove, Axe, and Domestos, with a faster growth profile and simpler story for investors. The $15.7 billion cash payment funds debt reduction and a massive 6.9 billion euro buyback program running through 2029.</p>
-    <p><strong>McCormick's transformation:</strong> McCormick goes from a $7 billion spice company to a $20 billion global food platform overnight. Adding Hellmann's (the world's largest mayonnaise brand) and Knorr (stock cubes and seasonings dominant in 80+ countries) to its existing Frank's RedHot, Cholula, and French's portfolio creates a genuine flavor conglomerate with pricing power across retail and foodservice channels globally.</p>
-    <p><strong>The market's skepticism:</strong> McCormick shares fell 9% and Unilever dropped 3% on the announcement. RBC analyst James Edward Jones captured the bear case: Unilever is giving up 100% ownership of two dominant brands (Knorr and Hellmann's) for a 55% stake in a sprawling food conglomerate. Investors wanted a cleaner exit, not a complex RMT structure that leaves Unilever entangled for years.</p>
+    <p><strong>Unilever's strategic exit:</strong> CEO Fernando Fernandez has spent a year dismantling Unilever's conglomerate structure. The ice cream business was spun off in December. Now the food division follows. What remains is a focused household and personal care company with a faster growth profile.</p>
+    <p><strong>McCormick's transformation:</strong> McCormick goes from a $7 billion spice company to a $20 billion global food platform overnight. Adding Hellmann's and Knorr to Frank's RedHot, Cholula, and French's creates a genuine flavor conglomerate with pricing power across retail and foodservice globally.</p>
+    <p><strong>The market's skepticism:</strong> McCormick fell 9% and Unilever dropped 3%. RBC analyst James Edward Jones captured the bear case: Unilever is giving up 100% ownership of two dominant brands for a 55% stake in a sprawling food conglomerate.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage at 4.0x:</strong> McCormick is absorbing enormous debt to fund the cash component. A consumer spending slowdown or failed synergy capture could strain the balance sheet for years.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Integration scale:</strong> Merging two global food operations across dozens of countries, manufacturing facilities, and distribution networks is a multi-year project. The $600M synergy target is ambitious.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Regulatory gauntlet:</strong> A $65B food combination will face antitrust scrutiny in multiple jurisdictions. The mid-2027 timeline already assumes a long review process.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage at 4.0x:</strong> McCormick is absorbing enormous debt. A consumer spending slowdown could strain the balance sheet for years.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Regulatory gauntlet:</strong> A $65B food combination will face antitrust scrutiny in multiple jurisdictions.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Brand portfolio depth:</strong> Hellmann's, Knorr, McCormick, Frank's, Cholula, and Maille under one roof. These are category leaders with pricing power and global distribution that no competitor can replicate.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Foodservice scale:</strong> The combined company becomes a dominant supplier to restaurants and food manufacturers worldwide, with cross-selling opportunities that neither company could access alone.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Brand portfolio depth:</strong> Hellmann's, Knorr, McCormick, Frank's, Cholula, and Maille under one roof. Category leaders with pricing power.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Foodservice scale:</strong> The combined company becomes a dominant supplier to restaurants and food manufacturers worldwide.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
@@ -320,28 +496,25 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Eli Lilly (NYSE: LLY) announced on March 30 a definitive agreement to acquire Centessa Pharmaceuticals (NASDAQ: CNTA), a UK-based clinical-stage biotech, for $38 per share in cash (roughly $6.3 billion), representing a 37% premium to Centessa's closing price. Shareholders will also receive one non-transferable contingent value right (CVR) worth up to $9 per share, bringing the total potential deal value to approximately $7.8 billion.</p>
-    <p>The CVR pays out in three tranches: $2 per share upon FDA approval of cleminorexton or ORX142 for narcolepsy type 2, $5 per share upon approval for idiopathic hypersomnia, and $2 per share upon a first FDA approval in any indication before January 1, 2030. The transaction, structured as a scheme of arrangement under English law, is expected to close in Q3 2026. This is Lilly's third acquisition of 2026, following a $2.4 billion bid for Orna Therapeutics and the $1.2 billion Ventyx Bio deal, plus an $8.8 billion alliance with Innovent Biologics.</p>
+    <p>Eli Lilly (NYSE: LLY) announced on March 30 a definitive agreement to acquire Centessa Pharmaceuticals (NASDAQ: CNTA) for $38 per share in cash (roughly $6.3 billion), representing a 37% premium. Shareholders will also receive one non-transferable CVR worth up to $9 per share, bringing total potential deal value to approximately $7.8 billion. The CVR pays out in three tranches tied to FDA approvals of cleminorexton or ORX142 for narcolepsy type 2, idiopathic hypersomnia, and any indication before January 1, 2030. This is Lilly's third acquisition of 2026.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The orexin thesis:</strong> Centessa's lead candidate, cleminorexton (formerly ORX750), is an orexin receptor 2 (OX2R) agonist designed to treat excessive daytime sleepiness. The drug has shown positive Phase IIa results across narcolepsy type 1, narcolepsy type 2, and idiopathic hypersomnia. Orexin agonists are considered the most promising new class of sleep-wake medications in decades, essentially the opposite of Merck's Belsomra (an orexin antagonist that induces sleep). Lilly is buying the potential to own the wakefulness side of that equation.</p>
-    <p><strong>The GLP-1 windfall at work:</strong> Lilly's Mounjaro and Zepbound franchises are throwing off so much cash that the company can afford to spend $7.8 billion on a Phase II asset without blinking. Three acquisitions and a major licensing deal in three months signals a company that is deploying its GLP-1 profits aggressively to build the next generation of its pipeline. The CVR structure limits overpayment risk: Lilly pays full price only if the drugs actually get approved.</p>
-    <p><strong>Sleep medicine is a massive market:</strong> Narcolepsy affects roughly 200,000 people in the U.S. alone, and idiopathic hypersomnia may affect even more. Current treatments (stimulants, sodium oxybate) are imperfect. A well-tolerated orexin agonist could capture billions in peak sales. Lilly is not just buying one drug; it is buying a platform (cleminorexton, ORX142, ORX489) that could generate multiple products across several sleep-wake indications.</p>
+    <p><strong>The orexin thesis:</strong> Centessa's lead candidate cleminorexton is an orexin receptor 2 agonist for excessive daytime sleepiness. Positive Phase IIa results across narcolepsy type 1, type 2, and idiopathic hypersomnia. Lilly is buying the potential to own the wakefulness side of the sleep-wake equation.</p>
+    <p><strong>The GLP-1 windfall at work:</strong> Mounjaro and Zepbound are throwing off so much cash that Lilly can spend $7.8B on a Phase II asset without blinking. Three acquisitions and a major licensing deal in three months signals a company deploying GLP-1 profits aggressively.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase II risk:</strong> Cleminorexton has mid-stage data only. Phase III trials have not started, and registrational studies are not expected to begin until Q1 2027. A lot can go wrong between here and approval.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Competitive field:</strong> Takeda's TAK-861 and other orexin agonists are in development. If a competitor reaches the market first or shows better data, Lilly's $6.3 billion upfront could look expensive.</p></div>
-      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>UK scheme of arrangement:</strong> The deal requires court approval and a 75% shareholder vote under English law. More complex and less certain than a standard U.S. tender offer.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Phase II risk:</strong> Registrational studies not expected to begin until Q1 2027. A lot can go wrong between here and approval.</p></div>
+      <div class="cb-item"><span class="cb-dot orange"></span><p><strong>Competitive field:</strong> Takeda's TAK-861 and other orexin agonists are in development.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Platform, not a single asset:</strong> Cleminorexton, ORX142, and ORX489 give Lilly multiple shots on goal across narcolepsy, idiopathic hypersomnia, and potentially Parkinson's-related sleepiness.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>CVR limits downside:</strong> $1.5 billion of the deal value is contingent on FDA approvals. If the drugs fail, Lilly keeps the $1.5B. If they succeed, the total price is still reasonable for a best-in-class franchise.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Platform, not a single asset:</strong> Cleminorexton, ORX142, and ORX489 give Lilly multiple shots on goal across several sleep-wake indications.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>CVR limits downside:</strong> $1.5B of the deal is contingent on FDA approvals. If the drugs fail, Lilly keeps the $1.5B.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
 </div>
 
-<!-- ARTICLE: Sysco / Jetro Restaurant Depot -->
+<!-- ARTICLE: Sysco / Restaurant Depot -->
 <div id="article-sysco-restaurant-depot-29-1b" class="article-page container" style="display:none;">
   <div class="article-back" onclick="showHome()">← Back to Feed</div>
   <div class="article-header">
@@ -359,24 +532,21 @@ footer span span { color:var(--accent); font-weight:700; }
   </div>
   <div class="article-body">
     <h2>Deal Overview</h2>
-    <p>Sysco Corporation (NYSE: SYY), the largest food distributor in the United States, announced on March 30 that it will acquire Jetro Restaurant Depot, the nation's largest cash-and-carry food wholesaler, for approximately $29.1 billion. Restaurant Depot shareholders will receive $21.6 billion in cash and 91.5 million Sysco shares. Based on Sysco's closing price of $81.80 on March 27, the total consideration represents 14.6x Restaurant Depot's operating income, or 13.0x including expected synergies.</p>
-    <p>Restaurant Depot, founded in Brooklyn in 1976, operates 166 large-format warehouse stores across 35 states. In calendar year 2025, it generated approximately $16 billion in revenue, $2.1 billion in EBITDA, and $1.9 billion in free cash flow, with a 30-year track record of uninterrupted EBITDA growth. The combined company generated nearly $100 billion in revenue and $6.4 billion in adjusted EBITDA in 2025.</p>
-    <p>Sysco plans to fund the cash portion with $21 billion in new debt and hybrid instruments plus $1 billion from cash and equity. Restaurant Depot shareholders will own roughly 16% of the combined company. Sysco is pausing share buybacks during the deleveraging period. The deal is expected to close by Q3 of Sysco's fiscal 2027, pending regulatory approval.</p>
+    <p>Sysco Corporation (NYSE: SYY) announced on March 30 that it will acquire Jetro Restaurant Depot for approximately $29.1 billion. Restaurant Depot shareholders will receive $21.6 billion in cash and 91.5 million Sysco shares. The total consideration represents 14.6x operating income, or 13.0x including expected synergies. Restaurant Depot operates 166 large-format warehouse stores across 35 states, generating approximately $16 billion in revenue, $2.1 billion in EBITDA, and $1.9 billion in free cash flow in 2025.</p>
     <h2>Why It Matters</h2>
-    <p><strong>The omnichannel bet:</strong> Sysco is a logistics company that delivers food to 700,000 customers. Restaurant Depot is a retailer where 725,000 independent operators drive to a warehouse and load their own trucks. These are fundamentally different business models. Sysco is betting that combining delivery-based distribution with cash-and-carry retail creates an omnichannel operation that can serve independent restaurants however they want to buy. It is a bold thesis. It may also be a naive one.</p>
-    <p><strong>The FTC ghost:</strong> In 2015, a federal judge blocked Sysco's $3.5 billion acquisition of US Foods on antitrust grounds. That deal combined two broadline distributors. This deal is structurally different: Restaurant Depot is a cash-and-carry retailer, not a broadline competitor. Sysco will argue the businesses are complementary, not overlapping. But the Independent Restaurant Coalition has already called on the FTC to block the sale, and the combined entity's near-$100 billion in revenue will attract serious scrutiny.</p>
-    <p><strong>Wall Street's verdict was instant:</strong> Sysco stock plunged 15% intraday on March 30, its worst single-day decline since the COVID crash. The objections are clear: $21 billion in new debt pushing pro forma leverage to roughly 4.5x, 19% share dilution, and a family-run Brooklyn warehouse business that has never operated inside a public company. The $250 million synergy target looks modest at 12.5% of Restaurant Depot's operating income, and investors are skeptical it can be achieved without disrupting the very culture that built a 30-year growth streak.</p>
+    <p><strong>The omnichannel bet:</strong> Sysco is a logistics company that delivers food. Restaurant Depot is a retailer where operators load their own trucks. These are fundamentally different models. Sysco is betting that combining them creates an omnichannel operation. It is a bold thesis.</p>
+    <p><strong>The FTC ghost:</strong> In 2015, a federal judge blocked Sysco's $3.5 billion acquisition of US Foods on antitrust grounds. This deal is structurally different, but the Independent Restaurant Coalition has already called on the FTC to block the sale.</p>
+    <p><strong>Wall Street's verdict was instant:</strong> Sysco stock plunged 15% intraday, its worst decline since the COVID crash. $21 billion in new debt, 19% share dilution, and a family-run Brooklyn warehouse business that has never operated inside a public company.</p>
     <div class="callout-box">
       <div class="cb-head risk">⚠ Risks to Watch</div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage spike:</strong> Pro forma net debt-to-EBITDA jumps from 2.8x to approximately 4.5x. A recession or slowdown in restaurant spending would pressure Sysco's ability to deleverage on schedule.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Antitrust uncertainty:</strong> The FTC blocked Sysco's last major deal. While this acquisition is structurally different, a combined $100B revenue food company will receive intense regulatory scrutiny.</p></div>
-      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Cultural mismatch:</strong> Sysco is a fleet-based logistics corporation. Restaurant Depot is a family-run warehouse retailer. Blending those operating models without destroying what made Restaurant Depot successful is the hardest part of this deal.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Leverage spike:</strong> Pro forma net debt-to-EBITDA jumps from 2.8x to approximately 4.5x.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Antitrust uncertainty:</strong> The FTC blocked Sysco's last major deal.</p></div>
+      <div class="cb-item"><span class="cb-dot red"></span><p><strong>Cultural mismatch:</strong> Sysco is fleet-based logistics. Restaurant Depot is family-run warehouse retail.</p></div>
     </div>
     <div class="callout-box">
       <div class="cb-head bull">✓ Bull Case</div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Financial profile:</strong> Restaurant Depot adds 45% more EBITDA and 55% more free cash flow to Sysco's base, with 30 years of uninterrupted growth. The business is a cash machine.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Procurement power:</strong> A $100B combined food purchasing operation creates massive supplier leverage. The $250M synergy target may prove conservative if procurement savings materialize as expected.</p></div>
-      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Independent restaurant access:</strong> Restaurant Depot's 725,000 customers are the most fragmented, hardest-to-reach segment of foodservice. Sysco just bought the largest direct relationship with that customer base in the country.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Financial profile:</strong> Restaurant Depot adds 45% more EBITDA and 55% more free cash flow, with 30 years of uninterrupted growth.</p></div>
+      <div class="cb-item"><span class="cb-dot green"></span><p><strong>Independent restaurant access:</strong> 725,000 customers in the most fragmented segment of foodservice.</p></div>
     </div>
   </div>
   <div style="height:48px;"></div>
