@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Markets — AcquireWire" description="Live markets dashboard: indices, sectors, rates, currencies, commodities, and crypto." active="markets">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="art-rule"></div>
+      <h1 class="page-title">Markets</h1>
+      <p class="page-dek">A live read on global markets — indices, sectors, rates, currencies, commodities, and crypto. Prices via public feeds, refreshed automatically.</p>
+    </div>
+
+    <div class="mkt-section">
+      <div class="section-head"><span class="idx">01</span><span class="lbl">Indices</span><span class="sep"></span></div>
+      <div class="quote-grid" id="g-indices"></div>
+    </div>
+
+    <div class="mkt-section">
+      <div class="section-head"><span class="idx">02</span><span class="lbl">Sector Heatmap</span><span class="sep"></span><span class="count mono">S&amp;P 500 · 1-Day</span></div>
+      <div class="heatmap" id="g-sectors"></div>
+    </div>
+
+    <div class="mkt-cols">
+      <div class="mkt-section">
+        <div class="section-head"><span class="idx">03</span><span class="lbl">Treasury Yields</span><span class="sep"></span></div>
+        <div class="quote-list" id="g-rates"></div>
+      </div>
+      <div class="mkt-section">
+        <div class="section-head"><span class="idx">04</span><span class="lbl">Currencies</span><span class="sep"></span></div>
+        <div class="quote-list" id="g-fx"></div>
+      </div>
+    </div>
+
+    <div class="mkt-cols">
+      <div class="mkt-section">
+        <div class="section-head"><span class="idx">05</span><span class="lbl">Commodities</span><span class="sep"></span></div>
+        <div class="quote-list" id="g-commodities"></div>
+      </div>
+      <div class="mkt-section">
+        <div class="section-head"><span class="idx">06</span><span class="lbl">Crypto</span><span class="sep"></span></div>
+        <div class="quote-list" id="g-crypto"></div>
+      </div>
+    </div>
+
+    <p class="mkt-foot mono" id="mktFoot">Loading market data…</p>
+    <div style="height:50px"></div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var foot = document.getElementById('mktFoot');
+
+      function fmt(p, isRate) {
+        if (isRate) return p.toFixed(2) + '%';
+        if (p >= 1000) return p.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        if (p >= 1) return p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return p.toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+      }
+      function chg(p) {
+        var up = p >= 0;
+        return '<span class="q-chg ' + (up ? 'up' : 'down') + '">' + (up ? '+' : '') + p.toFixed(2) + '%</span>';
+      }
+
+      function cards(el, items, isRate) {
+        el.innerHTML = items.map(function (q) {
+          return '<div class="qcard"><div class="qcard-label">' + q.label + '</div>' +
+            '<div class="qcard-px">' + fmt(q.price, isRate) + '</div>' + chg(q.changePct) + '</div>';
+        }).join('');
+      }
+      function list(el, items, isRate) {
+        el.innerHTML = items.map(function (q) {
+          return '<div class="qrow"><span class="qrow-label">' + q.label + '</span>' +
+            '<span class="qrow-px num">' + fmt(q.price, isRate) + '</span>' + chg(q.changePct) + '</div>';
+        }).join('');
+      }
+      function heatmap(el, items) {
+        el.innerHTML = items.map(function (q) {
+          var c = q.changePct;
+          var mag = Math.min(Math.abs(c) / 3, 1); // saturate at ±3%
+          var col = c >= 0 ? '76,212,151' : '255,122,107';
+          var bg = 'rgba(' + col + ',' + (0.12 + mag * 0.5).toFixed(2) + ')';
+          return '<div class="tile" style="background:' + bg + '">' +
+            '<div class="tile-label">' + q.label + '</div>' +
+            '<div class="tile-chg">' + (c >= 0 ? '+' : '') + c.toFixed(2) + '%</div></div>';
+        }).join('');
+      }
+
+      function load() {
+        fetch('/api/board', { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            if (!d || !d.board) { foot.textContent = 'Market data unavailable.'; return; }
+            var b = d.board;
+            if (b.indices) cards(document.getElementById('g-indices'), b.indices, false);
+            if (b.sectors) heatmap(document.getElementById('g-sectors'), b.sectors);
+            if (b.rates) list(document.getElementById('g-rates'), b.rates, true);
+            if (b.fx) list(document.getElementById('g-fx'), b.fx, false);
+            if (b.commodities) list(document.getElementById('g-commodities'), b.commodities, false);
+            if (b.crypto) list(document.getElementById('g-crypto'), b.crypto, false);
+            foot.textContent = 'Last updated ' + new Date(d.ts).toLocaleTimeString('en-GB') + ' · prices delayed · not investment advice';
+          })
+          .catch(function () { foot.textContent = 'Market data unavailable.'; });
+      }
+      load();
+      setInterval(load, 60000);
+    })();
+  </script>
+</Base>

@@ -1,0 +1,16 @@
+# build output
+dist/
+.vercel/
+# dependencies
+node_modules/
+# astro
+.astro/
+# env
+.env
+.env.production
+# os
+.DS_Store
+# migration scratch
+_migration/
+# logs
+npm-debug.log*

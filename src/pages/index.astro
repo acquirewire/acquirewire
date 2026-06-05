@@ -1,0 +1,252 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import dealsData from '../data/deals.json';
+
+const all = (await getCollection('articles', ({ data }) => (import.meta.env.PROD ? !data.draft : true)))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+type Deal = { date: string; acquirer: string; target: string; value: number | null; sector: string; status: string; slug?: string };
+const latestDeals = (dealsData as Deal[]).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+const statusLabel: Record<string, string> = { rumoured: 'Rumoured', agreed: 'Agreed', closed: 'Closed', ipo: 'IPO Filing' };
+const dealVal = (v: number | null) => (v == null ? '—' : '$' + (v % 1 === 0 ? v.toFixed(0) : v.toFixed(1)) + 'B');
+
+const [lead, ...rest] = all;
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase();
+const dateLong = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).toUpperCase();
+const edition = String(427 + all.length);
+---
+
+<Base active="feed">
+  <div class="wrap">
+    <!-- Front-page flag -->
+    <div class="flag">
+      <div class="flag-rule-thin"></div>
+      <div class="flag-row">
+        <h1 class="nameplate">Acquire<b>Wire</b></h1>
+        <div class="flag-meta">
+          <div>Edition <b>No.{edition}</b></div>
+          <div>{dateLong}</div>
+          <div>London · Free</div>
+        </div>
+      </div>
+      <div class="flag-rule-gold"></div>
+      <div class="dateline">
+        <span>M&amp;A</span><span>Private Capital</span><span>Markets</span><span>Regulation</span>
+        <span class="sep"></span>
+        <span>Daily Intelligence</span>
+      </div>
+    </div>
+
+    <!-- Lead splash (text-first) -->
+    {lead && (
+      <a class="lead fade" href={`/articles/${lead.id}/`}>
+        <div class="lead-kicker">
+          <span class="lead-tag">Lead Story</span>
+          <span class="mono">{fmt(lead.data.date)} · {lead.data.readTime} Min Read</span>
+        </div>
+        <h2 class="lead-title">{lead.data.title}</h2>
+        <p class="lead-sub">{lead.data.subtitle}</p>
+        <div class="lead-foot">
+          <span class="lead-byline">By <b>{lead.data.author}</b></span>
+          <span class="lead-readmore">
+            Read the breakdown
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+    )}
+
+    <!-- Index -->
+    <div class="section-head">
+      <span class="idx">01</span>
+      <span class="lbl">On the Wire</span>
+      <span class="sep"></span>
+      <span class="count">{all.length} Stories</span>
+    </div>
+
+    <div class="briefing">
+      {rest.map((a, i) => (
+        <a class="brief" href={`/articles/${a.id}/`}>
+          <div class="brief-no">{String(i + 1).padStart(2, '0')}</div>
+          <div class="brief-main">
+            <div class="brief-meta"><span class="mono">{fmt(a.data.date)} · {a.data.readTime} Min</span></div>
+            <h3 class="brief-title">{a.data.title}</h3>
+            <p class="brief-excerpt">{a.data.subtitle}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Markets (charts) -->
+    <div class="section-head">
+      <span class="idx">02</span>
+      <span class="lbl">Markets</span>
+      <span class="sep"></span>
+      <div class="range-toggle" id="rangeToggle" role="group" aria-label="Chart range">
+        <button type="button" data-r="1mo">1M</button>
+        <button type="button" data-r="3mo" class="active">3M</button>
+        <button type="button" data-r="6mo">6M</button>
+        <button type="button" data-r="1y">1Y</button>
+      </div>
+    </div>
+    <div class="markets-grid" id="marketsGrid">
+      <div class="markets-empty mono">Loading market data…</div>
+    </div>
+
+    <!-- Deal Tracker teaser -->
+    <div class="section-head">
+      <span class="idx">03</span>
+      <span class="lbl">Deal Tracker</span>
+      <span class="sep"></span>
+      <a class="count count-link" href="/deals">View all →</a>
+    </div>
+    <div class="deal-teaser">
+      {latestDeals.map((d) => (
+        <a class="dteaser-row" href={d.slug ? `/articles/${d.slug}/` : '/deals'}>
+          <span class="dteaser-val">{dealVal(d.value)}</span>
+          <span class="dteaser-name">{d.acquirer} <span class="dteaser-arr">→</span> {d.target}</span>
+          <span class="dteaser-sector mono">{d.sector}</span>
+          <span class={`status-pill ${d.status}`}>{statusLabel[d.status]}</span>
+        </a>
+      ))}
+    </div>
+
+    <section class="newsletter">
+      <span class="eyebrow">The Daily Wire</span>
+      <h2>The deal that mattered, explained.</h2>
+      <p>One email, every weekday morning. The most important move in markets and M&amp;A, with the numbers and the so-what.</p>
+      <form class="nl-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('input').placeholder='Thanks — check your inbox.';">
+        <input type="email" required placeholder="you@firm.com" aria-label="Email address" />
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </section>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var grid = document.getElementById('marketsGrid');
+      var toggle = document.getElementById('rangeToggle');
+      if (!grid) return;
+      var NS = 'http://www.w3.org/2000/svg';
+      var SHORT = { '1mo': '1M', '3mo': '3M', '6mo': '6M', '1y': '1Y' };
+      var cache = {};
+      var current = '3mo';
+
+      function fmt(p) {
+        if (p >= 1000) return p.toLocaleString('en-US', { maximumFractionDigits: 0 });
+        if (p >= 1) return p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return p.toLocaleString('en-US', { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+      }
+
+      function spark(series, up) {
+        var W = 260, H = 72, pad = 4;
+        var min = Math.min.apply(null, series), max = Math.max.apply(null, series);
+        var span = max - min || 1;
+        var n = series.length;
+        var xs = function (i) { return pad + (i / (n - 1)) * (W - pad * 2); };
+        var ys = function (v) { return H - pad - ((v - min) / span) * (H - pad * 2); };
+        var line = '', area = '';
+        for (var i = 0; i < n; i++) {
+          var x = xs(i).toFixed(1), y = ys(series[i]).toFixed(1);
+          line += (i ? 'L' : 'M') + x + ',' + y + ' ';
+        }
+        area = line + 'L' + xs(n - 1).toFixed(1) + ',' + H + ' L' + xs(0).toFixed(1) + ',' + H + ' Z';
+
+        var svg = document.createElementNS(NS, 'svg');
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+        svg.setAttribute('preserveAspectRatio', 'none');
+        svg.setAttribute('class', 'spark ' + (up ? 'up' : 'down'));
+
+        var ap = document.createElementNS(NS, 'path');
+        ap.setAttribute('d', area); ap.setAttribute('class', 'spark-area');
+        var lp = document.createElementNS(NS, 'path');
+        lp.setAttribute('d', line.trim()); lp.setAttribute('class', 'spark-line');
+        svg.appendChild(ap); svg.appendChild(lp);
+
+        // hover crosshair
+        var vline = document.createElementNS(NS, 'line');
+        vline.setAttribute('class', 'spark-cross'); vline.setAttribute('y1', '0'); vline.setAttribute('y2', String(H));
+        vline.style.opacity = '0';
+        var dot = document.createElementNS(NS, 'circle');
+        dot.setAttribute('r', '3'); dot.setAttribute('class', 'spark-dot'); dot.style.opacity = '0';
+        svg.appendChild(vline); svg.appendChild(dot);
+
+        return { svg: svg, xs: xs, ys: ys, vline: vline, dot: dot, W: W };
+      }
+
+      function card(m) {
+        var up = m.changePct >= 0;
+        var el = document.createElement('div');
+        el.className = 'mcard';
+        var sign = up ? '+' : '';
+        el.innerHTML =
+          '<div class="mcard-top">' +
+            '<span class="mcard-label">' + m.label + '</span>' +
+            '<span class="mcard-chg ' + (up ? 'up' : 'down') + '">' + sign + m.changePct.toFixed(2) + '%</span>' +
+          '</div>' +
+          '<div class="mcard-price" data-base="' + m.price + '">' + fmt(m.price) + '</div>';
+        var chartWrap = document.createElement('div');
+        chartWrap.className = 'mcard-chart';
+        var s = spark(m.series, up);
+        chartWrap.appendChild(s.svg);
+        var read = document.createElement('div');
+        read.className = 'mcard-read mono'; read.textContent = SHORT[current];
+        chartWrap.appendChild(read);
+        el.appendChild(chartWrap);
+
+        var priceEl = el.querySelector('.mcard-price');
+        s.svg.addEventListener('mousemove', function (e) {
+          var rect = s.svg.getBoundingClientRect();
+          var rx = (e.clientX - rect.left) / rect.width;
+          var idx = Math.round(rx * (m.series.length - 1));
+          if (idx < 0) idx = 0; if (idx > m.series.length - 1) idx = m.series.length - 1;
+          var val = m.series[idx];
+          var px = s.xs(idx), py = s.ys(val);
+          s.vline.setAttribute('x1', px); s.vline.setAttribute('x2', px); s.vline.style.opacity = '1';
+          s.dot.setAttribute('cx', px); s.dot.setAttribute('cy', py); s.dot.style.opacity = '1';
+          priceEl.textContent = fmt(val);
+          read.textContent = (((val - m.series[0]) / m.series[0]) * 100).toFixed(2) + '% vs ' + SHORT[current] + ' ago';
+        });
+        s.svg.addEventListener('mouseleave', function () {
+          s.vline.style.opacity = '0'; s.dot.style.opacity = '0';
+          priceEl.textContent = fmt(m.price); read.textContent = SHORT[current];
+        });
+        return el;
+      }
+
+      function paint(markets) {
+        if (!markets || !markets.length) { grid.innerHTML = '<div class="markets-empty mono">Market data unavailable.</div>'; return; }
+        grid.innerHTML = '';
+        markets.forEach(function (m) { grid.appendChild(card(m)); });
+      }
+
+      function load(range) {
+        current = range;
+        if (cache[range]) { paint(cache[range]); return; }
+        grid.style.opacity = '0.5';
+        fetch('/api/history?range=' + range, { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            grid.style.opacity = '';
+            if (d && d.markets && d.markets.length) { cache[range] = d.markets; }
+            paint(cache[range]);
+          })
+          .catch(function () { grid.style.opacity = ''; paint(cache[range]); });
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function (e) {
+          var b = e.target.closest('button[data-r]');
+          if (!b) return;
+          var r = b.getAttribute('data-r');
+          if (r === current) return;
+          Array.prototype.forEach.call(toggle.querySelectorAll('button'), function (x) { x.classList.toggle('active', x === b); });
+          load(r);
+        });
+      }
+
+      load('3mo');
+    })();
+  </script>
+</Base>

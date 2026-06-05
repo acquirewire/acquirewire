@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Search from 'astro-pagefind/components/Search.astro';
+---
+
+<Base title="Search — AcquireWire" description="Search AcquireWire's coverage of M&A, private capital, and markets.">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="art-rule"></div>
+      <h1 class="page-title">Search</h1>
+      <p class="page-dek">Find anything in AcquireWire's coverage — deals, companies, themes.</p>
+    </div>
+    <div class="search-wrap">
+      <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false, excerptLength: 24 }} />
+    </div>
+    <div style="height:80px"></div>
+  </div>
+</Base>

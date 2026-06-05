@@ -1,0 +1,83 @@
+[
+  {
+    "date": "2026-05-20",
+    "acquirer": "Mastercard",
+    "target": "BVNK",
+    "value": 1.8,
+    "sector": "Payments",
+    "status": "agreed",
+    "slug": "mastercard-bvnk-1-8b-stablecoin"
+  },
+  {
+    "date": "2026-05-19",
+    "acquirer": "—",
+    "target": "SpaceX",
+    "value": null,
+    "sector": "Space",
+    "status": "ipo",
+    "slug": "spacex-ipo-s1-filing-may-20"
+  },
+  {
+    "date": "2026-05-04",
+    "acquirer": "KKR / Arctos",
+    "target": "Sports portfolio stake",
+    "value": 1.95,
+    "sector": "Sports / PE",
+    "status": "agreed",
+    "slug": "kkr-arctos-sports-1-95b"
+  },
+  {
+    "date": "2026-05-03",
+    "acquirer": "Longlake",
+    "target": "Amex GBT",
+    "value": 6.3,
+    "sector": "Travel",
+    "status": "agreed",
+    "slug": "longlake-amex-gbt-6-3b-travel"
+  },
+  {
+    "date": "2026-04-13",
+    "acquirer": "Amazon",
+    "target": "Globalstar",
+    "value": 11.6,
+    "sector": "Satellite / Telecom",
+    "status": "agreed",
+    "slug": "amazon-globalstar-11-6b-satellite"
+  },
+  {
+    "date": "2026-04-09",
+    "acquirer": "Meta",
+    "target": "CoreWeave (AI capacity)",
+    "value": 21.0,
+    "sector": "AI / Cloud",
+    "status": "agreed",
+    "slug": "coreweave-meta-21b-ai-infra"
+  },
+  {
+    "date": "2026-04-05",
+    "acquirer": "Neurocrine Biosciences",
+    "target": "Soleno Therapeutics",
+    "value": 2.9,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "neurocrine-soleno-2-9b-pharma"
+  },
+  {
+    "date": "2026-04-01",
+    "acquirer": "Goldman Sachs",
+    "target": "Innovator ETFs",
+    "value": 2.0,
+    "sector": "Asset Management",
+    "status": "agreed",
+    "slug": "goldman-innovator-2b-etf"
+  },
+  {
+    "date": "2026-03-30",
+    "acquirer": "McCormick",
+    "target": "Unilever food brands",
+    "value": 44.8,
+    "sector": "Consumer / Food",
+    "status": "rumoured",
+    "slug": "mccormick-unilever-foods-44-8b"
+  }
+]

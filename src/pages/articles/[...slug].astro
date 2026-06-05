@@ -1,0 +1,135 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('articles'))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  return all.map((article, i) => ({
+    params: { slug: article.id },
+    props: {
+      article,
+      prev: all[i + 1] ?? null, // older
+      next: all[i - 1] ?? null, // newer
+    },
+  }));
+}
+
+const { article, prev, next } = Astro.props;
+const { data } = article;
+const { Content } = await render(article);
+
+const dateStr = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const isoDate = data.date.toISOString();
+const url = new URL(Astro.url.pathname, Astro.site).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: data.title,
+  description: data.subtitle,
+  datePublished: isoDate,
+  dateModified: isoDate,
+  author: { '@type': 'Organization', name: 'AcquireWire' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'AcquireWire',
+    logo: { '@type': 'ImageObject', url: 'https://www.acquirewire.co.uk/favicon.svg' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+};
+---
+
+<Base
+  title={`${data.title} — AcquireWire`}
+  description={data.subtitle}
+  type="article"
+  publishedTime={isoDate}
+>
+  <div id="progress"></div>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="article" data-pagefind-body>
+    <div class="read">
+      <a class="back" href="/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to the Wire
+      </a>
+
+      <header class="art-head">
+        <div class="art-rule"></div>
+        <h1 class="art-title">{data.title}</h1>
+        <p class="art-sub">{data.subtitle}</p>
+        <div class="art-byline">
+          <span class="who">{data.author}</span>
+          <span>·</span>
+          <time datetime={isoDate}>{dateStr}</time>
+          <span>·</span>
+          <span>{data.readTime} min read</span>
+        </div>
+      </header>
+    </div>
+
+    <div class="read">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <div class="art-foot">
+        <div class="share">
+          <span class="lbl">Share</span>
+          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(data.title)}&url=${encodeURIComponent(url)}`} target="_blank" rel="noopener" aria-label="Share on X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <button id="copyLink" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </div>
+
+        <div class="adjacent">
+          {prev ? (
+            <a href={`/articles/${prev.id}/`}>
+              <div class="dir">← Older</div>
+              <div class="t">{prev.data.title}</div>
+            </a>
+          ) : <span></span>}
+          {next ? (
+            <a class="next" href={`/articles/${next.id}/`}>
+              <div class="dir">Newer →</div>
+              <div class="t">{next.data.title}</div>
+            </a>
+          ) : <span></span>}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script is:inline>
+    (function () {
+      var bar = document.getElementById('progress');
+      function onScroll() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+        if (bar) bar.style.width = pct + '%';
+      }
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      var copy = document.getElementById('copyLink');
+      if (copy) {
+        var original = copy.innerHTML;
+        copy.addEventListener('click', function () {
+          navigator.clipboard.writeText(window.location.href).then(function () {
+            copy.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+            copy.style.color = 'var(--gold)';
+            setTimeout(function () { copy.innerHTML = original; copy.style.color = ''; }, 1500);
+          });
+        });
+      }
+    })();
+  </script>
+</Base>

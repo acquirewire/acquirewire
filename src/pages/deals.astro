@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import dealsData from '../data/deals.json';
+
+type Deal = {
+  date: string;
+  acquirer: string;
+  target: string;
+  value: number | null;
+  sector: string;
+  status: string;
+  slug?: string;
+};
+
+const deals = (dealsData as Deal[]).slice().sort((a, b) => b.date.localeCompare(a.date));
+
+const statusLabel: Record<string, string> = {
+  rumoured: 'Rumoured', agreed: 'Agreed', closed: 'Closed', ipo: 'IPO Filing',
+};
+const fmtVal = (v: number | null) => (v == null ? '—' : '$' + (v % 1 === 0 ? v.toFixed(0) : v.toFixed(1)) + 'B');
+const fmtDate = (d: string) =>
+  new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit', timeZone: 'UTC' }).toUpperCase();
+
+const totalValue = deals.reduce((s, d) => s + (d.value || 0), 0);
+const statuses = ['all', 'rumoured', 'agreed', 'closed', 'ipo'];
+---
+
+<Base title="Deal Tracker — AcquireWire" description="A running log of the M&A, take-private, and capital-markets deals AcquireWire is tracking." active="deals">
+  <div class="wrap">
+    <div class="page-head">
+      <div class="art-rule"></div>
+      <h1 class="page-title">Deal Tracker</h1>
+      <p class="page-dek">Every deal we're following — M&amp;A, take-privates, and capital-markets moves. Click a row to read the breakdown.</p>
+      <div class="deal-stats">
+        <div class="dstat"><div class="dstat-v">{deals.length}</div><div class="dstat-l">Deals Tracked</div></div>
+        <div class="dstat"><div class="dstat-v">${totalValue.toFixed(0)}B</div><div class="dstat-l">Aggregate Value</div></div>
+        <div class="dstat"><div class="dstat-v">{deals.filter((d) => d.status === 'agreed').length}</div><div class="dstat-l">Agreed</div></div>
+      </div>
+    </div>
+
+    <div class="deal-controls">
+      <div class="deal-filters" id="dealFilters">
+        {statuses.map((s) => (
+          <button type="button" data-s={s} class={s === 'all' ? 'active' : ''}>{s === 'all' ? 'All' : statusLabel[s]}</button>
+        ))}
+      </div>
+      <input type="search" id="dealSearch" class="deal-search" placeholder="Filter by company or sector…" aria-label="Filter deals" />
+    </div>
+
+    <table class="deal-table" id="dealTable">
+      <thead>
+        <tr>
+          <th data-sort="date" class="sortable">Date</th>
+          <th>Target</th>
+          <th>Acquirer</th>
+          <th data-sort="value" class="sortable num">Value</th>
+          <th>Sector</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {deals.map((d) => (
+          <tr
+            class="deal-row"
+            data-status={d.status}
+            data-value={d.value ?? 0}
+            data-date={d.date}
+            data-text={`${d.acquirer} ${d.target} ${d.sector}`.toLowerCase()}
+            onclick={d.slug ? `location.href='/articles/${d.slug}/'` : undefined}
+            style={d.slug ? 'cursor:pointer' : ''}
+          >
+            <td class="dt-date mono">{fmtDate(d.date)}</td>
+            <td class="dt-target">{d.target}</td>
+            <td class="dt-acq">{d.acquirer}</td>
+            <td class="dt-val num">{fmtVal(d.value)}</td>
+            <td class="dt-sector mono">{d.sector}</td>
+            <td><span class={`status-pill ${d.status}`}>{statusLabel[d.status]}</span></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="deal-empty mono" id="dealEmpty" hidden>No deals match that filter.</div>
+    <div style="height:60px"></div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var table = document.getElementById('dealTable');
+      if (!table) return;
+      var tbody = table.querySelector('tbody');
+      var rows = Array.prototype.slice.call(tbody.querySelectorAll('.deal-row'));
+      var filters = document.getElementById('dealFilters');
+      var search = document.getElementById('dealSearch');
+      var empty = document.getElementById('dealEmpty');
+      var status = 'all';
+      var sortKey = 'date', sortDir = -1;
+
+      function apply() {
+        var q = (search.value || '').toLowerCase().trim();
+        var visible = 0;
+        rows.forEach(function (r) {
+          var okS = status === 'all' || r.getAttribute('data-status') === status;
+          var okQ = !q || r.getAttribute('data-text').indexOf(q) !== -1;
+          var show = okS && okQ;
+          r.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        empty.hidden = visible !== 0;
+      }
+
+      function sort() {
+        var sorted = rows.slice().sort(function (a, b) {
+          var av, bv;
+          if (sortKey === 'value') { av = parseFloat(a.getAttribute('data-value')); bv = parseFloat(b.getAttribute('data-value')); }
+          else { av = a.getAttribute('data-date'); bv = b.getAttribute('data-date'); }
+          if (av < bv) return -1 * sortDir;
+          if (av > bv) return 1 * sortDir;
+          return 0;
+        });
+        sorted.forEach(function (r) { tbody.appendChild(r); });
+      }
+
+      filters.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-s]'); if (!b) return;
+        status = b.getAttribute('data-s');
+        Array.prototype.forEach.call(filters.querySelectorAll('button'), function (x) { x.classList.toggle('active', x === b); });
+        apply();
+      });
+      search.addEventListener('input', apply);
+
+      Array.prototype.forEach.call(table.querySelectorAll('th.sortable'), function (th) {
+        th.addEventListener('click', function () {
+          var k = th.getAttribute('data-sort');
+          if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = -1; }
+          Array.prototype.forEach.call(table.querySelectorAll('th'), function (x) { x.removeAttribute('data-active'); });
+          th.setAttribute('data-active', sortDir > 0 ? 'asc' : 'desc');
+          sort();
+        });
+      });
+    })();
+  </script>
+</Base>

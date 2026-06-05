@@ -1,0 +1,66 @@
+name: Daily article draft
+
+on:
+  schedule:
+    # 06:30 UTC every weekday (after US close / before UK open)
+    - cron: '30 6 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: daily-draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate draft
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-6' }}
+        run: node scripts/generate.mjs
+
+      - name: Open pull request
+        if: steps.gen.outputs.created == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: draft/${{ steps.gen.outputs.slug }}
+          commit-message: "draft: ${{ steps.gen.outputs.title }}"
+          title: "📝 Draft: ${{ steps.gen.outputs.title }}"
+          body: |
+            Auto-generated draft from the daily wire.
+
+            **Review checklist**
+            - [ ] Headline & standfirst accurate
+            - [ ] All figures match the linked source (no fabricated numbers)
+            - [ ] Risk + bull cases are fair
+            - [ ] Category & tags correct
+
+            Vercel will build a **preview** of this branch — read it there, edit the `.md` if needed, then **merge to publish**. Close the PR to discard.
+          labels: draft
+          add-paths: |
+            src/content/articles/*.md
+            scripts/state.json
+
+      - name: Notify (ntfy)
+        if: steps.gen.outputs.created == 'true' && vars.NTFY_TOPIC != ''
+        run: |
+          curl -s \
+            -H "Title: New AcquireWire draft" \
+            -H "Tags: newspaper" \
+            -d "${{ steps.gen.outputs.title }}" \
+            "${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}/${{ vars.NTFY_TOPIC }}" || true
