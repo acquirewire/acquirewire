@@ -1,6 +1,15 @@
 [
   {
     "date": "2026-06-05",
+    "acquirer": "Howard Hughes Holdings",
+    "target": "Vantage Group Holdings",
+    "value": 2.1,
+    "sector": "Reinsurance",
+    "status": "closed",
+    "slug": "howard-hughes-completes-2-1bn-vantage-acquisition"
+  },
+  {
+    "date": "2026-06-05",
     "acquirer": "Pershing Square (Bill Ackman)",
     "target": "Universal Music Group",
     "value": 65,
@@ -66,7 +75,7 @@
     "date": "2026-04-09",
     "acquirer": "Meta",
     "target": "CoreWeave (AI capacity)",
-    "value": 21.0,
+    "value": 21,
     "sector": "AI / Cloud",
     "status": "agreed",
     "slug": "coreweave-meta-21b-ai-infra"
@@ -84,7 +93,7 @@
     "date": "2026-04-01",
     "acquirer": "Goldman Sachs",
     "target": "Innovator ETFs",
-    "value": 2.0,
+    "value": 2,
     "sector": "Asset Management",
     "status": "agreed",
     "slug": "goldman-innovator-2b-etf"
