@@ -1,5 +1,95 @@
 [
   {
+    "date": "2026-05-27",
+    "acquirer": "Pershing Square (Bill Ackman)",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-65-billion-umg-bid-rejected"
+  },
+  {
+    "date": "2026-05-28",
+    "acquirer": "Pershing Square",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-65-billion-umg-bid-rejected"
+  },
+  {
+    "date": "2026-05-29",
+    "acquirer": "Pershing Square (Bill Ackman)",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Music / Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-65-billion-umg-bid-rejected"
+  },
+  {
+    "date": "2026-05-30",
+    "acquirer": "Pershing Square (Bill Ackman)",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-65-billion-umg-bid-rejected"
+  },
+  {
+    "date": "2026-05-31",
+    "acquirer": "Pershing Square",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-umg-65-billion-takeover-rejected"
+  },
+  {
+    "date": "2026-06-01",
+    "acquirer": "Pershing Square (Bill Ackman)",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-umg-65-billion-takeover-rejected"
+  },
+  {
+    "date": "2026-06-02",
+    "acquirer": "Pershing Square (Bill Ackman)",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "universal-music-group-rejects-65-billion-ackman-bid"
+  },
+  {
+    "date": "2026-06-03",
+    "acquirer": "Pershing Square",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-65-billion-universal-music-rejected"
+  },
+  {
+    "date": "2026-06-04",
+    "acquirer": "Pershing Square (Bill Ackman)",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "ackman-pershing-square-umg-65-billion-takeover-rejected"
+  },
+  {
+    "date": "2026-06-05",
+    "acquirer": "Pershing Square",
+    "target": "Universal Music Group",
+    "value": 65,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "universal-music-rejects-ackman-65-billion-takeover"
+  },
+  {
     "date": "2026-05-20",
     "acquirer": "Mastercard",
     "target": "BVNK",
@@ -48,7 +138,7 @@
     "date": "2026-04-09",
     "acquirer": "Meta",
     "target": "CoreWeave (AI capacity)",
-    "value": 21.0,
+    "value": 21,
     "sector": "AI / Cloud",
     "status": "agreed",
     "slug": "coreweave-meta-21b-ai-infra"
@@ -66,7 +156,7 @@
     "date": "2026-04-01",
     "acquirer": "Goldman Sachs",
     "target": "Innovator ETFs",
-    "value": 2.0,
+    "value": 2,
     "sector": "Asset Management",
     "status": "agreed",
     "slug": "goldman-innovator-2b-etf"
