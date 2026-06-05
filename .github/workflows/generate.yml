@@ -4,7 +4,12 @@ on:
   schedule:
     # 06:30 UTC every weekday (after US close / before UK open)
     - cron: '30 6 * * 1-5'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'How many articles to draft (1 = normal daily; >1 = backlog, dated backwards)'
+        required: false
+        default: '1'
 
 permissions:
   contents: write
@@ -32,6 +37,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-6' }}
+          COUNT: ${{ github.event.inputs.count || '1' }}
         run: node scripts/generate.mjs
 
       - name: Open pull request
@@ -54,6 +60,7 @@ jobs:
           labels: draft
           add-paths: |
             src/content/articles/*.md
+            src/data/deals.json
             scripts/state.json
 
       - name: Notify (ntfy)

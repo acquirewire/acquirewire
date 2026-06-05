@@ -25,6 +25,19 @@ const DRY = process.argv.includes('--dry-run');
 const NO_API = process.argv.includes('--no-api');
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6';
 
+// Batch mode: --count N writes N articles in one run (default 1).
+// When count > 1 (or --backdate), each successive article is dated one day
+// earlier, so a backlog reads as if published over the past N days.
+function argVal(name) {
+  const i = process.argv.indexOf(name);
+  if (i !== -1 && process.argv[i + 1]) return process.argv[i + 1];
+  const eq = process.argv.find((a) => a.startsWith(name + '='));
+  return eq ? eq.split('=')[1] : undefined;
+}
+const COUNT = Math.max(1, parseInt(argVal('--count') || process.env.COUNT || '1', 10) || 1);
+const BACKDATE = process.argv.includes('--backdate') || COUNT > 1;
+const dateMinusDays = (n) => { const d = new Date(); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); };
+
 const loadState = () => (existsSync(STATE_PATH) ? JSON.parse(readFileSync(STATE_PATH, 'utf8')) : { covered: [] });
 const keyOf = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60);
 
@@ -67,8 +80,7 @@ If — and ONLY if — this story is a specific M&A deal, take-private, or IPO, 
 This is a text-first publication: no images, no metrics boxes, no category labels. Put the numbers in the writing. Keep the body ~450-650 words.`;
 }
 
-function toMarkdown(a, story) {
-  const date = new Date().toISOString().slice(0, 10);
+function toMarkdown(a, story, date) {
   const fm = [
     '---',
     `title: ${JSON.stringify(a.title)}`,
@@ -87,6 +99,39 @@ function toMarkdown(a, story) {
   return fm + (a.body_markdown || '').trim() + '\n' + sourceNote;
 }
 
+async function draftOne(client, candidates) {
+  const resp = await client.messages.create({
+    model: MODEL,
+    max_tokens: 3500,
+    system: SYSTEM,
+    messages: [{ role: 'user', content: userPrompt(candidates) }],
+  });
+  const text = resp.content.map((b) => (b.type === 'text' ? b.text : '')).join('');
+  const jsonStr = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
+  return JSON.parse(jsonStr);
+}
+
+function appendDeal(article, slug, date) {
+  if (!article.deal || !article.deal.target) return;
+  try {
+    const deals = existsSync(DEALS_PATH) ? JSON.parse(readFileSync(DEALS_PATH, 'utf8')) : [];
+    const d = article.deal;
+    deals.unshift({
+      date,
+      acquirer: String(d.acquirer || '—'),
+      target: String(d.target),
+      value: typeof d.value === 'number' ? d.value : null,
+      sector: String(d.sector || '—'),
+      status: ['rumoured', 'agreed', 'closed', 'ipo'].includes(d.status) ? d.status : 'agreed',
+      slug,
+    });
+    writeFileSync(DEALS_PATH, JSON.stringify(deals, null, 2) + '\n');
+    console.log(`  ✓ Added to Deal Tracker: ${d.acquirer} / ${d.target}`);
+  } catch (e) {
+    console.warn('  ! could not update deals.json:', e.message);
+  }
+}
+
 async function main() {
   console.log(`▶ Fetching wire…`);
   const all = await fetchAll();
@@ -94,92 +139,79 @@ async function main() {
 
   const state = loadState();
   const covered = new Set(state.covered || []);
-  const fresh = all.filter((s) => !covered.has(keyOf(s.title)));
+  let fresh = all.filter((s) => !covered.has(keyOf(s.title)));
   console.log(`  ${fresh.length} not yet covered`);
-
   if (fresh.length === 0) {
     console.log('Nothing new to write today. Exiting cleanly.');
     return;
   }
 
-  const candidates = fresh.slice(0, 30);
-
   if (NO_API) {
-    candidates.forEach((c, i) => console.log(`  [${i + 1}] (${c.category}) ${c.title}`));
+    fresh.slice(0, Math.max(30, COUNT)).forEach((c, i) => console.log(`  [${i + 1}] (${c.category}) ${c.title}`));
     return;
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not set (add it to .env or as a GitHub secret).');
-
-  console.log(`▶ Drafting with ${MODEL}…`);
   const client = new Anthropic({ apiKey });
-  const resp = await client.messages.create({
-    model: MODEL,
-    max_tokens: 3500,
-    system: SYSTEM,
-    messages: [{ role: 'user', content: userPrompt(candidates) }],
-  });
 
-  const text = resp.content.map((b) => (b.type === 'text' ? b.text : '')).join('');
-  const jsonStr = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
-  let article;
-  try {
-    article = JSON.parse(jsonStr);
-  } catch (e) {
-    console.error('Failed to parse model JSON. Raw output:\n', text);
-    throw e;
+  const target = Math.min(COUNT, fresh.length);
+  console.log(`▶ Drafting ${target} article(s) with ${MODEL}${BACKDATE ? ' (dated backwards from today)' : ''}…`);
+
+  const usedKeys = new Set();
+  const written = [];
+  let firstSlug = '', firstTitle = '';
+
+  for (let i = 0; i < target; i++) {
+    const candidates = fresh.filter((c) => !usedKeys.has(keyOf(c.title))).slice(0, 30);
+    if (candidates.length === 0) break;
+
+    let article;
+    try {
+      article = await draftOne(client, candidates);
+    } catch (e) {
+      console.warn(`  ! draft ${i + 1} failed, skipping: ${e.message}`);
+      continue;
+    }
+
+    const story = candidates.find((c) => keyOf(c.title).includes(keyOf(article.title).slice(0, 20))) || candidates[0];
+    usedKeys.add(keyOf(story.title));
+    usedKeys.add(keyOf(article.title));
+
+    const slug = (article.slug || keyOf(article.title)).replace(/[^a-z0-9-]/g, '').slice(0, 70);
+    const date = BACKDATE ? dateMinusDays(i) : dateMinusDays(0);
+    const md = toMarkdown(article, story, date);
+
+    if (DRY) {
+      mkdirSync(join(ROOT, '_migration'), { recursive: true });
+      const out = join(ROOT, '_migration', `draft-preview-${i + 1}.md`);
+      writeFileSync(out, md, 'utf8');
+      console.log(`  ✓ DRY ${i + 1}/${target}: ${date} — ${article.title}`);
+      continue;
+    }
+
+    writeFileSync(join(ARTICLES_DIR, `${slug}.md`), md, 'utf8');
+    appendDeal(article, slug, date);
+    written.push({ slug, title: article.title, date });
+    if (!firstSlug) { firstSlug = slug; firstTitle = article.title; }
+    console.log(`  ✓ ${i + 1}/${target}: ${date} — ${slug}.md`);
   }
 
-  // Identify which candidate the model wrote about (best-effort, for dedupe)
-  const story = candidates.find((c) => keyOf(c.title).includes(keyOf(article.title).slice(0, 20))) || candidates[0];
-
-  const slug = (article.slug || keyOf(article.title)).replace(/[^a-z0-9-]/g, '').slice(0, 70);
-  const md = toMarkdown(article, story);
-
-  if (DRY) {
-    mkdirSync(join(ROOT, '_migration'), { recursive: true });
-    const out = join(ROOT, '_migration', 'draft-preview.md');
-    writeFileSync(out, md, 'utf8');
-    console.log(`✓ DRY RUN — wrote ${out}\n  Title: ${article.title}\n  Slug: ${slug}`);
-    if (article.deal && article.deal.target) console.log(`  Deal detected: ${article.deal.acquirer} / ${article.deal.target} (${article.deal.status})`);
+  if (DRY || written.length === 0) {
+    console.log(written.length === 0 && !DRY ? 'No articles written.' : 'Dry run complete.');
     return;
   }
 
-  const outPath = join(ARTICLES_DIR, `${slug}.md`);
-  writeFileSync(outPath, md, 'utf8');
-
   // Record covered keys (cap the rolling history)
-  const newCovered = [keyOf(article.title), keyOf(story.title), ...(state.covered || [])].slice(0, 300);
+  const newCovered = [...usedKeys, ...(state.covered || [])].slice(0, 400);
   writeFileSync(STATE_PATH, JSON.stringify({ covered: newCovered, lastRun: new Date().toISOString() }, null, 2));
-
-  // Append to the Deal Tracker if this story is a deal
-  if (article.deal && article.deal.target) {
-    try {
-      const deals = existsSync(DEALS_PATH) ? JSON.parse(readFileSync(DEALS_PATH, 'utf8')) : [];
-      const d = article.deal;
-      deals.unshift({
-        date: new Date().toISOString().slice(0, 10),
-        acquirer: String(d.acquirer || '—'),
-        target: String(d.target),
-        value: typeof d.value === 'number' ? d.value : null,
-        sector: String(d.sector || '—'),
-        status: ['rumoured', 'agreed', 'closed', 'ipo'].includes(d.status) ? d.status : 'agreed',
-        slug,
-      });
-      writeFileSync(DEALS_PATH, JSON.stringify(deals, null, 2) + '\n');
-      console.log(`✓ Added to Deal Tracker: ${d.acquirer} / ${d.target}`);
-    } catch (e) {
-      console.warn('! could not update deals.json:', e.message);
-    }
-  }
-
-  console.log(`✓ Wrote ${outPath}`);
+  console.log(`✓ Wrote ${written.length} article(s).`);
 
   // GitHub Actions outputs
   if (process.env.GITHUB_OUTPUT) {
-    appendFileSync(process.env.GITHUB_OUTPUT, `slug=${slug}\n`);
-    appendFileSync(process.env.GITHUB_OUTPUT, `title=${article.title.replace(/\n/g, ' ')}\n`);
+    appendFileSync(process.env.GITHUB_OUTPUT, `slug=${firstSlug}\n`);
+    appendFileSync(process.env.GITHUB_OUTPUT, `title=${written.length > 1 ? `${written.length} new articles` : firstTitle.replace(/\n/g, ' ')}\n`);
+    appendFileSync(process.env.GITHUB_OUTPUT, `count=${written.length}\n`);
     appendFileSync(process.env.GITHUB_OUTPUT, `created=true\n`);
   }
 }
