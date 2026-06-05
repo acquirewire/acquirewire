@@ -40,6 +40,23 @@ const dateMinusDays = (n) => { const d = new Date(); d.setDate(d.getDate() - n);
 
 const loadState = () => (existsSync(STATE_PATH) ? JSON.parse(readFileSync(STATE_PATH, 'utf8')) : { covered: [] });
 const keyOf = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60);
+const norm = (t) => (t || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+// Topic-overlap dedupe so the same event from different outlets isn't re-covered.
+const STOP = new Set(
+  ('the a an of to in on for and or with at by from as is are be into over after amid it its has have will would could ' +
+   'billion million trillion takeover bid deal deals acquisition acquire acquires merger buyout offer talks stake shares ' +
+   'share company group inc corp plc ltd co rejects rejected rebuffs spurns approach new report reported reportedly says ' +
+   'said about more same than what does just hit set close closing first').split(/\s+/)
+);
+const sigTokens = (t) =>
+  new Set((t || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length >= 4 && !STOP.has(w)));
+const sameTopic = (t1, t2) => {
+  const a = sigTokens(t1), b = sigTokens(t2);
+  let n = 0;
+  for (const x of a) if (b.has(x)) n++;
+  return n >= 2;
+};
 
 const SYSTEM = `You are the senior markets editor at AcquireWire, a sharp financial-intelligence publication covering M&A, private capital, regulation, and markets.
 
@@ -56,12 +73,15 @@ CRITICAL ACCURACY RULES (this is a finance publication):
 
 You output ONLY a single valid JSON object, no prose, no markdown fences.`;
 
-function userPrompt(candidates) {
+function userPrompt(candidates, exclude = []) {
+  const excludeBlock = exclude.length
+    ? `\nALREADY COVERED — do NOT write about any of these, or the same underlying event, company, or deal, even if a candidate below is from a different outlet or worded differently (e.g. "UMG" and "Universal Music Group" are the SAME story). Pick a story about a genuinely DIFFERENT company/event:\n${exclude.map((t) => `- ${t}`).join('\n')}\n`
+    : '';
   return `Here are today's candidate financial stories from the wire (title — source — summary):
 
 ${candidates.map((c, i) => `[${i + 1}] (${c.category}) ${c.title}\n    ${c.summary || '(no summary)'}\n    source: ${c.source}`).join('\n\n')}
-
-Pick the SINGLE most significant, genuinely newsworthy story for an M&A/markets audience (prefer concrete deals, capital moves, or clear market events over vague commentary). Then write the full AcquireWire article about it.
+${excludeBlock}
+Pick the SINGLE most significant, genuinely newsworthy story for an M&A/markets audience that is NOT already covered above (prefer concrete deals, capital moves, or clear market events over vague commentary). Then write the full AcquireWire article about it.
 
 Return ONLY this JSON object:
 {
@@ -99,12 +119,12 @@ function toMarkdown(a, story, date) {
   return fm + (a.body_markdown || '').trim() + '\n' + sourceNote;
 }
 
-async function draftOne(client, candidates) {
+async function draftOne(client, candidates, exclude = []) {
   const resp = await client.messages.create({
     model: MODEL,
     max_tokens: 3500,
     system: SYSTEM,
-    messages: [{ role: 'user', content: userPrompt(candidates) }],
+    messages: [{ role: 'user', content: userPrompt(candidates, exclude) }],
   });
   const text = resp.content.map((b) => (b.type === 'text' ? b.text : '')).join('');
   const jsonStr = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
@@ -159,18 +179,23 @@ async function main() {
   console.log(`▶ Drafting ${target} article(s) with ${MODEL}${BACKDATE ? ' (dated backwards from today)' : ''}…`);
 
   const usedKeys = new Set();
+  const coveredHeadlines = []; // passed to the model so it avoids repeats
+  const coveredTargets = new Set(); // normalised deal targets already written
   const written = [];
   let firstSlug = '', firstTitle = '';
+  let attempts = 0;
+  const maxAttempts = target * 3 + 5; // cap API calls so skips can't run away
 
-  for (let i = 0; i < target; i++) {
+  while (written.length < target && attempts < maxAttempts) {
+    attempts++;
     const candidates = fresh.filter((c) => !usedKeys.has(keyOf(c.title))).slice(0, 30);
     if (candidates.length === 0) break;
 
     let article;
     try {
-      article = await draftOne(client, candidates);
+      article = await draftOne(client, candidates, coveredHeadlines);
     } catch (e) {
-      console.warn(`  ! draft ${i + 1} failed, skipping: ${e.message}`);
+      console.warn(`  ! draft failed, retrying: ${e.message}`);
       continue;
     }
 
@@ -178,23 +203,33 @@ async function main() {
     usedKeys.add(keyOf(story.title));
     usedKeys.add(keyOf(article.title));
 
+    // Skip if this repeats a topic already written this batch (entity or token overlap)
+    const tgt = article.deal && article.deal.target ? norm(article.deal.target) : '';
+    const dup = (tgt && coveredTargets.has(tgt)) || coveredHeadlines.some((h) => sameTopic(h, article.title));
+    if (dup) {
+      console.log(`  ↪ skipped duplicate topic: ${article.title}`);
+      continue;
+    }
+
     const slug = (article.slug || keyOf(article.title)).replace(/[^a-z0-9-]/g, '').slice(0, 70);
-    const date = BACKDATE ? dateMinusDays(i) : dateMinusDays(0);
+    const date = BACKDATE ? dateMinusDays(written.length) : dateMinusDays(0);
     const md = toMarkdown(article, story, date);
 
     if (DRY) {
       mkdirSync(join(ROOT, '_migration'), { recursive: true });
-      const out = join(ROOT, '_migration', `draft-preview-${i + 1}.md`);
+      const out = join(ROOT, '_migration', `draft-preview-${written.length + 1}.md`);
       writeFileSync(out, md, 'utf8');
-      console.log(`  ✓ DRY ${i + 1}/${target}: ${date} — ${article.title}`);
-      continue;
+      console.log(`  ✓ DRY ${written.length + 1}/${target}: ${date} — ${article.title}`);
+    } else {
+      writeFileSync(join(ARTICLES_DIR, `${slug}.md`), md, 'utf8');
+      appendDeal(article, slug, date);
+      console.log(`  ✓ ${written.length + 1}/${target}: ${date} — ${slug}.md`);
     }
 
-    writeFileSync(join(ARTICLES_DIR, `${slug}.md`), md, 'utf8');
-    appendDeal(article, slug, date);
+    coveredHeadlines.push(article.title);
+    if (tgt) coveredTargets.add(tgt);
     written.push({ slug, title: article.title, date });
     if (!firstSlug) { firstSlug = slug; firstTitle = article.title; }
-    console.log(`  ✓ ${i + 1}/${target}: ${date} — ${slug}.md`);
   }
 
   if (DRY || written.length === 0) {
