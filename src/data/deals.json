@@ -1,6 +1,24 @@
 [
   {
     "date": "2026-06-05",
+    "acquirer": "REPAY Holdings",
+    "target": "KUBRA",
+    "value": 0.372,
+    "sector": "Fintech / Payments",
+    "status": "closed",
+    "slug": "repay-completes-372-million-kubra-acquisition"
+  },
+  {
+    "date": "2026-06-06",
+    "acquirer": "Paramount Global / Skydance Media",
+    "target": "Warner Bros. Discovery",
+    "value": null,
+    "sector": "Media & Entertainment",
+    "status": "rumoured",
+    "slug": "us-states-lawsuit-block-paramount-warner-bros-merger"
+  },
+  {
+    "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
     "value": 2.1,
