@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-08",
+    "acquirer": "Intesa Sanpaolo",
+    "target": "Monte dei Paschi di Siena",
+    "value": 35,
+    "sector": "Banking",
+    "status": "rumoured",
+    "slug": "intesa-sanpaolo-30-billion-monte-dei-paschi-bid"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
