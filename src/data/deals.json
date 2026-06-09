@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-09",
+    "acquirer": "GSK",
+    "target": "Nuvalent, Inc.",
+    "value": null,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "gsk-acquires-nuvalent-oncology-deal"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
