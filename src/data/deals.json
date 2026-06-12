@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-12",
+    "acquirer": "Frasers Group",
+    "target": "Hugo Boss",
+    "value": 2.3,
+    "sector": "Retail / Luxury",
+    "status": "agreed",
+    "slug": "frasers-group-23-billion-takeover-bid-hugo-boss"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
