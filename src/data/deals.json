@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-15",
+    "acquirer": "Fox Corporation",
+    "target": "Roku Inc.",
+    "value": 22,
+    "sector": "Media & Streaming",
+    "status": "agreed",
+    "slug": "fox-acquires-roku-22-billion-ctv-platform"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
