@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-17",
+    "acquirer": "SpaceX",
+    "target": "Cursor (Anysphere)",
+    "value": 60,
+    "sector": "AI / Software",
+    "status": "agreed",
+    "slug": "spacex-acquires-cursor-60-billion-all-stock"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
