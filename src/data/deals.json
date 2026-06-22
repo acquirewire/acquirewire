@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-22",
+    "acquirer": "CRH",
+    "target": "Arcosa Inc.",
+    "value": 8.5,
+    "sector": "Building Materials / Infrastructure",
+    "status": "agreed",
+    "slug": "crh-acquires-arcosa-8-5-billion-aggregates"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
