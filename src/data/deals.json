@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-23",
+    "acquirer": "AbbVie",
+    "target": "Apogee Therapeutics",
+    "value": 10.9,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "abbvie-10point9b-apogee-therapeutics-eczema-deal"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
