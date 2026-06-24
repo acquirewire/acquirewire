@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-24",
+    "acquirer": "Prologis",
+    "target": "Segro",
+    "value": 15.9,
+    "sector": "Real Estate",
+    "status": "rumoured",
+    "slug": "prologis-rejected-segro-takeover-bid-12-6-billion"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
