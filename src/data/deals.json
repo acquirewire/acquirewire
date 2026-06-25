@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-25",
+    "acquirer": "Castlelake",
+    "target": "EasyJet",
+    "value": null,
+    "sector": "Aviation",
+    "status": "rumoured",
+    "slug": "easyjet-rejects-castlelake-bid-door-open"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
