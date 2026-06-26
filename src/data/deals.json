@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-26",
+    "acquirer": "Merck",
+    "target": "Bio-Techne (TECH)",
+    "value": 11.3,
+    "sector": "Life Sciences / Pharma",
+    "status": "agreed",
+    "slug": "merck-bio-techne-11-billion-acquisition"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
