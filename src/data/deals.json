@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-28",
+    "acquirer": "Global Infrastructure Partners / EQT-Led Consortium",
+    "target": "AES Corporation",
+    "value": null,
+    "sector": "Energy & Infrastructure",
+    "status": "agreed",
+    "slug": "aes-stockholders-approve-gip-eqt-acquisition"
+  },
+  {
     "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
