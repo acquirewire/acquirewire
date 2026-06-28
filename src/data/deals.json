@@ -1,21 +1,111 @@
 [
   {
-    "date": "2026-06-05",
-    "acquirer": "Bally's / Intralot JV",
-    "target": "Evoke",
-    "value": 0.326,
-    "sector": "Gaming & Gambling",
+    "date": "2026-06-26",
+    "acquirer": "Merck",
+    "target": "Bio-Techne (TECH)",
+    "value": 11.3,
+    "sector": "Life Sciences / Pharma",
     "status": "agreed",
-    "slug": "ballys-intralot-evoke-326-million-takeover"
+    "slug": "merck-bio-techne-11-billion-acquisition"
   },
   {
-    "date": "2026-06-05",
-    "acquirer": "Howard Hughes Holdings",
-    "target": "Vantage Group Holdings",
-    "value": 2.1,
-    "sector": "Reinsurance",
-    "status": "closed",
-    "slug": "howard-hughes-completes-2-1bn-vantage-acquisition"
+    "date": "2026-06-25",
+    "acquirer": "Castlelake",
+    "target": "EasyJet",
+    "value": null,
+    "sector": "Aviation",
+    "status": "rumoured",
+    "slug": "easyjet-rejects-castlelake-bid-door-open"
+  },
+  {
+    "date": "2026-06-24",
+    "acquirer": "Prologis",
+    "target": "Segro",
+    "value": 15.9,
+    "sector": "Real Estate",
+    "status": "rumoured",
+    "slug": "prologis-rejected-segro-takeover-bid-12-6-billion"
+  },
+  {
+    "date": "2026-06-23",
+    "acquirer": "AbbVie",
+    "target": "Apogee Therapeutics",
+    "value": 10.9,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "abbvie-10point9b-apogee-therapeutics-eczema-deal"
+  },
+  {
+    "date": "2026-06-22",
+    "acquirer": "CRH",
+    "target": "Arcosa Inc.",
+    "value": 8.5,
+    "sector": "Building Materials / Infrastructure",
+    "status": "agreed",
+    "slug": "crh-acquires-arcosa-8-5-billion-aggregates"
+  },
+  {
+    "date": "2026-06-18",
+    "acquirer": "Skydance Media / Warner Bros. Discovery",
+    "target": "Paramount Global",
+    "value": null,
+    "sector": "Media & Entertainment",
+    "status": "agreed",
+    "slug": "paramount-skydance-warner-bros-antitrust-clearance"
+  },
+  {
+    "date": "2026-06-17",
+    "acquirer": "SpaceX",
+    "target": "Cursor (Anysphere)",
+    "value": 60,
+    "sector": "AI / Software",
+    "status": "agreed",
+    "slug": "spacex-acquires-cursor-60-billion-all-stock"
+  },
+  {
+    "date": "2026-06-16",
+    "acquirer": "Fox Corporation",
+    "target": "Roku, Inc.",
+    "value": 22,
+    "sector": "Media & Streaming",
+    "status": "agreed",
+    "slug": "fox-22-billion-roku-acquisition-streaming"
+  },
+  {
+    "date": "2026-06-12",
+    "acquirer": "Frasers Group",
+    "target": "Hugo Boss",
+    "value": 2.3,
+    "sector": "Retail / Luxury",
+    "status": "agreed",
+    "slug": "frasers-group-23-billion-takeover-bid-hugo-boss"
+  },
+  {
+    "date": "2026-06-10",
+    "acquirer": "Amwins / Dragoneer Investment Group",
+    "target": "Steadfast Group",
+    "value": null,
+    "sector": "Insurance Broking",
+    "status": "rumoured",
+    "slug": "steadfast-a7-7bn-takeover-bid-amwins-dragoneer"
+  },
+  {
+    "date": "2026-06-09",
+    "acquirer": "GSK",
+    "target": "Nuvalent, Inc.",
+    "value": null,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "gsk-acquires-nuvalent-oncology-deal"
+  },
+  {
+    "date": "2026-06-08",
+    "acquirer": "Intesa Sanpaolo",
+    "target": "Monte dei Paschi di Siena",
+    "value": 35,
+    "sector": "Banking",
+    "status": "rumoured",
+    "slug": "intesa-sanpaolo-30-billion-monte-dei-paschi-bid"
   },
   {
     "date": "2026-06-05",
@@ -34,6 +124,15 @@
     "sector": "Consumer / Bedding",
     "status": "agreed",
     "slug": "somnigroup-2-5-billion-leggett-acquisition-clears-antitrust"
+  },
+  {
+    "date": "2026-06-05",
+    "acquirer": "REPAY Holdings",
+    "target": "KUBRA",
+    "value": 0.372,
+    "sector": "Fintech / Payments",
+    "status": "closed",
+    "slug": "repay-completes-372-million-kubra-acquisition"
   },
   {
     "date": "2026-05-20",
