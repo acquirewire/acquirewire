@@ -1,6 +1,15 @@
 [
   {
     "date": "2026-06-05",
+    "acquirer": "Bally's / Intralot JV",
+    "target": "Evoke",
+    "value": 0.326,
+    "sector": "Gaming & Gambling",
+    "status": "agreed",
+    "slug": "ballys-intralot-evoke-326-million-takeover"
+  },
+  {
+    "date": "2026-06-05",
     "acquirer": "Howard Hughes Holdings",
     "target": "Vantage Group Holdings",
     "value": 2.1,
