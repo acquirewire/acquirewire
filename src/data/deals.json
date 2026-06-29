@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-29",
+    "acquirer": "Danaher",
+    "target": "Masimo Corporation",
+    "value": 9.9,
+    "sector": "Medtech / Medical Devices",
+    "status": "closed",
+    "slug": "danaher-completes-9-9-billion-masimo-acquisition"
+  },
+  {
     "date": "2026-06-26",
     "acquirer": "Merck",
     "target": "Bio-Techne (TECH)",
