@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-06-30",
+    "acquirer": "Zymeworks",
+    "target": "Theravance Biopharma",
+    "value": 0.929,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "zymeworks-929-million-theravance-acquisition-pipeline-expansion"
+  },
+  {
     "date": "2026-06-26",
     "acquirer": "Merck",
     "target": "Bio-Techne (TECH)",
