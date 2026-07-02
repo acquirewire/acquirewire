@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-01",
+    "acquirer": "EQT",
+    "target": "Perpetual",
+    "value": 1.7,
+    "sector": "Asset Management",
+    "status": "rumoured",
+    "slug": "perpetual-rejects-eqt-17-billion-takeover-bid"
+  },
+  {
     "date": "2026-06-30",
     "acquirer": "Zymeworks",
     "target": "Theravance Biopharma",
