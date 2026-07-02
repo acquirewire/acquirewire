@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-02",
+    "acquirer": "Kroger",
+    "target": "Giant Eagle",
+    "value": 1.65,
+    "sector": "Grocery & Pharmacy Retail",
+    "status": "agreed",
+    "slug": "kroger-acquires-giant-eagle-1-65-billion"
+  },
+  {
     "date": "2026-07-01",
     "acquirer": "EQT",
     "target": "Perpetual",
