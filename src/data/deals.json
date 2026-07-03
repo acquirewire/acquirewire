@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-03",
+    "acquirer": "Ecolab",
+    "target": "CoolIT Systems",
+    "value": 4.75,
+    "sector": "Data Centre Infrastructure",
+    "status": "closed",
+    "slug": "ecolab-closes-coolit-acquisition-ai-cooling-4bn-target"
+  },
+  {
     "date": "2026-07-02",
     "acquirer": "Kroger",
     "target": "Giant Eagle",
