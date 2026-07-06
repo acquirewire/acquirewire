@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-06",
+    "acquirer": "Sky (Comcast)",
+    "target": "ITV",
+    "value": 2.16,
+    "sector": "Media & Broadcasting",
+    "status": "agreed",
+    "slug": "sky-itv-acquisition-2-billion-british-broadcasting"
+  },
+  {
     "date": "2026-07-03",
     "acquirer": "Ecolab",
     "target": "CoolIT Systems",
