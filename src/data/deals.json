@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-07",
+    "acquirer": "Castlelake",
+    "target": "easyJet",
+    "value": 6.7,
+    "sector": "Aviation",
+    "status": "agreed",
+    "slug": "easyjet-castlelake-67-billion-takeover-bid"
+  },
+  {
     "date": "2026-07-06",
     "acquirer": "Sky (Comcast)",
     "target": "ITV",
