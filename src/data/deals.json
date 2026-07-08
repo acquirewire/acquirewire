@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-08",
+    "acquirer": "Yara International",
+    "target": "Gulf Coast Ammonia Plant",
+    "value": 1.3,
+    "sector": "Agriculture / Chemicals",
+    "status": "agreed",
+    "slug": "yara-acquires-gulf-coast-ammonia-plant-1-3-billion"
+  },
+  {
     "date": "2026-07-07",
     "acquirer": "Castlelake",
     "target": "easyJet",
