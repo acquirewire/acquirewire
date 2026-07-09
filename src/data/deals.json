@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-09",
+    "acquirer": "Frasers Group",
+    "target": "Hugo Boss AG",
+    "value": 2.2,
+    "sector": "Retail / Fashion",
+    "status": "rumoured",
+    "slug": "hugo-boss-board-rejects-frasers-2-2-billion-takeover"
+  },
+  {
     "date": "2026-07-08",
     "acquirer": "Yara International",
     "target": "Gulf Coast Ammonia Plant",
