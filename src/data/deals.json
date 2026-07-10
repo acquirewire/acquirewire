@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-10",
+    "acquirer": "Apollo Global Management",
+    "target": "EasyJet",
+    "value": 7.7,
+    "sector": "Aviation",
+    "status": "agreed",
+    "slug": "easyjet-apollo-7-7-billion-takeover-bid"
+  },
+  {
     "date": "2026-07-09",
     "acquirer": "Frasers Group",
     "target": "Hugo Boss AG",
