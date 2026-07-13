@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-13",
+    "acquirer": "Zurich Insurance Group",
+    "target": "Beazley",
+    "value": 10.3,
+    "sector": "Insurance",
+    "status": "agreed",
+    "slug": "zurich-beazley-8-billion-eu-clearance"
+  },
+  {
     "date": "2026-07-10",
     "acquirer": "Apollo Global Management",
     "target": "EasyJet",
