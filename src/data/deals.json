@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-14",
+    "acquirer": "TriCo Bancshares",
+    "target": "First Hawaiian Inc.",
+    "value": 2,
+    "sector": "Banking",
+    "status": "agreed",
+    "slug": "trico-first-hawaiian-2-billion-bank-merger"
+  },
+  {
     "date": "2026-07-13",
     "acquirer": "Zurich Insurance Group",
     "target": "Beazley",
