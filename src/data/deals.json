@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-15",
+    "acquirer": "eBay",
+    "target": "Depop",
+    "value": null,
+    "sector": "E-commerce / Resale",
+    "status": "agreed",
+    "slug": "ebay-depop-acquisition-uk-cma-cleared"
+  },
+  {
     "date": "2026-07-14",
     "acquirer": "TriCo Bancshares",
     "target": "First Hawaiian Inc.",
