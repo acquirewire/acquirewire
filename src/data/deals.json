@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-16",
+    "acquirer": "ABB",
+    "target": "Rotork",
+    "value": 5.5,
+    "sector": "Industrial Automation",
+    "status": "agreed",
+    "slug": "abb-rotork-5-5-billion-automation-acquisition"
+  },
+  {
     "date": "2026-07-15",
     "acquirer": "eBay",
     "target": "Depop",
