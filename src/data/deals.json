@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-17",
+    "acquirer": "NextEra Energy",
+    "target": "Dominion Energy",
+    "value": null,
+    "sector": "Utilities",
+    "status": "agreed",
+    "slug": "nextera-dominion-merger-regulatory-clock-starts"
+  },
+  {
     "date": "2026-07-16",
     "acquirer": "ABB",
     "target": "Rotork",
