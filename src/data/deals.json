@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-20",
+    "acquirer": "Prologis",
+    "target": "Segro",
+    "value": 17.1,
+    "sector": "Industrial Real Estate",
+    "status": "rumoured",
+    "slug": "prologis-third-bid-segro-13-5-billion"
+  },
+  {
     "date": "2026-07-17",
     "acquirer": "NextEra Energy",
     "target": "Dominion Energy",
