@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-23",
+    "acquirer": "Prologis",
+    "target": "Segro",
+    "value": 18.8,
+    "sector": "Real Estate / Logistics",
+    "status": "agreed",
+    "slug": "prologis-segro-takeover-bid-18-billion"
+  },
+  {
     "date": "2026-07-22",
     "acquirer": "Magnolia Oil & Gas",
     "target": "Texas tight-oil assets",
