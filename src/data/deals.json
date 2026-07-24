@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-24",
+    "acquirer": "Mapfre",
+    "target": "Safety Insurance Group",
+    "value": 1.54,
+    "sector": "Insurance",
+    "status": "agreed",
+    "slug": "mapfre-acquires-safety-insurance-group-154-billion"
+  },
+  {
     "date": "2026-07-23",
     "acquirer": "Prologis",
     "target": "Segro",
