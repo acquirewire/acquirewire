@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-27",
+    "acquirer": "Sazerac",
+    "target": "Brown-Forman",
+    "value": null,
+    "sector": "Consumer Staples / Spirits",
+    "status": "rumoured",
+    "slug": "brown-forman-rejects-sazerac-unsolicited-takeover-bid"
+  },
+  {
     "date": "2026-07-24",
     "acquirer": "Mapfre",
     "target": "Safety Insurance Group",
