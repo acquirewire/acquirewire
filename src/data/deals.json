@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-28",
+    "acquirer": "Union Pacific",
+    "target": "Norfolk Southern",
+    "value": null,
+    "sector": "Rail & Transportation",
+    "status": "rumoured",
+    "slug": "union-pacific-norfolk-southern-stb-merger-supplemental"
+  },
+  {
     "date": "2026-07-27",
     "acquirer": "Sazerac",
     "target": "Brown-Forman",
