@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-29",
+    "acquirer": "AT&T",
+    "target": "EchoStar Spectrum Licenses",
+    "value": 23,
+    "sector": "Telecoms",
+    "status": "closed",
+    "slug": "att-closes-23bn-echostar-spectrum-acquisition"
+  },
+  {
     "date": "2026-07-28",
     "acquirer": "Union Pacific",
     "target": "Norfolk Southern",
