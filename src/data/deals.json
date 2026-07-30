@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-30",
+    "acquirer": "AT&T",
+    "target": "EchoStar spectrum assets",
+    "value": 23,
+    "sector": "Telecom",
+    "status": "closed",
+    "slug": "att-completes-23-billion-echostar-spectrum-acquisition"
+  },
+  {
     "date": "2026-07-29",
     "acquirer": "AT&T",
     "target": "EchoStar Spectrum Licenses",
