@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-31",
+    "acquirer": "Intercontinental Exchange",
+    "target": "MarketAxess",
+    "value": 6,
+    "sector": "Financial Market Infrastructure",
+    "status": "agreed",
+    "slug": "intercontinental-exchange-acquires-marketaxess-6-billion"
+  },
+  {
     "date": "2026-07-30",
     "acquirer": "AT&T",
     "target": "EchoStar spectrum assets",
