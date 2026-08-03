@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-03",
+    "acquirer": "NXP Semiconductors",
+    "target": "Ambarella",
+    "value": null,
+    "sector": "Semiconductors",
+    "status": "rumoured",
+    "slug": "nxp-semiconductors-acquires-ambarella-automotive-ai"
+  },
+  {
     "date": "2026-07-31",
     "acquirer": "Intercontinental Exchange",
     "target": "MarketAxess",
