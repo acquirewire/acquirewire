@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-05",
+    "acquirer": "Santander",
+    "target": "Webster Financial Corporation",
+    "value": 12.3,
+    "sector": "Banking",
+    "status": "closed",
+    "slug": "santander-webster-financial-fed-approval-august-close"
+  },
+  {
     "date": "2026-08-04",
     "acquirer": "Prologis",
     "target": "SEGRO plc",
