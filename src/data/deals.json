@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-06",
+    "acquirer": "AkzoNobel",
+    "target": "Axalta Coating Systems",
+    "value": null,
+    "sector": "Industrials / Specialty Chemicals",
+    "status": "agreed",
+    "slug": "akzonobel-axalta-merger-shareholders-approve"
+  },
+  {
     "date": "2026-08-05",
     "acquirer": "Santander",
     "target": "Webster Financial Corporation",
