@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-07",
+    "acquirer": "Paramount Global",
+    "target": "Warner Bros. Discovery",
+    "value": 110,
+    "sector": "Media & Entertainment",
+    "status": "agreed",
+    "slug": "paramount-warner-bros-merger-uk-cleared-antitrust-trial"
+  },
+  {
     "date": "2026-08-06",
     "acquirer": "AkzoNobel",
     "target": "Axalta Coating Systems",
