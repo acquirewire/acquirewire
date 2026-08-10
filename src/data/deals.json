@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-10",
+    "acquirer": "Mastercard",
+    "target": "BVNK",
+    "value": 1.8,
+    "sector": "Fintech / Payments",
+    "status": "agreed",
+    "slug": "mastercard-acquires-stablecoin-firm-bvnk-1-8-billion"
+  },
+  {
     "date": "2026-08-07",
     "acquirer": "Paramount Global",
     "target": "Warner Bros. Discovery",
