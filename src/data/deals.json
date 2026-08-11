@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-11",
+    "acquirer": "Archer Aviation",
+    "target": "Boeing's Wisk Aero, Insitu and SkyGrid subsidiaries",
+    "value": null,
+    "sector": "Aerospace & Defense",
+    "status": "agreed",
+    "slug": "archer-aviation-acquires-boeing-wisk-insitu-skygrid"
+  },
+  {
     "date": "2026-08-10",
     "acquirer": "Mastercard",
     "target": "BVNK",
