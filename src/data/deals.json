@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-12",
+    "acquirer": "Curaleaf",
+    "target": "Aurora Cannabis",
+    "value": null,
+    "sector": "Cannabis",
+    "status": "rumoured",
+    "slug": "curaleaf-hostile-takeover-bid-aurora-cannabis"
+  },
+  {
     "date": "2026-08-11",
     "acquirer": "Archer Aviation",
     "target": "Boeing's Wisk Aero, Insitu and SkyGrid subsidiaries",
