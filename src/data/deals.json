@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-13",
+    "acquirer": "Trian Fund Management",
+    "target": "Wendy's",
+    "value": null,
+    "sector": "Restaurants & Consumer",
+    "status": "rumoured",
+    "slug": "wendy-trian-nelson-peltz-takeover-bid"
+  },
+  {
     "date": "2026-08-12",
     "acquirer": "Curaleaf",
     "target": "Aurora Cannabis",
