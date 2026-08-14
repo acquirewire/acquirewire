@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-14",
+    "acquirer": "Silver Lake",
+    "target": "Workday",
+    "value": null,
+    "sector": "Enterprise Software",
+    "status": "rumoured",
+    "slug": "workday-silver-lake-acquisition-talks-stock-surges"
+  },
+  {
     "date": "2026-08-13",
     "acquirer": "Trian Fund Management",
     "target": "Wendy's",
