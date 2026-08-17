@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-17",
+    "acquirer": "Rocket Lab",
+    "target": "Iridium Communications",
+    "value": null,
+    "sector": "Aerospace & Satellite",
+    "status": "agreed",
+    "slug": "rocket-lab-clears-antitrust-iridium-acquisition-financing"
+  },
+  {
     "date": "2026-08-14",
     "acquirer": "Silver Lake",
     "target": "Workday",
