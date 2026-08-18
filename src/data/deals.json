@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-18",
+    "acquirer": "Brookfield",
+    "target": "Reliance Worldwide Corporation",
+    "value": 2.9,
+    "sector": "Industrial / Building Products",
+    "status": "rumoured",
+    "slug": "brookfield-29-billion-takeover-bid-reliance-worldwide"
+  },
+  {
     "date": "2026-08-17",
     "acquirer": "Rocket Lab",
     "target": "Iridium Communications",
