@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-19",
+    "acquirer": "KKR",
+    "target": "UGI Corporation",
+    "value": 9,
+    "sector": "Utilities",
+    "status": "rumoured",
+    "slug": "kkr-9-billion-takeover-bid-ugi-gas-utility"
+  },
+  {
     "date": "2026-08-18",
     "acquirer": "Brookfield",
     "target": "Reliance Worldwide Corporation",
