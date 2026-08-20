@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-20",
+    "acquirer": "Stripe",
+    "target": "OpenRouter",
+    "value": 7.5,
+    "sector": "AI Infrastructure",
+    "status": "agreed",
+    "slug": "stripe-agrees-acquire-openrouter-7-5-billion-ai-routing"
+  },
+  {
     "date": "2026-08-19",
     "acquirer": "KKR",
     "target": "UGI Corporation",
