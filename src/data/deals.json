@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-21",
+    "acquirer": "Charter Communications",
+    "target": "Cox Communications",
+    "value": 34.5,
+    "sector": "Telecoms",
+    "status": "closed",
+    "slug": "charter-closes-34-5-billion-cox-acquisition-cable-giant"
+  },
+  {
     "date": "2026-08-20",
     "acquirer": "Stripe",
     "target": "OpenRouter",
