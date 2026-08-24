@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-24",
+    "acquirer": "Monte dei Paschi",
+    "target": "Banco BPM / Banca Generali",
+    "value": 40,
+    "sector": "Banking",
+    "status": "rumoured",
+    "slug": "monte-dei-paschi-40-billion-double-bid-bpm-banca-generali"
+  },
+  {
     "date": "2026-08-21",
     "acquirer": "Charter Communications",
     "target": "Cox Communications",
