@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-25",
+    "acquirer": "nVent Electric",
+    "target": "Maverick Power",
+    "value": 1.75,
+    "sector": "Electrical Equipment / Data Centres",
+    "status": "agreed",
+    "slug": "nvent-acquires-maverick-power-1-75-billion-data-centre"
+  },
+  {
     "date": "2026-08-24",
     "acquirer": "Monte dei Paschi",
     "target": "Banco BPM / Banca Generali",
