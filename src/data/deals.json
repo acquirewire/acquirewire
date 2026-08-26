@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-26",
+    "acquirer": "McKesson",
+    "target": "Precision Medicine Group",
+    "value": 2.25,
+    "sector": "Healthcare Services",
+    "status": "agreed",
+    "slug": "mckesson-acquires-precision-medicine-group-2-25-billion"
+  },
+  {
     "date": "2026-08-25",
     "acquirer": "nVent Electric",
     "target": "Maverick Power",
