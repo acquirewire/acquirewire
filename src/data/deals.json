@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-27",
+    "acquirer": "Victory Capital",
+    "target": "First Eagle Investments",
+    "value": 7,
+    "sector": "Asset Management",
+    "status": "agreed",
+    "slug": "victory-capital-first-eagle-7-billion-asset-manager"
+  },
+  {
     "date": "2026-08-26",
     "acquirer": "McKesson",
     "target": "Precision Medicine Group",
