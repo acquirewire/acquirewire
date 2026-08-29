@@ -38,6 +38,26 @@ const COUNT = Math.max(1, parseInt(argVal('--count') || process.env.COUNT || '1'
 const BACKDATE = process.argv.includes('--backdate') || COUNT > 1;
 const dateMinusDays = (n) => { const d = new Date(); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); };
 
+// Errors that will fail identically on every retry: billing, auth, a bad model
+// id, a malformed request. Retrying these burns the attempt budget and buries
+// the real cause under a wall of identical warnings, so we abort on the first.
+const FATAL_STATUSES = new Set([400, 401, 403, 404]);
+const isFatalApiError = (e) => e instanceof Anthropic.APIError && FATAL_STATUSES.has(e.status);
+
+function hintFor(e) {
+  const msg = (e.message || '').toLowerCase();
+  if (msg.includes('credit balance'))
+    return `  → The Anthropic account behind ANTHROPIC_API_KEY is out of credit.
+    Top up at https://console.anthropic.com/settings/billing, then re-run:
+    Actions → Daily article draft → Run workflow.`;
+  if (e.status === 401 || e.status === 403)
+    return `  → ANTHROPIC_API_KEY is invalid, revoked, or lacks access to this model.
+    Replace it with: gh secret set ANTHROPIC_API_KEY --repo <owner>/<repo>`;
+  if (e.status === 404)
+    return `  → Model "${MODEL}" was not found. Point the ANTHROPIC_MODEL repo variable at a current model id.`;
+  return `  → This request will fail the same way on every retry; fix the cause above.`;
+}
+
 const loadState = () => (existsSync(STATE_PATH) ? JSON.parse(readFileSync(STATE_PATH, 'utf8')) : { covered: [] });
 const keyOf = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 60);
 const norm = (t) => (t || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -184,6 +204,8 @@ async function main() {
   const written = [];
   let firstSlug = '', firstTitle = '';
   let attempts = 0;
+  let softFailures = 0;   // transient errors we retried past
+  let fatal = null;       // first non-retryable API error, if any
   const maxAttempts = target * 3 + 5; // cap API calls so skips can't run away
 
   while (written.length < target && attempts < maxAttempts) {
@@ -195,6 +217,8 @@ async function main() {
     try {
       article = await draftOne(client, candidates, coveredHeadlines);
     } catch (e) {
+      if (isFatalApiError(e)) { fatal = e; break; }
+      softFailures++;
       console.warn(`  ! draft failed, retrying: ${e.message}`);
       continue;
     }
@@ -232,8 +256,28 @@ async function main() {
     if (!firstSlug) { firstSlug = slug; firstTitle = article.title; }
   }
 
-  if (DRY || written.length === 0) {
-    console.log(written.length === 0 && !DRY ? 'No articles written.' : 'Dry run complete.');
+  // Nothing written. Distinguish "no news today" (fine, exit 0) from "the API
+  // refused us" (broken, exit 1) — a silent green run hid an 11-day outage in
+  // August 2026, so an API problem must fail the workflow and page us.
+  if (written.length === 0) {
+    if (fatal) {
+      console.error(`
+✗ Aborted: the Anthropic API rejected the request (HTTP ${fatal.status}).`);
+      console.error(`  ${fatal.message}`);
+      console.error(hintFor(fatal));
+      process.exit(1);
+    }
+    if (softFailures > 0) {
+      console.error(`
+✗ No articles written: ${softFailures} attempt(s) failed and none succeeded.`);
+      process.exit(1);
+    }
+    console.log('No articles written: no usable candidates on the wire today.');
+    return;
+  }
+
+  if (DRY) {
+    console.log('Dry run complete.');
     return;
   }
 

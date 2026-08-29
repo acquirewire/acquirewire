@@ -71,11 +71,25 @@ jobs:
             --repo "${{ github.repository }}" \
             --merge --admin
 
-      - name: Notify (ntfy)
+      - name: Notify success (ntfy)
         if: steps.gen.outputs.created == 'true' && vars.NTFY_TOPIC != ''
         run: |
           curl -s \
             -H "Title: New AcquireWire draft" \
             -H "Tags: newspaper" \
             -d "${{ steps.gen.outputs.title }}" \
+            "${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}/${{ vars.NTFY_TOPIC }}" || true
+
+      # The generator now exits non-zero when the API refuses us, so this fires
+      # on a real outage. Without it a broken key just produced green empty runs.
+      - name: Notify failure (ntfy)
+        if: failure() && vars.NTFY_TOPIC != ''
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          curl -s \
+            -H "Title: AcquireWire daily draft FAILED" \
+            -H "Tags: rotating_light" \
+            -H "Priority: high" \
+            -d "No article published today. Check the run log: $RUN_URL" \
             "${{ vars.NTFY_SERVER || 'https://ntfy.sh' }}/${{ vars.NTFY_TOPIC }}" || true
