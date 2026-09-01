@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-01",
+    "acquirer": "Aon",
+    "target": "USI Insurance Services",
+    "value": 17,
+    "sector": "Insurance",
+    "status": "agreed",
+    "slug": "aon-acquires-usi-insurance-17-billion-kkr-exit"
+  },
+  {
     "date": "2026-08-27",
     "acquirer": "Victory Capital",
     "target": "First Eagle Investments",
