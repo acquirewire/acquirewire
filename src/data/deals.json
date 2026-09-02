@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-02",
+    "acquirer": "Eli Lilly",
+    "target": "Merida Biosciences",
+    "value": 2.875,
+    "sector": "Biotech",
+    "status": "agreed",
+    "slug": "eli-lilly-merida-biosciences-2-875-billion-autoimmune"
+  },
+  {
     "date": "2026-09-01",
     "acquirer": "Aon",
     "target": "USI Insurance Services",
