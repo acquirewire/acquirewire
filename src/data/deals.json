@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-03",
+    "acquirer": "Uber",
+    "target": "Delivery Hero",
+    "value": 14.8,
+    "sector": "Food Delivery",
+    "status": "agreed",
+    "slug": "delivery-hero-board-backs-uber-14-8-billion-takeover"
+  },
+  {
     "date": "2026-09-02",
     "acquirer": "Eli Lilly",
     "target": "Merida Biosciences",
