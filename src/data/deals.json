@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-04",
+    "acquirer": "Nvidia",
+    "target": "Hugging Face",
+    "value": 12.93,
+    "sector": "AI / Software",
+    "status": "agreed",
+    "slug": "nvidia-confirms-hugging-face-acquisition-12-93-billion"
+  },
+  {
     "date": "2026-09-03",
     "acquirer": "Uber",
     "target": "Delivery Hero",
