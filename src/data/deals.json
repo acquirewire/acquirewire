@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-07",
+    "acquirer": "Flex",
+    "target": "EPC Power",
+    "value": 4.4,
+    "sector": "Electrical Equipment / Data Centres",
+    "status": "agreed",
+    "slug": "flex-acquires-epc-power-4-4-billion-ai-data-centre"
+  },
+  {
     "date": "2026-09-04",
     "acquirer": "Nvidia",
     "target": "Hugging Face",
