@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-08",
+    "acquirer": "WaFd",
+    "target": "EverBank Financial",
+    "value": 3.9,
+    "sector": "Banking",
+    "status": "agreed",
+    "slug": "wafd-everbank-3-9-billion-reverse-merger-75-billion-bank"
+  },
+  {
     "date": "2026-09-07",
     "acquirer": "Flex",
     "target": "EPC Power",
