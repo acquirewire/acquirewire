@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-09",
+    "acquirer": "GE Aerospace",
+    "target": "Consolidated Precision Products",
+    "value": 11.75,
+    "sector": "Aerospace & Defense",
+    "status": "agreed",
+    "slug": "ge-aerospace-acquires-cpp-castings-11-75-billion"
+  },
+  {
     "date": "2026-09-08",
     "acquirer": "WaFd",
     "target": "EverBank Financial",
