@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-10",
+    "acquirer": "Independence Realty Trust",
+    "target": "Centerspace",
+    "value": 2.14,
+    "sector": "Real Estate / Multifamily",
+    "status": "agreed",
+    "slug": "independence-realty-centerspace-2-14-billion-apartment-reit-merger"
+  },
+  {
     "date": "2026-09-09",
     "acquirer": "GE Aerospace",
     "target": "Consolidated Precision Products",
