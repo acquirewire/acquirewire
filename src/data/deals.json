@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-11",
+    "acquirer": "Copart",
+    "target": "ACV Auctions",
+    "value": 1.9,
+    "sector": "Automotive / Marketplaces",
+    "status": "agreed",
+    "slug": "copart-acquires-acv-auctions-1-9-billion-cash"
+  },
+  {
     "date": "2026-09-10",
     "acquirer": "Independence Realty Trust",
     "target": "Centerspace",
