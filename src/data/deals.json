@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-14",
+    "acquirer": "Bending Spoons",
+    "target": "Miro",
+    "value": 1.355,
+    "sector": "Enterprise Software",
+    "status": "agreed",
+    "slug": "bending-spoons-acquires-miro-1-355-billion"
+  },
+  {
     "date": "2026-09-11",
     "acquirer": "Copart",
     "target": "ACV Auctions",
