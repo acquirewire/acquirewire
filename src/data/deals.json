@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-16",
+    "acquirer": "Grab",
+    "target": "Atome Financial (60%)",
+    "value": 1.49,
+    "sector": "Fintech / Consumer Lending",
+    "status": "agreed",
+    "slug": "grab-acquires-60-percent-atome-financial-1-49-billion"
+  },
+  {
     "date": "2026-09-15",
     "acquirer": "Sequence Holdings / DFO Management",
     "target": "The Baldwin Group",
