@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-24",
+    "acquirer": "Schneider Electric",
+    "target": "Shelly Group",
+    "value": 1.4,
+    "sector": "Smart Home / IoT",
+    "status": "agreed",
+    "slug": "schneider-electric-14-billion-bid-shelly-group"
+  },
+  {
     "date": "2026-09-16",
     "acquirer": "Grab",
     "target": "Atome Financial (60%)",
