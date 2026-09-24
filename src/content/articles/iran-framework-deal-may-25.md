@@ -5,6 +5,7 @@ date: 2026-05-25
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Markets"
 draft: false
 ---
 ## The State of Play

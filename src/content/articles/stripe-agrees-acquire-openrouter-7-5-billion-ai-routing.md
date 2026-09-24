@@ -1,10 +1,11 @@
 ---
 title: "Stripe Agrees to Buy OpenRouter for About $7.5 Billion, Betting Payments and AI Routing Converge"
-subtitle: "The payments company is paying a reported 5.4x markup on OpenRouter's May valuation for a gateway that routes traffic across 400-plus AI models — its largest acquisition to date."
+subtitle: "The payments company is paying a reported 5.4x markup on OpenRouter's May valuation for a gateway that routes traffic across 400-plus AI models, its largest acquisition to date."
 date: 2026-08-20
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["fintech","ai","m&a"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
@@ -15,11 +16,11 @@ OpenRouter sits between developers and more than 400 models from over 80 provide
 
 ## Why It Matters
 
-**Stripe is treating AI inference as a payments problem.** Every model call is a metered transaction with a price, a vendor and a settlement — the same primitives Stripe already handles for card payments. Owning the routing layer gives Stripe visibility into where enterprise AI spend flows and a natural position to bill, reconcile and optimise it. That is a far larger strategic ambition than a bolt-on.
+**Stripe is treating AI inference as a payments problem.** Every model call is a metered transaction with a price, a vendor and a settlement, the same primitives Stripe already handles for card payments. Owning the routing layer gives Stripe visibility into where enterprise AI spend flows and a natural position to bill, reconcile and optimise it. That is a far larger strategic ambition than a bolt-on.
 
 **The valuation jump underlines how fast infrastructure assets are repricing.** Paying more than five times a three-month-old mark is extraordinary even by 2026 standards. It reflects both OpenRouter's traffic growth and a scarcity premium: neutral model gateways with real volume are rare, and hyperscalers, chipmakers and labs have all been circling similar assets.
 
-**Neutrality becomes the open question.** OpenRouter's value rests on being provider-agnostic. Under Stripe — itself a commercial partner to many AI labs — customers and model vendors will watch closely for any tilt in routing decisions. Preserving that trust will be the integration's central challenge.
+**Neutrality becomes the open question.** OpenRouter's value rests on being provider-agnostic. Under Stripe, itself a commercial partner to many AI labs, customers and model vendors will watch closely for any tilt in routing decisions. Preserving that trust will be the integration's central challenge.
 
 <div class="callout risk">
   <div class="ttl">Risks to Watch</div>

@@ -5,6 +5,7 @@ date: 2026-04-09
 readTime: 5
 author: "AcquireWire Desk"
 tags: []
+sector: "Energy & Utilities"
 draft: false
 ---
 ## The Week in Context

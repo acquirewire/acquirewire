@@ -1,10 +1,11 @@
 ---
 title: "Baldwin Group to Go Private in $7.7 Billion Deal Led by Sequence Holdings and Dell's Family Office"
-subtitle: "Shareholders get $32.50 in cash — an 88% premium to the price before take-private reports surfaced in June — as the insurance broker trades quarterly scrutiny for room to invest in AI."
+subtitle: "Shareholders get $32.50 in cash, an 88% premium to the price before take-private reports surfaced in June, as the insurance broker trades quarterly scrutiny for room to invest in AI."
 date: 2026-09-15
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["insurance","take-private","private equity"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
@@ -13,7 +14,7 @@ The Baldwin Group has agreed to be taken private through a majority investment b
 
 The enterprise value comprises an equity purchase price of about $4.6 billion and roughly $3.1 billion of net debt to be assumed or refinanced. Eligible Baldwin colleagues will retain a significant minority equity stake alongside the new owners. The deal is expected to close in the first quarter of 2027. Management framed the transaction as giving the broker flexibility to pursue long-term investments, including in AI, without the pressure of quarterly earnings and share-price swings.
 
-Analysts at TD Cowen described Sequence and DFO as "ideal owners" for the business, according to The Insurer. Baldwin, formerly known as BRP Group, is one of the fastest-growing independent brokers in the United States and has expanded largely through acquisition — a strategy that built scale but also the debt that weighed on its public valuation.
+Analysts at TD Cowen described Sequence and DFO as "ideal owners" for the business, according to The Insurer. Baldwin, formerly known as BRP Group, is one of the fastest-growing independent brokers in the United States and has expanded largely through acquisition, a strategy that built scale but also the debt that weighed on its public valuation.
 
 ## Why It Matters
 

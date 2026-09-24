@@ -5,6 +5,7 @@ date: 2026-04-10
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Energy & Utilities"
 draft: false
 ---
 ## The Numbers

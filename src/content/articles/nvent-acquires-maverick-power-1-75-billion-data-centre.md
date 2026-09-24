@@ -5,11 +5,12 @@ date: 2026-08-25
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["industrials","data centres","m&a"]
+sector: "Technology"
 draft: false
 ---
 ## What Happened
 
-nVent Electric has agreed to acquire Maverick Power for $1.75 billion, with up to $550 million of additional cash consideration payable if the business hits performance targets — taking the potential total to $2.3 billion. It is the company's largest acquisition since its 2018 spin-off from Pentair, and the announcement on 24 August sent a clear signal about where nVent sees growth.
+nVent Electric has agreed to acquire Maverick Power for $1.75 billion, with up to $550 million of additional cash consideration payable if the business hits performance targets, taking the potential total to $2.3 billion. It is the company's largest acquisition since its 2018 spin-off from Pentair, and the announcement on 24 August sent a clear signal about where nVent sees growth.
 
 Maverick Power, headquartered in McKinney, Texas, manufactures engineered power-distribution and infrastructure systems for data centres. It employs roughly 900 people across Texas and Arizona and is expected to generate approximately $700 million of revenue in 2026. nVent said the deal strengthens its position in the data-centre vertical, adds a power-distribution platform to its portfolio and expands its offering for new power architectures and system-level solutions and services.
 
@@ -17,7 +18,7 @@ Bloomberg framed the purchase as nVent seeking "a bigger piece of the AI boom." 
 
 ## Why It Matters
 
-**nVent is buying its way up the data-centre value chain.** The company already sells enclosures, liquid cooling and thermal management into hyperscale builds. Adding switchgear-style power distribution lets it pitch a more complete electrical package to customers racing to energise new capacity — and captures more dollars per megawatt deployed.
+**nVent is buying its way up the data-centre value chain.** The company already sells enclosures, liquid cooling and thermal management into hyperscale builds. Adding switchgear-style power distribution lets it pitch a more complete electrical package to customers racing to energise new capacity, and captures more dollars per megawatt deployed.
 
 **The earn-out structure hedges an obvious concern.** At $1.75 billion for roughly $700 million of revenue, nVent is paying about 2.5 times sales upfront. Tying $550 million to targets protects nVent if the current data-centre capex boom slows, while giving Maverick's owners a strong incentive to keep delivering through the integration.
 

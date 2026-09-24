@@ -5,19 +5,20 @@ date: 2026-08-31
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["fintech","private equity","take-private"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
 
-A consortium of Advent International and Stripe has abandoned its pursuit of PayPal, Bloomberg reported on 28 August, ending what would have been one of the largest leveraged buyouts on record. The group had bid $60.50 a share on 15 July — a 28% premium at the time and more than $53 billion in total — only for PayPal's board to reject the price as inadequate, with later reporting putting the board's own number closer to $70.
+A consortium of Advent International and Stripe has abandoned its pursuit of PayPal, Bloomberg reported on 28 August, ending what would have been one of the largest leveraged buyouts on record. The group had bid $60.50 a share on 15 July, a 28% premium at the time and more than $53 billion in total, only for PayPal's board to reject the price as inadequate, with later reporting putting the board's own number closer to $70.
 
 The collapse came roughly two weeks after the parties rekindled negotiations that had first broken down in July. In the interim, PayPal's stock had rallied about 40%, leaving the original offer well below where the shares traded and making a deal at a price the board would accept uneconomic. PayPal fell as much as 16% in premarket trading on the news.
 
 ## Why It Matters
 
-**The market did the board's negotiating for it.** By rejecting $60.50 and letting the stock run, PayPal's directors effectively raised the clearing price beyond what a leveraged structure could support. That is a vindication of the board's stance — but it now leaves shareholders holding a stock that had been bid up on takeover hopes, as the premarket drop makes clear.
+**The market did the board's negotiating for it.** By rejecting $60.50 and letting the stock run, PayPal's directors effectively raised the clearing price beyond what a leveraged structure could support. That is a vindication of the board's stance, but it now leaves shareholders holding a stock that had been bid up on takeover hopes, as the premarket drop makes clear.
 
-**Mega-LBOs remain hard to finance at full prices.** A $53 billion-plus take-private requires tens of billions in debt. With financing costs elevated and PayPal's board anchored near $70, the maths stopped working for Advent and Stripe. The episode is a reminder that even deep-pocketed sponsors have a ceiling, and that public boards holding out for more can win — at the cost of a volatile share price.
+**Mega-LBOs remain hard to finance at full prices.** A $53 billion-plus take-private requires tens of billions in debt. With financing costs elevated and PayPal's board anchored near $70, the maths stopped working for Advent and Stripe. The episode is a reminder that even deep-pocketed sponsors have a ceiling, and that public boards holding out for more can win, at the cost of a volatile share price.
 
 **Stripe's strategic appetite is undimmed.** Days before the PayPal talks ended, Stripe committed roughly $7.5 billion to buy OpenRouter. The company is clearly willing to deploy capital at scale; it simply will not overpay for a legacy platform when it can buy growth infrastructure instead.
 

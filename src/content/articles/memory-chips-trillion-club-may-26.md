@@ -5,6 +5,7 @@ date: 2026-05-26
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Technology"
 draft: false
 ---
 ## What Happened

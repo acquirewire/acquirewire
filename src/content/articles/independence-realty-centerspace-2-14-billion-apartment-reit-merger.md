@@ -1,10 +1,11 @@
 ---
 title: "Independence Realty Trust to Buy Centerspace in $2.14 Billion All-Stock Deal, Creating an $8.1 Billion Apartment REIT"
-subtitle: "Centerspace holders get 3.8 IRT shares each — $60.46 a share, a 14.7% premium — as the Sunbelt landlord adds 47 Midwest and Mountain West communities and 10,456 units."
+subtitle: "Centerspace holders get 3.8 IRT shares each, $60.46 a share, a 14.7% premium, as the Sunbelt landlord adds 47 Midwest and Mountain West communities and 10,456 units."
 date: 2026-09-10
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["real estate","m&a","reits"]
+sector: "Real Estate"
 draft: false
 ---
 ## What Happened

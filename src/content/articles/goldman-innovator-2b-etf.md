@@ -5,6 +5,7 @@ date: 2026-04-02
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Financials"
 draft: false
 ---
 ## Deal Overview

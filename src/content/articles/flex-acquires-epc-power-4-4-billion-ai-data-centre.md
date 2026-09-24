@@ -5,6 +5,7 @@ date: 2026-09-07
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["industrials","data centres","m&a"]
+sector: "Technology"
 draft: false
 ---
 ## What Happened
@@ -19,7 +20,7 @@ Flex disclosed the agreement in a filing with the SEC the same day. The deal cam
 
 **Flex is building the spin-off before it lists.** Announcing a $4.4 billion acquisition months ahead of separating the same segment is deliberate: the enlarged Cloud and Power Infrastructure business will come to market with a faster-growing, higher-margin profile than Flex's traditional contract-manufacturing operations. EPC's 30% margin trajectory is precisely the kind of number that commands a premium multiple as a standalone.
 
-**800-volt is where the data-centre power stack is heading.** As rack densities climb, operators are moving to higher-voltage DC distribution to cut losses and copper. EPC's positioning on that transition — and its roadmap into solid-state transformers — is what justifies paying more than five times forward revenue.
+**800-volt is where the data-centre power stack is heading.** As rack densities climb, operators are moving to higher-voltage DC distribution to cut losses and copper. EPC's positioning on that transition, and its roadmap into solid-state transformers, is what justifies paying more than five times forward revenue.
 
 **The AI power-infrastructure land grab is accelerating.** This deal follows nVent's $1.75 billion purchase of Maverick Power two weeks earlier and a string of similar transactions. Companies with proven power-electronics engineering are scarce, and buyers are paying up before the assets disappear.
 

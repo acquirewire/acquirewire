@@ -1,10 +1,11 @@
 ---
 title: "WaFd and EverBank Agree $3.9 Billion Reverse Merger to Build a $75 Billion Regional Bank"
-subtitle: "EverBank folds into the listed WaFd but its investors take 59% of the combined group, which will adopt the EverBank name and ticker — with ~29% EPS accretion promised for WaFd holders in 2027."
+subtitle: "EverBank folds into the listed WaFd but its investors take 59% of the combined group, which will adopt the EverBank name and ticker, with ~29% EPS accretion promised for WaFd holders in 2027."
 date: 2026-09-08
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["banking","m&a","regional banks"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
@@ -21,7 +22,7 @@ EverBank, headquartered in Jacksonville, Florida, brings a nationally oriented d
 
 **Regional-bank consolidation is back on.** A $75 billion balance sheet puts the combined group squarely in the mid-tier that regulators and investors have been encouraging to scale up. Combining WaFd's Pacific Northwest and Western footprint with EverBank's Southeast and national digital franchise creates geographic diversity neither had alone.
 
-**The accretion promise sets a high bar.** A 29% EPS uplift with a sub-two-year earn-back is unusually strong for a bank deal and implies substantial cost savings. Delivering it will require integrating two very different institutions — a traditional branch-based thrift and a digitally oriented lender — without losing deposits or key people.
+**The accretion promise sets a high bar.** A 29% EPS uplift with a sub-two-year earn-back is unusually strong for a bank deal and implies substantial cost savings. Delivering it will require integrating two very different institutions, a traditional branch-based thrift and a digitally oriented lender, without losing deposits or key people.
 
 <div class="callout risk">
   <div class="ttl">Risks to Watch</div>

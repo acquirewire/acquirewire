@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 const { article, prev, next } = Astro.props;
 const { data } = article;
 const { Content } = await render(article);
+const ogImage = data.image;
 
 const dateStr = data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 const isoDate = data.date.toISOString();
@@ -46,6 +47,7 @@ const jsonLd = {
   description={data.subtitle}
   type="article"
   publishedTime={isoDate}
+  {...(ogImage ? { image: ogImage } : {})}
 >
   <div id="progress"></div>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -67,9 +69,24 @@ const jsonLd = {
           <time datetime={isoDate}>{dateStr}</time>
           <span>·</span>
           <span>{data.readTime} min read</span>
+          {data.sector && (<><span>·</span><a class="art-sector" href="/">{data.sector}</a></>)}
         </div>
       </header>
     </div>
+
+    {data.image && (
+      <div class="read">
+        <figure class="art-figure">
+          <img src={data.image} alt={data.imageAlt ?? ''} loading="lazy" decoding="async" width="1200" height="675" />
+          {(data.imageAlt || data.imageCredit) && (
+            <figcaption>
+              {data.imageAlt}
+              {data.imageCredit && <span class="cred">{data.imageCredit}</span>}
+            </figcaption>
+          )}
+        </figure>
+      </div>
+    )}
 
     <div class="read">
       <div class="prose">

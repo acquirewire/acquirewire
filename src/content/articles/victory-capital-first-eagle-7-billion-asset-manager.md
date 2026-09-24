@@ -5,6 +5,7 @@ date: 2026-08-27
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["asset management","m&a","private credit"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
@@ -13,7 +14,7 @@ Victory Capital Holdings has agreed to acquire First Eagle Investments in a tran
 
 First Eagle managed approximately $222 billion as of 31 July. The combination creates a diversified global manager with roughly $571 billion of client assets and about $3.2 billion of annual revenue. Victory expects around $280 million of net expense synergies, and First Eagle's $41 billion CLO and alternative-credit platform will become the combined group's alternatives arm. Closing is targeted by the end of the first quarter of 2027, subject to regulatory approvals and client consents. Amundi, a Victory shareholder, publicly welcomed the deal.
 
-Morningstar described the purchase as Victory's "biggest bet yet." The San Antonio-based firm has grown almost entirely through acquisitions of investment franchises, but First Eagle — a well-known name in global value investing with a substantial alternatives business — is a different order of magnitude from its previous deals.
+Morningstar described the purchase as Victory's "biggest bet yet." The San Antonio-based firm has grown almost entirely through acquisitions of investment franchises, but First Eagle, a well-known name in global value investing with a substantial alternatives business, is a different order of magnitude from its previous deals.
 
 ## Why It Matters
 
@@ -21,7 +22,7 @@ Morningstar described the purchase as Victory's "biggest bet yet." The San Anton
 
 **Alternatives are the prize.** First Eagle's CLO and private-credit business is the fastest-growing, highest-fee part of the acquired portfolio. For Victory, which has historically been weighted towards traditional equity and fixed-income strategies, that platform provides an immediate foothold in the segment where institutional allocations are still rising.
 
-**The synergy target is ambitious.** At $280 million, the savings represent a significant slice of the combined cost base. Delivering that without disrupting investment teams — whose departure would trigger client outflows — is the central execution test, and it is why the deal carries a lengthy closing period with client-consent conditions.
+**The synergy target is ambitious.** At $280 million, the savings represent a significant slice of the combined cost base. Delivering that without disrupting investment teams, whose departure would trigger client outflows, is the central execution test, and it is why the deal carries a lengthy closing period with client-consent conditions.
 
 <div class="callout risk">
   <div class="ttl">Risks to Watch</div>

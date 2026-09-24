@@ -5,6 +5,7 @@ date: 2026-03-31
 readTime: 5
 author: "AcquireWire Desk"
 tags: []
+sector: "Consumer & Retail"
 draft: false
 ---
 ## Deal Overview

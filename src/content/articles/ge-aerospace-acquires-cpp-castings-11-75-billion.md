@@ -1,10 +1,11 @@
 ---
 title: "GE Aerospace Brings Castings In-House With $11.75 Billion Deal for Consolidated Precision Products"
-subtitle: "The engine maker is buying a 6,600-employee supplier from Warburg Pincus and Berkshire Partners — $7 billion in cash plus new debt — to break a bottleneck that has throttled engine output."
+subtitle: "The engine maker is buying a 6,600-employee supplier from Warburg Pincus and Berkshire Partners, $7 billion in cash plus new debt, to break a bottleneck that has throttled engine output."
 date: 2026-09-09
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["aerospace","m&a","supply chain"]
+sector: "Industrials"
 draft: false
 ---
 ## What Happened
@@ -17,7 +18,7 @@ CPP, headquartered in Cleveland, Ohio, produces investment and precision sand ca
 
 **Vertical integration is the response to a supply chain that will not heal on its own.** Castings for turbine blades and structural components have been one of the most persistent constraints on engine deliveries since the pandemic. By owning CPP outright, GE gains direct control over capacity allocation, quality and investment at a chokepoint that has held back both new-engine output and aftermarket spares.
 
-**The price signals how much unmet demand is worth.** Nearly $12 billion for a castings supplier would have looked extravagant a few years ago. Today, with airlines waiting years for aircraft and GE's LEAP and GE9X programmes ramping, every incremental engine delivered carries decades of high-margin service revenue — which is why first-year accretion is credible.
+**The price signals how much unmet demand is worth.** Nearly $12 billion for a castings supplier would have looked extravagant a few years ago. Today, with airlines waiting years for aircraft and GE's LEAP and GE9X programmes ramping, every incremental engine delivered carries decades of high-margin service revenue, which is why first-year accretion is credible.
 
 **Competitors will notice.** CPP also supplies other engine makers and defence primes. GE has not indicated any intent to restrict supply, and regulators will almost certainly seek assurances; but the strategic reality is that GE now controls a resource its rivals depend on, and that will shape negotiations across the industry.
 

@@ -1,10 +1,11 @@
 ---
 title: "Goldman Emerges as Lead Bidder for Palmer Square, the $37 Billion CLO Machine"
-subtitle: "The Kansas credit manager run by Chris and Angie Long has become one of the largest CLO issuers in the market — and Goldman wants it to plug a gap in asset management."
+subtitle: "The Kansas credit manager run by Chris and Angie Long has become one of the largest CLO issuers in the market, and Goldman wants it to plug a gap in asset management."
 date: 2026-09-22
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["private credit","m&a","asset management"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
@@ -15,11 +16,11 @@ No definitive agreement has been reached and the talks could still end without a
 
 ## Why It Matters
 
-**Goldman is buying capability, not just assets.** The $37 billion figure is assets under management, not a purchase price, and the strategic value lies in Palmer Square's CLO issuance machinery. Structured-credit origination at scale requires warehousing relationships, ratings expertise and a track record through cycles — all of which take years to assemble and none of which Goldman can simply hire into existence.
+**Goldman is buying capability, not just assets.** The $37 billion figure is assets under management, not a purchase price, and the strategic value lies in Palmer Square's CLO issuance machinery. Structured-credit origination at scale requires warehousing relationships, ratings expertise and a track record through cycles, all of which take years to assemble and none of which Goldman can simply hire into existence.
 
 **Asset management is where Goldman has staked its re-rating.** The bank has spent several years arguing that durable fee income deserves a higher multiple than volatile markets revenue. Filling a visible gap in structured credit through a targeted acquisition fits that story, and follows a pattern of buying specific product capabilities rather than pursuing scale for its own sake.
 
-**Private credit consolidation is entering a new phase.** After a decade in which independent managers raised capital easily, the largest banks and asset managers are now buying the specialists outright. For founder-led firms like Palmer Square, selling to a global distributor offers reach that would be difficult to build alone — and a liquidity event that the private-credit boom has made unusually valuable.
+**Private credit consolidation is entering a new phase.** After a decade in which independent managers raised capital easily, the largest banks and asset managers are now buying the specialists outright. For founder-led firms like Palmer Square, selling to a global distributor offers reach that would be difficult to build alone, and a liquidity event that the private-credit boom has made unusually valuable.
 
 <div class="callout risk">
   <div class="ttl">Risks to Watch</div>

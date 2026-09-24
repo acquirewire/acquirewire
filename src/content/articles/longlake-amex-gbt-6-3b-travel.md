@@ -5,11 +5,12 @@ date: 2026-05-04
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Technology"
 draft: false
 ---
 ## Deal Overview
 
-Long Lake Management announced on May 4 a definitive agreement to acquire American Express Global Business Travel (NYSE: GBTG) for $9.50 per share in an all-cash transaction valued at approximately $6.3 billion. The offer represents a 60.2% premium to Amex GBT's closing stock price on May 1 and a 65.1% premium to the 30-day VWAP. Major shareholders representing 69% of voting shares (American Express, Expedia, Qatar Investment Authority, and BlackRock) have signed voting agreements supporting the deal. The transaction is backed by General Catalyst and Alpha Wave, with equity from Long Lake's investors plus Koch Equity Development and committed debt financing from JPMorgan, Bank of America, Citi, and MUFG. The American Express brand licensing agreement remains in place.
+Long Lake Management announced on May 4 a definitive agreement to acquire American Express Global Business Travel (NYSE: GBTG) for $9.50 per share in an all-cash transaction valued at approximately $6.3 billion. The offer is a 60.2% premium to Amex GBT's closing stock price on May 1 and a 65.1% premium to the 30-day VWAP. Major shareholders representing 69% of voting shares (American Express, Expedia, Qatar Investment Authority, and BlackRock) have signed voting agreements supporting the deal. The transaction is backed by General Catalyst and Alpha Wave, with equity from Long Lake's investors plus Koch Equity Development and committed debt financing from JPMorgan, Bank of America, Citi, and MUFG. The American Express brand licensing agreement remains in place.
 
 Long Lake was founded in 2023 by Alex Taubman with a stated thesis of acquiring services businesses and modernizing them through applied AI. The Amex GBT deal is by far the firm's largest transaction and one of the largest "AI-led" PE acquisitions to date.
 

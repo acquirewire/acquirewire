@@ -5,6 +5,7 @@ date: 2026-05-28
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Markets"
 draft: false
 ---
 ## Where Things Stand

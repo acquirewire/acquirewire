@@ -5,19 +5,20 @@ date: 2026-09-16
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["fintech","m&a","asia"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
 
 Grab Holdings has agreed to acquire a majority stake in Atome Financial, the Singapore-based buy-now-pay-later provider, in a $1.49 billion deal announced on 15 September. Grab will initially purchase 60% of Atome from parent Advance Intelligence Group and other holders, with the remainder to be acquired roughly two years after the first phase completes. The transaction includes $260 million of primary growth capital and is expected to close by the third quarter of 2027, subject to regulatory approvals.
 
-Atome operates in Singapore, Malaysia, the Philippines, Indonesia and Thailand and has served 25 million cumulative transacted users. Its businesses — BNPL loans and cards, consumer loans and digital lending — will be combined with Grab's financial-services segment, which management said would accelerate the unit's growth and profitability. Grab executives told CNBC the purchase was about taking financial services to "the next level" rather than remaining a payments and small-loans adjunct to the core app.
+Atome operates in Singapore, Malaysia, the Philippines, Indonesia and Thailand and has served 25 million cumulative transacted users. Its businesses (BNPL loans and cards, consumer loans and digital lending) will be combined with Grab's financial-services segment, which management said would accelerate the unit's growth and profitability. Grab executives told CNBC the purchase was about taking financial services to "the next level" rather than remaining a payments and small-loans adjunct to the core app.
 
 Bloomberg characterised the deal as a fintech bet designed to spur Grab's lending push. It is one of the largest acquisitions Grab has made since listing, and it gives the group a standalone consumer-credit brand with its own licences across the region.
 
 ## Why It Matters
 
-**Grab is buying credit models it would otherwise have to build market by market.** The company has been explicit that the deal lets it expand BNPL into the Philippines, Indonesia and Thailand faster than organic development would allow. Atome brings underwriting data, licences and merchant relationships in each country — assets that take years to assemble and that regulators do not hand out easily.
+**Grab is buying credit models it would otherwise have to build market by market.** The company has been explicit that the deal lets it expand BNPL into the Philippines, Indonesia and Thailand faster than organic development would allow. Atome brings underwriting data, licences and merchant relationships in each country, assets that take years to assemble and that regulators do not hand out easily.
 
 **Financial services is where Grab's profitability story lives.** Ride-hailing and delivery are mature, competitive and thin-margin. Lending to a captive base of drivers, merchants and consumers offers far better economics, provided credit quality holds. Folding Atome in gives the segment scale and a product set that spans instalments, cards and personal loans.
 

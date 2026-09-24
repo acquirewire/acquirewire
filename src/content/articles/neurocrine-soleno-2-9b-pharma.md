@@ -5,11 +5,12 @@ date: 2026-04-06
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Healthcare"
 draft: false
 ---
 ## Deal Overview
 
-Neurocrine Biosciences (NASDAQ: NBIX) announced on April 6 that it will acquire Soleno Therapeutics (NASDAQ: SLNO) for $53 per share in an all-cash tender offer, valuing Soleno at approximately $2.9 billion. The offer represents a 34% premium to Soleno's closing price on April 2 and a 51% premium to its 30-day volume-weighted average price. Neurocrine will fund the deal with its $2.54 billion cash pile supplemented by modest pre-payable debt. The transaction is expected to close within 90 days.
+Neurocrine Biosciences (NASDAQ: NBIX) announced on April 6 that it will acquire Soleno Therapeutics (NASDAQ: SLNO) for $53 per share in an all-cash tender offer, valuing Soleno at approximately $2.9 billion. The offer is a 34% premium to Soleno's closing price on April 2 and a 51% premium to its 30-day volume-weighted average price. Neurocrine will fund the deal with its $2.54 billion cash pile supplemented by modest pre-payable debt. The transaction is expected to close within 90 days.
 
 Soleno's Vykat XR (diazoxide choline) was approved by the FDA in March 2025 as the first and only treatment for hyperphagia in Prader-Willi syndrome. In its first nine months on market, the drug generated $190.4 million in net revenue, priced at $466,000 per patient per year. By year-end 2025, 859 patients were actively on drug, representing just 12.5% of the estimated U.S. addressable market.
 

@@ -1,10 +1,11 @@
 ---
 title: "UK Watchdog Opens Formal Probe Into McCormick's $45 Billion Unilever Foods Deal, Sets 11 November Deadline"
-subtitle: "The CMA's Phase 1 review will test whether combining Knorr, Hellmann's, French's and Frank's RedHot lessens competition — with Colman's already put up for sale to head off mustard concerns."
+subtitle: "The CMA's Phase 1 review will test whether combining Knorr, Hellmann's, French's and Frank's RedHot lessens competition, with Colman's already put up for sale to head off mustard concerns."
 date: 2026-09-17
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["antitrust","regulation","consumer staples"]
+sector: "Consumer & Retail"
 draft: false
 ---
 ## What Happened

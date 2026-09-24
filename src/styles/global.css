@@ -142,11 +142,14 @@ svg { display: block; }
 .menu-toggle { display: none; }
 .menu-toggle svg { width: 17px; height: 17px; }
 
-.ticker { border-bottom: 1px solid var(--hair); background: var(--bg-2); overflow: hidden; display: flex; align-items: stretch; }
-.ticker-label { flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 0 15px; background: var(--gold); color: #0a0b0d; font-family: var(--mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.ticker { border-bottom: 1px solid var(--hair); background: var(--bg-2); overflow: hidden; display: flex; align-items: stretch; position: relative; }
+/* The track is animated with a transform, which creates a stacking context and
+   would otherwise paint the scrolling headlines over the label. Lifting the
+   label above it keeps the box solid and the headlines running behind it. */
+.ticker-label { position: relative; z-index: 2; flex-shrink: 0; display: flex; align-items: center; gap: 7px; padding: 0 15px; background: var(--gold); color: #0a0b0d; font-family: var(--mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; box-shadow: 1px 0 0 var(--hair); }
 .ticker-label .pulse { width: 5px; height: 5px; border-radius: 50%; background: #0a0b0d; animation: pulse 1.6s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
-.ticker-track { display: flex; align-items: center; white-space: nowrap; animation: marquee 60s linear infinite; }
+.ticker-track { position: relative; z-index: 1; display: flex; align-items: center; white-space: nowrap; animation: marquee 60s linear infinite; }
 .ticker:hover .ticker-track { animation-play-state: paused; }
 .ticker-item { display: inline-flex; align-items: center; gap: 9px; padding: 8px 22px; font-size: 0.72rem; color: var(--text-dim); border-right: 1px solid var(--border-soft); }
 .ticker-item b { color: var(--text); font-weight: 500; }
@@ -265,6 +268,8 @@ svg { display: block; }
 .status-pill.closed { color: var(--pos); }
 .status-pill.rumoured { color: var(--c-regulation); }
 .status-pill.ipo { color: var(--c-pe); }
+.status-pill.listed { color: var(--pos); }
+.status-pill.terminated { color: var(--neg); opacity: 0.85; }
 
 /* ===========================================================================
    Deal Tracker
@@ -274,6 +279,37 @@ svg { display: block; }
 .dstat-l { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 5px; }
 
 .deal-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 18px 0 0; padding-top: 18px; border-top: 1px solid var(--hair); flex-wrap: wrap; }
+/* ---- tabs (Deal Tracker / Roundups) ---- */
+.tab-bar { display: flex; gap: 0; margin: 4px 0 22px; border-bottom: 1px solid var(--border); }
+.tab-bar button { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.1em; font-weight: 600; text-transform: uppercase; padding: 10px 16px; background: transparent; color: var(--text-muted); border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; cursor: pointer; transition: color 0.15s, border-color 0.15s; }
+.tab-bar button:hover { color: var(--text); }
+.tab-bar button.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+.roundup { padding: 26px 0; border-bottom: 1px solid var(--border); }
+.roundup-meta { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.roundup-title { font-family: var(--serif); font-size: 1.5rem; line-height: 1.24; margin: 0 0 8px; }
+.roundup-sub { color: var(--text-dim); margin: 0 0 14px; max-width: 68ch; }
+.roundup-body { max-width: 72ch; }
+.roundup-empty { padding: 44px 0 60px; max-width: 60ch; color: var(--text-dim); }
+.roundup-empty .mono { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+
+/* ---- article imagery (optional; only when it earns its place) ---- */
+.art-figure { margin: 0 0 34px; }
+.art-figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--border); border-radius: 3px; background: var(--bg-2); }
+.art-figure figcaption { margin-top: 9px; font-size: 0.73rem; line-height: 1.5; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 8px; }
+.art-figure .cred { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.72; }
+.art-sector { color: var(--gold); text-decoration: none; }
+.art-sector:hover { text-decoration: underline; }
+
+/* ---- sector filter on The Wire ---- */
+.sector-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.sector-filter button { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; font-weight: 600; text-transform: uppercase; padding: 6px 11px; background: transparent; color: var(--text-muted); border: 1px solid var(--border); border-radius: 3px; cursor: pointer; transition: color 0.15s, background 0.15s, border-color 0.15s; }
+.sector-filter button:hover { color: var(--text); border-color: var(--text-muted); }
+.sector-filter button.active { background: var(--gold); border-color: var(--gold); color: #0a0b0d; }
+.sf-n { font-size: 0.55rem; opacity: 0.62; font-weight: 500; }
+.brief-sector { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+@media (max-width: 640px) { .sector-filter button { font-size: 0.55rem; padding: 5px 9px; } }
+
 .deal-filters { display: inline-flex; gap: 2px; border: 1px solid var(--border); border-radius: 5px; overflow: hidden; }
 .deal-filters button { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; font-weight: 600; padding: 6px 13px; background: transparent; color: var(--text-muted); border: none; cursor: pointer; transition: color 0.15s, background 0.15s; }
 .deal-filters button:hover { color: var(--text); }

@@ -5,6 +5,7 @@ date: 2026-05-20
 readTime: 5
 author: "AcquireWire Desk"
 tags: []
+sector: "Industrials"
 draft: false
 ---
 ## What Was Filed

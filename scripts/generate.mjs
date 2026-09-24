@@ -85,6 +85,15 @@ House style:
 - Always give both a risk case and a bull case.
 - Sound like a smart human analyst, not a press release. No hype, no filler, no "in conclusion".
 
+WRITE LIKE A PERSON, NOT A MODEL. These are hard rules:
+- NEVER use em dashes (—). Use a comma, a colon, a full stop, or brackets. This is the single most common tell.
+- Vary sentence length. Follow a long, qualified sentence with a short flat one. Do not let every sentence run to the same 25 words.
+- Banned words and phrases: underscores/underscoring, highlights (as a verb), pivotal (except "pivotal trial" in its clinical sense), testament, crucial, landscape (figurative), showcase, delve, foster, robust, intricate, tapestry, vibrant, seamless, "stands as", "serves as", "represents a" (write "is a"), "it is important to note", "in today's", "rapidly evolving".
+- No "not just X, it's Y" constructions. No "From X to Y" ranges where X and Y are not on one scale.
+- Do not force things into threes. If there are two real risks, give two. If there are four, give four.
+- Do not end on an upbeat summary. Stop when the analysis stops.
+- Prefer plain verbs: "is", "has", "buys", "paid". Do not reach for a fancier synonym just to avoid repeating a word.
+
 CRITICAL ACCURACY RULES (this is a finance publication):
 - Use ONLY facts and figures present in the SOURCE MATERIAL provided, plus widely-known, stable background context you are highly confident about.
 - NEVER invent specific numbers (prices, valuations, percentages, dates) that are not supported by the source. If a precise figure isn't given, describe it qualitatively or omit it.
@@ -110,25 +119,47 @@ Return ONLY this JSON object:
   "subtitle": "1-2 sentence standfirst with the key numbers and the tension",
   "readTime": 4,
   "tags": ["two", "or", "three", "lowercase", "tags"],
+  "sector": "EXACTLY ONE OF: Financials | Technology | Healthcare | Industrials | Consumer & Retail | Energy & Utilities | Media & Telecom | Real Estate | Transport & Travel | Markets",
   "deal": null,
-  "body_markdown": "Markdown body. Start with a '## What Happened' H2, then 1-2 tight paragraphs that weave the key figures into the prose. Then '## Why It Matters' with 2-3 paragraphs, each starting with a **bold lead-in:**. Then include EXACTLY these two callout blocks as raw HTML (no emoji in the titles):\\n<div class=\\"callout risk\\">\\n  <div class=\\"ttl\\">Risks to Watch</div>\\n  <ul>\\n    <li><strong>Point:</strong> detail.</li>\\n  </ul>\\n</div>\\n<div class=\\"callout bull\\">\\n  <div class=\\"ttl\\">Bull Case</div>\\n  <ul>\\n    <li><strong>Point:</strong> detail.</li>\\n  </ul>\\n</div>"
+  "body_markdown": "Markdown body. Start with a '## What Happened' H2, then 1-2 tight paragraphs that weave the key figures into the prose. Then '## Why It Matters' with 2-3 paragraphs (3-4 for a major story), each starting with a **bold lead-in:**. Then include these two callout blocks as raw HTML (no emoji in the titles). Give each list however many points the story actually supports, between 2 and 4, and do not make the two lists the same length as each other:\\n<div class=\\"callout risk\\">\\n  <div class=\\"ttl\\">Risks to Watch</div>\\n  <ul>\\n    <li><strong>Point:</strong> detail.</li>\\n  </ul>\\n</div>\\n<div class=\\"callout bull\\">\\n  <div class=\\"ttl\\">Bull Case</div>\\n  <ul>\\n    <li><strong>Point:</strong> detail.</li>\\n  </ul>\\n</div>"
 }
 
 If — and ONLY if — this story is a specific M&A deal, take-private, or IPO, set "deal" to an object (else leave it null):
 { "acquirer": "Buyer (or — for an IPO)", "target": "Company/asset", "value": <number in USD billions, or null if unknown>, "sector": "e.g. Pharma", "status": "rumoured | agreed | closed | ipo" }
 
-This is a text-first publication: no images, no metrics boxes, no category labels. Put the numbers in the writing. Keep the body ~450-650 words.`;
+This is a text-first publication: no metrics boxes, no category labels. Put the numbers in the writing.
+
+Let the story set the length. Most deals are worth 450-650 words. A genuinely major one, roughly $10bn or more, a hostile approach, a collapsed or contested deal, or a situation that reshapes an industry, earns 800-1000 words: give those a third "## Why It Matters" paragraph and a fuller account of the terms and the history. Do not pad a small deal to reach a word count, and do not compress a big one to stay under it.`;
+}
+
+// Keep in step with src/content.config.ts.
+const SECTORS = [
+  'Financials', 'Technology', 'Healthcare', 'Industrials', 'Consumer & Retail',
+  'Energy & Utilities', 'Media & Telecom', 'Real Estate', 'Transport & Travel', 'Markets',
+];
+
+// Belt and braces: the prompt forbids em dashes, but a model will still reach
+// for one occasionally, so strip any that survive rather than publish the tell.
+function deDash(s = '') {
+  return s
+    .replace(/\s*—\s*([^—]{3,110}?)\s*—\s*/g, (m, inner) => (inner.includes(',') ? ` (${inner}) ` : `, ${inner}, `))
+    .replace(/(\S)\s*—\s*(\S)/g, '$1, $2')
+    .replace(/—/g, ',')
+    .replace(/,\s*,/g, ',')
+    .replace(/\s+,/g, ',');
 }
 
 function toMarkdown(a, story, date) {
+  const sector = SECTORS.includes(a.sector) ? a.sector : 'Markets';
   const fm = [
     '---',
-    `title: ${JSON.stringify(a.title)}`,
-    `subtitle: ${JSON.stringify(a.subtitle)}`,
+    `title: ${JSON.stringify(deDash(a.title))}`,
+    `subtitle: ${JSON.stringify(deDash(a.subtitle))}`,
     `date: ${date}`,
     `readTime: ${a.readTime || 4}`,
     'author: "AcquireWire Desk"',
     `tags: ${JSON.stringify(a.tags || [])}`,
+    `sector: ${JSON.stringify(sector)}`,
     'draft: false',
     '---',
     '',
@@ -136,13 +167,13 @@ function toMarkdown(a, story, date) {
   const sourceNote = story?.link
     ? `\n\n*Source: [${story.source}](${story.link})*\n`
     : '\n';
-  return fm + (a.body_markdown || '').trim() + '\n' + sourceNote;
+  return fm + deDash((a.body_markdown || '').trim()) + '\n' + sourceNote;
 }
 
 async function draftOne(client, candidates, exclude = []) {
   const resp = await client.messages.create({
     model: MODEL,
-    max_tokens: 3500,
+    max_tokens: 5000,
     system: SYSTEM,
     messages: [{ role: 'user', content: userPrompt(candidates, exclude) }],
   });

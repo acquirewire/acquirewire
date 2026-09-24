@@ -8,10 +8,18 @@ const all = (await getCollection('articles', ({ data }) => (import.meta.env.PROD
 
 type Deal = { date: string; acquirer: string; target: string; value: number | null; sector: string; status: string; slug?: string };
 const latestDeals = (dealsData as Deal[]).slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
-const statusLabel: Record<string, string> = { rumoured: 'Rumoured', agreed: 'Agreed', closed: 'Closed', ipo: 'IPO Filing' };
+const statusLabel: Record<string, string> = { rumoured: 'Rumoured', agreed: 'Agreed', closed: 'Closed', ipo: 'IPO Filing', listed: 'Listed', terminated: 'Terminated' };
 const dealVal = (v: number | null) => (v == null ? '—' : '$' + (v % 1 === 0 ? v.toFixed(0) : v.toFixed(1)) + 'B');
 
 const [lead, ...rest] = all;
+
+// Only offer sectors that actually have stories behind them, ordered by volume.
+const sectorCounts = rest.reduce<Record<string, number>>((acc, a) => {
+  const s = a.data.sector ?? 'Markets';
+  acc[s] = (acc[s] || 0) + 1;
+  return acc;
+}, {});
+const sectorList = Object.entries(sectorCounts).sort((a, b) => b[1] - a[1]);
 const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase();
 const dateLong = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).toUpperCase();
 const edition = String(427 + all.length);
@@ -65,18 +73,29 @@ const edition = String(427 + all.length);
       <span class="count">{all.length} Stories</span>
     </div>
 
-    <div class="briefing">
+    <div class="sector-filter" id="sectorFilter" role="group" aria-label="Filter stories by sector">
+      <button type="button" data-sec="all" class="active">All<span class="sf-n">{rest.length}</span></button>
+      {sectorList.map(([s, n]) => (
+        <button type="button" data-sec={s}>{s}<span class="sf-n">{n}</span></button>
+      ))}
+    </div>
+
+    <div class="briefing" id="briefing">
       {rest.map((a, i) => (
-        <a class="brief" href={`/articles/${a.id}/`}>
+        <a class="brief" href={`/articles/${a.id}/`} data-sector={a.data.sector ?? 'Markets'}>
           <div class="brief-no">{String(i + 1).padStart(2, '0')}</div>
           <div class="brief-main">
-            <div class="brief-meta"><span class="mono">{fmt(a.data.date)} · {a.data.readTime} Min</span></div>
+            <div class="brief-meta">
+              <span class="mono">{fmt(a.data.date)} · {a.data.readTime} Min</span>
+              <span class="brief-sector">{a.data.sector ?? 'Markets'}</span>
+            </div>
             <h3 class="brief-title">{a.data.title}</h3>
             <p class="brief-excerpt">{a.data.subtitle}</p>
           </div>
         </a>
       ))}
     </div>
+    <div class="deal-empty mono" id="briefEmpty" hidden>No stories in that sector yet.</div>
 
     <!-- Markets (charts) -->
     <div class="section-head">
@@ -116,12 +135,45 @@ const edition = String(427 + all.length);
       <span class="eyebrow">The Daily Wire</span>
       <h2>The deal that mattered, explained.</h2>
       <p>One email, every weekday morning. The most important move in markets and M&amp;A, with the numbers and the so-what.</p>
-      <form class="nl-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('input').placeholder='Thanks — check your inbox.';">
+      <form class="nl-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('input').placeholder='Thanks, check your inbox.';">
         <input type="email" required placeholder="you@firm.com" aria-label="Email address" />
         <button class="btn" type="submit">Subscribe</button>
       </form>
     </section>
   </div>
+
+  <script is:inline>
+    (function () {
+      var filter = document.getElementById('sectorFilter');
+      var list = document.getElementById('briefing');
+      var empty = document.getElementById('briefEmpty');
+      if (!filter || !list) return;
+      var items = Array.prototype.slice.call(list.querySelectorAll('.brief'));
+
+      function apply(sec) {
+        var shown = 0;
+        items.forEach(function (el) {
+          var ok = sec === 'all' || el.getAttribute('data-sector') === sec;
+          el.style.display = ok ? '' : 'none';
+          if (ok) {
+            shown++;
+            // Renumber so the visible list always reads 01, 02, 03…
+            el.querySelector('.brief-no').textContent = String(shown).padStart(2, '0');
+          }
+        });
+        if (empty) empty.hidden = shown !== 0;
+      }
+
+      filter.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-sec]');
+        if (!b) return;
+        Array.prototype.forEach.call(filter.querySelectorAll('button'), function (x) {
+          x.classList.toggle('active', x === b);
+        });
+        apply(b.getAttribute('data-sec'));
+      });
+    })();
+  </script>
 
   <script is:inline>
     (function () {

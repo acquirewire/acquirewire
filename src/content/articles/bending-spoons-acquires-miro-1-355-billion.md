@@ -5,6 +5,7 @@ date: 2026-09-14
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["software","m&a","private equity"]
+sector: "Technology"
 draft: false
 ---
 ## What Happened
@@ -19,7 +20,7 @@ The price is an enterprise value, meaning it reflects Miro's cash and debt; repo
 
 **The SaaS valuation reset is now producing real transactions.** Miro is the latest well-known collaboration tool to change hands at a level that would have been unthinkable in 2021. For late-stage investors, an exit at $1.355 billion crystallises losses; for buyers with an operating playbook, it is an opportunity to acquire tens of millions of users at a sensible price.
 
-**Bending Spoons is emerging as a serial consolidator of tired software.** The company's strategy — buy, streamline, monetise — has been applied repeatedly, and back-to-back deals for Airtable and Miro suggest it has both the capital and the confidence to scale it. Paying cash for a $1.355 billion asset so soon after Airtable points to deep and reliable funding.
+**Bending Spoons is emerging as a serial consolidator of tired software.** The company's strategy (buy, streamline, monetise) has been applied repeatedly, and back-to-back deals for Airtable and Miro suggest it has both the capital and the confidence to scale it. Paying cash for a $1.355 billion asset so soon after Airtable points to deep and reliable funding.
 
 **Customers will watch for changes.** Bending Spoons' acquisitions have historically involved pricing changes and headcount reductions. Enterprise buyers of Miro will be alert to how the product roadmap and support evolve, and competitors will use the transition to court accounts.
 

@@ -5,6 +5,7 @@ date: 2026-05-27
 readTime: 5
 author: "AcquireWire Desk"
 tags: []
+sector: "Markets"
 draft: false
 ---
 ## The Numbers

@@ -1,10 +1,11 @@
 ---
 title: "Lilly Pays Up to $2.875 Billion for Merida Biosciences to Attack Autoimmune Disease at the Antibody Level"
-subtitle: "The all-cash deal buys a phase I platform of engineered proteins that target the rogue antibodies driving Graves' disease and thyroid eye disease — with the bulk of the price tied to milestones."
+subtitle: "The all-cash deal buys a phase I platform of engineered proteins that target the rogue antibodies driving Graves' disease and thyroid eye disease, with the bulk of the price tied to milestones."
 date: 2026-09-02
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["pharma","biotech","m&a"]
+sector: "Healthcare"
 draft: false
 ---
 ## What Happened
@@ -13,7 +14,7 @@ Eli Lilly has entered a definitive agreement to acquire Merida Biosciences, a Ma
 
 Merida's platform engineers proteins that target the pathogenic antibodies underlying autoimmune and allergic diseases, rather than broadly suppressing the immune system. Its lead candidate, MER511, is in phase I development for Graves' disease and thyroid eye disease. Lilly said the acquisition adds both the antibody-engineering platform and a pipeline of biologics aimed at a range of immune-mediated conditions. Closing is expected in the fourth quarter of 2026, subject to regulatory approvals.
 
-The announcement landed on the same day as Aon's $17 billion purchase of USI and capped a month in which large pharmaceutical groups continued to pay up for early-stage immunology assets. Lilly has been among the most active acquirers in the sector, and the Merida structure — modest disclosed upfront, large contingent tail — mirrors how it has approached other pre-proof-of-concept deals.
+The announcement landed on the same day as Aon's $17 billion purchase of USI and capped a month in which large pharmaceutical groups continued to pay up for early-stage immunology assets. Lilly has been among the most active acquirers in the sector, and the Merida structure (modest disclosed upfront, large contingent tail) mirrors how it has approached other pre-proof-of-concept deals.
 
 ## Why It Matters
 

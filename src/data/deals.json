@@ -243,6 +243,15 @@
     "slug": "wendy-trian-nelson-peltz-takeover-bid"
   },
   {
+    "date": "2026-08-13",
+    "acquirer": "Frasers Group",
+    "target": "Hugo Boss",
+    "value": 2,
+    "sector": "Retail / Fashion",
+    "status": "closed",
+    "slug": "mike-ashley-raises-stake-hugo-boss-takeover"
+  },
+  {
     "date": "2026-08-12",
     "acquirer": "Curaleaf",
     "target": "Aurora Cannabis",
@@ -271,7 +280,7 @@
   },
   {
     "date": "2026-08-07",
-    "acquirer": "Paramount Global",
+    "acquirer": "Paramount Skydance",
     "target": "Warner Bros. Discovery",
     "value": 110,
     "sector": "Media & Entertainment",
@@ -300,7 +309,7 @@
     "date": "2026-08-04",
     "acquirer": "Prologis",
     "target": "SEGRO plc",
-    "value": null,
+    "value": 18.8,
     "sector": "Industrial Real Estate",
     "status": "agreed",
     "slug": "prologis-segro-acquisition-logistics-real-estate"
@@ -369,15 +378,6 @@
     "slug": "mapfre-acquires-safety-insurance-group-154-billion"
   },
   {
-    "date": "2026-07-23",
-    "acquirer": "Prologis",
-    "target": "Segro",
-    "value": 18.8,
-    "sector": "Real Estate / Logistics",
-    "status": "agreed",
-    "slug": "prologis-segro-takeover-bid-18-billion"
-  },
-  {
     "date": "2026-07-22",
     "acquirer": "Magnolia Oil & Gas",
     "target": "Texas tight-oil assets",
@@ -385,24 +385,6 @@
     "sector": "Energy / Oil & Gas",
     "status": "agreed",
     "slug": "magnolia-oil-gas-4-billion-texas-acquisition"
-  },
-  {
-    "date": "2026-07-21",
-    "acquirer": "Mike Ashley / Frasers Group",
-    "target": "Hugo Boss",
-    "value": null,
-    "sector": "Retail / Fashion",
-    "status": "rumoured",
-    "slug": "mike-ashley-raises-stake-hugo-boss-takeover"
-  },
-  {
-    "date": "2026-07-20",
-    "acquirer": "Prologis",
-    "target": "Segro",
-    "value": 17.1,
-    "sector": "Industrial Real Estate",
-    "status": "rumoured",
-    "slug": "prologis-third-bid-segro-13-5-billion"
   },
   {
     "date": "2026-07-17",
@@ -459,15 +441,6 @@
     "slug": "easyjet-apollo-7-7-billion-takeover-bid"
   },
   {
-    "date": "2026-07-09",
-    "acquirer": "Frasers Group",
-    "target": "Hugo Boss AG",
-    "value": 2.2,
-    "sector": "Retail / Fashion",
-    "status": "rumoured",
-    "slug": "hugo-boss-board-rejects-frasers-2-2-billion-takeover"
-  },
-  {
     "date": "2026-07-08",
     "acquirer": "Yara International",
     "target": "Gulf Coast Ammonia Plant",
@@ -482,7 +455,7 @@
     "target": "easyJet",
     "value": 6.7,
     "sector": "Aviation",
-    "status": "agreed",
+    "status": "terminated",
     "slug": "easyjet-castlelake-67-billion-takeover-bid"
   },
   {
@@ -558,24 +531,6 @@
     "slug": "merck-bio-techne-11-billion-acquisition"
   },
   {
-    "date": "2026-06-25",
-    "acquirer": "Castlelake",
-    "target": "EasyJet",
-    "value": null,
-    "sector": "Aviation",
-    "status": "rumoured",
-    "slug": "easyjet-rejects-castlelake-bid-door-open"
-  },
-  {
-    "date": "2026-06-24",
-    "acquirer": "Prologis",
-    "target": "Segro",
-    "value": 15.9,
-    "sector": "Real Estate",
-    "status": "rumoured",
-    "slug": "prologis-rejected-segro-takeover-bid-12-6-billion"
-  },
-  {
     "date": "2026-06-23",
     "acquirer": "AbbVie",
     "target": "Apogee Therapeutics",
@@ -594,21 +549,12 @@
     "slug": "crh-acquires-arcosa-8-5-billion-aggregates"
   },
   {
-    "date": "2026-06-18",
-    "acquirer": "Skydance Media / Warner Bros. Discovery",
-    "target": "Paramount Global",
-    "value": null,
-    "sector": "Media & Entertainment",
-    "status": "agreed",
-    "slug": "paramount-skydance-warner-bros-antitrust-clearance"
-  },
-  {
     "date": "2026-06-17",
     "acquirer": "SpaceX",
     "target": "Cursor (Anysphere)",
     "value": 60,
     "sector": "AI / Software",
-    "status": "agreed",
+    "status": "closed",
     "slug": "spacex-acquires-cursor-60-billion-all-stock"
   },
   {
@@ -622,16 +568,16 @@
   },
   {
     "date": "2026-06-12",
-    "acquirer": "Frasers Group",
-    "target": "Hugo Boss",
-    "value": 2.3,
-    "sector": "Retail / Luxury",
-    "status": "agreed",
-    "slug": "frasers-group-23-billion-takeover-bid-hugo-boss"
+    "acquirer": "IPO",
+    "target": "SpaceX (NASDAQ: SPCX)",
+    "value": null,
+    "sector": "Space",
+    "status": "listed",
+    "slug": "spacex-ipo-s1-filing-may-20"
   },
   {
     "date": "2026-06-10",
-    "acquirer": "Amwins / Dragoneer Investment Group",
+    "acquirer": "KKR / Dragoneer / Amwins",
     "target": "Steadfast Group",
     "value": null,
     "sector": "Insurance Broking",
@@ -655,15 +601,6 @@
     "sector": "Banking",
     "status": "rumoured",
     "slug": "intesa-sanpaolo-30-billion-monte-dei-paschi-bid"
-  },
-  {
-    "date": "2026-06-06",
-    "acquirer": "Paramount Global / Skydance Media",
-    "target": "Warner Bros. Discovery",
-    "value": null,
-    "sector": "Media & Entertainment",
-    "status": "rumoured",
-    "slug": "us-states-lawsuit-block-paramount-warner-bros-merger"
   },
   {
     "date": "2026-06-05",
@@ -691,24 +628,6 @@
     "sector": "Fintech / Payments",
     "status": "closed",
     "slug": "repay-completes-372-million-kubra-acquisition"
-  },
-  {
-    "date": "2026-05-20",
-    "acquirer": "Mastercard",
-    "target": "BVNK",
-    "value": 1.8,
-    "sector": "Payments",
-    "status": "agreed",
-    "slug": "mastercard-bvnk-1-8b-stablecoin"
-  },
-  {
-    "date": "2026-05-19",
-    "acquirer": "—",
-    "target": "SpaceX",
-    "value": null,
-    "sector": "Space",
-    "status": "ipo",
-    "slug": "spacex-ipo-s1-filing-may-20"
   },
   {
     "date": "2026-05-04",

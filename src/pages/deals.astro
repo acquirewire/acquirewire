@@ -1,6 +1,17 @@
 ---
+import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import dealsData from '../data/deals.json';
+
+// Roundups are their own collection, so they never surface in The Wire, the
+// front-page lead slot, or the RSS feed.
+const roundupEntries = (await getCollection('roundups', ({ data }) => (import.meta.env.PROD ? !data.draft : true)))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const roundups = await Promise.all(
+  roundupEntries.map(async (r) => ({ data: r.data, Content: (await render(r)).Content })),
+);
+const fmtRoundupDate = (d: Date) =>
+  d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 type Deal = {
   date: string;
@@ -15,14 +26,18 @@ type Deal = {
 const deals = (dealsData as Deal[]).slice().sort((a, b) => b.date.localeCompare(a.date));
 
 const statusLabel: Record<string, string> = {
-  rumoured: 'Rumoured', agreed: 'Agreed', closed: 'Closed', ipo: 'IPO Filing',
+  rumoured: 'Rumoured', agreed: 'Agreed', closed: 'Closed',
+  ipo: 'IPO Filing', listed: 'Listed', terminated: 'Terminated',
 };
 const fmtVal = (v: number | null) => (v == null ? '—' : '$' + (v % 1 === 0 ? v.toFixed(0) : v.toFixed(1)) + 'B');
 const fmtDate = (d: string) =>
   new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit', timeZone: 'UTC' }).toUpperCase();
 
 const totalValue = deals.reduce((s, d) => s + (d.value || 0), 0);
-const statuses = ['all', 'rumoured', 'agreed', 'closed', 'ipo'];
+// Only offer filters for statuses the data actually contains.
+const present = new Set(deals.map((d) => d.status));
+const statuses = ['all', 'rumoured', 'agreed', 'closed', 'listed', 'terminated', 'ipo']
+  .filter((s) => s === 'all' || present.has(s));
 ---
 
 <Base title="Deal Tracker — AcquireWire" description="A running log of the M&A, take-private, and capital-markets deals AcquireWire is tracking." active="deals">
@@ -30,7 +45,7 @@ const statuses = ['all', 'rumoured', 'agreed', 'closed', 'ipo'];
     <div class="page-head">
       <div class="art-rule"></div>
       <h1 class="page-title">Deal Tracker</h1>
-      <p class="page-dek">Every deal we're following — M&amp;A, take-privates, and capital-markets moves. Click a row to read the breakdown.</p>
+      <p class="page-dek">Every deal we're following: M&amp;A, take-privates, and capital-markets moves. Click a row to read the breakdown.</p>
       <div class="deal-stats">
         <div class="dstat"><div class="dstat-v">{deals.length}</div><div class="dstat-l">Deals Tracked</div></div>
         <div class="dstat"><div class="dstat-v">${totalValue.toFixed(0)}B</div><div class="dstat-l">Aggregate Value</div></div>
@@ -38,6 +53,12 @@ const statuses = ['all', 'rumoured', 'agreed', 'closed', 'ipo'];
       </div>
     </div>
 
+    <div class="tab-bar" id="dealTabs" role="tablist">
+      <button type="button" role="tab" data-tab="tracker" class="active" aria-selected="true">Tracker<span class="sf-n">{deals.length}</span></button>
+      <button type="button" role="tab" data-tab="roundups" aria-selected="false">Roundups<span class="sf-n">{roundups.length}</span></button>
+    </div>
+
+    <section id="tabTracker">
     <div class="deal-controls">
       <div class="deal-filters" id="dealFilters">
         {statuses.map((s) => (
@@ -80,8 +101,46 @@ const statuses = ['all', 'rumoured', 'agreed', 'closed', 'ipo'];
       </tbody>
     </table>
     <div class="deal-empty mono" id="dealEmpty" hidden>No deals match that filter.</div>
+    </section>
+
+    <section id="tabRoundups" hidden>
+      {roundups.length === 0 ? (
+        <div class="roundup-empty">
+          <p class="mono">No roundups yet.</p>
+          <p>On days without a deal worth a full piece, the desk publishes a short roundup of tracker movement here instead of padding out The Wire.</p>
+        </div>
+      ) : (
+        roundups.map(({ data, Content }) => (
+          <article class="roundup">
+            <div class="roundup-meta mono">{fmtRoundupDate(data.date)}</div>
+            <h2 class="roundup-title">{data.title}</h2>
+            <p class="roundup-sub">{data.subtitle}</p>
+            <div class="prose roundup-body"><Content /></div>
+          </article>
+        ))
+      )}
+    </section>
     <div style="height:60px"></div>
   </div>
+
+  <script is:inline>
+    (function () {
+      var tabs = document.getElementById('dealTabs');
+      var panes = { tracker: document.getElementById('tabTracker'), roundups: document.getElementById('tabRoundups') };
+      if (!tabs) return;
+      tabs.addEventListener('click', function (e) {
+        var b = e.target.closest('button[data-tab]');
+        if (!b) return;
+        var key = b.getAttribute('data-tab');
+        Array.prototype.forEach.call(tabs.querySelectorAll('button'), function (x) {
+          var on = x === b;
+          x.classList.toggle('active', on);
+          x.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        Object.keys(panes).forEach(function (k) { if (panes[k]) panes[k].hidden = k !== key; });
+      });
+    })();
+  </script>
 
   <script is:inline>
     (function () {

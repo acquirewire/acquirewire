@@ -5,11 +5,12 @@ date: 2026-09-11
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["automotive","m&a","marketplaces"]
+sector: "Transport & Travel"
 draft: false
 ---
 ## What Happened
 
-Copart has agreed to acquire ACV Auctions for $10.50 a share in cash, valuing the online wholesale-vehicle marketplace at about $1.9 billion, in a definitive merger agreement dated 10 September. The price represents a roughly 45% premium to ACV's unaffected share price on 10 August, and ACV shares rose 43.6% in premarket trading the following morning. It is Copart's largest acquisition to date.
+Copart has agreed to acquire ACV Auctions for $10.50 a share in cash, valuing the online wholesale-vehicle marketplace at about $1.9 billion, in a definitive merger agreement dated 10 September. The price is a roughly 45% premium to ACV's unaffected share price on 10 August, and ACV shares rose 43.6% in premarket trading the following morning. It is Copart's largest acquisition to date.
 
 Copart will launch a tender offer for all outstanding ACV shares, followed by a merger to cash out any untendered stock at the same price. The company intends to fund the transaction from cash on hand, and the deal carries no financing condition. Closing is expected by year-end 2026, after which ACV will continue to operate as an independent subsidiary under its current management.
 
@@ -17,7 +18,7 @@ The companies said the combination would create a full-spectrum, largely digital
 
 ## Why It Matters
 
-**Copart is buying the dealer-to-dealer channel it never had.** Copart dominates salvage and insurance-total-loss auctions. ACV runs a digital marketplace where franchised dealers sell trade-ins wholesale to other dealers — a larger, faster-turning and less cyclical pool of vehicles. Combining the two creates a remarketing platform that spans dealer trade-ins, wholesale, salvage disposition and international resale.
+**Copart is buying the dealer-to-dealer channel it never had.** Copart dominates salvage and insurance-total-loss auctions. ACV runs a digital marketplace where franchised dealers sell trade-ins wholesale to other dealers: a larger, faster-turning and less cyclical pool of vehicles. Combining the two creates a remarketing platform that spans dealer trade-ins, wholesale, salvage disposition and international resale.
 
 **The premium is steep but the balance sheet can carry it.** A 45% premium and a $1.9 billion price for a business that has yet to sustain meaningful profitability reflect the scarcity of scaled digital auto marketplaces. Paying entirely from cash, with no debt and no financing contingency, removes execution risk and underlines how much dry powder Copart has accumulated.
 

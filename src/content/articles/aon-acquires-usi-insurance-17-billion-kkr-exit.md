@@ -1,10 +1,11 @@
 ---
 title: "Aon Buys USI From KKR for $17 Billion in All-Cash Bet on the Middle Market"
-subtitle: "The broker is funding the deal entirely with new debt to add the tenth-largest US insurance broker — a 6x return on KKR's original equity — and its stock slid roughly 10% on the news."
+subtitle: "The broker is funding the deal entirely with new debt to add the tenth-largest US insurance broker, a 6x return on KKR's original equity, and its stock slid roughly 10% on the news."
 date: 2026-09-01
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["insurance","m&a","private equity"]
+sector: "Financials"
 draft: false
 ---
 ## What Happened
@@ -15,9 +16,9 @@ Aon plans to fund the purchase with new debt and expects closing in the fourth q
 
 ## Why It Matters
 
-**Aon is buying a distribution engine it never built.** The firm's strength has been large corporate and reinsurance clients. USI brings a dense network of middle-market relationships — the segment where brokers earn the richest margins and where competitors such as Marsh McLennan and Gallagher have been consolidating aggressively. Handing Sicard a global remit signals this is a platform, not a bolt-on.
+**Aon is buying a distribution engine it never built.** The firm's strength has been large corporate and reinsurance clients. USI brings a dense network of middle-market relationships, the segment where brokers earn the richest margins and where competitors such as Marsh McLennan and Gallagher have been consolidating aggressively. Handing Sicard a global remit signals this is a platform, not a bolt-on.
 
-**The debt-funded structure explains the share-price reaction.** Financing $17 billion entirely with borrowing pushes Aon's leverage materially higher at a time when rates remain elevated. Investors are being asked to trust that $395 million of synergies and 2028 accretion justify the balance-sheet strain — and the 10% drop suggests many want to see execution first.
+**The debt-funded structure explains the share-price reaction.** Financing $17 billion entirely with borrowing pushes Aon's leverage materially higher at a time when rates remain elevated. Investors are being asked to trust that $395 million of synergies and 2028 accretion justify the balance-sheet strain, and the 10% drop suggests many want to see execution first.
 
 **It is a landmark private-equity exit.** A 6x multiple on original equity for a broker KKR has owned since 2017 is a textbook sponsor outcome, and it validates the buy-and-build playbook that has consolidated hundreds of regional agencies under platforms like USI over the past decade.
 

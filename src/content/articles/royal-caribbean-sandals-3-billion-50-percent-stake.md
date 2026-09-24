@@ -1,10 +1,11 @@
 ---
 title: "Royal Caribbean Pays $3 Billion for Half of Sandals, Stepping Off the Ship and Onto the Beach"
-subtitle: "The cruise operator is buying 50% of Sandals and Beaches at about 10x forward EBITDA, valuing the all-inclusive chain at $6 billion — and its own shares fell sharply on the news."
+subtitle: "The cruise operator is buying 50% of Sandals and Beaches at about 10x forward EBITDA, valuing the all-inclusive chain at $6 billion, and its own shares fell sharply on the news."
 date: 2026-09-23
 readTime: 4
 author: "AcquireWire Desk"
 tags: ["travel","m&a","consumer"]
+sector: "Transport & Travel"
 draft: false
 ---
 ## What Happened
@@ -19,7 +20,7 @@ The transaction creates a joint venture combining Sandals' Caribbean all-inclusi
 
 **A 12% share drop is a clear verdict on capital allocation.** Management promised earnings accretion next year, yet the market still marked the stock down hard. The concern is straightforward: a cruise operator taking on committed debt to buy a minority-controlled stake in a different, capital-intensive industry, at a point when investors would rather see deleveraging and buybacks than diversification.
 
-**Fifty-fifty ownership is a genuine structural question.** Royal Caribbean gets no outright control, and the Stewart family keeps both half the equity and the executive chairmanship. Joint ventures between a listed operator and a founding family can work well when interests align — but they offer limited recourse when they do not, and consolidating neither full profits nor full control complicates the equity story.
+**Fifty-fifty ownership is a genuine structural question.** Royal Caribbean gets no outright control, and the Stewart family keeps both half the equity and the executive chairmanship. Joint ventures between a listed operator and a founding family can work well when interests align. But they offer limited recourse when they do not, and consolidating neither full profits nor full control complicates the equity story.
 
 <div class="callout risk">
   <div class="ttl">Risks to Watch</div>

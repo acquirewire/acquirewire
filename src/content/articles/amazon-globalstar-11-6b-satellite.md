@@ -5,6 +5,7 @@ date: 2026-04-14
 readTime: 4
 author: "AcquireWire Desk"
 tags: []
+sector: "Media & Telecom"
 draft: false
 ---
 ## Deal Overview
