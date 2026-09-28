@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-28",
+    "acquirer": "Gold Fields",
+    "target": "Northern Star Resources",
+    "value": 27,
+    "sector": "Mining",
+    "status": "rumoured",
+    "slug": "gold-fields-27-billion-northern-star-takeover-rejected"
+  },
+  {
     "date": "2026-09-25",
     "acquirer": "BASF",
     "target": "Evonik Industries",
