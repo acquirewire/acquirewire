@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-29",
+    "acquirer": "AMD",
+    "target": "World Labs",
+    "value": 8.2,
+    "sector": "Artificial Intelligence",
+    "status": "agreed",
+    "slug": "amd-acquires-world-labs-8-billion-ai"
+  },
+  {
     "date": "2026-09-28",
     "acquirer": "Gold Fields",
     "target": "Northern Star Resources",
