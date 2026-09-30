@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-30",
+    "acquirer": "Hormel Foods",
+    "target": "Brakebush",
+    "value": 1.06,
+    "sector": "Food & Beverage",
+    "status": "agreed",
+    "slug": "hormel-brakebush-chicken-acquisition-1-billion"
+  },
+  {
     "date": "2026-09-29",
     "acquirer": "AMD",
     "target": "World Labs",
