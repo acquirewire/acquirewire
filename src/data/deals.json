@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-01",
+    "acquirer": "Warner Bros. Discovery",
+    "target": "Paramount Global",
+    "value": 110,
+    "sector": "Media & Telecom",
+    "status": "closed",
+    "slug": "paramount-warner-bros-merger-clears-judge-october-close"
+  },
+  {
     "date": "2026-09-30",
     "acquirer": "Hormel Foods",
     "target": "Brakebush",
