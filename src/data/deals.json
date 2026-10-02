@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-02",
+    "acquirer": "onsemi",
+    "target": "Synaptics",
+    "value": 5.7,
+    "sector": "Semiconductors",
+    "status": "agreed",
+    "slug": "onsemi-synaptics-57b-all-cash-deal-revised"
+  },
+  {
     "date": "2026-10-01",
     "acquirer": "Warner Bros. Discovery",
     "target": "Paramount Global",
