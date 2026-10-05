@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-05",
+    "acquirer": "Schneider Electric",
+    "target": "PTC Inc.",
+    "value": 20,
+    "sector": "Industrial Software",
+    "status": "agreed",
+    "slug": "schneider-electric-ptc-acquisition-20-billion"
+  },
+  {
     "date": "2026-10-02",
     "acquirer": "onsemi",
     "target": "Synaptics",
