@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-06",
+    "acquirer": "KKR",
+    "target": "Funds Administration Business",
+    "value": 5.1,
+    "sector": "Financial Services",
+    "status": "agreed",
+    "slug": "kkr-5-billion-funds-administration-acquisition"
+  },
+  {
     "date": "2026-10-05",
     "acquirer": "Schneider Electric",
     "target": "PTC Inc.",
