@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-07",
+    "acquirer": "Union Pacific",
+    "target": "Norfolk Southern",
+    "value": 85,
+    "sector": "Rail & Transport",
+    "status": "rumoured",
+    "slug": "union-pacific-85-billion-norfolk-southern-merger-pushback"
+  },
+  {
     "date": "2026-10-06",
     "acquirer": "KKR",
     "target": "Funds Administration Business",
