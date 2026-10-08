@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-08",
+    "acquirer": "Mubadala Capital",
+    "target": "Clear Channel Outdoor",
+    "value": null,
+    "sector": "Out-of-Home Advertising",
+    "status": "closed",
+    "slug": "mubadala-clear-channel-outdoor-cfius-clearance"
+  },
+  {
     "date": "2026-10-07",
     "acquirer": "Union Pacific",
     "target": "Norfolk Southern",
