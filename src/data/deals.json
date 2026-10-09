@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-09",
+    "acquirer": "NextEra Energy",
+    "target": "Dominion Energy",
+    "value": 67,
+    "sector": "Utilities",
+    "status": "rumoured",
+    "slug": "dominion-nextera-67-billion-merger-hearing"
+  },
+  {
     "date": "2026-10-08",
     "acquirer": "Mubadala Capital",
     "target": "Clear Channel Outdoor",
