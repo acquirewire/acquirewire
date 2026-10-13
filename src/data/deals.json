@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-13",
+    "acquirer": "Kroger",
+    "target": "Albertsons",
+    "value": 25,
+    "sector": "Grocery Retail",
+    "status": "closed",
+    "slug": "albertsons-demands-8-billion-kroger-failed-merger"
+  },
+  {
     "date": "2026-10-12",
     "acquirer": "IonQ",
     "target": "Elisity",
