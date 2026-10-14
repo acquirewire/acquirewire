@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-14",
+    "acquirer": "Kroger",
+    "target": "Albertsons",
+    "value": null,
+    "sector": "Grocery Retail",
+    "status": "rumoured",
+    "slug": "albertsons-8-billion-kroger-lawsuit-failed-merger"
+  },
+  {
     "date": "2026-10-13",
     "acquirer": "Kroger",
     "target": "Albertsons",
