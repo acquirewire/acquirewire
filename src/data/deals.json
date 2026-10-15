@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-15",
+    "acquirer": "Mubadala Capital",
+    "target": "Clear Channel Outdoor Holdings, Inc.",
+    "value": null,
+    "sector": "Out-of-Home Media",
+    "status": "closed",
+    "slug": "mubadala-capital-clear-channel-outdoor-acquisition-closed"
+  },
+  {
     "date": "2026-10-14",
     "acquirer": "Kroger",
     "target": "Albertsons",
