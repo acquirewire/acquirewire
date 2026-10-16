@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-16",
+    "acquirer": "Proofpoint",
+    "target": "Varonis Systems",
+    "value": 6.3,
+    "sector": "Cybersecurity",
+    "status": "agreed",
+    "slug": "proofpoint-acquires-varonis-6-billion-cybersecurity"
+  },
+  {
     "date": "2026-10-15",
     "acquirer": "Mubadala Capital",
     "target": "Clear Channel Outdoor Holdings, Inc.",
