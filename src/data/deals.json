@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-19",
+    "acquirer": "Silgan Holdings",
+    "target": "Trivium Packaging",
+    "value": 3.4,
+    "sector": "Packaging",
+    "status": "agreed",
+    "slug": "silgan-trivium-packaging-3-4-billion-acquisition"
+  },
+  {
     "date": "2026-10-16",
     "acquirer": "Proofpoint",
     "target": "Varonis Systems",
