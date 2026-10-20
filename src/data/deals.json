@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-20",
+    "acquirer": "Merck KGaA",
+    "target": "Silence Therapeutics",
+    "value": 1.3,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "merck-kgaa-silence-therapeutics-1-3bn-rare-disease"
+  },
+  {
     "date": "2026-10-19",
     "acquirer": "Silgan Holdings",
     "target": "Trivium Packaging",
