@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-21",
+    "acquirer": "AkzoNobel",
+    "target": "Axalta Coating Systems",
+    "value": null,
+    "sector": "Specialty Chemicals / Coatings",
+    "status": "agreed",
+    "slug": "akzonobel-axalta-merger-unit-sales-approval"
+  },
+  {
     "date": "2026-10-20",
     "acquirer": "Merck KGaA",
     "target": "Silence Therapeutics",
