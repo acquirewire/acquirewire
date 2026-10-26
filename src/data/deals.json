@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-26",
+    "acquirer": "EQT Corporation",
+    "target": "Range Resources",
+    "value": 50,
+    "sector": "Natural Gas",
+    "status": "agreed",
+    "slug": "eqt-acquires-range-resources-50-billion-natural-gas"
+  },
+  {
     "date": "2026-10-22",
     "acquirer": "—",
     "target": "Portfolio of 36 skilled nursing facilities",
