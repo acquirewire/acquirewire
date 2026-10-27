@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-27",
+    "acquirer": "CRH",
+    "target": "Arcosa",
+    "value": 8.5,
+    "sector": "Construction Materials",
+    "status": "closed",
+    "slug": "crh-completes-8-5-billion-arcosa-acquisition"
+  },
+  {
     "date": "2026-10-26",
     "acquirer": "EQT Corporation",
     "target": "Range Resources",
