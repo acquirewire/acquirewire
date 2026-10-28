@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-28",
+    "acquirer": "EQT Corporation",
+    "target": "Range Resources",
+    "value": null,
+    "sector": "Natural Gas",
+    "status": "rumoured",
+    "slug": "eqt-range-resources-acquisition-natgas-dominance"
+  },
+  {
     "date": "2026-10-27",
     "acquirer": "CRH",
     "target": "Arcosa",
