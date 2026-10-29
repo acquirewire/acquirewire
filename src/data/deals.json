@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-29",
+    "acquirer": "DoorDash",
+    "target": "Instacart",
+    "value": 17,
+    "sector": "On-Demand Delivery",
+    "status": "agreed",
+    "slug": "doordash-acquires-instacart-17-billion-delivery-merger"
+  },
+  {
     "date": "2026-10-28",
     "acquirer": "EQT Corporation",
     "target": "Range Resources",
