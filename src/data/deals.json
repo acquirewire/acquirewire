@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-30",
+    "acquirer": "BASF",
+    "target": "Evonik Industries",
+    "value": 12.5,
+    "sector": "Chemicals",
+    "status": "rumoured",
+    "slug": "basf-12-5-billion-takeover-bid-evonik-rebuffed"
+  },
+  {
     "date": "2026-10-29",
     "acquirer": "DoorDash",
     "target": "Instacart",
