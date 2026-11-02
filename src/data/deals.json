@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-02",
+    "acquirer": "Marvell Technology",
+    "target": "Lumentum Holdings",
+    "value": 115,
+    "sector": "Semiconductors / Optical Components",
+    "status": "agreed",
+    "slug": "marvell-lumentum-115-billion-all-stock-merger"
+  },
+  {
     "date": "2026-10-30",
     "acquirer": "BASF",
     "target": "Evonik Industries",
