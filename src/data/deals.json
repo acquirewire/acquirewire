@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-03",
+    "acquirer": "Vistra Corp",
+    "target": "Cogentrix Natural Gas Portfolio",
+    "value": null,
+    "sector": "Power Generation",
+    "status": "closed",
+    "slug": "vistra-cogentrix-gas-portfolio-5-5gw-close"
+  },
+  {
     "date": "2026-11-02",
     "acquirer": "Marvell Technology",
     "target": "Lumentum Holdings",
