@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-05",
+    "acquirer": "SoftBank",
+    "target": "ABB Robotics (ABB Ltd robot unit)",
+    "value": 5.4,
+    "sector": "Industrials",
+    "status": "rumoured",
+    "slug": "china-blocks-softbank-abb-robotics-5-billion"
+  },
+  {
     "date": "2026-11-03",
     "acquirer": "Vistra Corp",
     "target": "Cogentrix Natural Gas Portfolio",
