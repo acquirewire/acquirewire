@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-06",
+    "acquirer": "Intesa Sanpaolo",
+    "target": "Monte dei Paschi di Siena",
+    "value": null,
+    "sector": "Banking",
+    "status": "rumoured",
+    "slug": "monte-dei-paschi-intesa-takeover-bid-profit-guidance"
+  },
+  {
     "date": "2026-11-05",
     "acquirer": "SoftBank",
     "target": "ABB Robotics (ABB Ltd robot unit)",
