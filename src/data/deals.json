@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-09",
+    "acquirer": "Surgery Partners",
+    "target": "HealthSpan",
+    "value": 6,
+    "sector": "Healthcare",
+    "status": "agreed",
+    "slug": "surgery-partners-raises-healthspan-merger-25-per-share"
+  },
+  {
     "date": "2026-11-06",
     "acquirer": "Intesa Sanpaolo",
     "target": "Monte dei Paschi di Siena",
