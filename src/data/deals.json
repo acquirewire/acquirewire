@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-10",
+    "acquirer": "Vanguard",
+    "target": "Altruist",
+    "value": null,
+    "sector": "Fintech / Wealth Management",
+    "status": "agreed",
+    "slug": "vanguard-4-billion-private-debt-altruist-deal"
+  },
+  {
     "date": "2026-11-09",
     "acquirer": "Surgery Partners",
     "target": "HealthSpan",
