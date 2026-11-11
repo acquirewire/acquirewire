@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-11",
+    "acquirer": "AkzoNobel",
+    "target": "Axalta Coating Systems",
+    "value": 25,
+    "sector": "Specialty Chemicals / Coatings",
+    "status": "agreed",
+    "slug": "akzonobel-axalta-25-billion-merger-uk-cma-concerns"
+  },
+  {
     "date": "2026-11-10",
     "acquirer": "Vanguard",
     "target": "Altruist",
