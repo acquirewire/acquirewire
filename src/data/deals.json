@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-12",
+    "acquirer": "Hancock Whitney",
+    "target": "Trustmark",
+    "value": 3.2,
+    "sector": "Banking",
+    "status": "agreed",
+    "slug": "hancock-whitney-trustmark-3-billion-merger-gulf-south"
+  },
+  {
     "date": "2026-11-11",
     "acquirer": "AkzoNobel",
     "target": "Axalta Coating Systems",
