@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-13",
+    "acquirer": "SpaceX",
+    "target": "Tesla",
+    "value": null,
+    "sector": "Technology",
+    "status": "rumoured",
+    "slug": "spacex-tesla-merger-talks-december-announcement"
+  },
+  {
     "date": "2026-11-12",
     "acquirer": "Hancock Whitney",
     "target": "Trustmark",
