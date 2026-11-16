@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-16",
+    "acquirer": "UniCredit",
+    "target": "Commerzbank",
+    "value": null,
+    "sector": "Banking",
+    "status": "agreed",
+    "slug": "unicredit-eu-us-approval-commerzbank-acquisition"
+  },
+  {
     "date": "2026-11-13",
     "acquirer": "SpaceX",
     "target": "Tesla",
