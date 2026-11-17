@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-17",
+    "acquirer": "Aon",
+    "target": "USI Insurance Services",
+    "value": 17,
+    "sector": "Insurance Brokerage",
+    "status": "closed",
+    "slug": "aon-completes-17bn-usi-brokerage-acquisition"
+  },
+  {
     "date": "2026-11-16",
     "acquirer": "UniCredit",
     "target": "Commerzbank",
