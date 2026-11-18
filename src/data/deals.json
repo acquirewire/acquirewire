@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-18",
+    "acquirer": "Eurobank",
+    "target": "Fibank (First Investment Bank)",
+    "value": 1.08,
+    "sector": "Banking",
+    "status": "closed",
+    "slug": "eurobank-fibank-acquisition-bulgaria-one-billion"
+  },
+  {
     "date": "2026-11-17",
     "acquirer": "Aon",
     "target": "USI Insurance Services",
