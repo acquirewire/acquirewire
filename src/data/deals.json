@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-19",
+    "acquirer": "NextEra Energy",
+    "target": "Dominion Energy",
+    "value": 67,
+    "sector": "Utilities",
+    "status": "agreed",
+    "slug": "nextera-dominion-energy-67-billion-merger-hearings"
+  },
+  {
     "date": "2026-11-18",
     "acquirer": "Eurobank",
     "target": "Fibank (First Investment Bank)",
