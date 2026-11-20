@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-20",
+    "acquirer": "Intersnack Group",
+    "target": "Utz Brands",
+    "value": null,
+    "sector": "Food & Beverage",
+    "status": "closed",
+    "slug": "intersnack-completes-utz-brands-take-private"
+  },
+  {
     "date": "2026-11-19",
     "acquirer": "NextEra Energy",
     "target": "Dominion Energy",
