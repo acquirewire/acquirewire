@@ -277,7 +277,7 @@ const edition = String(427 + all.length);
         current = range;
         if (cache[range]) { paint(cache[range]); return; }
         grid.style.opacity = '0.5';
-        fetch('/api/history?range=' + range, { cache: 'no-store' })
+        fetch('/api/history?range=' + range)
           .then(function (r) { return r.ok ? r.json() : null; })
           .then(function (d) {
             grid.style.opacity = '';

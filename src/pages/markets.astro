@@ -86,7 +86,7 @@ import Base from '../layouts/Base.astro';
       }
 
       function load() {
-        fetch('/api/board', { cache: 'no-store' })
+        fetch('/api/board')
           .then(function (r) { return r.ok ? r.json() : null; })
           .then(function (d) {
             if (!d || !d.board) { foot.textContent = 'Market data unavailable.'; return; }
@@ -101,8 +101,18 @@ import Base from '../layouts/Base.astro';
           })
           .catch(function () { foot.textContent = 'Market data unavailable.'; });
       }
+      // Refresh slowly, and only while the tab is actually being looked at.
+      var POLL_MS = 300000;
+      var last = Date.now();
+      function tick() {
+        if (document.visibilityState !== 'visible') return;
+        if (Date.now() - last < POLL_MS - 1000) return;
+        last = Date.now();
+        load();
+      }
       load();
-      setInterval(load, 60000);
+      setInterval(tick, 60000);
+      document.addEventListener('visibilitychange', tick);
     })();
   </script>
 </Base>

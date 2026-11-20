@@ -215,15 +215,31 @@ const ticker = (await getCollection('articles', ({ data }) => (import.meta.env.P
           tape.hidden = false;
         }
 
+        // No `cache: 'no-store'`: that bypassed the browser cache and defeated
+        // the CDN headers the endpoint sets, so every tab on every page hit the
+        // function directly. Let the Cache-Control header do its job.
         function load() {
-          fetch('/api/quotes', { cache: 'no-store' })
+          fetch('/api/quotes')
             .then(function (r) { return r.ok ? r.json() : null; })
             .then(function (d) { if (d) render(d.quotes); })
             .catch(function () { /* leave hidden on failure */ });
         }
 
+        // This tape sits in the layout, so it runs on every page. Poll slowly,
+        // and not at all while the tab is in the background.
+        var POLL_MS = 300000;
+        var last = 0;
+        function tick() {
+          if (document.visibilityState !== 'visible') return;
+          var now = Date.now();
+          if (now - last < POLL_MS - 1000) return;
+          last = now;
+          load();
+        }
+        last = Date.now();
         load();
-        setInterval(load, 60000);
+        setInterval(tick, 60000);
+        document.addEventListener('visibilitychange', tick);
       })();
     </script>
   </body>

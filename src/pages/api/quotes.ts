@@ -73,8 +73,9 @@ function json(body: unknown) {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      // CDN-cache for 60s, serve stale up to 5 min while revalidating.
-      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+      // CDN-cache for 5 min, serve stale for an hour while revalidating. The
+      // tape polls at the same cadence, so visitors share one invocation.
+      'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600',
     },
   });
 }
