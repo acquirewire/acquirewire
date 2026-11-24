@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-24",
+    "acquirer": "Sanofi",
+    "target": "Insmed",
+    "value": 41,
+    "sector": "Pharma",
+    "status": "agreed",
+    "slug": "sanofi-insmed-41-billion-acquisition-biopharma"
+  },
+  {
     "date": "2026-11-23",
     "acquirer": "CrowdStrike",
     "target": "Zscaler",
