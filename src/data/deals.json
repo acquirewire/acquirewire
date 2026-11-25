@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-25",
+    "acquirer": "AkzoNobel",
+    "target": "Axalta Coating Systems",
+    "value": 25,
+    "sector": "Specialty Chemicals & Coatings",
+    "status": "agreed",
+    "slug": "akzonobel-axalta-25-billion-merger-uk-remedies"
+  },
+  {
     "date": "2026-11-24",
     "acquirer": "Sanofi",
     "target": "Insmed",
