@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-26",
+    "acquirer": "Altria Group",
+    "target": "Imperial Brands",
+    "value": null,
+    "sector": "Tobacco",
+    "status": "rumoured",
+    "slug": "altria-imperial-brands-takeover-bid-tobacco"
+  },
+  {
     "date": "2026-11-25",
     "acquirer": "AkzoNobel",
     "target": "Axalta Coating Systems",
