@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-27",
+    "acquirer": "Altria Group",
+    "target": "Imperial Brands",
+    "value": 30,
+    "sector": "Tobacco",
+    "status": "rumoured",
+    "slug": "altria-30-billion-imperial-brands-takeover-bid"
+  },
+  {
     "date": "2026-11-26",
     "acquirer": "Altria Group",
     "target": "Imperial Brands",
